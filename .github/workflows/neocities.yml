@@ -53,6 +53,22 @@ jobs:
           fi
           if [ -f site/index.html ]; then echo "ready=true" >> "$GITHUB_OUTPUT"; fi
 
+      - name: Neocities-Schlüssel prüfen
+        if: steps.prep.outputs.ready == 'true'
+        env:
+          KEY: ${{ secrets.NEOCITIES_API_TOKEN }}
+        run: |
+          if [ -z "$KEY" ]; then
+            echo "::error::Secret NEOCITIES_API_TOKEN fehlt oder ist leer."
+            exit 1
+          fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $KEY" https://neocities.org/api/info)
+          if [ "$code" != "200" ]; then
+            echo "::error::Neocities lehnt den Schlüssel ab (HTTP $code). Bitte neuen API-Schlüssel als Secret NEOCITIES_API_TOKEN hinterlegen."
+            exit 1
+          fi
+          echo "::notice::Neocities-Schlüssel ist gültig."
+
       - name: Ordner site/ zu Neocities hochladen
         if: steps.prep.outputs.ready == 'true'
         uses: bcomnes/deploy-to-neocities@v3
