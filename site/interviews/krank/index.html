@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krank bei Pogoradio</title>
+<meta name="description" content="Pogoradio im November 2008 im Juz Mannheim mit Krank aus der Schweiz: Käse, Toblerone, Heidi, die Schweizergarde, eine Kuh namens Else und Rüdis Hochzeit mit Schmidt mit DT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter+Tight:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f1eb;
+  --card:#ffffff;
+  --ink:#141212;
+  --muted:#625b55;
+  --red:#e2001a;
+  --red-text:#c40016;
+  --rule:#141212;
+  --soft:#e7e1d8;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#151313;
+    --card:#1f1c1b;
+    --ink:#f2eee8;
+    --muted:#b4aca3;
+    --red:#e2001a;
+    --red-text:#ff4d5e;
+    --rule:#f2eee8;
+    --soft:#2a2624;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 "Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:72rem;margin:0 auto;padding:0 16px}
+
+/* Kopf: rote Fläche, darunter Kunstblut */
+.top{background:#e2001a;color:#fff;overflow:hidden}
+.top .wrap{padding-top:22px;padding-bottom:6px}
+.top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+h1{margin:0;min-width:0;font:900 clamp(84px,24vw,280px)/.78 Archivo,"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:62%;letter-spacing:-.015em;text-transform:uppercase}
+.meta{display:flex;flex-wrap:wrap;gap:4px 0;margin:6px 0 18px;padding:0;list-style:none;font:700 14px/1.35 "Inter Tight",sans-serif;letter-spacing:.02em}
+.meta li{padding:0 14px 0 0;margin-right:14px;border-right:2px solid rgba(255,255,255,.85)}
+.meta li:last-child{border-right:0;margin-right:0;padding-right:0}
+.plus{flex:none;width:44px;height:44px;margin:0;background:
+  linear-gradient(#fff,#fff) center/11px 32px no-repeat,
+  linear-gradient(#fff,#fff) center/32px 11px no-repeat}
+.drips-wrap{overflow:hidden}
+.drips{display:block;width:100%;height:70px;color:#e2001a}
+
+.intro{display:grid;grid-template-columns:minmax(0,1fr) 19rem;gap:24px 48px;align-items:start;margin-top:22px}
+.deck{margin:0;font:600 clamp(21px,2.6vw,27px)/1.35 "Inter Tight",sans-serif;max-width:40rem}
+.warn{margin:0;padding:14px 16px;border:3px solid var(--red);font:700 15px/1.4 "Inter Tight",sans-serif}
+.warn b{display:block;color:var(--red-text);font:900 22px/1 Archivo,sans-serif;font-stretch:75%;text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
+
+.lineup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 20px;margin:34px 0 0;padding:0;list-style:none}
+.lineup li{border-top:3px solid var(--rule);padding:10px 0 0}
+.lineup .role{display:block;font:700 12px/1.3 "Inter Tight",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lineup .name{display:block;font:800 clamp(22px,2.6vw,30px)/1.05 Archivo,sans-serif;font-stretch:75%;margin-top:4px}
+.lineup .extra{display:block;font-size:14.5px;line-height:1.4;color:var(--muted);margin-top:6px}
+
+figure{margin:0}
+figcaption{margin-top:8px;font-size:14px;line-height:1.45;color:var(--muted)}
+figcaption b{color:var(--ink)}
+.hero{margin-top:36px}
+
+.lead{max-width:44rem;margin:30px 0 0;font-size:19px}
+
+/* Abschnitte */
+.part{display:grid;grid-template-columns:minmax(0,1fr) 19rem;gap:20px 48px;align-items:start;margin-top:52px;padding-top:14px;border-top:3px solid var(--rule)}
+.part > h2{grid-column:1 / -1;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 16px;align-items:baseline;margin:0}
+.part > h2 .no{font:900 clamp(44px,6vw,72px)/.9 Archivo,sans-serif;font-stretch:62%;color:var(--red-text)}
+.part > h2 .t{font:800 clamp(26px,3.4vw,38px)/1.05 Archivo,sans-serif;font-stretch:75%;text-transform:uppercase;letter-spacing:.005em}
+.talk{min-width:0}
+.side{min-width:0;display:grid;gap:26px}
+
+.turn{display:grid;grid-template-columns:7.2rem minmax(0,1fr);gap:0 18px;margin:0 0 14px}
+.who{margin:0;padding-top:.3em;font:700 12px/1.3 "Inter Tight",sans-serif;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.said{margin:0}
+.q .who{color:var(--red-text)}
+.q .said{font-weight:600}
+.regie{margin:6px 0 18px;padding-left:calc(7.2rem + 18px);font-style:italic;color:var(--muted)}
+
+/* Anmerkungen als Käse */
+.note{margin:0;padding:16px 34px 16px 16px;color:#1d1700;font-size:15px;line-height:1.5;border-radius:2px;background:
+  radial-gradient(circle at 96% 14%,#e6b832 0 9px,transparent 10px),
+  radial-gradient(circle at 98% 62%,#e6b832 0 6px,transparent 7px),
+  radial-gradient(circle at 88% 100%,#e6b832 0 7px,transparent 8px),
+  #f6cf45}
+.note b{display:block;margin-bottom:4px;font:800 12px/1.4 "Inter Tight",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+
+.pull{margin:0;padding-top:12px;border-top:6px solid var(--red);font:800 clamp(26px,3vw,32px)/1.08 Archivo,sans-serif;font-stretch:75%;color:var(--red-text)}
+.pull cite{display:block;margin-top:10px;font:700 12px/1.3 "Inter Tight",sans-serif;font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.end{margin:64px 0 0;padding:20px 0 48px;border-top:3px solid var(--rule)}
+.protokoll{margin:0;font:600 14px/1.6 "Inter Tight",sans-serif;color:var(--muted);max-width:52rem}
+.bye{margin:20px 0 0;font:900 clamp(40px,8vw,84px)/.9 Archivo,sans-serif;font-stretch:62%;text-transform:uppercase;color:var(--red-text)}
+
+@media (max-width:860px){
+  .plus{width:34px;height:34px}
+  .intro,.part{grid-template-columns:minmax(0,1fr)}
+  .lineup{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
+  .side{max-width:32rem}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:2px}
+  .who{padding-top:0}
+  .regie{padding-left:0}
+  .drips{height:44px}
+}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header>
+  <div class="top">
+    <div class="wrap">
+      <div class="top-row">
+        <ul class="meta">
+          <li>Pogoradio auf Bermudafunk</li>
+          <li>Live im Juz Mannheim</li>
+          <li>November 2008</li>
+        </ul>
+        <div class="plus" aria-hidden="true"></div>
+      </div>
+      <h1>Krank</h1>
+    </div>
+  </div>
+  <div class="drips-wrap"><svg class="drips" viewBox="0 0 1600 70" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <rect x="0" y="0" width="1600" height="14" fill="currentColor"/>
+    <g fill="currentColor">
+      <rect x="70" y="0" width="12" height="38" rx="6"/><circle cx="76" cy="40" r="8"/>
+      <rect x="190" y="0" width="8" height="22" rx="4"/><circle cx="194" cy="24" r="5.5"/>
+      <rect x="315" y="0" width="14" height="52" rx="7"/><circle cx="322" cy="54" r="9"/>
+      <rect x="470" y="0" width="9" height="28" rx="4.5"/><circle cx="474.5" cy="30" r="6"/>
+      <rect x="610" y="0" width="12" height="44" rx="6"/><circle cx="616" cy="46" r="8"/>
+      <rect x="760" y="0" width="7" height="20" rx="3.5"/><circle cx="763.5" cy="22" r="5"/>
+      <rect x="880" y="0" width="15" height="58" rx="7.5"/><circle cx="887.5" cy="60" r="9.5"/>
+      <rect x="1040" y="0" width="9" height="30" rx="4.5"/><circle cx="1044.5" cy="32" r="6"/>
+      <rect x="1180" y="0" width="12" height="46" rx="6"/><circle cx="1186" cy="48" r="8"/>
+      <rect x="1330" y="0" width="8" height="24" rx="4"/><circle cx="1334" cy="26" r="5.5"/>
+      <rect x="1460" y="0" width="13" height="40" rx="6.5"/><circle cx="1466.5" cy="42" r="8.5"/>
+    </g>
+  </svg></div>
+
+  <div class="wrap">
+    <div class="intro">
+      <p class="deck">Punkrock aus der Schweiz, mit Lederjacke, Nieten und sehr viel Kunstblut. Am Mikrofon geben Krank fast keine einzige ernste Antwort.</p>
+      <p class="warn"><b>Achtung</b>Enthält Kunstblut, derbe Witze, frei erfundene Geschichten und sehr viel Käse.</p>
+    </div>
+
+    <ul class="lineup" aria-label="Besetzung">
+      <li><span class="role">Gesang</span><span class="name">Knüppelfresse Schmidt</span><span class="extra">mit DT</span></li>
+      <li><span class="role">Bass</span><span class="name">Massenmord</span><span class="extra">Vorname Massen, Nachname Mord</span></li>
+      <li><span class="role">Gitarre</span><span class="name">Völler</span><span class="extra">kein Vorname, „der Hellste“</span></li>
+      <li><span class="role">Schlagzeug</span><span class="name">Karl Russel</span><span class="extra">im Karussell geboren</span></li>
+    </ul>
+
+    <figure class="hero">
+      <img src="krank-bierdusche.jpg" width="1400" height="1007" alt="Krank auf der Bühne im Juz Mannheim: links der Gitarrist im weißen Hemd, in der Mitte der Sänger in Lederjacke, der dem Bassisten eine Flasche Bier über den Kopf gießt. Beide sind mit Kunstblut verschmiert, hinten sitzt der Schlagzeuger.">
+      <figcaption><b>Juz Mannheim, November 2008.</b> Schmidt gießt Massenmord Bier über den Kopf, links Völler, hinten Karl Russel.</figcaption>
+    </figure>
+
+    <p class="lead">Im November 2008 spielen Krank im Juz Mannheim, und Rüdi holt sie vor das Pogoradio-Mikrofon. Es geht um Raclette und Appenzeller, um Toblerone, um Heidi und die Schweizergarde, um eine Kuh namens Else und um die Frage, ob Rüdi durch eine Hochzeit mit dem Sänger Schweizer werden kann.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">01</span><span class="t">Schmidt mit DT</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, guten Abend. Hier ist Pogoradio, live on air, und wir haben die Band Krank am Start. Ihr kommt aus der Schweiz.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ja, genau.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dann stellt euch mal ganz schnell vor.</p></div>
+    <div class="turn"><p class="who">Massenmord</p><p class="said">Ich bin der Massen, Vorname, und der Mord, Nachname. Und ich spiele Bass.</p></div>
+    <div class="turn"><p class="who">Völler</p><p class="said">Ich bin der Hellste und so, und ich bin der Gitarrist. Ich bin der Völler, und ich habe keinen Vornamen.</p></div>
+    <div class="turn"><p class="who">Karl Russel</p><p class="said">Ich bin der Karl Russel und spiele das Schlagwerk.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Er heißt Russel, weil er einen Rüssel hat.</p></div>
+    <div class="turn"><p class="who">Karl Russel</p><p class="said">Und weil ich in einem Karussell geboren wurde.</p></div>
+    <div class="turn"><p class="who">Schmidt</p><p class="said">Ich bin der Knüppelfresse Schmidt. Mit DT hinten, das ist wichtig. Viele schreiben es nur mit T, aber für mich ist das DT hinten wichtig. Also nicht mit zwei T.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">So wie man es nicht mit SZ schreibt, sondern mit zwei S. DT Schmidt, konsequent.</p></div>
+    <div class="turn"><p class="who">Schmidt</p><p class="said">Halt dein Maul. Okay, weiter geht's.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das heißt, an alle Zuhörerinnen: Falls ihr Knüppelfresse jemals im Bett haben solltet, dann nennt ihn Schmidt mit zwei T, bevor er kommt.</p></div>
+    <div class="turn"><p class="who">Schmidt</p><p class="said">Oh ja, Schmidt mit zwei T. Dann kann ich länger.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich dachte, du kannst nur bei Tieren.</p></div>
+    <div class="turn"><p class="who">Schmidt</p><p class="said">Ich habe mir mal eine Anakonda anal eingeführt.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Die digital animierte Anakonda, die heißt ja Analconda. Und die echte ist dann die Analog-Conda.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Apropos digital: Was steht denn auf deinem Zettel? Nächste Frage!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hier steht: Kennt ihr Nintendo Wii?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ja, kenne ich. Ist das das, wo man Masturbieren üben kann? Da habe ich mal meinen kleinen Bruder k.o. geschlagen, beim Boxen mit dem Controller, weil ich dachte, das ist jetzt so in 3D. Ich hab's nicht gecheckt. Aber die Typen vom Yoga-Abend haben mir erklärt, wie das funktioniert, und jetzt ist das okay.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Seine Freundin ist jetzt im Frauenhaus, weil sie zu oft Nintendo Wii gespielt haben.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nein, seine Freundin ist seine rechte Hand.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das ist eine fiese Unterstellung. Jeden Montag rufe ich ihr nach: Isabel, komm runter, oder es gibt wieder aufs Maul.</p></div>
+  </div>
+  <aside class="side">
+    <figure>
+      <img src="krank-kunstblut.jpg" width="1200" height="872" alt="Sänger in Lederjacke mit Kunstblut im Gesicht, dahinter der Gitarrist im weißen Hemd mit Krawatte, vorne der Bassist im blutverschmierten Unterhemd." loading="lazy">
+      <figcaption><b>Schmidt, Völler, Massenmord.</b> Das Blut ist aus der Flasche.</figcaption>
+    </figure>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">02</span><span class="t">Der Lieblingskäse</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Warte mal, ich muss wieder lauter machen. Achtung, jetzt: Was ist dein Lieblingskäse?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich habe eigentlich zwei Lieblingskäse. Es kommt ganz drauf an. Was ist die Mehrzahl von Käse? Käsen? Also: Montags, donnerstags und samstags mag ich Raclette. Das schiebst du in den Ofen, nimmst es wieder raus und tust ein bisschen was drauf, und das geht mit Kartoffeln genauso. Genauso ficke ich übrigens auch: reinschieben, rausschieben.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Und dienstags, mittwochs und freitags mag ich den Swissalp von Emmi. Das ist eine Firma in Luzern. Die machen das gut, die können das. Im Frauenhaus, wo seine Freundin drin ist, mögen sie den Swissalp auch.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Fragst du uns jetzt nach dem Käse, weil wir aus der Schweiz kommen?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich mag vor allem den Käse, der aus dem Ausland kommt. Kennt ihr den Appenzeller? Scheiße, so viele Löcher.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Emmi ist eine Molkerei aus Luzern. Der Appenzeller kommt aus der Ostschweiz, also nicht ganz aus dem Ausland.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">03</span><span class="t">Mit 35 aufs Force Attack</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt mal was über eure Band. Ihr seid ja auf dem aufsteigenden Ast.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Unser Ziel ist, mit 30 auf dem Force Attack zu spielen. Aber uns kennt niemand. Wir machen alles selber, das ist schwierig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dann macht ihr's halt mit 35.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Okay, mit 35. Bis ich 30 bin … Ich bin der Jüngste in der Band. Zwölf.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Am Mikrofon muss man immer die Wahrheit sagen. Das ist auch ein Lügendetektor, da leuchtet eine rote Lampe, wenn du lügst.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Okay, ich bin 22.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Wir sind 27. Die anderen sind alt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie seid ihr eigentlich zum Punkrock gekommen? Wolltest du das machen, oder ist das von Geburt an?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das Ding hatte ich eigentlich von Geburt an, aber später machen lassen. Die Frage fand ich gut. Also, die ursprüngliche Idee war, was komplett Neues zu machen. In erster Linie war das die Idee von unserem Sänger, dem lieben Herrn Knüppelfresse Schmidt mit DT. Der war vor ein paar Jahren sehr, sehr kreativ. Das hat inzwischen leider ein bisschen abgenommen, aber er macht es wieder wett mit seinem Sex-Appeal. Er hat die Band gegründet, weil er einfach seine Meinung …</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mal was anderes: Ich habe gerade deinen Bauchnabel gesehen. Wie sieht der denn aus? Total scheiße.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Der Doktor war schlecht. Der wollte die Nabelschnur durchschneiden, aber hat dafür den Mixer genommen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du kannst auch in deiner Heimatsprache sprechen.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Mein Vater arbeitet bei der UBS und hat sich leicht verspekuliert. Was auch die Deutschen spüren, wollte ich nur mal sagen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Leicht verspekuliert. Und du bist ja der Kommerz-Heini in der Band, hab ich gehört. Du warst ja bei Viva, sozusagen die Gülcan der Schweiz.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das liegt daran: Meine Eltern waren im Golfclub, und meine Mutter wollte ein Handicap. Da hieß es: schwierig, schwierig mit dem Handicap. Da musste ich Sachen machen, die ich beim Bermudafunk nicht sagen darf. Und dann hat sie gesagt: Das ist doch Punkrock, mein Sohn, was du da machst. Da habe ich gesagt: Okay, dann mache ich halt Punk.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hast du's kapiert?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Klingt plausibel.</p></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Unser Ziel ist, mit 30 auf dem Force Attack zu spielen. Aber uns kennt niemand.“<cite>Krank</cite></blockquote>
+    <p class="note"><b>Anm. d. Red.</b>Das Force Attack war ein großes Punkfestival bei Rostock. Und die UBS hatte sich 2008 tatsächlich verspekuliert: Im Oktober musste der Schweizer Staat die Großbank retten.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">04</span><span class="t">Der Austauschschüler</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mit wem rede ich jetzt gerade?</p></div>
+    <div class="turn"><p class="who">Völler</p><p class="said">Ich bin der Völli.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Erzähl die Geschichte vom Völler!</p></div>
+    <div class="turn"><p class="who">Völler</p><p class="said">Das ist keine Geschichte, das ist ein Lied. Meine Fans singen immer: „Ihr seid voll!“ Und dann singe ich weiter: „Ich bin Völler!“</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Er ist bei uns in der Band der Austauschschüler. Er macht sich ganz gut, er hat sich die Haare wachsen lassen. Er sieht aus wie der Sohn von Gilbert Gress.</p></div>
+    <div class="turn"><p class="who">Völler</p><p class="said">Ich bin der Sohn von Gilbert Gress.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Der Fußballtrainer. Kannst du Französisch?</p></div>
+    <div class="turn"><p class="who">Völler</p><p class="said">Ein bisschen, ich bin ja in der Schweiz aufgewachsen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">In der Schweiz gibt's ja auch Schweizer, die Französisch reden. Damit habt ihr aber nichts zu tun, oder?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Mit Leuten, die Französisch reden? Mit denen prügeln wir uns immer mittwochs auf dem Schulhof.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt mischt sich hier der Sänger von Rotzenplotz ein.</p></div>
+    <div class="turn"><p class="who">Gast</p><p class="said">Ich mische mich nicht ein. Ich suche eigentlich nur den Veranstalter.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Da kannst du lange suchen. Aber du hast ein schönes Lächeln, oder?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Schön ist Definitionssache. Kommt drauf an. Dentalhygiene, das ist wichtig.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Gutes Stichwort, einfach mal in die Runde geworfen. Da könnte der Sänger von Rotzenplotz wirklich noch viel rausholen. Mit Dentalhygiene kriegt der ein Lächeln, da sterben die Bohlens alle weg.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich finde, seine Zähne sind okay. Bei euch ist das ja so: Ihr seid mit Toblerone aufgewachsen, ne?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Für die Zähne eigentlich ganz schlecht, weil da die vielen kleinen bräunlichen Stücke drin sind.</p></div>
+  </div>
+  <aside class="side">
+    <figure>
+      <img src="krank-gitarre.jpg" width="1100" height="899" alt="Der Gitarrist im weißen Hemd mit schwarzer Krawatte fletscht die Zähne in die Kamera, im Gesicht Kunstblut. Dahinter rotes Licht und eine Wandmalerei mit Skelett." loading="lazy">
+      <figcaption><b>Völler,</b> der Austauschschüler, beim Lächeln.</figcaption>
+    </figure>
+    <p class="note"><b>Anm. d. Red.</b>Gilbert Gress ist ein Fußballtrainer aus dem Elsass und hat Ende der 1990er die Schweizer Nationalmannschaft trainiert.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">05</span><span class="t">Tobler One</span></h2>
+  <div class="talk">
+    <div class="turn"><p class="who">Krank</p><p class="said">Weißt du, wieso Toblerone Toblerone heißt? Jetzt werde ich plötzlich zum Interviewer. Ich will wissen, ob der Rüdi das weiß. Das gehört zur Allgemeinbildung, vierte Klasse.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Tobler … One?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Also: Der Typ, der das erfunden hat, wollte den Namen schützen lassen. Aber unter „Tobler“ war schon was eingetragen. Dann hat er es halt „Tobler One“ genannt. Und wenn man das ausspricht: Toblerone.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Pogoradio ist eben ein Sender, wo man immer was dazulernt.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Genau. Da kriegt man immer was mit auf den Lebensweg. Das ist nicht einfach so lalala, da wird einem immer was erzählt, und das bringt einen weiter.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Je nachdem ist der Lebensweg auch sehr kurz.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Schön wär's. Toblerone gibt es seit 1908, und der Name setzt sich aus Tobler und Torrone zusammen, dem italienischen Wort für Nougat.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">06</span><span class="t">Heidi, Klara und die Kuh Else</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie sieht dein familiärer Hintergrund aus? Hast du eine schlechte Kindheit gehabt?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich weiß jetzt gar nicht, was ich darauf sagen soll.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Bist du wie die Heidi auf dem Berg aufgewachsen und musstest die Ziegen hüten? Oder warst du gleich in Zürich? Die Heidi war ja dann auch in Zürich.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Die Heidi war in Frankfurt. Gedreht haben sie in Zürich. Und jetzt guck mal: Auf jedem Schweizer Bahnhof steht eine gelbe Rollstuhlrampe. Das ist nur wegen dem Film.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nee, das war die Klara!</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Falls die Klara mal in die Schweiz kommen will, hat sie eine Rollstuhlrampe. Auf die Berge ist schwierig mit dem Rollstuhl. Ich habe Verwandte, die auch in den Bergen wohnen. Dritten Grades. Der Typ, der für die Kühe den Kessel halten muss. Der ist mein Facebook-Freund.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Seid ihr mehr so Anti-Schweizer, die nie auf die Berge gekommen sind und immer im Schatten gelebt haben? Wenn du im Tal lebst, hast du ja ganz wenig Sonne, da sind immer Berge außen rum.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Viereinhalb Stunden, kommt auf die Jahreszeit an. Die Drehung der Erde, die Gravitation: Im Sommer hast du mehr Licht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr seid also mehr so Talbewohner?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Moment, da muss ich Einspruch erheben. Unser Heimatclub, wo wir jedes Jahr spielen, ist die Box. Wir lieben euch! Ihr seid die Geilsten!</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Um noch mal aufs Heidi-Thema zurückzukommen: Jedes Mal, wenn wir in die Box fahren, essen wir im Heidiland. Das ist eine bekannte Raststätte. Da kannst du fünf Franken in einen Kasten werfen, das sind drei Euro, und dann kommt die Heidi raus, so wie beim Nussknacker. Da stehen immer die Japaner, werfen ihre gesamte Kohle rein und machen Fotos von der Heidi. Und wir finden die eigentlich geil. Deshalb warten wir immer, bis die Japaner kommen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wann wart ihr das letzte Mal richtig in den Bergen?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Erst letzte Woche. Ich wohne in den Bergen. Ich hatte da auch mal ein Verhältnis mit einer Kuh. Im Sommer ging das lang, im Winter ging es nicht mehr so gut.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das war die Else.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Obwohl, im Winter ist es doch eigentlich schön kuschelig, ne?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nee, im Winter wird's hart. Wir hatten Probleme mit der Milch.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aber die muss doch im Winter geschlachtet werden.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Die wurde erst geschlachtet, als die Else gesagt hat, dass er nicht der Vater ist.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich wollte die Alimente nicht mehr bezahlen. Und dann hat sie gesagt: Ich mach Schluss mit dir.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe das Gefühl, du lügst mich an. Du erfindest Geschichten, um dich interessant zu machen. Kann das sein?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Was ist denn das für ein Vorwurf?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Jetzt bist du in der Ecke, Alter. Kämpf dich raus! Du schaffst es!</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Im Roman von Johanna Spyri kommt Heidi nach Frankfurt, zu Klara, die im Rollstuhl sitzt. Das Heidiland ist eine Raststätte an der A13 bei Maienfeld.</p>
+    <figure>
+      <img src="krank-schmidt.jpg" width="900" height="1215" alt="Der Sänger in Lederjacke und blutverschmierten Jeans steht breitbeinig auf der Bühne und singt mit geschlossenen Augen. Hinten links der Schlagzeuger, rechts der Bassist." loading="lazy">
+      <figcaption><b>Knüppelfresse Schmidt,</b> mit DT. Hinten Karl Russel.</figcaption>
+    </figure>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">07</span><span class="t">Dreißig Sekunden Stille</span></h2>
+  <div class="talk">
+    <div class="turn"><p class="who">Krank</p><p class="said">Rüdi, ich will dir eins sagen. Kennst du Larry King?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Larry King kenne ich, ja.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Und kennst du den Rüdi?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Kenne ich auch.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Larry King würde in die Ecke gehen, weinen und sich in die Jeans pissen, wenn er den Namen hört. Weil er es weiß. Du weißt es auch. Jeder hier weiß es. Deshalb jetzt einfach mal 30 Sekunden Stille.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">30 Sekunden. Wer zählt? Zählst du?</p></div>
+    <p class="regie">Es wird kurz still, ungefähr.</p>
+    <div class="turn"><p class="who">Krank</p><p class="said">Kennt ihr das aus der Kirche, wenn es still ist und einer hustet? Habt ihr bei euch auch Kirchen? Da ist extra einer angestellt. Nach den Fürbitten hat man seine Ruhe, geht in sich, und dann braucht es einen, der hustet. Das ist der Völler. Der ist dafür angestellt, gutes Geld. Wenn der Sammelbeutel rumgeht, die Kollekte, die geht an den Völler nach Fulda.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Er kommt aus Fulda, muss man dazu sagen. Wenn du über Kirche redest, bist du da richtig: die katholischste Stadt in Deutschland.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich will nicht unterbrechen, aber ihr kommt ja aus der Schweiz. Die Schweizergarde bewacht den Papst.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Richtig. Aber wusstest du, dass die unter der Kutte moderne Handfeuerwaffen haben?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt im Ernst? Warst du mal bei denen?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nee. Ich habe mich angemeldet und den Zettel rausgeschickt, aber der kam nicht an.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich dachte immer, die kämpfen wirklich mit der Lanze.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Mit der Lanze gegen vollautomatische Maschinengewehre? Nee, die haben wirklich Handfeuerwaffen.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Das stimmt sogar: Die Schweizergarde trägt neben der Hellebarde auch Pistolen und Sturmgewehre.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t8">
+  <h2 id="t8"><span class="no">08</span><span class="t">Smart, Unterhosen und eine Hochzeit</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich schneide. Schnitt.</p></div>
+    <p class="regie">Pause. Danach springt das Aufnahmegerät nur mühsam wieder an.</p>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, jetzt krieg ich's endlich wieder an. Wenn ich es mal ausgemacht habe, ist das wie bei einem alten Diesel. Ich geb's zu: Ich fahre Volkswagen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr in der Schweiz auch Volkswagen?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Haben wir, aber das ist ein anderes Volk. In der Schweiz ist der Volkswagen der Smart. Der kleine beschissene, den alle fahren, weil man so gut einparken kann.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Was in Deutschland arm ist, ist in der Schweiz Penner. Das wollte ich einfach mal sagen. Wir in der Schweiz haben so viel. Jeder hat eine Karre, wir haben Arbeit.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wenn wir schon von Reichtum reden: Was hast du denn so daheim an Unterhosen?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich hab dir schon gesagt, ich bin der Mann der sieben Dinge.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nee, ich muss dir ehrlich sagen: Ich habe mehr. Aber zwei davon sind kaputt, die haben Löcher.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Aber was für Pogoradio wichtig ist: die Deutschen in der Schweiz. Die Deutschen in der Schweiz sind wie die Türken in Deutschland. Wenn du als Deutscher in der Schweiz Arbeitslosengeld kriegst, ist das mehr als Hartz IV und mehr als ein Ein-Euro-Job. Das ist doch mal eine Information. Wenn du Punk bist und keinen Job hast: Komm in die Schweiz, melde dich arbeitslos, du kriegst mehr Geld.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aber ich habe den Film mit Emil gesehen, „Die Schweizermacher“. Es ist total schwierig, in der Schweiz eingebürgert zu werden.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Die Schweizer mögen die Deutschen halt auch nicht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Muss man da einen Schweizer Schäferhund haben oder Schweizer Verwandte? Oder kann ich jetzt die Ehe mit dir eingehen?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Homosexuell geht. In Zürich können wir heiraten. Du, Rüdi, ich heirate dich, und dann bist du Schweizer.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dann bin ich sozusagen dein Mann?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ehrlich, ja. In der Schweiz geht das. Dann heißt du Rüdi Schmidt. Mit DT.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Doppelnamen gibt's ja nicht, oder wie?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Doch, doch, doch. Aber die meisten Frauen behalten ihren Namen, weil sie den anderen meistens nicht mögen. Wer will schon Schmidt heißen?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Vor allem mit DT.</p></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Was in Deutschland arm ist, ist in der Schweiz Penner.“<cite>Krank</cite></blockquote>
+    <p class="note"><b>Anm. d. Red.</b>„Die Schweizermacher“ ist eine Komödie von 1978 mit Emil Steinberger über zwei Beamte, die Einbürgerungswillige überprüfen. Heiraten konnten Männer 2008 in der Schweiz noch nicht. Seit 2007 gab es die eingetragene Partnerschaft, die Ehe für alle kam erst 2022.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t9">
+  <h2 id="t9"><span class="no">09</span><span class="t">Zürich, der See und Schlagzeuge</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die Schweiz ist eigentlich so das Paradies in Europa. Viele wissen es nicht.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nee, viele wissen es schon.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich war mal in Zürich, so ein Tagesurlaub. Es war alles so schweineteuer. Ich war froh, als ich wieder im Auto saß und heimfahren konnte. Ein halbes Hähnchen mit Pommes …</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Komm vorbei, ich habe eine Wohnung da.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Der See, der war geil. Den habe ich mir angeguckt und Fotos gemacht.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich wohne auch am See. Ich bin der Einzige in der Band, der am See wohnt. Ich genieße das sehr.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Noch bei den Eltern, oder hast du eine eigene Wohnung?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich wohne noch bei den Eltern. Aber ich hoffe, dass sich das bald ändert, wenn meine Bude läuft.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Frag mal, was er baut!</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich baue Schlagzeuge.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Weiß ich schon. Habe ich im Internet gesehen.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Oh, super. Wieder was gelernt bei Pogoradio. Die meisten Sachen, die ich über Sexualität weiß, kenne ich übrigens aus dem Pogoradio.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich auch.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich dachte, jetzt kommt die Bravo.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nee, das war dann mehr so eine andere Geschichte. Da haben wir uns als kleine Jungs getroffen.</p></div>
+  </div>
+  <aside class="side">
+    <figure>
+      <img src="krank-boden.jpg" width="900" height="1066" alt="Die Band liegt am Ende des Konzerts auf der Bühne zwischen leeren Dosen und Flaschen. Vorne liegt der Gitarrist auf dem Rücken und spielt weiter, dahinter Bassist und Sänger übereinander." loading="lazy">
+      <figcaption><b>Konzertende.</b> Völler spielt im Liegen weiter, dahinter Massenmord und Schmidt.</figcaption>
+    </figure>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t10">
+  <h2 id="t10"><span class="no">10</span><span class="t">Sexualkunde bei Pogoradio</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die Bravo, da wollen wir ja auch hin. Sagen wir mal so: Was wisst ihr eigentlich über Sexualität?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das ist eine gute Frage. Also, das Beste ist immer unser lieber Herr Knüppelfresse Schmidt. Er und auch Herr Massenmord, die teilen den Leuten auf der Bühne sehr gern ihre sexuellen Vorlieben mit und zeigen ihnen, wie man das macht.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Kommt drauf an. Bei jeder Show ist das Mikro so eingestellt, dass kein Schwein was versteht.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Was sehr wissenswert ist für das Sexualleben aller Zuhörer und Zuhörerinnen: Mr. Spock. Das ist immer eine sehr gute Idee, wenn es mal nicht mehr so läuft. Da spreizt du den Mittelfinger vom Ringfinger.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Genau.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ja, aber nur nicht ins Gesicht.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich sag: two in the front, two in the back.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie sagt man das auf Deutsch?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Zwei vorne und zwei hinten. Zwei gelb, zwei braun.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die Frage war ja: Was habt ihr sexuell bei Pogoradio gelernt?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das haben wir jetzt alles aufgezählt. Ich weiß jetzt, wer eine sehr erotische Stimme hat.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Eins wollte ich bei Pogoradio immer mal sagen, bevor wir zu Ende kommen: Verhütet, verhütet, verhütet!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Recht hast du, das ist wichtig.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Die Menschheit muss aussterben.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Im Schweizer Fernsehen gab's letztens einen Film über einen Typen, der wegen Syphilis die Hälfte seines Hirns nicht mehr hat. Der kann sich immer nur an die letzten zwei Minuten seines Lebens erinnern. Und der Grund war: Er war Punkrocker. Die kriegen keine Frau, die müssen ins Bordell. Und einmal willst du es auch ungeschützt.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Immer nur geschützt!</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Stell dir vor, du hast keine andere Wahl. Einmal im Leben willst du Sex ohne Kondom, und dann stirbst du. Punkrock.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich finde auch die Luftballons heute sehr leichtsinnig. Einmal in runder Form und einmal in Form von Schwänzen.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das war doch schon wieder sehr Bermudafunk. Darf ich das sagen? Entschuldigung. Penis ist okay?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Penis ist okay. Pimmel hätte ich an deiner Stelle nicht gesagt. Phallussymbol.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ja, aber das war doch sehr offensichtlich, fand ich.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und was hast du gedacht? Böse, böse, böse? Oder gut, gut, gut?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich habe gedacht: Oh, Luftballons.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ich habe meinen Penis in der Show noch gar nicht gezeigt. Kann ich das jetzt machen? Kann ich meinen Penis aufs Mikrofon legen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aber nicht berühren! Ganz wichtig: Als Moderator darf man das Mikro nie aus der Hand geben.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Du kannst ihn bei mir auf die Flasche legen, auf den Flaschenhals. Dann trinkst du draus.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Nee, meine ist leer. Trau mich noch nicht.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Mr. Spock ist der Vulkanier aus „Raumschiff Enterprise“. Sein Gruß mit gespreizten Fingern heißt eigentlich: „Lebe lang und in Frieden.“</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t11">
+  <h2 id="t11"><span class="no">11</span><span class="t">Bevor die Sendung zu gut wird</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Doch, jetzt mal! Du kannst nicht erst einheizen und dann … Wir sind an dem Punkt angelangt, wo die Sendung vielleicht gut werden könnte. Und deshalb hören wir jetzt auf.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das ist gut. Wir müssen einfach aufpassen, dass die Sendung nicht zu gut wird. Sonst flippt das Publikum aus und weiß danach nicht mehr, was es machen soll. Die sind total desillusioniert, hängen nur noch rum und gehen am nächsten Tag nicht mehr zur Arbeit.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Und dann kommen sie in die Schweiz und holen sich da das Arbeitslosengeld.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Richtig. Also: In der Schweiz ist die Homo-Ehe erlaubt. Das haben wir heute gelernt. Was haben wir noch gelernt?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Tobler One.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Heidi finden wir alle cool. Sie ist unsere Lieblingswichsvorlage, und für fünf Franken kann man sie im Heidiland auch anschauen.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Und dass Schafe keine Antibabypille vertragen. Und dass Kühe bei Kälte harte Euter bekommen.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Und dass die Box die geilste Location in der Schweiz ist. Unbedingt hingehen, bester Punkclub der Schweiz!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Guck mal hier, von Rotzenplotz ist auch noch einer gekommen.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Ein bisschen zu spät.</p></div>
+    <div class="turn"><p class="who">Jemand</p><p class="said">Hat mich auch gefreut. Wir können heute die Homo-Ehe feiern. Nur deswegen bin ich eigentlich hier.</p></div>
+    <div class="turn"><p class="who">Jemand</p><p class="said">Mal ganz kurz: Bis ich meiner Freundin beigebracht habe, dass ihre Vagina nichts ist im Vergleich zu ihrem Arsch, das hat eine Zeit gedauert. Nur nebenbei.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Er ist übrigens der einzige Nichtraucher. Kein Scheiß, er raucht nicht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist die Dame anwesend?</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Welche Dame? Die in seiner Fantasie ist immer anwesend.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Das Interview letztens wäre übrigens viel lustiger gewesen, wenn der Segel dabei gewesen wäre.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wäre, wäre … Hätte der Hund nicht gekackt, hätte er den Hasen noch gekriegt. Wissen wir doch alle. Jetzt ist Schluss, die Sendung ist gleich vorbei. Das war wieder live im Pogoradio bei Bermudafunk.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Live! Oder soll einer sagen, der Rüdi sitzt nur zu Hause und zieht sich das rein? Nein, der Rüdi ist an der Front. Rü heißt auf Lateinisch übrigens Front.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Und gerade riecht's. Dieses Aroma, unverkennbar.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das riecht man normalerweise nicht, wenn man nur die Sendung hört.</p></div>
+    <div class="turn"><p class="who">Krank</p><p class="said">Stimmt. Geruchsradio kommt noch.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay. Das war's.</p></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Wir müssen einfach aufpassen, dass die Sendung nicht zu gut wird.“<cite>Krank</cite></blockquote>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="protokoll">Pogoradio auf Bermudafunk · Juz Mannheim · November 2008 · Rüdi mit Krank aus der Schweiz · Transkript redigiert und gekürzt. Wer genau was sagt, ist auf der Aufnahme oft nicht zu hören, deshalb steht meistens nur „Krank“. Ein paar Stellen über Leute, die nicht dabei waren, sind weggelassen.</p>
+  <p class="bye">Geruchsradio kommt noch.</p>
+</footer>
+</body>
+</html>
