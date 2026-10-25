@@ -1,0 +1,295 @@
+<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Bregenz</title><style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+.pgr-bar{margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)))}</style></head><body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Overpass:wght@600;800&display=swap">
+<style>
+/* Layout: one reading column; the route is set as green cycle-path signs, which also mark each stage */
+:root {
+  --bg: #f5f8f6;
+  --fg: #1a2420;
+  --muted: #5a6a62;
+  --rule: #d3ddd7;
+  --sign: #00784a;
+  --sign-fg: #ffffff;
+  --display: "Overpass", "Arial Narrow", Arial, sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111816; --fg: #e2e8e4; --muted: #98a79f; --rule: #28332e; --sign: #1a8a58; --sign-fg: #ffffff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111816; --fg: #e2e8e4; --muted: #98a79f; --rule: #28332e; --sign: #1a8a58; --sign-fg: #ffffff;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.68;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 36rem; margin: 0 auto; padding-block: 3.5rem 5rem; }
+header { display: grid; gap: 1.25rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--rule); margin-bottom: 2.5rem; }
+h1 {
+  font-family: var(--display); font-weight: 800; letter-spacing: -0.02em;
+  font-size: clamp(3rem, 14vw, 5.5rem); line-height: 0.9; margin: 0; text-wrap: balance;
+}
+.byline { margin: 0; color: var(--muted); font-style: italic; font-size: 1rem; }
+.route { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.9rem 0.5rem; align-items: flex-start; }
+.route li { display: grid; gap: 0.3rem; justify-items: start; position: relative; padding-right: 1.1rem; }
+.route li:not(:last-child)::after {
+  content: ""; position: absolute; right: 0.2rem; top: 0.72rem; width: 0.55rem; height: 0.55rem;
+  border-top: 2px solid var(--muted); border-right: 2px solid var(--muted); transform: rotate(45deg);
+}
+.plate {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: var(--sign); color: var(--sign-fg);
+  font-family: var(--display); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.01em;
+  padding: 0.28rem 0.6rem 0.18rem; border-radius: 3px; line-height: 1.3;
+}
+.bike { width: 1.25rem; height: auto; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-top: -0.1rem; }
+.route .train .plate { background: transparent; color: var(--fg); box-shadow: inset 0 0 0 2px var(--sign); }
+.day { font-family: var(--display); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); padding-left: 0.1rem; }
+.stage { margin: 3rem 0 1.25rem; font-size: 1rem; font-weight: normal; }
+.stage:first-of-type { margin-top: 0; }
+p { margin: 0 0 1rem; hyphens: auto; }
+p.say { margin-bottom: 0.45rem; }
+p:not(.say) + p.say { margin-top: -0.2rem; }
+p.say + p:not(.say) { margin-top: 0.9rem; }
+@media (max-width: 30rem) { body { font-size: 1.0625rem; } main { padding-block: 2.25rem 4rem; } }
+</style>
+<main lang="de">
+  <header>
+    <h1>Bregenz</h1>
+    <p class="byline">Miguel erzählt, wie er mit einem geschenkten Fahrrad von Bregenz nach Innsbruck fuhr.</p>
+    <ol class="route" aria-label="Route"><li class=""><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Bregenz</span><span class="day">Tag 1</span></li><li class=""><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Götzis</span><span class="day">Tag 2</span></li><li class=""><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Feldkirch</span><span class="day">Tag 4</span></li><li class=""><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Bludenz</span><span class="day">Tag 4</span></li><li class=""><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Innsbruck</span><span class="day">Tag 4</span></li><li class="train"><span class="plate">Mannheim</span><span class="day">Tag 5 · Zug</span></li></ol>
+  </header>
+  <article>
+<h2 class="stage"><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Bregenz</span></h2>
+<p>Einmal musste ich am Bahnhof in Bregenz schlafen. Bregenz, in Österreich. Am Morgen will ich meinen Zug nehmen, aber der Zug kommt zu spät, viel zu spät. Und ich habe keine Zeit – es ist mein freier Tag, mein Urlaub. Keine Zeit, keine Zeit. Also laufe ich ein bisschen herum, um zu schauen, was los ist. Und da finde ich ein silbernes Fahrrad. Kein Schloss, kein Name, nichts. Ich denke: Vielleicht ist das für mich. Ich nehme das Rad und fahre los.</p>
+<p>Ich weiß nicht genau, wohin. Ich weiß, wo Götzis ist, da will ich hin. Bregenz kenne ich eigentlich, aber in diesem Moment fahre ich einfach. Und auf einmal sehe ich den See. Ich weiß nicht, warum, aber nie – wirklich nie – haben wir in Bregenz den See gesehen. Auch nicht das Theater. Wir haben überhaupt nichts gesehen von Bregenz, wir waren immer nur auf der Durchreise. Aber jetzt sehe ich alles, alles, was mich in Bregenz interessiert.</p>
+<p>Und ich sehe einen großen Platz, den besten Platz der Welt: einen Schachplatz. Spielst du Schach? Für mich ist das das beste Spiel überhaupt, um eine Philosophie zu verstehen – aus China oder aus der Türkei. Keine Ahnung, ob das stimmt.</p>
+<p>Es ist sechs Uhr morgens. Auf dem Platz mit dem riesigen Schachbrett, mit diesen großen, großen Figuren, sitzt ein alter Mann, ganz allein, so wie ich. Ich denke: Vielleicht will er spielen, er ist ja allein. Also gehe ich hin.</p>
+<p class="say">„Hey, spielst du Schach?“</p>
+<p class="say">„Ja, natürlich. Ich warte auf meine Freunde, aber es ist noch zu früh. Spielst du auch?“</p>
+<p class="say">„Klar.“</p>
+<p class="say">„Bist du gut oder Anfänger?“</p>
+<p class="say">„Weiß nicht. Ich spiele seit vielleicht zwanzig Jahren. Aber ich weiß, viele sind besser als ich. Ich spiele zum Spaß, nicht für den Wettkampf.“</p>
+<p class="say">„Okay. Willst du mit mir spielen?“</p>
+<p class="say">„Sicher.“</p>
+<p>Wir stellen alle Figuren auf. Ich habe Weiß und fange mit einer Eröffnung an, die mir Johnny beigebracht hat, eine ganz, ganz alte aus Russland. Und ich gewinne. Der Mann sagt: „Du bist gut. Ich will es mal mit Weiß probieren.“</p>
+<p class="say">„Ja, klar, warum nicht.“</p>
+<p>Ich nehme Schwarz. Ich liebe Schwarz, ich glaube, das ist meine Farbe. Und ich gewinne wieder. Der Mann sagt: „Hey, du bist richtig, richtig gut.“</p>
+<p class="say">„Nein, sorry. Ich mache auch Fehler. Aber du machst mehr Fehler als ich. Du siehst sie nur nicht.“</p>
+<p class="say">„Noch eine Partie.“</p>
+<p class="say">„Ja, ja. Aber zum Spaß, oder?“</p>
+<p class="say">„Ja, zum Spaß. Nicht als Wettkampf.“</p>
+<p class="say">„Okay, okay.“</p>
+<p>Und zum dritten Mal gewinne ich. Er ist ein alter Mann, und er sagt: „Mann, ich spiele dieses Spiel mein ganzes Leben. Und du gewinnst dreimal hintereinander. Ich verstehe das nicht. Warum bist du hier?“</p>
+<p class="say">„Hä? Warum? Weiß nicht.“</p>
+<p class="say">„Nein, Mann, du weißt es. Warum bist du hier?“</p>
+<p class="say">„Nein.“</p>
+<p class="say">„Doch. Warum bist du hier?“</p>
+<p>Na gut, stimmt. Ich weiß, warum ich hier bin. Ich muss nach Götzis, und ich warte auf den Zug. Aber der Zug kommt vielleicht erst um drei, jetzt ist es acht, und ich weiß nicht, ob ich Zeit habe oder nicht, weil ich nach Mannheim muss, weil ich in einer Band spiele, bla, bla, bla.</p>
+<p>Und er sagt: „Ah, aber du brauchst doch nur ein Fahrrad.“</p>
+<p class="say">„Mann, ich weiß nicht, was ich brauche.“</p>
+<p class="say">„Doch. Aber nicht das da. Das silberne Rad ist für Kinder. Du brauchst das beste – dieses hier.“</p>
+<p class="say">„Hä?“</p>
+<p class="say">„Ja, das ist meins. Du kannst es nehmen.“</p>
+<p class="say">„Ja, aber ich komme nicht zurück. Vielleicht in zwei Monaten, ich weiß es nicht genau.“</p>
+<p class="say">„Kein Problem. Wenn du wieder mit mir spielen willst, komm mit dem Rad und gib es mir zurück. Aber es ist mir egal, ob du es zurückbringst. Ich habe fünf Stück zu Hause.“</p>
+<p>Fünf Fahrräder hat er zu Hause! Ich sage: „Wow, Mann, danke! Vielen, vielen Dank!“</p>
+<p class="say">„Ja, ja. Los, los, fahr zu deinem Ort.“</p>
+<h2 class="stage"><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Nach Götzis</span></h2>
+<p>Ich nehme das Rad und fahre Richtung Götzis, weil da zwei Freunde von mir wohnen, richtig, richtig liebe Freunde. Erst fahre ich auf der Schnellstraße. Aber ich höre die Autos, ich halte an und habe ein schlechtes Gefühl. Vielleicht bin ich auf dem falschen Weg – immer und immer wieder auf dem falschen Weg. Ich muss den richtigen Weg suchen. Also fahre ich langsam zurück, zurück, zurück. Und da sehe ich ein grünes Schild, und darauf ein weißes Fahrrad. Ich sage: Das ist der Weg. Los geht’s.</p>
+<p>Ich fahre direkt nach Götzis, halte in der Natur an, trinke Wasser, total entspannt. Ich finde eine richtig schöne Stelle mit Steinen, halte da und denke: Jetzt würde ich gern eine Zigarette rauchen. Und genau in diesem Moment kommen drei oder vier Punks – ich weiß die Zahl nicht mehr genau –, und alle rauchen. Ich frage: „Hey, Servus! Hast du eine Zigarette für mich, bitte?“</p>
+<p class="say">„Ja, ja, alles klar“, und dann bla, bla, bla auf Deutsch.</p>
+<p class="say">„Ich kann kein Deutsch.“</p>
+<p class="say">„Was ist deine Sprache?“</p>
+<p class="say">„Spanisch.“</p>
+<p class="say">„Spanisch kann ich nicht, aber Englisch. Wir können Englisch reden, kein Problem.“</p>
+<p class="say">„Ja, stimmt, aber ich hab keine Zeit, keine Zeit. Ich muss nach Götzis.“</p>
+<p class="say">„Okay. Tschüss!“</p>
+<p>In Götzis schlafe ich dann. Das ist Tag eins. Nein – Tag zwei. Das ist Tag zwei. Ich schlafe dort und rede mit Angie und Stefan, meinen Freunden. Sie sagen: „Miguel, das ist ein harter Weg. Wenn du zurückwillst, helfen wir dir, mit dem Zug zu fahren.“</p>
+<p class="say">„Es ist mein Urlaub. Ich will mit dem Rad fahren.“</p>
+<p class="say">„Okay, Miguel, kein Problem. Aber denk dran: Am fünften Tag musst du in Mannheim sein.“</p>
+<p class="say">„Ja, klar, natürlich. Und wenn ich Probleme habe, rufe ich Johnny an. Kein Problem.“</p>
+<p>Und ja, Johnny hilft mir wirklich immer.</p>
+<p>Losfahren will ich um zwölf, weil ich vorher noch das Haus putze und meine Sachen in Ordnung bringe – ich mag es nicht, bei Freunden Chaos zu hinterlassen. Dann setze ich mich aufs Rad. Die Namen der kleinen Orte sind natürlich richtig schwer auszusprechen. Aber auf der Karte siehst du, wo der Weg langgeht, von Götzis direkt nach Innsbruck. Denn in diesem Moment denke ich: Ich will nach Innsbruck.</p>
+<p>Warum? Weil ich mich von der Tour an diesen Ort erinnere. An die Leute dort. Ich konnte nicht richtig mit ihnen reden – manchmal verstehen mich die Leute nicht –, aber sie waren wirklich nett. Und ich habe das Gefühl, ich muss noch einmal nach Innsbruck. Auf Tour habe ich keine Zeit, mit den Leuten zu reden, da heißt es nur: Schlagzeug spielen, bla, bla, bla. Alles zu schnell, viel zu schnell, weil wir jeden Tag spielen. Das ist hart für mich. Ich will die Leute kennenlernen.</p>
+<p>Darum fahre ich mit dem Rad und halte in all den Orten und Dörfern, die ich spannend finde – wo die Leute nach dem Do-it-yourself-Prinzip leben, gegen den Kapitalismus. Ich habe alle Infos dazu auf einem Zettel, weil mir das wirklich wichtig ist: Leute, die horizontal miteinander reden wollen, auf Augenhöhe. Horizontale Treffen.</p>
+<p>Unterwegs komme ich an einen ganz, ganz ruhigen Ort, nur alte Leute. Ich denke: Schön. Und fahre hin.</p>
+<p class="say">„Servus!“</p>
+<p class="say">„Servus! Was machst du?“</p>
+<p class="say">„Ich bin mit dem Rad unterwegs. Allein.“</p>
+<p class="say">„Allein?“</p>
+<p class="say">„Warum nicht? Ich fahre gern allein Rad.“</p>
+<p class="say">„Hast du Hunger?“</p>
+<p class="say">„Nein.“</p>
+<p class="say">„Aber willst du nicht was mit uns essen?“</p>
+<p class="say">„Okay.“</p>
+<p>Also esse ich mit den Leuten. Und sie fragen mich: „Wo willst du am Ende hin?“</p>
+<p class="say">„Ich glaube, nach Mannheim. Da muss ich hin. Aber eigentlich will ich da gar nicht hin.“</p>
+<p class="say">„Aber hast du nicht gesagt, das ist dein Weg?“</p>
+<p class="say">„Ja, aber das ist geradeaus. Ich fahre lieber im Kreis, die ganze Zeit. Mal große Kreise, mal kleine. Ich habe das Gefühl, ich muss im Kreis fahren, nicht auf einer geraden Linie.“</p>
+<p class="say">„Wo willst du denn hin?“</p>
+<p class="say">„Nach Innsbruck.“</p>
+<p class="say">„Innsbruck? Das ist hart, Mann. Da musst du über zwei Berge. Richtig hoch.“</p>
+<p class="say">„Ist mir egal. Ich komme aus den Bergen. Ich will mit meinem Rad dahin.“</p>
+<p class="say">„Okay, wenn du willst. Aber hast du Geld?“</p>
+<p class="say">„Na ja, nicht wirklich.“</p>
+<p class="say">„Wie viel brauchst du für deinen Weg?“</p>
+<p class="say">„Nein, ich brauche kein Geld.“</p>
+<p class="say">„Doch, du brauchst Geld. Nimm zwanzig Euro.“</p>
+<p class="say">„Ja, ja, kein Problem.“</p>
+<p class="say">„Los, los, fahr deinen Weg.“</p>
+<p class="say">„Danke, vielen Dank!“</p>
+<h2 class="stage"><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Unterwegs</span></h2>
+<p>Und ich fahre richtig schnell los. Das ist Tag drei, und es wird Abend. Noch nicht richtig Nacht, aber die Nacht kommt.</p>
+<p>Unterwegs sehe ich ein Mädchen, das eine Kuh am Hals packt. Eine Kuh! Bei euch sagt man „Kuh“, oder? Sorry, ist mir egal, ob ihr mich versteht. „Muh“ versteht jeder. Muh! Scheiß auf die Sprache.</p>
+<p>Ich sehe also das Mädchen, wie sie die Kuh am Hals packt, und denke: Oh Mann. Warum packt sie dieses schöne Tier am Hals? Und dann sehe ich – nicht den Bauch, wie heißt das noch … das Euter. Riesig und rot. Und ich weiß, was los ist, weil ich aus dem Dschungel komme. Bei uns weiß jeder: Wenn die Kuh ein großes, rotes Euter hat, muss sie schnell gemolken werden. Die Leute hier wollen sie melken, aber sie packen sie falsch, am Hals.</p>
+<p>Bei uns, da wo die Kühe leben, singen alle Lieder, schöne Lieder für die Natur. Und ich denke mir: Mädchen, du musst es mal anders probieren. Vielleicht, vielleicht schaffe ich es ja. Und ich singe ein Lied, das in Venezuela richtig berühmt ist, das Lied vom Morgenstern.</p>
+<p>Und genau in diesem Moment schaut mich die Kuh an, und ich denke: Ah, ich hab die Energie. Ich sitze auf meinem Rad und höre ding-dong, ding-dong – die Glocke an ihrem Hals. Ich singe dasselbe Lied immer weiter, und sie kommt mit. Ich singe einfach und fahre Rad. Und ich frage die Leute: „Hey, wo melkt ihr die Kühe?“</p>
+<p class="say">„Da drüben, da drüben.“</p>
+<p class="say">„Okay, cool.“</p>
+<p>Das Mädchen fragt mich: „Hey, was machst du da?“</p>
+<p class="say">„Na ja, ich kann helfen, weißt du.“</p>
+<p class="say">„Ja, aber kannst du das? So wie mein Papa?“</p>
+<p class="say">„Klar. Ich komme aus Südamerika, für mich ist das normal.“</p>
+<p class="say">„Oh, bitte hilf mir!“</p>
+<p class="say">„Okay, cool.“</p>
+<p>Ich stelle den Eimer für die Milch hin und singe, singe, singe. Danach gehen wir zu ihrem Haus, und die Leute kochen für mich und sagen danke. „Willst du hier schlafen?“</p>
+<p class="say">„Keine Zeit, keine Zeit, tut mir leid. Ich muss weiter.“</p>
+<h2 class="stage"><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Der Berg</span></h2>
+<p>Um die Geschichte zu Ende zu bringen: Dann komme ich an diesen verdammten Berg. Richtig, richtig hart. Und ich sage: Nein. Der Berg ist nicht härter als ich. Vielleicht schaffe ich das. Wenn ich erst mal ganz oben bin, geht’s ja nur noch runter. Ich weiß, vielleicht zwanzig Kilometer bergauf.</p>
+<p>Da halten mich zwei Polizisten in einem Auto an und fragen mich etwas, auf Englisch oder auf Deutsch. Ich sage: „Servus!“ Und der Polizist lächelt.</p>
+<p class="say">„Ah, du sprichst Deutsch?“</p>
+<p class="say">„Ja, ja.“</p>
+<p>Und dann sagt er irgendwas auf Deutsch, und ich verstehe natürlich gar nichts. Ich sage: „Sorry, mein Deutsch ist nicht so gut.“</p>
+<p class="say">„Ah. Woher kommst du?“</p>
+<p class="say">„Aus Venezuela, Südamerika.“</p>
+<p class="say">„Ah. Was machst du hier?“</p>
+<p class="say">„Ich fahre mit dem Rad durch die Welt.“</p>
+<p class="say">„Aber kennst du die Gegend hier?“</p>
+<p class="say">„Ja, ich war mit Freunden mit dem Auto hier. Jetzt will ich mit dem Rad hier sein, allein.“</p>
+<p class="say">„Warum?“</p>
+<p class="say">„Weiß nicht. Das ist mein Weg. Ich muss allein fahren.“</p>
+<p class="say">„Vielleicht. Aber vielleicht brauchst du ein bisschen Hilfe. Die Nacht kommt, und du musst noch weiter hoch, viel weiter.“</p>
+<p class="say">„Ja, vielleicht brauche ich Hilfe.“</p>
+<p class="say">„Willst du? Wir können dir helfen.“</p>
+<p class="say">„Wirklich? Okay, los!“</p>
+<p>Ich steige in das Auto, da sitzen eine Frau und ein Mann. Der Mann fragt: „Hey, reist du mit dem Rad um die Welt?“</p>
+<p class="say">„Nein, nein, nicht wirklich. Sonst immer mit dem Flugzeug oder mit dem Auto. Aber ich liebe das Fahrrad.“</p>
+<p>Als Kind in Venezuela war Radfahren ein großes Problem, weil jeder mit der Waffe auf dich losgeht, wenn du ein Fahrrad hast. Alle sind arm, und es ist richtig gefährlich, mit dem Rad herumzufahren. Also nicht überall in Venezuela, nur in Caracas. Venezuela ist wunderschön, aber Caracas – meine Stadt, da komme ich her – ist richtig gewalttätig. Und ich mag keine Gewalt. Wenn ich zu viel Gewalt in meinem Leben spüre, gehe ich in die Natur, auf den Berg bei meiner Stadt. Genauso hier: Ich habe gerade zu viele Probleme im Kopf, also gehe ich in die Natur. Kein Problem.</p>
+<p>Die Polizistin fragt: „Hast du was zu trinken?“</p>
+<p class="say">„Gerade nicht, ich hab nur eine Flasche Wasser.“</p>
+<p>Und der andere sagt: „Meine Frau hat mir was gekocht, das liegt hier. Aber ich hab keinen Hunger. Nimm du es. Du brauchst es bestimmt später.“</p>
+<p class="say">„Danke!“</p>
+<p>Als wir oben sind, sagen sie noch: „Und bitte nicht vergessen: Mach dein Licht an. In der Nacht ohne Licht fahren ist verboten.“</p>
+<p class="say">„Okay, kein Problem.“</p>
+<p>Tak, tak, tak, und ab geht’s, den Berg runter. Richtig schön. Der Wind im Gesicht, an den Armen, am ganzen Körper. Diesen Berg, dieses Gefühl – das musst du selbst erleben, wenn du es spüren willst.</p>
+<p>Na ja. Und dann finden mich wieder zwei Polizisten. Mit Blaulicht, bam, bam, bam – aber diesmal überhaupt nicht freundlich. Ich halte einfach an. Es sind zwei Männer, ein alter und einer vielleicht in meinem Alter, ich weiß nicht genau. Ich grüße sie, aber sie antworten gar nicht.</p>
+<p class="say">„Deinen Pass.“</p>
+<p class="say">„Ah, hier.“</p>
+<p class="say">„Was machst du hier?“</p>
+<p class="say">„Ich fahre mit dem Rad durch Europa.“</p>
+<p class="say">„Kannst du nicht.“</p>
+<p class="say">„Warum?“</p>
+<p class="say">„Ist illegal. Weil du arm bist.“</p>
+<p class="say">„Hä?“</p>
+<p class="say">„Ja. Das Rad ist gestohlen.“</p>
+<p class="say">„Sorry, Mann, du liegst falsch.“</p>
+<p class="say">„Nein, das glaub ich dir nicht. Du bist hier, weil du die Leute bestiehlst, meine Leute“, bla, bla, bla. „Du bist arm.“</p>
+<p>In diesem Moment vergesse ich mich. Und ich sage: „Mann, halt dein verdammtes Maul! Du nennst mich nicht arm. Ich hab in New York City gearbeitet, in der Canal Street, bei Sacred Tattoo, und hab verdammte Tattoos gestochen. Die Leute haben mir hundertfünfzig Dollar pro Stunde bezahlt. So ein Geld kannst du dir in deinem verdammten Leben nicht mal vorstellen. Du hast noch nie eine große Stadt gesehen. Du lebst in deinem verdammten Kaff auf dem verdammten Land. Red nicht so mit mir!“</p>
+<p>Und der Polizist: „Hä? Was ist los? Was willst du?“</p>
+<p>Und der andere sagt: „Nein, Mann, du liegst falsch. Du kommst mit uns. Auf die Wache.“</p>
+<p>Rechts von mir sehe ich nur Bäume und Steine und einen Fluss. Mitkommen? Nein, Mann, denke ich, kommt doch lieber ihr mit mir. Und ab in die Bäume, ganz schnell. Da geht’s immer runter und rauf, das ist ganz leicht, vielleicht zweihundert Meter, nicht viel. Mit dem Rad geht das schnell. Die Polizisten sitzen gerade im Auto, und ich bin schneller draußen in der Dunkelheit. Die sehen gar nichts. Und der andere holt die Taschenlampe, schnell, schnell. Aber als er sie hat, bin ich schon oben am Berg und schaue nur zu, was passiert.</p>
+<p>Und sie machen es falsch: Sie laufen da unten in Reihen, geradeaus, nach rechts, nach links, aber nie den Berg hoch. Ich denke: Echt jetzt? Dumme Polizei. Ich nehme ein paar Steine und werfe sie ganz, ganz fest da rüber. Und als ich das mache, machen die Vögel Lärm, die ganze Natur bewegt sich, und die Leute sehen nichts. Und ich spüre: Die Natur hilft mir gegen die verdammte Polizei. Mein Gott. Ich denke an gar nichts mehr. Und die Natur macht immer weiter Geräusche. Ich weiß nicht genau – nach zwei Stunden fährt die Polizei weg.</p>
+<p>Und in diesem Moment fliegt eine Blüte durch die Luft zu mir. Ich halte meine rechte Hand so, als wollte ich Wasser daraus trinken, und die Blüte landet genau in der Mitte meiner Hand. Und ich sage: So schön. So schön. Ich schließe die Hand und lege die Blüte in eine Schachtel, eine Zigarettenschachtel – aber natürlich sind da keine Zigaretten drin. Nur Blumen und Steine und ein paar Geschenke von meinen Freunden. Und ich denke: Ich habe hier alles, was ich zum Schlafen brauche. Ich schlafe hier, und wenn ich aufwache, fahre ich ganz schnell los.</p>
+<h2 class="stage"><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Feldkirch – Bludenz – Innsbruck</span></h2>
+<p>Okay, es ist Morgen. Tag vier. Los geht’s. Ich bin in Feldkirch. Und ich sehe ein wunderschönes Mädchen, und das Mädchen sieht mich, und ich sage: „Servus.“ Und sie sagt: „Servus.“</p>
+<p>Ich frage: „Wo fährst du hin?“</p>
+<p class="say">„Nach Bludenz.“</p>
+<p class="say">„Ich muss nach Innsbruck, aber ich kenne den Weg nicht.“</p>
+<p class="say">„Ah, das ist ganz einfach. Komm mit mir, ich zeige dir den Weg.“</p>
+<p class="say">„Ah, okay, cool.“</p>
+<p>Und wir fahren zusammen von Feldkirch nach Bludenz, die ganze Zeit zusammen, sie auf ihrem Rad, ich auf meinem. Richtig, richtig schön. Wir reden, halten am Fluss, am See, trinken Wasser, reden über das Leben. Als wir in Bludenz sind, sagt sie: „Okay. Dein Weg geht einfach geradeaus. Siehst du die Berge da?“</p>
+<p class="say">„Ja, klar.“</p>
+<p class="say">„Hinter diesen Bergen, da unten, ist Innsbruck.“</p>
+<p class="say">„Ah, okay, cool.“</p>
+<p>Ich muss also wieder in die Berge und im Kreis fahren. Ich sehe die Bahnlinie, aber das ist nicht mein Weg. Ich sehe die Straße für die Autos, das ist auch nicht mein Weg. Dazwischen ist der Weg für die Fahrräder, richtig gut. Auf dem fahre ich Richtung Innsbruck.</p>
+<p>Und wieder helfen mir andere Leute. Andere Leute unterstützen mich. Ich bitte nicht um Hilfe, ich bitte um gar nichts. Ich weiß nicht genau, warum die Leute mich unterstützen. Aber ich weiß: Uff, so viele richtig, richtig nette Leute.</p>
+<p>Das letzte Stück nach Innsbruck geht es nur noch bergab, und ich denke: Oh, Miguel, du musst was trinken. Aber hier ist es richtig hart, nur Sonne. Nicht wie auf dem Weg vorher, wo überall Brunnen waren. Hier gibt es kein Wasser, kein freundlicher Ort. Und da sehe ich einen Typen, der Orangensaft trinkt. Ah, Miguel, halt an!</p>
+<p>Ich sage: „Servus.“ Und er sagt: „Servus“ und noch etwas anderes auf Deutsch. Aber ich kann kein Deutsch. Ich sage: „Sorry, Mann, sprichst du Englisch?“</p>
+<p class="say">„Ja, klar.“</p>
+<p class="say">„Ah, okay, cool. Ich spreche kein Deutsch.“</p>
+<p class="say">„Kein Problem. Wo willst du hin?“</p>
+<p class="say">„Nach Innsbruck.“</p>
+<p class="say">„Ah, cool. Ich arbeite in Innsbruck. Aber warum bist du allein?“</p>
+<p class="say">„Ich spiele in einer Band“, bla, bla, bla, „und ich wollte allein mit dem Rad fahren und so.“</p>
+<p class="say">„Okay. Aber von wo bist du mit dem Rad gekommen?“</p>
+<p class="say">„Aus Bregenz.“</p>
+<p class="say">„Bregenz? Bist du verrückt?“</p>
+<p class="say">„Ja, warum nicht?“</p>
+<p class="say">„Mann, das ist richtig hart mit dem Rad. Bitte, erzähl mir die Geschichte. Willst du mit mir nach Innsbruck fahren?“</p>
+<p class="say">„Ja, klar.“</p>
+<p>Ich steige in seinen Transporter, und da hat er jede Menge Essen. Ich habe gerade Hunger, und er hat Orangen, Wasser, Obst. Er sagt: „Mann, nimm dir, was du willst.“</p>
+<p class="say">„Danke!“</p>
+<p>Ich esse und erzähle die Geschichte, und er lächelt die ganze Zeit. Dann sagt er: „Miguel, jetzt sind wir in Innsbruck. Hier arbeite ich. Wo genau willst du hin, Mann?“</p>
+<p class="say">„Wenn du hier arbeitest, ist hier der beste Ort.“ Denn in Venezuela sagen die Leute: Bis hierher hat mich der Fluss getragen. Das ist der beste Ort.</p>
+<p class="say">„Okay, cool, Miguel. Man sieht sich. Vielleicht. Vielleicht auch nicht.“</p>
+<p class="say">„Okay, cool. Tschüss!“</p>
+<p>Und dann halte ich an mit einer großen, großen Flasche Orangina. Ich sage mir: Ich muss was trinken – und trinke die ganze Flasche aus. Und ich denke: So, jetzt bin ich in Innsbruck. Ich muss nach Mannheim, oder? Aber nicht heute, am nächsten Tag. Heute ist Tag vier. An Tag fünf muss ich in Mannheim sein.</p>
+<h2 class="stage"><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Innsbruck</span></h2>
+<p>Na ja. Die Telefonnummern von den Leuten in Innsbruck habe ich nicht. Aber ich kenne den Weg zu dem Laden, wo wir zweimal gespielt haben. Beim ersten Mal siehst du den Weg, beim zweiten Mal siehst du ihn wieder, und dann kannst du ausprobieren, ob er für dich leicht ist oder schwer. Aber das ist gar nicht nötig. Denn in diesem Moment läuft Tobias vorbei, ein Freund von dort.</p>
+<p class="say">„Hey, Tobias!“</p>
+<p class="say">„Hey, Miguel! Was machst du denn hier?“</p>
+<p class="say">„Ich bin mit dem Rad unterwegs.“</p>
+<p class="say">„Ja, aber wo sind deine Freunde?“</p>
+<p class="say">„In Mannheim.“</p>
+<p class="say">„Hä?“</p>
+<p class="say">„Ja, die warten auf mich. Aber nicht heute, morgen.“</p>
+<p class="say">„Mann, bist du verrückt?“</p>
+<p class="say">„Ja, warum nicht?“</p>
+<p class="say">„Aber was genau willst du jetzt machen?“</p>
+<p class="say">„Mit dir mitgehen.“</p>
+<p class="say">„Cool. Komm mit zu mir.“</p>
+<p>Bei ihm zu Hause macht er einen Salat. Ich esse Salat mit ihm, wir trinken und rauchen Zigaretten – Johnny mag es gar nicht, wenn ich rauche, aber egal. Wir reden über das Leben und hören Musik. Er fragt mich, wie es mit Apatia No weitergeht, meiner Band, und ich erzähle ihm, was ich über die Zukunft von Apatia No denke. Ein richtig, richtig schöner Tag.</p>
+<p>Dann sagt er: „Hey, Miguel, ich geh jetzt Fußball spielen.“</p>
+<p class="say">„Ich kann heute nicht Fußball spielen, ich bin richtig, richtig müde. Ich muss zwei Stunden schlafen. Aber danach will ich mit dir ins Café.“</p>
+<p class="say">„Okay.“</p>
+<p class="say">„Aber bitte: Wenn du vom Fußball zurückkommst und ich schlafe tief und fest – weck mich auf. Ich will mit.“</p>
+<p class="say">„Okay, hab’s verstanden.“</p>
+<p>Er geht. Als er zurückkommt, sagt er: „Miguel, ich gehe jetzt.“</p>
+<p class="say">„Okay!“ Ich stehe ganz schnell auf, wasche mir das Gesicht mit kaltem Wasser und gehe mit ihm. Im Café machen die Gäste so viel Lärm, dass wir nicht reden können. Er arbeitet ja, und ich habe frei. Also sage ich: „Mann, ich geh raus und mach eine kleine Runde durch die Stadt.“</p>
+<p class="say">„Okay, kein Problem.“</p>
+<p>Und da sehe ich eine große Pizza, eine riesige Pizza, und kriege Hunger. Aber Geld habe ich gerade keins. Ich gehe rein und frage den Typen: „Sorry, ist die Pizza vegetarisch?“</p>
+<p class="say">„Ja, vegetarisch. Warum?“</p>
+<p class="say">„Weil ich Vegetarier bin.“</p>
+<p class="say">„Ja? Warum bist du Vegetarier?“</p>
+<p>Ich erkläre ihm, warum. Er ist Türke und glaubt an seine Kultur, natürlich. Ich habe eine andere Kultur, aber seine und meine Kultur sind sich ein bisschen ähnlich. Und wir reden nur noch über unsere Kulturen. Dann schiebt er zwei Stück Pizza in den Ofen, macht sie warm und gibt sie mir. Ich frage: „Wie viel kostet das?“ Ich muss ja schauen, ob ich es mir leisten kann oder nicht. Aber er sagt: „Mann, für dich ist das umsonst.“</p>
+<p class="say">„Danke, vielen Dank!“</p>
+<p>Ich nehme die Pizza und gehe direkt zurück zum Café. Aber unterwegs treffe ich wieder Punks, und die Punks sagen: „Hey, willst du mit uns feiern gehen?“</p>
+<p class="say">„Ja, klar!“</p>
+<p>Am nächsten Tag hilft mir Tobias. Denn von Innsbruck zurück nach Mannheim würde ich mit dem Rad fünf Tage brauchen – ich muss den Zug nehmen. Und jetzt bin ich hier.</p>
+<h2 class="stage"><span class="plate"><svg class="bike" viewBox="0 0 24 16" aria-hidden="true"><circle cx="5" cy="11" r="4"/><circle cx="19" cy="11" r="4"/><path d="M5 11 9.5 4h6l3.5 7M9.5 4 12 11h-7M15.5 4l-3.5 7M8 2h3"/></svg>Mannheim</span></h2>
+<p>Von Innsbruck nach Mannheim mit dem Zug. Drei Züge, nur drei Züge. Das Ticket kostet achtzig Euro.</p>
+<p>Ob ich die ganze Zeit Geld dabeihatte? Nein, Mann, ich habe kein Geld gebraucht. Als die Tour vorbei war, habe ich Johnny gefragt, ob ich etwas Geld nehmen kann, und er sagte: „Miguel, tut mir leid, ich hab keins.“ Ich sagte: „Kein Problem, dann fahre ich eben allein nach Bregenz.“ Er hat mir das Ticket gekauft, und mit dem Ticket bin ich hingefahren. Und Tobias hat mir das Geld gegeben, um das Ticket hierher zu kaufen. Ich muss es ihm zurückgeben, ich weiß. Aber ich glaube, das ist kein Problem. Ich finde das Geld schon, ich habe Geld in meinem Land.</p>
+<p>Heute ist Tag fünf. Heute bin ich aus Innsbruck gekommen.</p>
+  </article>
+</main>
+
+</body></html>

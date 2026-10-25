@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Look: Laborbefund. Die Band ist nach der Toxoplasmose benannt, also bekommt sie einen Befundbericht:
+   Formularkopf, Petrischale, roter Stempel, Abschnitte als Befunde. Fester Look für helles und dunkles System. */
+:root {
+  --paper: #eef3ef;
+  --form: #ffffff;
+  --ink: #16201a;
+  --ink-soft: #536058;
+  --rule: #c7d3cb;
+  --lab: #2b7656;
+  --lab-deep: #1d5a40;
+  --lab-soft: #e1eee6;
+  --stamp: #c4261e;
+  --hl: rgba(43, 118, 86, .17);
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue Condensed Bold", Impact, sans-serif;
+  --serif: "Spectral", Georgia, "Times New Roman", serif;
+  --mono: "Space Mono", ui-monospace, Menlo, Consolas, monospace;
+  --label-col: 8.5rem;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--lab); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: calc(70rem + 32px);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.label {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Befundkopf ---------- */
+.report { padding-top: clamp(2rem, 6vw, 3.5rem); }
+.sheet {
+  position: relative;
+  background: var(--form);
+  border: 2px solid var(--ink);
+  box-shadow: 0 1px 0 var(--rule), 0 18px 40px -26px rgba(22, 32, 26, .5);
+}
+.sheet-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem 1.5rem;
+  flex-wrap: wrap;
+  padding: .55rem 1rem;
+  background: var(--lab);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sheet-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  align-items: center;
+  row-gap: clamp(.9rem, 2.5vw, 1.4rem);
+  padding: clamp(1.2rem, 4vw, 2.25rem) clamp(1rem, 4vw, 2.25rem) clamp(1rem, 3vw, 1.75rem);
+}
+.title { grid-column: 1 / -1; min-width: 0; }
+.specimen { grid-column: 2; display: flex; align-items: center; gap: 1.1rem; }
+.sheet h1 {
+  margin: .3rem 0 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 11vw, 8.5rem);
+  line-height: .86;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+}
+.dek { grid-column: 1; margin: 0; max-width: 36rem; font-size: clamp(1.1rem, 2.3vw, 1.28rem); line-height: 1.5; }
+
+.dish { width: clamp(92px, 13vw, 160px); height: auto; display: block; flex: none; }
+.dish .rim { fill: #f5faf7; stroke: var(--ink); stroke-width: 2.5; }
+.dish .agar { fill: var(--lab-soft); stroke: var(--rule); stroke-width: 1.5; }
+.dish .cell { fill: var(--lab); }
+.dish .cell.alt { fill: var(--lab-deep); }
+
+.fields {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 2px solid var(--ink);
+}
+.fields div { padding: .55rem 1rem .7rem; border-right: 1px solid var(--rule); min-width: 0; }
+.fields div:last-child { border-right: 0; }
+.fields dt { font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.fields dd { margin: .1rem 0 0; font-family: var(--display); font-weight: 600; font-size: 1.15rem; line-height: 1.2; }
+
+.stamp {
+  margin: 0;
+  padding: .25rem .8rem .3rem;
+  border: 4px double var(--stamp);
+  border-radius: 6px;
+  color: var(--stamp);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3.6vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transform: rotate(-7deg);
+  opacity: .9;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.stamp small { display: block; font-size: .42em; letter-spacing: .14em; text-align: center; margin-top: .15rem; }
+
+.preface { margin: 1.1rem 0 0; font-size: .95rem; color: var(--ink-soft); max-width: 44rem; }
+
+/* ---------- Hauptteil ---------- */
+.main {
+  padding-top: clamp(2.5rem, 6vw, 3.75rem);
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 46rem) minmax(0, 17rem);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  justify-content: space-between;
+  align-items: start;
+}
+.side { grid-column: 2; grid-row: 1; display: grid; gap: 1.6rem; min-width: 0; }
+.talk { grid-column: 1; grid-row: 1; display: grid; gap: clamp(2.75rem, 6vw, 3.75rem); min-width: 0; }
+
+.flyer { margin: 0; position: relative; background: var(--form); border: 2px solid var(--ink); padding: .6rem .6rem .7rem; transform: rotate(1.2deg); }
+.flyer::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  width: 26px;
+  height: 46px;
+  border: 3px solid #8b948f;
+  border-radius: 13px;
+  transform: translateX(-50%);
+  background: transparent;
+}
+.flyer img { display: block; width: 100%; height: auto; }
+.flyer figcaption { margin-top: .5rem; font-family: var(--mono); font-size: .7rem; line-height: 1.45; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
+.anamnese { background: var(--form); border: 2px solid var(--ink); }
+.anamnese h2 {
+  margin: 0;
+  padding: .45rem .8rem;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.anamnese dl { margin: 0; padding: .4rem .8rem .8rem; display: grid; }
+.anamnese div { padding: .5rem 0; border-bottom: 1px dashed var(--rule); }
+.anamnese div:last-child { border-bottom: 0; }
+.anamnese dt { font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.anamnese dd { margin: .1rem 0 0; font-size: .95rem; line-height: 1.4; }
+.anamnese .src { margin: 0; padding: 0 .8rem .7rem; font-family: var(--mono); font-size: .68rem; color: var(--ink-soft); }
+
+.toc ol { margin: .5rem 0 0; padding: 0; list-style: none; display: grid; gap: .05rem; counter-reset: b; }
+.toc a { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .3rem; padding: .22rem 0; text-decoration: none; font-size: .98rem; line-height: 1.3; }
+.toc .n { font-family: var(--mono); font-size: .8rem; color: var(--lab); padding-top: .12rem; }
+.toc a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--lab); text-decoration-thickness: 2px; text-underline-offset: .2em; }
+
+/* Befunde */
+.finding { display: grid; gap: 1.15rem; scroll-margin-top: 1.5rem; }
+.finding-head { border-top: 2px solid var(--ink); padding-top: .7rem; display: grid; gap: .1rem; }
+.finding-head .label { color: var(--lab); }
+.finding h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.turn { display: grid; grid-template-columns: var(--label-col) minmax(0, 1fr); column-gap: 1.3rem; }
+.who {
+  margin: 0;
+  padding-top: .32em;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--lab-deep);
+}
+.turn.q .who { color: var(--ink-soft); }
+.turn.x .who { color: var(--ink-soft); }
+.said { display: grid; gap: .8em; min-width: 0; }
+.said p, .turn > p:not(.who) { margin: 0; min-width: 0; hyphens: auto; }
+.turn.q .said, .turn.q > p:not(.who) { font-weight: 600; }
+.turn.x .said, .turn.x > p:not(.who) { font-style: italic; color: var(--ink-soft); }
+mark {
+  color: inherit;
+  background: linear-gradient(transparent 56%, var(--hl) 56% 94%, transparent 94%);
+  padding: 0 .05em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.verdict {
+  margin: .6rem 0 .6rem var(--label-col);
+  margin-left: calc(var(--label-col) + 1.3rem);
+  justify-self: start;
+  max-width: 30rem;
+  padding: .7rem 1.1rem .8rem;
+  border: 5px double var(--stamp);
+  border-radius: 8px;
+  color: var(--stamp);
+  transform: rotate(-2deg);
+}
+.verdict p {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4.4vw, 2.3rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+.verdict .label { margin-top: .4rem; color: var(--stamp); }
+
+.protocol {
+  margin: 0;
+  padding-top: 1.1rem;
+  border-top: 2px solid var(--ink);
+  font-size: .92rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+footer { border-top: 2px solid var(--ink); }
+.foot {
+  padding-top: 1rem;
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 2.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  font-family: var(--mono);
+  font-size: .76rem;
+  color: var(--ink-soft);
+}
+.foot p { margin: 0; }
+
+/* ---------- Schmal ---------- */
+@media (max-width: 960px) {
+  .sheet-body { grid-template-columns: minmax(0, 1fr); }
+  .specimen { grid-column: 1; }
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side, .talk { grid-column: auto; grid-row: auto; }
+  .side { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .fields { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fields div:nth-child(3) { border-right: 0; }
+  .fields div:nth-child(n+4) { border-top: 1px solid var(--rule); }
+}
+@media (max-width: 640px) {
+  .dish { width: 92px; }
+  .fields { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .fields div:nth-child(3) { border-right: 1px solid var(--rule); }
+  .fields div:nth-child(2n) { border-right: 0; }
+  .fields div:nth-child(n+3) { border-top: 1px solid var(--rule); }
+  .side { grid-template-columns: minmax(0, 1fr); }
+  .flyer { max-width: 19rem; transform: rotate(.8deg); }
+  .turn { grid-template-columns: minmax(0, 1fr); row-gap: .1rem; }
+  .who { text-align: left; padding-top: 0; }
+  .verdict { margin-left: 0; transform: none; }
+}
+</style>
+<title>Toxoplasma im Juz</title><meta name="description" content="Pogoradio-Interview vom 17. Dezember 2005 mit Toxoplasma im Juz Mannheim: alte Lieder, die gefloppte Metal-Platte, das eigene Tonstudio, die Tour mit The Exploited und Dritte Wahl und warum man kein Knecht seines eigenen Klischees sein will."><style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style></head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="wrap report">
+  <div class="sheet">
+    <div class="sheet-top"><span>Pogoradio · Befundbericht</span><span>Probe vom 17.12.2005</span></div>
+    <div class="sheet-body">
+      <div class="title">
+        <p class="label">Erreger</p>
+        <h1>Toxoplasma</h1>
+      </div>
+      <p class="dek">Seit 25 Jahren Deutschpunk aus Neuwied, wieder in Originalbesetzung. Nach dem Konzert mit WKZ am 17. Dezember 2005 im Juz Mannheim geht es um alte Lieder, eine gefloppte Metal-Platte, das eigene Tonstudio und eine Tour mit The Exploited und Dritte Wahl.</p>
+      <div class="specimen">
+      <svg class="dish" viewBox="0 0 200 200" aria-hidden="true">
+        <circle class="rim" cx="100" cy="100" r="94"/>
+        <circle class="agar" cx="100" cy="100" r="80"/>
+        <path class="cell" d="M62 70c10-14 30-16 40-6-12-4-28 0-36 12z"/>
+        <path class="cell alt" d="M120 58c16 2 26 16 22 30-4-12-14-22-26-24z"/>
+        <path class="cell" d="M70 128c-6-14 2-30 16-32-10 8-14 20-10 32z"/>
+        <path class="cell alt" d="M118 140c14-4 22-18 18-32 0 12-8 24-20 28z"/>
+        <path class="cell" d="M96 98c8-8 22-8 28 0-9-3-19-2-26 4z"/>
+        <path class="cell alt" d="M54 102c2-10 10-16 18-16-7 3-12 9-14 16z"/>
+        <path class="cell" d="M138 104c6 6 6 16 0 22 2-7 1-15-3-20z"/>
+        <path class="cell" d="M92 150c8 4 18 2 24-4-8 2-16 2-22-1z"/>
+      </svg>
+      <p class="stamp" aria-hidden="true">Positiv<small>chronisch seit 1980</small></p>
+      </div>
+    </div>
+    <dl class="fields">
+      <div><dt>Herkunft</dt><dd>Neuwied am Rhein</dd></div>
+      <div><dt>Erstbefund</dt><dd>1980</dd></div>
+      <div><dt>Probe entnommen</dt><dd>Juz Mannheim</dd></div>
+      <div><dt>Datum</dt><dd>17.12.2005</dd></div>
+      <div><dt>Untersucht von</dt><dd>Pogoradio</dd></div>
+    </dl>
+  </div>
+  <p class="preface">Vorab ein Technikproblem: Das Aufnahmegerät lief offenbar die ganze Zeit in der Tasche, und ein Mikro steckte im Kopfhörereingang. Was zu verstehen ist, steht hier.</p>
+</header>
+
+<main class="wrap main">
+
+  <aside class="side">
+    <figure class="flyer">
+      <img src="toxoplasma-flyer.jpg" width="450" height="644" alt="Konzertflyer: Toxoplasma, Deutschpunk-Legende in der 1981er Besetzung, und WKZ, 1980er Gift-und-Galle-Punk. 17. Dezember 2005 im JUZ Mannheim. Unten rechts der Button von Pogoradio.">
+      <figcaption>Anhang: Flyer zum Konzert, 17.12.2005</figcaption>
+    </figure>
+
+    <div class="anamnese">
+      <h2>Anamnese</h2>
+      <dl>
+        <div><dt>Name</dt><dd>Nach der Infektionskrankheit Toxoplasmose, die Sänger Wally Ende der 70er hatte</dd></div>
+        <div><dt>Debüt</dt><dd>„Toxoplasma“, 1983, bei Aggressive Rockproduktionen in Berlin</dd></div>
+        <div><dt>Verlauf</dt><dd>1986 und 1998 aufgelöst, seit 2004 wieder in Originalbesetzung</dd></div>
+        <div><dt>Nebenbefund</dt><dd>Ein Bandmitglied betreibt das Tonstudio Toxo Music</dd></div>
+      </dl>
+      <p class="src">Quelle: <a href="https://de.wikipedia.org/wiki/Toxoplasma_(Band)">Wikipedia</a> und das Interview</p>
+    </div>
+
+    <nav class="toc" aria-labelledby="toc-h">
+      <p class="label" id="toc-h">Befunde</p>
+      <ol>
+        <li><a href="#b1"><span class="n">B01</span><span>Was noch gespielt wird</span></a></li>
+        <li><a href="#b2"><span class="n">B02</span><span>Originalbesetzung</span></a></li>
+        <li><a href="#b3"><span class="n">B03</span><span>Weder links noch rechts</span></a></li>
+        <li><a href="#b4"><span class="n">B04</span><span>Toxo Music und die erste Platte</span></a></li>
+        <li><a href="#b5"><span class="n">B05</span><span>Boxparty in Koblenz</span></a></li>
+        <li><a href="#b6"><span class="n">B06</span><span>Sich selbst nachspielen</span></a></li>
+        <li><a href="#b7"><span class="n">B07</span><span>Rentnerrock und Schachclub</span></a></li>
+        <li><a href="#b8"><span class="n">B08</span><span>Mit Exploited und Dritte Wahl</span></a></li>
+        <li><a href="#b9"><span class="n">B09</span><span>Kein Knecht des Klischees</span></a></li>
+        <li><a href="#b10"><span class="n">B10</span><span>Da kommt was</span></a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <article class="talk" aria-label="Interview">
+
+    <section class="finding" id="b1">
+      <div class="finding-head"><p class="label">Befund 01</p><h2>Was noch gespielt wird</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Okay, ich bin on air. Ich hab mal eine Frage: Die Lieder, die beim Publikum gut ankommen, sind ja die von der ersten oder zweiten Platte. Was danach kam, war ein Haufen Zeug, teilweise sogar Heavy Metal, oder?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Davon spielen wir gar nichts mehr. Wir spielen die erste Platte und „Leben verboten“. Das ist auch eine sehr gute Scheibe, die kommt beim Publikum fast genauso gut an wie die erste. Und von der „Gut und Böse“ spielen wir noch was. Aber diese ganze Heavy-Metal-Zeit, das war nur eine Scheibe.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Auf dem Cover standen doch Stiefel auf einer Müllhalde, oder?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Nö, da erinnerst du dich falsch. Da ist ein Schwein drauf und ein Berg Hackfleisch. Ein kleines Schwein an der Seite, in Originalgröße sieben Zentimeter. Ein japanisches Genschwein.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Dann verwechsle ich das mit einer anderen Band. Ihr habt also eine ziemlich metallastige Scheibe gemacht, weil ihr was anderes probieren wolltet? Ihr seid ja eigentlich richtige Musiker. Euer Gitarrist kann richtig spielen, und die drei Akkorde reichen eigentlich nur für die besten Lieder. Müsst ihr euch da nicht reduzieren?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Zurzeit nicht. Wir spielen jetzt wieder in der Originalbesetzung. Die Besetzung aus den 90ern war nicht die originale, das waren andere Freunde von mir.</p></div>
+    </section>
+
+    <section class="finding" id="b2">
+      <div class="finding-head"><p class="label">Befund 02</p><h2>Originalbesetzung</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Und ihr probt so einmal im Monat?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ja. Öfter, wenn Konzerte anstehen.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Und wie ist das bei Konzerten? Schon geil, wenn die ganzen jungen Leute abgehen, oder?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ja, sicher. Aber auf der Bühne konzentriert man sich auf die Musik. Richtig genießt man das, glaube ich, erst in der Erinnerung. Wenn man sich dann gern daran erinnert, dann ist es geil.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Und wie war das früher? Kamen da genauso viele Leute, mehr oder weniger?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>So wie jetzt, mal mehr, mal weniger. Man war halt selber noch jünger. Das war der Unterschied.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Mich hat das ja geprägt, von 16 bis jetzt.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Wie alt bist du?</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>23. Und bei euch ist das eigentlich genauso, nur dass es länger angehalten hat?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>25 Jahre.</p></div>
+    </section>
+
+    <section class="finding" id="b3">
+      <div class="finding-head"><p class="label">Befund 03</p><h2>Weder links noch rechts</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Was ist mit dem politischen Anspruch? Ist der geblieben? Seid ihr Linke, oder was seid ihr?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ich bin eher links. Eher links als rechts auf jeden Fall. Ich will aber aufpassen, dass ich nicht zu sehr in die linke Ecke komme, weil Punkrock für mich auch einen gewissen <mark>Anarchieanspruch</mark> hat, und der ist weder links noch rechts. Stellenweise geht mir dieses Rechts-links-Gewichse ziemlich auf die Eier. Vor allem, wenn es um Haarspaltereien geht: Die Veganer verprügeln die Fleischesser, die Antideutschen verprügeln die Antifa, und so weiter und so weiter.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Und dann gibt’s ja noch die Anti-Antifa.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Gut, das sind die Rechten. Über die brauchen wir gar nicht zu reden. <mark>Keine Diskussion.</mark></p></div>
+    </section>
+
+    <section class="finding" id="b4">
+      <div class="finding-head"><p class="label">Befund 04</p><h2>Toxo Music und die erste Platte</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Was machst du außer Toxoplasma noch?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ich hab ein Tonstudio. Sonst häng ich den ganzen Tag ab, arbeiten muss ich ja nicht.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Da nimmst du Bands auf, bei Toxo Music, richtig?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ja, genau. Punkrock-Bands, Death-Metal-Bands, Metal-Bands, und <mark>wenn ein Gesangsverein kommt, schmeiß ich den auch nicht raus.</mark></p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Das Studio hast du schon ewig, oder?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Seit 20 Jahren. Seit 16 Jahren bin ich damit selbstständig.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Man muss ja auch sagen: Bei der ersten Platte wart ihr noch minderjährig.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Nein, wir waren schon volljährig, 18, 19. Nur der Stefan war 17, wir anderen 19.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Im Nachhinein muss man sagen, die Platte ist damals sehr gut aufgenommen worden. Von der Qualität her.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Da streiten sich die Geister.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Viele Platten von damals, auch von Bands, die groß rauskamen, haben eine totale Scheißqualität. Aber die „Toxoplasma“ besticht, deshalb finden die Leute sie immer noch gut. Vom Sound her hat die was ganz Eigenes.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><div class="said">
+        <p>Wir hatten Harris Johns aus Berlin, das war damals der Tontechniker der Plattenfirma, Aggressive Rockproduktionen. Den kann man sich nicht aussuchen, den kriegt man vorgesetzt.</p>
+        <p>Dann hatten wir noch einen anderen, der hat dieselbe Aufnahme gemixt, und das klang komplett anders. Ziemlich scheiße nämlich. Johns hat das so gemixt und so komprimiert, dass es richtig geil klingt.</p>
+      </div></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Die hat wirklich ihren eigenen Flair.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Absolut. Der ist, glaube ich, nicht mehr zu reproduzieren.</p></div>
+    </section>
+
+    <section class="finding" id="b5">
+      <div class="finding-head"><p class="label">Befund 05 · Abschweifung</p><h2>Boxparty in Koblenz</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Und wann machen wir jetzt die Boxparty in Koblenz?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Schauen wir mal. Ich muss erst mal wieder ins Training kommen.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Du hast dir das beim letzten Mal falsch vorgestellt. Das läuft im Prinzip wie hier: Eine Band spielt, normalerweise Laser, und daneben steht ein Ring. Wär doch geil, wenn in Koblenz Laser während der Boxparty spielen, und dann springen überraschend Toxoplasma aus der Klamottenkiste.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Nächstes Jahr könnte man das mal ins Auge fassen. Das Problem ist nur: Ich bin kein Veranstalter.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Aber wir. Ich kann die anhauen. Wir machen alles klar, alle kriegen Spritgeld, und dann sind alle glücklich. Da geht’s dann richtig ab: Ihr spielt, und die Leute schlagen sich dazu die Fresse ein.</p></div>
+    </section>
+
+    <section class="finding" id="b6">
+      <div class="finding-head"><p class="label">Befund 06</p><h2>Sich selbst nachspielen</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Zurück zu Toxoplasma. Ihr seid ja eigentlich die Standard-Deutschpunk-Band, bei der man sagt: Die sind richtig gut.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Danke.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Ich hab heute beim Publikum gemerkt: Die Leute kommen und finden alles super. Aber im Endeffekt wiederholt ihr euch ja, als Musiker gesehen.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><div class="said">
+        <p>Das ist eine Gratwanderung. Solange du nicht das Gefühl hast, dass du anfängst, dich selbst nachzuspielen. Du singst ja Lieder wie „Vakuum“: „In meinem Kopf ist ein Vakuum.“ <mark>Das musst du so singen, als würde es dir gerade einfallen.</mark> In dem Augenblick lebe ich das auch, und das muss man, sonst kommt es nicht rüber. Du musst das ja übertragen. Und das macht mir zurzeit noch tierisch Spaß.</p>
+        <p>Es gab aber auch Phasen. Spätestens 98 hab ich gesagt: Leute, Feierabend, ich hab keinen Bock mehr. Das hat mir nichts mehr gebracht. Da stehst du auf der Bühne, beobachtest dich selbst von außen und fragst dich: Warum machst du das hier? Ob die Leute das gut finden oder nicht, ist dann gar kein Thema mehr. Du stehst vor dir selbst, und irgendwas in dir will nur noch heim.</p>
+      </div></div>
+      <figure class="verdict">
+        <p>„Das musst du so singen, als würde es dir gerade einfallen.“</p>
+        <figcaption class="label">Toxoplasma über alte Lieder</figcaption>
+      </figure>
+    </section>
+
+    <section class="finding" id="b7">
+      <div class="finding-head"><p class="label">Befund 07 · Abschweifung</p><h2>Rentnerrock und Schachclub</h2></div>
+      <div class="turn x"><p class="who">Szene</p><p>Jemand ruft dazwischen: „Das ist doch Rentnerrock, der Aufstand der alten Herren!“ Ein anderer will nur noch aufs Sofa.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Wally, erzähl noch mal, was du uns letztes Mal über deine Zeit als Boxer erzählt hast. Das finden die Sabotakt-Zuschauer nämlich am allerinteressantesten.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ich war acht Jahre im Schachclub. Allerhöchstens Schattenboxer. Vollkontakt-Schattenboxen. Darüber erzähl ich nichts.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Okay. Ich mach langsam Schluss, wir haben nicht so viel Sendezeit. Du hast also keine Probleme damit, Lieder zu singen, die du vor 20 Jahren geschrieben hast?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p><mark>Wenn ich Probleme damit habe, hör ich auf.</mark> Ganz einfach. Hab ich schon mal gemacht, und das würde ich immer wieder tun. Zurzeit macht es uns allen tierisch Spaß.</p></div>
+    </section>
+
+    <section class="finding" id="b8">
+      <div class="finding-head"><p class="label">Befund 08</p><h2>Mit Exploited und Dritte Wahl</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Vor allem die Tour mit The Exploited war bestimmt super. Die Typen von Exploited und von Dritte Wahl sind ja super.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ja, das war total geil.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Ist euch aufgefallen, dass Gunnar von Dritte Wahl aussieht wie Smudo von den Fantastischen Vier?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ich kenne die Fantastischen Vier nicht. Ich weiß nicht, wie die aussehen.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Doch, das stimmt. Erzähl doch noch kurz was über die Tour. Ich hab vorher auch gedacht: Exploited, den können wir im Interview bestimmt aufs Korn nehmen. Aber das war ein super Typ.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Die gehen durch wie eine Abrissbirne. Der Rest ist Geschmackssache, wirklich. Aber was die jeden Abend leisten, finde ich nach wie vor beeindruckend. Darum geht’s. Die bringen ihren Spirit rüber, verstehst du?</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Auf jeden Fall. Ich hab ihm alles abgekauft, was er uns weisgemacht hat. Ihr wart doch auch in Polen?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ja, genau. In Polen Krakau, Warschau, Danzig, Breslau und Stettin. Dann Tschechien, Slowenien, weiter unten Zagreb, Belgrad und Montenegro.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Wie kommt ihr im Ausland an? Da kennt euch doch keiner.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Da waren wir Nobodys, nur in Polen kennen uns ein paar. Angekündigt hat uns keiner, Toxo stand nicht mal auf dem Plakat. Aber während des Konzerts haben die Leute schon kapiert, dass das Toxoplasma ist.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Dankbares Publikum, oder?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><div class="said">
+        <p>Ja, das war eine geile Tour, hat tierisch Spaß gemacht. Ich bin vorher nie über die A3 hinausgekommen, die Scheiße kenne ich auswendig. Für mich war es immer interessant, mal in den Osten zu fahren. Am Meer zu spielen und zwei Tage später im Schnee zu stehen, an der Adria und an der Ostsee, und das alles in kürzester Zeit. Das war für mich ein Erlebnis.</p>
+        <p>Darum ging es mir persönlich. Ob uns da einer kennt oder nicht, war mir scheißegal. Ich hab mich in den Bus gesetzt und mich gefreut. Wir hatten ja nur eine Viertelstunde Programm.</p>
+      </div></div>
+    </section>
+
+    <section class="finding" id="b9">
+      <div class="finding-head"><p class="label">Befund 09</p><h2>Kein Knecht des Klischees</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Es gibt eher wenig Konzerte von euch, oder?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Wir haben ja nichts Neues.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Das Schlimme ist: Die Leute wollen eigentlich nur die alten Sachen hören, oder?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Was heißt alte Sachen? <mark>Die neuesten Sachen sind mittlerweile auch 15 Jahre alt.</mark></p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Die wollen halt die alten Sachen hören, zum Beispiel „Leben verboten“. Wie oft habt ihr die Platte verkauft?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><div class="said">
+        <p>Boah, 15.000, 20.000 Mal. „Leben verboten“ ist von den Leuten gut angenommen worden. Ob wir jetzt „Asozial“ spielen, „Leben verboten“ oder „Schwarzrotbraun“, das macht mittlerweile keinen Unterschied mehr. „Schwarzrotbraun“ ist von 91, von der „Gut und Böse“. Man kann das nicht so krass trennen.</p>
+        <p>Es gibt aber ein paar Platten, die sind gefloppt. Die „Ausverkauf“ ist gefloppt, weil sie Metal war. Wir haben gedacht, wir versuchen mal, uns weiterzuentwickeln. War natürlich nicht so toll. Wir waren aber nicht die einzige Band, die auf Metal gemacht hat. Einige Bands haben damals gemeint, sie müssten sich weiterentwickeln, gerade Gitarristen sind dafür sehr veranlagt. Unser Gitarrist kam schon aus der Metal-Ecke.</p>
+        <p>Uns hat das damals auch Spaß gemacht. Aber im Nachhinein haben uns die Songs nichts mehr gegeben, während „Asozial“ oder „Schwarzrotbraun“ nach wie vor geil zu spielen und geil zu singen sind. Und für die Leute auch.</p>
+      </div></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Weil du die ganze Zeit von der Metal-Platte redest: Ich hab letztes Mal einen Bekannten gefragt, der ist genauso alt wie du, 41 oder 42. Der hat erzählt, wie er euch das erste Mal gesehen hat, alle mit Stachelhaaren, und alle fanden die Platte super geil. Und dann waren alle total enttäuscht, dass ihr auf einmal Strumpfhosen-Metaller wart.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Das kann ich bis zu einem gewissen Grad verstehen. Aber ich hab mir auch gesagt: <mark>Du willst ja kein Knecht deines eigenen Klischees sein</mark>, verstehst du? Für mich war das eine Prinzipsache zu sagen: Ey, wir machen jetzt das, und wenn ihr das nicht wollt, fuck you. Das ist ja irgendwo unsere Message: Fuck you, und entweder passt euch das, oder es passt euch nicht. War schon immer so.</p></div>
+      <figure class="verdict">
+        <p>„Du willst ja kein Knecht deines eigenen Klischees sein.“</p>
+        <figcaption class="label">Toxoplasma über die Metal-Platte</figcaption>
+      </figure>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Ich muss auch sagen, mir hat das heute auf jeden Fall Bock gemacht. Bei älteren Bands denkt man ja öfter mal: Das glaubt euch eh keine Sau. Das Gefühl hatte ich heute nicht.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Weil wir das selbst noch nicht so fühlen. Das meine ich: Wenn du anfängst, dich von außen zu beobachten, dann ist der Punkt erreicht. Dann gehst du besser heim.</p></div>
+    </section>
+
+    <section class="finding" id="b10">
+      <div class="finding-head"><p class="label">Befund 10</p><h2>Da kommt was</h2></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Macht ihr eigentlich schon was Neues?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Schauen wir mal. Keine Ahnung.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Scheißfrage, ich weiß, die hab ich von jemandem gekriegt. Also: neue Platte?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Ganz allgemein ausgedrückt: Da kommt was.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Eine Platte? Eine Schallplatte?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Drück es noch allgemeiner aus: <mark>Da kommt was.</mark></p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Eine Live-DVD oder was?</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Die DVD sowieso, das ist klar.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Das macht heutzutage ja jeder.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Aber die wird schon anders.</p></div>
+      <div class="turn q"><p class="who">Pogoradio</p><p>Und du, was machst du eigentlich hier? Bist du der Fahrer oder so?</p></div>
+      <div class="turn x"><p class="who">Kameramann</p><p>Ich kenne die gut. Ich hab zuerst mal die Homepage gemacht.</p></div>
+      <div class="turn"><p class="who">Toxoplasma</p><p>Er ist der offizielle Kameramann. Er hat eine gute Kamera, eine Sony.</p></div>
+    </section>
+
+    <p class="protocol">Mitschnitt aus dem Juz Mannheim, 17. Dezember 2005. Die Aufnahme ist stellenweise kaum zu verstehen. Fragen und Antworten sind leicht bereinigt und gekürzt, unverständliche Stellen fehlen. Alle Fragen stehen unter „Pogoradio“, alle Antworten der Band unter „Toxoplasma“.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p>Pogoradio · Toxoplasma · Juz Mannheim, 17.12.2005</p>
+    <p>Bandgeschichte: <a href="https://de.wikipedia.org/wiki/Toxoplasma_(Band)">Wikipedia</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

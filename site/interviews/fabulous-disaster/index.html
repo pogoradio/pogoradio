@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,600;0,800;1,400&display=swap">
+<style>
+/* Look: Speisekarte aus einem amerikanischen Diner. Rosa Wand, Schachbrettboden,
+   cremefarbene Karte mit schwarzem Rand. Fester Look, gleich auf hellem und dunklem System. */
+:root {
+  --wall: #f4cfdd;
+  --card: #fffaf1;
+  --ink: #1d1819;
+  --ink-soft: #5f5458;
+  --rule: #e6d6cc;
+  --pink: #ef6fa2;
+  --pink-ink: #b11f5c;
+  --mint: #93d6c4;
+  --mint-ink: #1f6f5f;
+  --cherry: #d32a3f;
+  --script: "Pacifico", "Brush Script MT", cursive;
+  --retro: "Righteous", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  --sans: "Karla", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--pink-ink); outline-offset: 3px; border-radius: 3px; }
+
+.checker {
+  height: 28px;
+  background: repeating-conic-gradient(var(--ink) 0 25%, #fff 0 50%) 0 0 / 28px 28px;
+  border-block: 3px solid var(--ink);
+}
+.wrap {
+  max-width: calc(52rem + 32px);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.label {
+  margin: 0;
+  font-family: var(--retro);
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Leuchtschild ---------- */
+.sign { padding-block: clamp(2.25rem, 7vw, 4rem) clamp(2rem, 6vw, 3.25rem); text-align: center; display: grid; gap: .9rem; justify-items: center; }
+.sign .label { color: var(--pink-ink); }
+h1 {
+  margin: 0;
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: clamp(2.9rem, 11vw, 6.2rem);
+  line-height: 1.15;
+  color: var(--card);
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 4px 4px 0 var(--ink), 0 0 26px rgba(239, 111, 162, .9);
+  padding-inline: .2em;
+}
+.tagline {
+  margin: 0;
+  display: inline-block;
+  padding: .35rem 1rem .4rem;
+  background: var(--ink);
+  color: var(--card);
+  font-family: var(--retro);
+  font-size: clamp(.95rem, 2.4vw, 1.15rem);
+  border-radius: 999px;
+}
+
+/* ---------- Karte ---------- */
+.card {
+  margin-block: clamp(2rem, 5vw, 3rem);
+  background: var(--card);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: clamp(1.4rem, 4.5vw, 3rem) clamp(1rem, 4.5vw, 3rem) clamp(1.6rem, 4vw, 2.75rem);
+  display: grid;
+  gap: clamp(2.25rem, 5vw, 3.25rem);
+}
+.dek { margin: 0; font-size: clamp(1.15rem, 2.4vw, 1.3rem); line-height: 1.5; text-align: center; max-width: 36rem; justify-self: center; }
+
+.top { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 2.5rem); align-items: start; }
+
+/* Tageskarte */
+.menu h2 {
+  margin: 0 0 .7rem;
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--pink-ink);
+}
+.menu ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .15rem; }
+.menu a {
+  display: grid;
+  grid-template-columns: 1.6rem auto minmax(1rem, 1fr) auto;
+  align-items: baseline;
+  gap: .45rem;
+  padding: .28rem 0;
+  text-decoration: none;
+}
+.menu .n { font-family: var(--retro); color: var(--pink-ink); }
+.menu .t { font-weight: 800; }
+.menu .dots { border-bottom: 2px dotted var(--ink-soft); transform: translateY(-.3em); }
+.menu .c { font-style: italic; font-size: .9rem; color: var(--ink-soft); white-space: nowrap; }
+.menu a:hover .t { text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 3px; text-underline-offset: .2em; }
+
+/* Kreidetafel */
+.board {
+  background: var(--ink);
+  color: var(--card);
+  border-radius: 10px;
+  padding: 1.1rem 1.1rem 1.25rem;
+  border: 6px solid #8a5a3c;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+.board .label { color: var(--mint); }
+.board dl { margin: .8rem 0 0; display: grid; gap: .65rem; }
+.board dt { font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: #c9bfc2; }
+.board dd { margin: .05rem 0 0; font-family: var(--retro); font-size: 1.05rem; line-height: 1.3; }
+
+/* Gespräch */
+.talk { display: grid; gap: clamp(2.5rem, 6vw, 3.25rem); }
+.course { display: grid; gap: 1rem; scroll-margin-top: 1.5rem; }
+.course h2 {
+  margin: 0 0 .3rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-family: var(--retro);
+  font-weight: 400;
+  font-size: clamp(1.55rem, 4vw, 2.1rem);
+  line-height: 1.1;
+}
+.course h2 .donut {
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, var(--card) 0 27%, var(--pink) 28% 100%);
+  border: 3px solid var(--ink);
+  font-size: 0;
+}
+.course h2 .tag {
+  margin-left: auto;
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: .9rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.turn { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 1.2rem; }
+.who {
+  margin: 0;
+  padding-top: .2rem;
+  text-align: right;
+  font-family: var(--retro);
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--pink-ink);
+}
+.turn.q .who { color: var(--mint-ink); }
+.turn.x .who { color: var(--ink-soft); }
+.turn p:not(.who) { margin: 0; min-width: 0; }
+.turn.q p:not(.who) { font-weight: 800; }
+.said { display: grid; gap: .8rem; min-width: 0; }
+.said p { margin: 0; }
+.aside { font-style: italic; color: var(--ink-soft); }
+.note {
+  margin: .3rem 0 0 calc(9.5rem + 1.2rem);
+  padding: .7rem .9rem;
+  border-left: 5px solid var(--mint);
+  background: #f2faf7;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+.note .label { color: var(--mint-ink); font-size: .72rem; margin-bottom: .2rem; }
+.note p { margin: 0; }
+
+.pull {
+  margin: .8rem 0;
+  justify-self: center;
+  max-width: 30rem;
+  text-align: center;
+  padding: 1.3rem 1.5rem 1.4rem;
+  background: var(--pink);
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 5px 5px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+.pull p { margin: 0; font-family: var(--script); font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.25; color: var(--ink); }
+.pull .label { margin-top: .3rem; font-size: .72rem; }
+
+.protocol {
+  margin: 0;
+  padding-top: 1.1rem;
+  border-top: 2px dashed var(--rule);
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+footer .foot {
+  padding-block: 1.1rem calc(env(safe-area-inset-bottom, 0px) + 2.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  font-size: .85rem;
+  color: var(--ink-soft);
+}
+footer p { margin: 0; }
+
+/* ---------- Schmal ---------- */
+@media (max-width: 760px) {
+  .top { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .who { text-align: left; padding-top: 0; }
+  .note { margin-left: 0; }
+  .course h2 { flex-wrap: wrap; row-gap: .2rem; }
+  .course h2 .tag { margin-left: 0; flex-basis: 100%; padding-left: 3.4rem; }
+  .menu .c { display: none; }
+  .menu a { grid-template-columns: 1.6rem minmax(0, 1fr); }
+  .menu .dots { display: none; }
+  .pull { border-radius: 28px; transform: none; }
+  .card { box-shadow: 5px 5px 0 var(--ink); }
+}
+</style>
+<title>Fabulous Disaster im Juz</title><meta name="description" content="Pogoradio-Interview 2004 mit Fabulous Disaster aus San Francisco im Juz Mannheim: ein abgesagtes Festival, Containern, eine Nacht mit Courtney Love und Dunkin'-Donuts-Kaffee."><style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style></head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<div class="checker" aria-hidden="true"></div>
+
+<header class="wrap sign">
+  <p class="label">Pogoradio · Juz Mannheim · Sommer 2004</p>
+  <h1>Fabulous Disaster</h1>
+  <p class="tagline">Heute auf der Karte: Containern, Courtney Love und Kaffee</p>
+</header>
+
+<main class="wrap">
+  <div class="card">
+
+    <p class="dek">Eigentlich sollten Fabulous Disaster aus San Francisco auf einem Festival spielen, an dessen Namen sie sich schon nicht mehr erinnern. Stattdessen holt sie der Club kurzfristig nach Mannheim, und Rüdi von Pogoradio fragt nach Tour, Miete, Mama und einer Nacht mit Courtney Love.</p>
+
+    <div class="top">
+      <nav class="menu" aria-labelledby="menu-h">
+        <h2 id="menu-h">Tageskarte</h2>
+        <ol>
+          <li><a href="#rudi"><span class="n">1</span><span class="t">Rüdi, Rüdi, Rüdi</span><span class="dots"></span><span class="c">Vorspeise</span></a></li>
+          <li><a href="#tour"><span class="n">2</span><span class="t">Tour Nummer fünf</span><span class="dots"></span><span class="c">Tagesgericht</span></a></li>
+          <li><a href="#tonne"><span class="n">3</span><span class="t">Aus der Tonne</span><span class="dots"></span><span class="c">gratis</span></a></li>
+          <li><a href="#courtney"><span class="n">4</span><span class="t">Shopping mit Courtney Love</span><span class="dots"></span><span class="c">Spezial des Hauses</span></a></li>
+          <li><a href="#hafen"><span class="n">5</span><span class="t">In jedem Hafen einen</span><span class="dots"></span><span class="c">scharf</span></a></li>
+          <li><a href="#platten"><span class="n">6</span><span class="t">Drei Platten und ein Mann</span><span class="dots"></span><span class="c">Beilage</span></a></li>
+          <li><a href="#miete"><span class="n">7</span><span class="t">Miete fürs Nichts</span><span class="dots"></span><span class="c">Hausmannskost</span></a></li>
+          <li><a href="#kaffee"><span class="n">8</span><span class="t">Kaffee und Donuts</span><span class="dots"></span><span class="c">Dessert</span></a></li>
+          <li><a href="#gruesse"><span class="n">9</span><span class="t">Grüße an die Hörer</span><span class="dots"></span><span class="c">zum Mitnehmen</span></a></li>
+        </ol>
+      </nav>
+
+      <aside class="board" aria-label="Die Band">
+        <p class="label">Die Band</p>
+        <dl>
+          <div><dt>Aus</dt><dd>San Francisco</dd></div>
+          <div><dt>Gegründet</dt><dd>1998</dd></div>
+          <div><dt>Label</dt><dd>Pink &amp; Black, bei Fat Wreck Chords</dd></div>
+          <div><dt>Ganz frisch</dt><dd>EP „I'm a Mess“, Juli 2004</dd></div>
+          <div><dt>Europa</dt><dd>Tour Nummer fünf</dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <article class="talk" aria-label="Interview">
+
+      <section class="course" id="rudi">
+        <h2><span class="donut">1</span>Rüdi, Rüdi, Rüdi<span class="tag">Vorspeise</span></h2>
+        <div class="turn q"><p class="who">Rüdi</p><p>Ich hoffe, das läuft. Ja, läuft. Ich heiße Rüdi.</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Rudy! Rudy! Rudy! Rudy! <span class="aside">(Die Band wiederholt seinen Namen ein gutes Dutzend Mal.)</span></p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Guten Tag. Und hier sitzt die Schlagzeugerin, der berühmte Star. Warst du schon immer die Schlagzeugerin?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><div class="said">
+          <p>Immer. Ich bin von Anfang an dabei. Wir sind die letzten zwei aus der Originalbesetzung, weil zwei Mädels aufgehört haben. Uns gibt es jetzt insgesamt ungefähr sechs Jahre, und die Originalbesetzung lief etwa fünf Jahre.</p>
+          <p>Letztes Jahr wollte unsere ursprüngliche Sängerin aufhören, sie wollte nicht mehr touren. Und dieses Jahr, nachdem Squeaky als neue Gitarristin dazugekommen ist, hat unsere alte Bassistin aufgehört. Jetzt haben wir April. Unsere alte Bassistin sitzt wieder in Oakland und wünscht sich, sie wäre mit auf Tour. Tja.</p>
+        </div></div>
+      </section>
+
+      <section class="course" id="tour">
+        <h2><span class="donut">2</span>Tour Nummer fünf<span class="tag">Tagesgericht</span></h2>
+        <div class="turn q"><p class="who">Rüdi</p><p>Wie oft wart ihr schon in Europa?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Ich bin zum achten Mal hier, aber für Fabulous Disaster ist es das fünfte Mal. Unsere fünfte Tour.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Ich habe gehört, ihr solltet dieses Wochenende auf einem Festival spielen. Das wurde abgesagt, und dann hat euch der Booker hierhergeholt.</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Nein, der Club. Wir sind gestern ganz kurzfristig hier ins Programm gerutscht, und wir sind echt froh, dass wir stattdessen hier sind. Wir haben nämlich gesehen, welche Bands auf dem Festival gespielt hätten.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Wie hieß das Festival denn?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><div class="said">
+          <p>Keine Ahnung. So denkwürdig war das. Irgendwas mit Volvo? Nein … irgendwas eben.</p>
+          <p>Wir haben hier nämlich schon richtig gute Festivals gespielt, Festivals sind super. Auf unserem ersten, gleich nach der Ankunft, haben wir mit den UK Subs gespielt. Das war der Hammer. Und nächsten Monat, im September, spielen wir auf einem Festival in Belgien mit den Buzzcocks.</p>
+          <p>Die Buzzcocks sind großartig. Legendär. Ich liebe die, die haben mich stark beeinflusst.</p>
+        </div></div>
+      </section>
+
+      <section class="course" id="tonne">
+        <h2><span class="donut">3</span>Aus der Tonne<span class="tag">gratis</span></h2>
+        <div class="turn q"><p class="who">Rüdi</p><p>Woher habt ihr eigentlich das Geld zum Leben? Für euer Essen?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Das fällt vom Himmel. Nein: Wir gehen Dumpster Diving. Weißt du, was das ist? Gibt es das hier auch? Das heißt, du steigst in den Container und holst dir was aus dem Müll.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Ach so, ja. Beim Supermarkt.</p></div>
+        <aside class="note"><p class="label">Anm. d. Red.</p><p>Auf Deutsch heißt das Containern.</p></aside>
+        <figure class="pull">
+          <p>„Das Geld fällt vom Himmel.“</p>
+          <figcaption class="label">Fabulous Disaster über ihre Finanzen</figcaption>
+        </figure>
+      </section>
+
+      <section class="course" id="courtney">
+        <h2><span class="donut">4</span>Shopping mit Courtney Love<span class="tag">Spezial des Hauses</span></h2>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Vor ungefähr einem Monat haben wir mit Courtney Love abgehangen.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Und, wie war das?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Das war so verdammt lustig. Die beste Nacht überhaupt, wir hatten einen Riesenspaß. Sie war total drauf. Ich habe sie am Flughafen in Oakland abgeholt.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Sie hat richtig viel Geld, oder?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Oh ja, hat sie. Wir waren in ihrem Hotelzimmer, und da lagen überall verdammte Bündel Bargeld und Schminkzeug herum.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Woher hat sie das Geld? Von ihrem Mann?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><div class="said">
+          <p>Ich schätze schon, und von Hole. Die waren in Amerika richtig populär. Inzwischen nicht mehr so, aber sie hatte gerade eine neue Platte draußen. Nach einer Weile ist man halt berühmt, und der Name taucht mal hier, mal da auf. Jetzt ist sie Hollywood. Hollywood durch und durch.</p>
+          <p>Als wir mit ihr unterwegs waren, war sie so lustig. Sie ist mit uns shoppen gegangen, und wir haben im Laden Journey-Songs gesungen. Bei Urban Outfitters, Luftgitarre zu „Don't Stop Believin'“. Das war großartig.</p>
+        </div></div>
+        <aside class="note"><p class="label">Anm. d. Red.</p><p>Courtney Love war mit Kurt Cobain von Nirvana verheiratet und sang bei Hole. Ihr Soloalbum „America's Sweetheart“ erschien im Februar 2004.</p></aside>
+      </section>
+
+      <section class="course" id="hafen">
+        <h2><span class="donut">5</span>In jedem Hafen einen<span class="tag">scharf</span></h2>
+        <div class="turn x"><p class="who">Anm.</p><p class="aside">Die Frage dazu geht in der Aufnahme unter.</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Ich definitiv nicht. Sally schon. Sally ist lesbisch. Früher war die Band fast komplett lesbisch, und jetzt ist sie komplett nicht lesbisch.</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Ich bin verheiratet und habe zwei Freunde. Hallo! Nein, Spaß.</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Du klingst genau wie mein Kumpel Chris. Der ist mit einem Typen verheiratet und hat ungefähr tausend Freunde.</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Na bitte. Das ist Lynda. In jedem Hafen einen, die schamlosen Luder. Wir haben in jedem Hafen einen, oder?</p></div>
+      </section>
+
+      <section class="course" id="platten">
+        <h2><span class="donut">6</span>Drei Platten und ein Mann<span class="tag">Beilage</span></h2>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Wir haben, mal sehen, drei Platten draußen. Und gerade ist eine neue rausgekommen, eine EP namens „I'm a Mess“, im Juli. Und schaut auf unsere Website. <span class="aside">(Es folgt ein Durcheinander, ob man Disaster mit i oder e schreibt.)</span></p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Macht ihr die Website selbst, oder macht die ein Typ oder eine Frau?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Ein Typ. Mein Alter.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Für den Job braucht ihr einen Mann?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Ja, auf jeden Fall. Ich habe zu viel zu tun, um das selbst zu machen. Ich bin ständig unterwegs. Also kümmert er sich darum.</p></div>
+      </section>
+
+      <section class="course" id="miete">
+        <h2><span class="donut">7</span>Miete fürs Nichts<span class="tag">Hausmannskost</span></h2>
+        <div class="turn q"><p class="who">Rüdi</p><p>Wie viele Tage im Jahr seid ihr unterwegs?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Fünf Jahre lang waren wir ununterbrochen unterwegs, auf Tour und für Aufnahmen. Dann kam der Besetzungswechsel, und wir haben zehn, elf Monate lang nicht getourt.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Und wie viel Zeit verbringst du zu Hause in deiner Wohnung?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Diesmal war ich fast ein Jahr in meiner Wohnung. Man zahlt ja jeden Monat Miete.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Für nichts? Du zahlst jeden Monat Miete, während du auf Tour bist?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Müssen wir ja, sonst …</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Oder wohnst du noch bei deinen Eltern?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Nein, ich wohne nicht bei meinen Eltern, Mister Schlaumeier. Mister Klugscheißer! Ich wohne in Oakland.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Hast du noch Kontakt zu deinen Eltern?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Mein Vater ist tot. Zu meiner Mutter, ja.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Kocht sie gut?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Die beste überhaupt. Sie ist die Beste, ich liebe sie.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Und kannst du auch kochen?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Nein. Nicht wirklich.</p></div>
+      </section>
+
+      <section class="course" id="kaffee">
+        <h2><span class="donut">8</span>Kaffee und Donuts<span class="tag">Dessert</span></h2>
+        <div class="turn q"><p class="who">Rüdi</p><p>Kaffee?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Er macht alles. Doch, Kaffee mache ich. Den besten. Instantkaffee. Kaffee von Dunkin' Donuts.</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Dunkin' Donuts!</p></div>
+        <div class="turn x"><p class="who">Stimmen</p><p>„Mary weiß, was Dunkin' Donuts ist.“ – „Na klar! Meine Mitbewohnerin und ich haben erst gestern darüber geredet, wie gut der ist. Oh Mann, der fehlt mir.“</p></div>
+      </section>
+
+      <section class="course" id="gruesse">
+        <h2><span class="donut">9</span>Grüße an die Hörer<span class="tag">zum Mitnehmen</span></h2>
+        <div class="turn q"><p class="who">Rüdi</p><p>Habt ihr noch eine wichtige Botschaft für die Hörerinnen und Hörer von Pogoradio?</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>„Be true to your school“, also: Bleibt eurer Schule treu, und hört diesen Sender. Welchen Sender eigentlich? Wie heißt der noch mal?</p></div>
+        <div class="turn q"><p class="who">Rüdi</p><p>Pogoradio.</p></div>
+        <div class="turn"><p class="who">Fabulous Disaster</p><p>Pogoradio! Okay. Passt. Los geht’s.</p></div>
+      </section>
+
+      <p class="protocol">Aus dem Englischen übersetzt und leicht bereinigt. Füllwörter, Wiederholungen sowie Lied- und Hintergrundfetzen aus der Aufnahme sind gestrichen. Die Musikerinnen reden durcheinander und sind hier als „Fabulous Disaster“ zusammengefasst.</p>
+    </article>
+
+  </div>
+</main>
+
+<div class="checker" aria-hidden="true"></div>
+
+<footer>
+  <div class="wrap foot">
+    <p>Pogoradio · Fabulous Disaster · Juz Mannheim 2004</p>
+    <p>Bermudafunk 105,4</p>
+  </div>
+</footer>
+
+</body>
+</html>

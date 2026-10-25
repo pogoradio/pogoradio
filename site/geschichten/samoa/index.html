@@ -1,0 +1,621 @@
+<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Busfahren in Samoa</title><meta name="description" content="Matze wollte wissen, wie das mit dem Busfahren in Samoa ist. Die Antwort im O-Ton, mit Sitzordnung zum Durchklicken."><style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style></head><body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:wdth,wght@75..100,500..800&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&display=swap">
+<style>
+/* Layout: Lackierung eines Inselbusses als Streifen oben und unten, eine Lesespalte im O-Ton,
+   in der Mitte die Sitzordnung als Draufsicht zum Durchklicken, am Ende das Schild mit den Fahrgastregeln. */
+:root {
+  --paper: #f1f5f4;
+  --panel: #e4eeec;
+  --ink: #172026;
+  --ink-soft: #55636b;
+  --rule: #c3d1cf;
+  --teal: #0b6a74;
+  --red: #cf3049;
+  --yellow: #f2b31a;
+  --bus: #d3eae6;
+  --seat: #afd0cb;
+  --glass: #9bcfe0;
+  --p-young: #f5c84a;
+  --p-old: #0b4b54;
+  --p-mid: #5f8f6f;
+  --cargo: #94653a;
+  --hl: rgba(242, 179, 26, .5);
+  --plate: #f2b31a;
+  --plate-ink: #172026;
+
+  --display: "Bungee", "Arial Black", Impact, sans-serif;
+  --sans: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Literata", "Iowan Old Style", Georgia, serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1517;
+    --panel: #142124;
+    --ink: #e5edeb;
+    --ink-soft: #9cb0b3;
+    --rule: #29393c;
+    --teal: #45bcc6;
+    --red: #ff6a80;
+    --yellow: #ffc83d;
+    --bus: #173230;
+    --seat: #22504d;
+    --glass: #2a6878;
+    --p-young: #ffd660;
+    --p-old: #3cc3cd;
+    --p-mid: #9ccb92;
+    --cargo: #c58b53;
+    --hl: rgba(255, 200, 61, .3);
+    --plate: #f2b31a;
+    --plate-ink: #172026;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1517;
+  --panel: #142124;
+  --ink: #e5edeb;
+  --ink-soft: #9cb0b3;
+  --rule: #29393c;
+  --teal: #45bcc6;
+  --red: #ff6a80;
+  --yellow: #ffc83d;
+  --bus: #173230;
+  --seat: #22504d;
+  --glass: #2a6878;
+  --p-young: #ffd660;
+  --p-old: #3cc3cd;
+  --p-mid: #9ccb92;
+  --cargo: #c58b53;
+  --hl: rgba(255, 200, 61, .3);
+  --plate: #f2b31a;
+  --plate-ink: #172026;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 3px; }
+
+.livery {
+  height: 30px;
+  background: linear-gradient(var(--teal) 0 15px, var(--paper) 15px 18px, var(--yellow) 18px 24px, var(--red) 24px 30px);
+}
+.livery.bottom {
+  background: linear-gradient(var(--red) 0 6px, var(--yellow) 6px 12px, var(--paper) 12px 15px, var(--teal) 15px 30px);
+}
+
+.wrap {
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.col { max-width: calc(42rem + 32px); }
+.wide { max-width: calc(64rem + 32px); }
+
+.label {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: .76rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Kopf ---------- */
+.head { padding-block: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 4vw, 2.5rem); display: grid; gap: 1.1rem; }
+h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--teal);
+  font-size: clamp(2.3rem, 10.5vw, 6rem);
+  line-height: .95;
+  letter-spacing: -.01em;
+}
+h1 span { display: block; }
+h1 span + span { color: var(--red); }
+.dek { margin: 0; max-width: 38rem; font-size: clamp(1.1rem, 2.2vw, 1.28rem); line-height: 1.55; }
+
+.ask {
+  margin-top: .5rem;
+  display: grid;
+  gap: .3rem;
+  padding: 1rem 1.15rem;
+  border: 2px solid var(--ink);
+  border-radius: 14px 14px 14px 4px;
+  max-width: 34rem;
+}
+.ask p { margin: 0; }
+.ask .q { font-family: var(--sans); font-weight: 700; font-size: 1.12rem; line-height: 1.35; }
+
+/* ---------- Text ---------- */
+.story { display: grid; gap: 2.6rem; padding-block: 1rem 0; }
+.story section { display: grid; gap: 1rem; }
+.story h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-stretch: 80%;
+  font-variation-settings: "wdth" 80;
+  font-size: clamp(1.6rem, 3.6vw, 2.1rem);
+  line-height: 1.1;
+  color: var(--teal);
+  text-wrap: balance;
+}
+.story p { margin: 0; }
+mark {
+  color: inherit;
+  background: linear-gradient(transparent 56%, var(--hl) 56% 96%, transparent 96%);
+  padding: 0 .06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.oton-note { font-family: var(--sans); font-size: .82rem; color: var(--ink-soft); }
+
+.whisper {
+  margin: .4rem 0;
+  padding: 0;
+  display: grid;
+  gap: .6rem;
+}
+.whisper .quote {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(1.55rem, 4.2vw, 2.25rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.whisper .quote::before { content: "„"; color: var(--red); }
+.whisper .quote::after { content: "“"; color: var(--red); }
+
+/* ---------- Sitzordnung ---------- */
+.diagram {
+  margin: clamp(1rem, 3vw, 2rem) auto;
+  background: var(--panel);
+  border-radius: 16px;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  display: grid;
+  gap: 1.1rem;
+}
+.d-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .4rem 1.5rem; }
+.d-head h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-stretch: 80%;
+  font-variation-settings: "wdth" 80;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .5rem;
+}
+.steps button {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: .9rem;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--rule);
+  border-radius: 10px;
+  padding: .6rem .75rem;
+  cursor: pointer;
+  display: flex;
+  gap: .55rem;
+  align-items: center;
+  min-width: 0;
+}
+.steps button .n {
+  flex: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: .8rem;
+  background: var(--rule);
+  color: var(--ink);
+}
+.steps button:hover { border-color: var(--teal); }
+.steps button[aria-pressed="true"] { border-color: var(--teal); background: var(--teal); color: var(--paper); }
+.steps button[aria-pressed="true"] .n { background: var(--paper); color: var(--teal); }
+
+.stage-wrap { display: grid; justify-items: center; }
+#bus { display: block; width: 100%; max-width: 100%; height: auto; }
+#bus.vertical { max-width: 380px; }
+.caption {
+  margin: 0;
+  min-height: 3.3em;
+  font-family: var(--sans);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+.legend {
+  margin: 0;
+  padding: .9rem 0 0;
+  border-top: 1px solid var(--rule);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.4rem;
+  font-family: var(--sans);
+  font-size: .82rem;
+  color: var(--ink-soft);
+}
+.legend li { display: inline-flex; align-items: center; gap: .45rem; }
+.legend svg { width: 26px; height: 26px; flex: none; }
+
+/* SVG-Teile */
+.bus-body { fill: var(--bus); stroke: var(--ink); stroke-width: 2.5; }
+.glass { fill: var(--glass); }
+.seat { fill: var(--seat); }
+.wheel { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.door-gap { fill: var(--panel); }
+.door-leaf { stroke: var(--ink); stroke-width: 2.5; }
+.tlabel { font-family: var(--sans); font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; fill: var(--ink-soft); }
+.person circle { stroke: var(--panel); stroke-width: 1.5; }
+.person.double circle { stroke: var(--paper); stroke-width: 2.5; }
+.person { transition: transform .75s cubic-bezier(.55, 0, .2, 1), opacity .45s ease; }
+.no-anim .person, .no-anim .only { transition: none !important; }
+.only { opacity: 0; transition: opacity .45s ease; }
+#bus[data-stage="2"] .on2, #bus[data-stage="3"] .on3, #bus[data-stage="4"] .on4 { opacity: 1; }
+.arrow { fill: none; stroke: var(--red); stroke-width: 2.5; stroke-dasharray: 6 5; }
+.arrow.in { stroke: var(--ink); }
+.wave { fill: none; stroke: var(--red); stroke-width: 3.5; }
+.cargo { fill: var(--cargo); }
+#bus[data-stage="2"] .vip circle, #bus[data-stage="3"] .vip circle { stroke: var(--yellow); stroke-width: 4; }
+#bus[data-stage="3"] .mover circle { stroke: var(--red); stroke-width: 3.5; }
+.mk { fill: var(--red); }
+.mk.ink { fill: var(--ink); }
+
+/* ---------- Schild ---------- */
+.plate {
+  margin: clamp(2.5rem, 6vw, 3.5rem) 0 0;
+  background:
+    radial-gradient(circle at 14px 14px, rgba(23, 32, 38, .55) 0 3px, transparent 4px),
+    radial-gradient(circle at calc(100% - 14px) 14px, rgba(23, 32, 38, .55) 0 3px, transparent 4px),
+    radial-gradient(circle at 14px calc(100% - 14px), rgba(23, 32, 38, .55) 0 3px, transparent 4px),
+    radial-gradient(circle at calc(100% - 14px) calc(100% - 14px), rgba(23, 32, 38, .55) 0 3px, transparent 4px),
+    var(--plate);
+  color: var(--plate-ink);
+  border-radius: 12px;
+  padding: clamp(1.4rem, 4vw, 2rem) clamp(1.3rem, 4vw, 2.2rem);
+  display: grid;
+  gap: 1rem;
+  box-shadow: inset 0 0 0 3px var(--plate-ink);
+}
+.plate h2 {
+  margin: 0;
+  color: var(--plate-ink);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.45rem, 4.5vw, 2.1rem);
+  line-height: 1.05;
+}
+.plate ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: .55rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+.plate li { display: grid; grid-template-columns: 1.1rem minmax(0, 1fr); gap: .6rem; }
+.plate li::before { content: ""; width: .7rem; height: .7rem; margin-top: .38em; border-radius: 50%; background: var(--plate-ink); }
+.plate .big {
+  margin: .3rem 0 0;
+  padding-top: 1rem;
+  border-top: 3px solid var(--plate-ink);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  line-height: 1.1;
+}
+
+footer { padding-block: clamp(2.5rem, 6vw, 4rem) 1.5rem; }
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+  font-family: var(--sans);
+  font-size: .8rem;
+  color: var(--ink-soft);
+}
+.foot p { margin: 0; }
+
+@media (max-width: 720px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .person, .only { transition: none !important; }
+}
+</style>
+
+<div class="livery" aria-hidden="true"></div>
+
+<header class="wrap col head">
+  <p class="label">Sprachaufnahme · O-Ton</p>
+  <h1><span>Busfahren</span> <span>in Samoa</span></h1>
+  <p class="dek">Wer darf vorne sitzen, wer muss nach hinten, und wann sitzt einem eine samoanische Frau auf den Knien? Eine Antwort mit ein, zwei Worten vorweg.</p>
+  <div class="ask">
+    <p class="label">Die Frage</p>
+    <p class="q">Matze wollte wissen, wie das mit dem Busfahren in Samoa ist.</p>
+  </div>
+</header>
+
+<main>
+  <article class="wrap col story" aria-label="Die Antwort im O-Ton">
+
+    <section>
+      <h2>Richtige Kanten</h2>
+      <p>Okay, also Matze, du wolltest ja wissen, wie das mit dem Busfahren in Samoa ist. Aber da muss ich erst ein, zwei Worte vorwegschicken: Die Leute in Samoa sind nicht wie wir, die sind einfach viel, viel größer, massiver und stärker – <mark>richtige Kanten</mark>. Du findest also kaum Leute, die irgendwie spackelig aussehen oder so, und je älter die werden, umso mehr nehmen die zu. <mark>Die essen halt immer, bis sie müde sind</mark>, und nicht wie wir nur, solange sie Hunger haben. Das gehört einfach dazu, dass du dir die Wampe vollschlägst, und je älter du wirst, umso dicker wirst du. Die sind also alle massiv übergewichtig.</p>
+      <p>Und das macht es ein bisschen schwierig, mit denen im Bus zu fahren, weil die Busse halt kleine Busse sind, <mark>ungepolstert und für Asiaten gebaut</mark>, die meistens eine Kante kleiner sind als hier. Da ist ein Bus schon mal eine ganz schön volle Angelegenheit. Wenn du in so einen Bus reinkommst, dann kannst du dich nicht einfach irgendwo hinsetzen.</p>
+    </section>
+
+    <section>
+      <h2>Wer wo sitzt</h2>
+      <p>Das ist nicht drin, sondern du musst dich dahin setzen, wo der Sitzplatz deinem <mark>sozialen Status</mark> entspricht. Das heißt im Prinzip, dass jüngere Leute hinten im Bus sitzen, und je älter die werden, umso größer wird der soziale Status, aber auch das Volumen der Leute, und umso weiter vorne sitzt man. Als Mann kriegst du einen <mark>Altersbonus</mark> gegenüber einer Frau. Du wirst also als 30-jähriger Mann ungefähr bei einer 27-jährigen Frau sitzen, und je älter man wird, umso größer wird der Unterschied: Als 60-Jähriger sitzt du sicherlich vor einer 65-jährigen Frau.</p>
+      <p>Das wird dann interessant, wenn der Bus voller wird. Angenommen, du hast einen Bus, der schon ziemlich voll ist, und da steigt jemand ein, der einen hohen sozialen Status hat. Dann kann er ja nicht einfach zu einem freien Platz gehen, sondern er muss irgendwo vorne im Bus sitzen. Aber das ist auch kein Problem: Sobald er reinkommt, steht jemand auf.</p>
+    </section>
+  </article>
+
+  <figure class="wrap wide" aria-labelledby="d-h">
+    <div class="diagram">
+      <div class="d-head">
+        <h2 id="d-h">Die Sitzordnung</h2>
+        <p class="label">Draufsicht, vorne ist bei der Tür</p>
+      </div>
+      <div class="steps" role="group" aria-label="Schritt wählen">
+        <button type="button" id="st1" data-stage="1" aria-pressed="true"><span class="n">1</span>Sitzordnung</button>
+        <button type="button" id="st2" data-stage="2" aria-pressed="false"><span class="n">2</span>Jemand steigt ein</button>
+        <button type="button" id="st3" data-stage="3" aria-pressed="false"><span class="n">3</span>Dominoeffekt</button>
+        <button type="button" id="st4" data-stage="4" aria-pressed="false"><span class="n">4</span>Verdoppeln</button>
+      </div>
+      <div class="stage-wrap">
+        <svg id="bus" role="img" aria-labelledby="cap" data-stage="1"></svg>
+      </div>
+      <p class="caption" id="cap" aria-live="polite">Jung sitzt hinten, alt sitzt vorn. Mit dem Status wächst auch das Volumen.</p>
+      <ul class="legend">
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="6" style="fill: var(--p-young)"/></svg>jung, wenig Status</li>
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11" style="fill: var(--p-old)"/></svg>alt, viel Status</li>
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9.5" style="fill: var(--p-old); stroke: var(--yellow); stroke-width: 3.5"/></svg>steigt ein</li>
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9" style="fill: var(--p-mid); stroke: var(--red); stroke-width: 3"/></svg>macht Platz</li>
+        <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="10" cy="15" r="7" style="fill: var(--p-young)"/><circle cx="16" cy="10" r="7" style="fill: var(--p-young); stroke: var(--panel); stroke-width: 2"/></svg>verdoppelt</li>
+      </ul>
+    </div>
+  </figure>
+
+  <article class="wrap col story" aria-label="Fortsetzung der Antwort">
+    <section>
+      <h2>Dominoeffekt und Verdoppeln</h2>
+      <p>Dann geht die Person nach hinten, aber nicht ganz nach hinten, sondern vielleicht zwei, drei Reihen. Bis dahin ist da aber schon jemand aufgestanden, macht Platz und geht wieder zwei, drei Reihen nach hinten, sodass du praktisch einen <mark>Dominoeffekt</mark> von Leuten hast, die im Bus reihenweise nach hinten schwappen.</p>
+      <p>Und wenn der Bus dann richtig voll ist, dann beginnt man zu <mark>verdoppeln</mark>: Dann sitzt man auf den Knien anderer Leute, und das geht zum Glück hinten los. Das Problem ist nur, wenn die Verdopplungswelle von hinten immer weiter nach vorne in den Bus kommt und dich erreicht. Dann sind da nur noch Leute von hohem sozialen Status, und deine Chance ist: Du hast halt eine 100 bis 120 Kilo schwere samoanische Frau auf deinen Knien sitzen.</p>
+      <p>Das ist also bei den holprigen Straßen, den ungepolsterten Bussen und der ganzen Enge schon mal recht extrem, weil natürlich neben dir auch doppelt Leute aufeinandersitzen. Du sitzt also auf zwei Sitzplätzen, wo du gerade mal zwei kleine Asiaten hinkriegen würdest, mit drei echt dicken Samoanern in einer Reihe. <mark>Das ist schon ein Spektakel.</mark></p>
+    </section>
+
+    <section>
+      <h2>Mein erster Bus</h2>
+      <p>Und ich erinnere mich noch sehr gut, als ich zum ersten Mal in einen Bus gekommen bin, der schon eineinhalbfach belegt war. Erst mal wusste ich gar nicht, wohin, weißt du? Der ganze Bus, alles sitzt voller Leute, hinten sitzen die schon aufeinander drauf. Der Gang vollgestapelt bis oben hin mit allem möglichen Zeug, von Kokosnüssen, gegrilltem Schwein, Bierkästen – alles, was du dir vorstellen kannst, ist da aufgetürmt. Aber zum Glück ist direkt jemand aufgestanden, und dann wusste ich wenigstens: Mensch, das ist jetzt mein Platz. Setze mich dahin und denke, alles ist in Ordnung. Von hinten flüstert mir eine Frau ins Ohr:</p>
+      <blockquote class="whisper">
+        <p class="label">Von hinten, ins Ohr geflüstert</p>
+        <p class="quote">Mensch, du hättest aber auch anbieten können, auf deinen Knien zu sitzen.</p>
+      </blockquote>
+      <p>Und das ist halt eine Sache, die für uns kaum vorstellbar ist. Geh mal in der U-Bahn zu einer Frau, die zehn Jahre älter ist, und sag: „Hier, willst du nicht auf meinen Knien sitzen?“ Das kommt halt in Deutschland überhaupt nicht an, aber in Samoa wäre das das Ding gewesen, was man machen sollte, ne?</p>
+      <p>Also für dich ist wichtig: <mark>Sieh zu, dass du nicht während der Stoßzeiten fährst in Samoa.</mark> Da ist es einfach zu extrem, wenn es auch kuschelig ist.</p>
+    </section>
+
+    <aside class="plate" aria-labelledby="plate-h">
+      <h2 id="plate-h">Fahrgastregeln Samoa</h2>
+      <ul>
+        <li>Setz dich nach deinem Status: jung hinten, alt vorn.</li>
+        <li>Als Mann hast du einen Altersbonus.</li>
+        <li>Steigt jemand mit mehr Status ein: aufstehen, zwei, drei Reihen nach hinten.</li>
+        <li>Ist der Bus richtig voll, wird verdoppelt. Hinten geht’s los.</li>
+        <li>Deine Knie anzubieten gehört dazu.</li>
+      </ul>
+      <p class="big">Und: Nicht in der Stoßzeit fahren.</p>
+    </aside>
+  </article>
+</main>
+
+<footer class="wrap col">
+  <div class="foot">
+    <p>Busfahren in Samoa · Interview: Matze</p>
+    <p>Sprachaufnahme, leicht redigiert, im O-Ton.</p>
+  </div>
+</footer>
+<div class="livery bottom" aria-hidden="true"></div>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('bus');
+  var cap = document.getElementById('cap');
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.steps button'));
+  var captions = {
+    1: 'Jung sitzt hinten, alt sitzt vorn. Mit dem Status wächst auch das Volumen.',
+    2: 'Jemand mit hohem Status steigt ein. Er muss vorne sitzen, auch wenn hinten noch etwas frei ist.',
+    3: 'Vorne steht einer auf und geht zwei, drei Reihen nach hinten. Dort hat schon der Nächste Platz gemacht, und so weiter: der Dominoeffekt.',
+    4: 'Ist der Bus richtig voll, wird verdoppelt: Man sitzt anderen auf den Knien. Das fängt hinten an und wandert nach vorn. Im Gang stapeln sich Kokosnüsse, Schwein und Bierkästen.'
+  };
+
+  /* Alle Maße in der waagerechten Ansicht (vorne = links); senkrecht werden x und y getauscht. */
+  var W = 720, H = 320;
+  var rowX = function (r) { return 170 + r * 64; };
+  var seatY = [80, 113, 177, 210];
+  var AISLE = 145;
+  var vertical = false;
+  var stage = 1;
+  var people = [];
+
+  function P(x, y) { return vertical ? [y, x] : [x, y]; }
+  function el(name, attrs, parent) {
+    var e = document.createElementNS(NS, name);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    (parent || svg).appendChild(e);
+    return e;
+  }
+  function rect(x, y, w, h, attrs, parent) {
+    var p = P(x, y);
+    var a = Object.assign({ x: p[0], y: p[1], width: vertical ? h : w, height: vertical ? w : h }, attrs || {});
+    return el('rect', a, parent);
+  }
+  function seat(r, s) { return [rowX(r), seatY[s]]; }
+  function status(r, s) {
+    var j = (((r * 7 + s * 3) % 5) - 2) * 0.03;
+    return Math.max(0.05, Math.min(1, 0.95 - r * 0.125 + j));
+  }
+  function fillFor(st) {
+    return 'color-mix(in oklab, var(--p-old) ' + Math.round(st * 100) + '%, var(--p-young))';
+  }
+  function place(g, pos) {
+    var p = P(pos[0], pos[1]);
+    g.style.transform = 'translate(' + p[0] + 'px,' + p[1] + 'px)';
+  }
+  function curve(a, b, c, cls, parent) {
+    function shorten(p, q, d) {
+      var dx = q[0] - p[0], dy = q[1] - p[1], L = Math.sqrt(dx * dx + dy * dy) || 1;
+      return [p[0] + dx / L * d, p[1] + dy / L * d];
+    }
+    var s = shorten(a, c, 15), e = shorten(b, c, 17);
+    var S = P(s[0], s[1]), C = P(c[0], c[1]), E = P(e[0], e[1]);
+    return el('path', { d: 'M' + S + ' Q' + C + ' ' + E, class: cls, 'marker-end': 'url(#' + (cls.indexOf('in') > -1 ? 'mki' : 'mk') + ')' }, parent);
+  }
+  function text(str, h, v, cls, parent) {
+    var pos = vertical ? v : h;
+    var t = el('text', { x: pos[0], y: pos[1], 'text-anchor': pos[2], class: cls || 'tlabel' }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  function build() {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    svg.setAttribute('viewBox', vertical ? '0 0 ' + H + ' ' + W : '0 0 ' + W + ' ' + H);
+    svg.classList.toggle('vertical', vertical);
+    svg.classList.add('no-anim');
+
+    var defs = el('defs', {});
+    [['mk', 'mk'], ['mki', 'mk ink']].forEach(function (m) {
+      var mk = el('marker', { id: m[0], viewBox: '0 0 10 10', refX: 6, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }, defs);
+      el('path', { d: 'M0,0 L10,5 L0,10 z', class: m[1] }, mk);
+    });
+
+    /* Bus */
+    rect(40, 45, 650, 200, { rx: 34, class: 'bus-body' });
+    rect(48, 64, 12, 162, { rx: 6, class: 'glass' });
+    rect(84, 238, 46, 14, { class: 'door-gap' });
+    var d1 = P(84, 245), d2 = P(96, 232), d3 = P(130, 245), d4 = P(118, 232);
+    el('line', { x1: d1[0], y1: d1[1], x2: d2[0], y2: d2[1], class: 'door-leaf' });
+    el('line', { x1: d3[0], y1: d3[1], x2: d4[0], y2: d4[1], class: 'door-leaf' });
+    rect(92, 65, 30, 30, { rx: 6, class: 'seat' });
+    var wc = P(76, 80);
+    el('circle', { cx: wc[0], cy: wc[1], r: 10, class: 'wheel' });
+    for (var r = 0; r < 8; r++) for (var s = 0; s < 4; s++) {
+      var c = seat(r, s);
+      rect(c[0] - 15, c[1] - 15, 30, 30, { rx: 6, class: 'seat' });
+    }
+    text('vorn', [40, 30, 'start'], [145, 28, 'middle']);
+    text('hinten', [690, 30, 'end'], [145, 712, 'middle']);
+
+    /* Gang-Ladung (Schritt 4) */
+    var cargo = el('g', { class: 'only on4' });
+    for (var i = 0; i < 6; i++) {
+      var cx = rowX(i + 1) + (i % 2 ? 6 : -6);
+      if (i % 2) { rect(cx - 10, AISLE - 9, 20, 18, { rx: 3, class: 'cargo' }, cargo); }
+      else { var cc = P(cx, AISLE); el('circle', { cx: cc[0], cy: cc[1], r: 9, class: 'cargo' }, cargo); }
+    }
+
+    /* Pfeile */
+    var g2 = el('g', { class: 'only on2' });
+    curve([106, 292], seat(1, 2), [106, 175], 'arrow in', g2);
+    var g3 = el('g', { class: 'only on3' });
+    curve(seat(1, 2), seat(3, 2), [rowX(2), AISLE - 6], 'arrow', g3);
+    curve(seat(3, 2), seat(5, 2), [rowX(4), AISLE - 6], 'arrow', g3);
+    curve(seat(5, 2), seat(6, 1), [rowX(5) + 40, AISLE], 'arrow', g3);
+    var g4 = el('g', { class: 'only on4' });
+    var w1 = P(660, 272), w2 = P(430, 272);
+    el('path', { d: 'M' + w1 + ' L' + w2, class: 'wave', 'marker-end': 'url(#mk)' }, g4);
+    text('Welle', [545, 298, 'middle'], [272, 686, 'middle'], 'tlabel', g4);
+
+    /* Leute */
+    people = [];
+    var layer = el('g', {});
+    function addPerson(st, positions, cls) {
+      var g = el('g', { class: 'person ' + (cls || '') }, layer);
+      var c = el('circle', { cx: 0, cy: 0, r: (6 + st * 7).toFixed(1) }, g);
+      c.style.fill = 'var(--p-mid)';
+      c.style.fill = fillFor(st);
+      people.push({ g: g, pos: positions, rest: positions.filter(Boolean)[0] });
+    }
+    var moves = { '1-2': seat(3, 2), '3-2': seat(5, 2), '5-2': seat(6, 1) };
+    var empty = { '6-1': 1, '7-3': 1 };
+    for (var r2 = 0; r2 < 8; r2++) for (var s2 = 0; s2 < 4; s2++) {
+      var key = r2 + '-' + s2;
+      if (empty[key]) continue;
+      var home = seat(r2, s2);
+      var moved = moves[key];
+      addPerson(status(r2, s2), [home, home, moved || home, moved || home], moved ? 'mover' : '');
+    }
+    addPerson(1, [null, [106, 292], seat(1, 2), seat(1, 2)], 'vip');
+    addPerson(0.12, [null, null, null, seat(7, 3)], '');
+    for (var r3 = 4; r3 < 8; r3++) for (var s3 = 0; s3 < 4; s3++) {
+      var b = seat(r3, s3);
+      addPerson(0.1 + (7 - r3) * 0.04, [null, null, null, [b[0] + 7, b[1] - 7]], 'double');
+    }
+
+    setStage(stage, true);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { svg.classList.remove('no-anim'); }); });
+  }
+
+  function setStage(n, silent) {
+    stage = n;
+    svg.setAttribute('data-stage', n);
+    people.forEach(function (p) {
+      var pos = p.pos[n - 1];
+      if (pos) { place(p.g, pos); p.g.style.opacity = 1; }
+      else { place(p.g, p.rest); p.g.style.opacity = 0; }
+    });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.stage === n)); });
+    if (!silent || cap.textContent !== captions[n]) cap.textContent = captions[n];
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setStage(+b.dataset.stage); });
+  });
+
+  var mq = window.matchMedia('(max-width: 600px)');
+  function orient() { vertical = mq.matches; build(); }
+  if (mq.addEventListener) mq.addEventListener('change', orient); else if (mq.addListener) mq.addListener(orient);
+  orient();
+})();
+</script>
+
+</body></html>

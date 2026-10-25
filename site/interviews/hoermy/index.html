@@ -1,0 +1,594 @@
+<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Hørmy auf Radreise</title><meta name="description" content="Pogoradio-Interview-Reihe, 2007: Hørmy, früher Sänger von Lønd Lørds Ønd, über drei Monate mit dem Rad durch Burma, Thailand und Laos."><style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style></head><body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<style>
+/* Layout: Reisepass-Seite als Kopfband mit Guilloche, darunter die Route als Stempelreihe,
+   dann Reportage-Spalte mit Fahrtenbuch am Rand (auf dem Handy oben als Zusammenfassung). */
+:root {
+  --paper: #eef1ef;
+  --paper-band: #e2e9e5;
+  --ink: #19213a;
+  --ink-soft: #4c5570;
+  --rule: #b7c1c2;
+  --guil: rgba(47, 122, 99, .13);
+  --accent: #5a3e9e;
+  --hl: rgba(90, 62, 158, .2);
+  --st-red: #bf3a2d;
+  --st-jade: #2c7660;
+  --st-violet: #5a3e9e;
+  --bar-a: #19213a;
+  --bar-b: #5a3e9e;
+
+  --display: "Bricolage Grotesque", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --stop: 104px;
+  --route-gap: 1rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #10151f;
+    --paper-band: #151c29;
+    --ink: #e3e7ee;
+    --ink-soft: #9ba4b7;
+    --rule: #2d3546;
+    --guil: rgba(92, 195, 159, .1);
+    --accent: #ab95ff;
+    --hl: rgba(171, 149, 255, .26);
+    --st-red: #ff8273;
+    --st-jade: #5fc7a2;
+    --st-violet: #ab95ff;
+    --bar-a: #e3e7ee;
+    --bar-b: #ab95ff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #10151f;
+  --paper-band: #151c29;
+  --ink: #e3e7ee;
+  --ink-soft: #9ba4b7;
+  --rule: #2d3546;
+  --guil: rgba(92, 195, 159, .1);
+  --accent: #ab95ff;
+  --hl: rgba(171, 149, 255, .26);
+  --st-red: #ff8273;
+  --st-jade: #5fc7a2;
+  --st-violet: #ab95ff;
+  --bar-a: #e3e7ee;
+  --bar-b: #ab95ff;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: .74rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Kopfband: Pass-Seite ---------- */
+.band {
+  background-color: var(--paper-band);
+  background-image:
+    repeating-radial-gradient(circle at 12% 130%, transparent 0 10px, var(--guil) 10px 11px),
+    repeating-radial-gradient(circle at 96% -30%, transparent 0 13px, var(--guil) 13px 14px);
+  border-bottom: 1px solid var(--rule);
+}
+.band .wrap {
+  padding-block: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 3vw, 2rem);
+  display: grid;
+  gap: 1.25rem;
+}
+h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-stretch: 80%;
+  font-variation-settings: "wdth" 80, "opsz" 96;
+  font-size: clamp(3rem, 10vw, 7.75rem);
+  line-height: .9;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+  max-width: 12ch;
+}
+h1 em { font-style: normal; color: var(--accent); }
+.dek {
+  margin: 0;
+  max-width: 40rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  line-height: 1.55;
+}
+.mrz {
+  container-type: inline-size;
+  margin-top: clamp(.75rem, 3vw, 2rem);
+  padding-top: .9rem;
+  border-top: 1px dashed var(--rule);
+  font-family: var(--mono);
+  color: var(--ink-soft);
+}
+.mrz p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.5;
+  font-size: clamp(.55rem, 1.9vw, 1.5rem);
+  font-size: min(3.5cqi, 1.5rem);
+  letter-spacing: .02em;
+}
+
+/* ---------- Route ---------- */
+.route-section {
+  padding-block: clamp(2.25rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  gap: 1.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.route-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; }
+.route-head h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+.route {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--route-gap);
+}
+.stop {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: .7rem;
+  text-align: center;
+  min-width: 0;
+}
+.slot {
+  width: var(--stop);
+  height: var(--stop);
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+/* Verbindungslinie zur nächsten Station */
+.stop:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--stop) / 2);
+  left: calc(50% + var(--stop) / 2 + 6px);
+  right: calc(-50% - var(--route-gap) + var(--stop) / 2 + 6px);
+  border-top: 2.5px solid var(--ink);
+}
+.stop.depart::after { border-top-style: dashed; border-top-color: var(--ink-soft); }
+.stop-name {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+.stop-note {
+  margin: .2rem 0 0;
+  font-family: var(--mono);
+  font-size: .76rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 22ch;
+}
+
+.plane {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 2px dashed var(--ink-soft);
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+}
+.plane svg { width: 34px; height: 34px; fill: currentColor; transform: rotate(90deg); }
+
+.stamp {
+  --c: var(--st-red);
+  color: var(--c);
+  border: 4px double var(--c);
+  font-family: var(--mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .15rem;
+  background: var(--paper);
+  opacity: .92;
+}
+.stamp b {
+  font-family: var(--display);
+  font-weight: 800;
+  font-stretch: 85%;
+  font-variation-settings: "wdth" 85;
+  font-size: 1.15rem;
+  letter-spacing: .04em;
+}
+.stamp small { font-size: .58rem; letter-spacing: .1em; }
+.stamp .line { width: 80%; border-top: 1.5px solid var(--c); margin: .1rem 0; }
+.stamp.burma { width: 102px; height: 86px; border-radius: 6px; transform: rotate(-7deg); }
+.stamp.thai { --c: var(--st-jade); width: 96px; height: 96px; border-radius: 50%; transform: rotate(5deg); }
+.stamp.thai b { font-size: .86rem; letter-spacing: .02em; }
+.stamp.laos { --c: var(--st-violet); width: 104px; height: 78px; border-radius: 50% / 46%; transform: rotate(-3deg); }
+
+.legend {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.6rem;
+  font-family: var(--mono);
+  font-size: .76rem;
+  color: var(--ink-soft);
+}
+.legend span { display: inline-flex; align-items: center; gap: .55rem; }
+.legend i { display: inline-block; width: 2.2rem; border-top: 2.5px solid var(--ink); }
+.legend i.dash { border-top-style: dashed; border-top-color: var(--ink-soft); }
+
+/* ---------- Hauptteil ---------- */
+.body {
+  padding-block: clamp(2.25rem, 5vw, 3.75rem) 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 40rem) minmax(0, 19rem);
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.story { grid-column: 1; grid-row: 1; display: grid; gap: 2.4rem; min-width: 0; }
+.log { grid-column: 2; grid-row: 1; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.5rem); min-width: 0; }
+
+.story section { display: grid; gap: .8rem; }
+.story h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+.story p { margin: 0; }
+.story strong {
+  font-weight: 600;
+  background: linear-gradient(transparent 58%, var(--hl) 58% 94%, transparent 94%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 .08em;
+}
+.band-name { font-style: italic; }
+
+/* Interview */
+.qa { gap: 1.9rem; }
+.scene {
+  margin: 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+.ex { display: grid; gap: .85rem; }
+.ex + .ex { padding-top: 1.9rem; border-top: 1px solid var(--rule); margin-top: -.0rem; }
+.qa .who {
+  display: block;
+  margin-bottom: .3rem;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-style: normal;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.qa .q {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.4vw, 1.4rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.qa .a { margin: 0; }
+.qa .a .who { color: var(--accent); }
+.protocol {
+  margin: .5rem 0 0;
+  font-family: var(--mono);
+  font-size: .76rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* Fahrtenbuch */
+.log {
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  padding: 1.1rem 1.15rem 1.25rem;
+  background: var(--paper);
+  display: grid;
+  gap: 1.1rem;
+  font-family: var(--mono);
+  font-size: .84rem;
+  line-height: 1.4;
+}
+.log-head { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.log-head .eyebrow { color: var(--ink); }
+.log-list { margin: 0; display: grid; }
+.log-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: .42rem 0;
+  border-bottom: 1px dotted var(--rule);
+}
+.log-list div:first-child { padding-top: 0; }
+.log-list dt { color: var(--ink-soft); }
+.log-list dd { margin: 0; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+
+.split { margin: 0; display: grid; gap: .45rem; }
+.split figcaption { font-weight: 600; }
+.bar { display: flex; height: 12px; border-radius: 2px; overflow: hidden; }
+.bar span:first-child { background: var(--bar-a); }
+.bar span:last-child { background: var(--bar-b); }
+.bar-labels { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .1rem .8rem; font-size: .72rem; color: var(--ink-soft); }
+.bar-labels span { white-space: nowrap; }
+
+footer.wrap { padding-block: 0 3rem; }
+.foot {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--ink-soft);
+}
+.foot p { margin: 0; }
+
+/* ---------- Schmal ---------- */
+@media (max-width: 860px) {
+  .body { grid-template-columns: minmax(0, 1fr); }
+  .log { grid-column: 1; grid-row: 1; position: static; }
+  .story { grid-row: 2; }
+}
+@media (max-width: 640px) {
+  :root { --stop: 92px; --route-gap: 1.6rem; }
+  .route { grid-template-columns: minmax(0, 1fr); }
+  .stop {
+    grid-template-columns: var(--stop) minmax(0, 1fr);
+    justify-items: start;
+    align-items: center;
+    text-align: left;
+    column-gap: 1.1rem;
+  }
+  .stop .slot { grid-row: 1 / span 2; }
+  .stop-text { align-self: center; }
+  .stop:not(:last-child)::after {
+    top: calc(var(--stop) + 4px);
+    bottom: calc(-1 * var(--route-gap) - 4px);
+    left: calc(var(--stop) / 2);
+    right: auto;
+    border-top: 0;
+    border-left: 2.5px solid var(--ink);
+  }
+  .stop.depart::after { border-left-style: dashed; border-left-color: var(--ink-soft); }
+  .stamp.burma { width: 94px; height: 80px; }
+  .stamp.thai { width: 88px; height: 88px; }
+  .stamp.laos { width: 94px; height: 72px; }
+  .stop-note { max-width: none; }
+}
+</style>
+
+<header class="band">
+  <div class="wrap">
+    <p class="eyebrow">Pogoradio-Interview-Reihe · Juz Mannheim, 2007</p>
+    <h1>Bergauf ist <em>Punkrock</em></h1>
+    <p class="dek">Hørmy hat früher bei der Punkband <span class="band-name">Lønd Lørds Ønd</span> gesungen. Morgens um halb vier, im Backstage vom Juz Mannheim, erzählt er Pogoradio von drei Monaten auf dem Fahrrad durch Burma, Thailand und Laos: 4.000 Kilometer, mindestens fünf Platten und sehr viel Hängematte.</p>
+    <div class="mrz" aria-hidden="true">
+      <p>POGORADIO&lt;&lt;HOERMY&lt;&lt;LOEND&lt;LOERDS&lt;OEND&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+      <p>BURMA&lt;THAILAND&lt;LAOS&lt;&lt;4000KM&lt;&lt;3M&lt;&lt;2007&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap route-section" aria-labelledby="route-h">
+    <div class="route-head">
+      <h2 id="route-h">Die Route</h2>
+      <p class="eyebrow">Schema, nicht maßstäblich</p>
+    </div>
+    <ol class="route">
+      <li class="stop depart">
+        <div class="slot">
+          <span class="plane">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+          </span>
+        </div>
+        <div class="stop-text">
+          <p class="stop-name">Deutschland</p>
+          <p class="stop-note">Abflug mit Rad im Gepäck, zusammen genau 20&nbsp;kg</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="slot">
+          <span class="stamp burma" aria-hidden="true"><b>Burma</b><span class="line"></span><small>Fahrrad<br>erlaubt</small></span>
+        </div>
+        <div class="stop-text">
+          <p class="stop-name">Burma</p>
+          <p class="stop-note">Start der Radtour, mit Sonderstempel im Pass</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="slot">
+          <span class="stamp thai" aria-hidden="true"><b>Thailand</b><small>Durchreise</small></span>
+        </div>
+        <div class="stop-text">
+          <p class="stop-name">Thailand</p>
+          <p class="stop-note">Zweite Etappe</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="slot">
+          <span class="stamp laos" aria-hidden="true"><b>Laos</b><small>Ziel</small></span>
+        </div>
+        <div class="stop-text">
+          <p class="stop-name">Laos</p>
+          <p class="stop-note">Letzte Etappe</p>
+        </div>
+      </li>
+    </ol>
+    <p class="legend">
+      <span><i class="dash"></i>Flug</span>
+      <span><i></i>Fahrrad, 4.000&nbsp;km in drei Monaten</span>
+    </p>
+  </section>
+
+  <div class="wrap body">
+    <aside class="log" aria-labelledby="log-h">
+      <div class="log-head">
+        <p class="eyebrow" id="log-h">Fahrtenbuch</p>
+        <p class="eyebrow">2007</p>
+      </div>
+      <dl class="log-list">
+        <div><dt>Interview</dt><dd>3:30 Uhr, Backstage</dd></div>
+        <div><dt>Strecke</dt><dd>4.000 km</dd></div>
+        <div><dt>Dauer</dt><dd>3 Monate</dd></div>
+        <div><dt>Länder</dt><dd>3</dd></div>
+        <div><dt>Platten</dt><dd>mind. 5</dd></div>
+        <div><dt>Schaltauge</dt><dd>1 abgerissen</dd></div>
+        <div><dt>Hotelnächte</dt><dd>keine</dd></div>
+        <div><dt>Schloss benutzt</dt><dd>nie</dd></div>
+      </dl>
+      <figure class="split">
+        <figcaption>Freigepäck: 20 kg</figcaption>
+        <div class="bar" role="img" aria-label="12 Kilo Fahrrad und 8 Kilo Ausrüstung, zusammen 20 Kilo">
+          <span style="flex: 12"></span><span style="flex: 8"></span>
+        </div>
+        <div class="bar-labels" aria-hidden="true">
+          <span>Rad 12 kg</span><span>Ausrüstung 8 kg</span>
+        </div>
+      </figure>
+      <figure class="split">
+        <figcaption>3 Monate unterwegs</figcaption>
+        <div class="bar" role="img" aria-label="Etwa die Hälfte der drei Monate auf Tour, die andere Hälfte in der Hängematte">
+          <span style="flex: 1"></span><span style="flex: 1"></span>
+        </div>
+        <div class="bar-labels" aria-hidden="true">
+          <span>Tour ~1,5 Mon.</span><span>Hängematte ~1,5 Mon.</span>
+        </div>
+      </figure>
+    </aside>
+
+    <article class="story qa" aria-label="Interview">
+      <p class="scene">Halb vier morgens, Backstage im Juz Mannheim. Pogoradio prüft noch kurz die Tontechnik, dann geht’s los.</p>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Du warst doch mal Sänger bei <span class="band-name">Lønd Lørds Ønd</span>, oder?</p>
+        <p class="a"><span class="who">Hørmy</span>Ja, stimmt. Aber eigentlich will ich von meiner Radreise erzählen. Ich war mit dem Fahrrad in <strong>Burma, Thailand und Laos</strong>.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Wie kommt das Fahrrad überhaupt nach Burma?</p>
+        <p class="a"><span class="who">Hørmy</span>Im Flugzeug, direkt aus Deutschland. Aufpreis musste ich keinen zahlen, Probleme mit dem Gepäck gab’s auch nicht. Das Rad wiegt <strong>12 Kilo</strong>, meine Ausrüstung <strong>8 Kilo</strong>, zusammen genau die erlaubten <strong>20 Kilo Freigepäck</strong>. Verpackt war das Rad in einer speziellen Fahrradtasche, die ich mir aus Neuseeland hab mitbringen lassen.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Burma ist ein Militärstaat. Darf man da einfach so mit dem Rad rumfahren?</p>
+        <p class="a"><span class="who">Hørmy</span>Eigentlich nicht, frei mit dem Rad reisen ist dort verboten. Politisch hat sich auch schon was angekündigt. Ich hatte aber einen <strong>speziellen Stempel im Pass</strong>, der mir das Fahrrad erlaubt hat. Und die Leute waren trotz allem durchweg freundlich. Von Burma ging’s dann weiter über Thailand nach Laos.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Wie fühlt sich das an, die ganze Zeit durch die Berge?</p>
+        <p class="a"><span class="who">Hørmy</span>Rauf, runter, rauf, runter. Das ist <strong>absolute Freiheit</strong>. In den Dörfern haben die Leute gewaltig gestaunt. Die fahren da fast alle Moped oder Mofa.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Und wo hast du geschlafen?</p>
+        <p class="a"><span class="who">Hørmy</span>Nicht im Hotel. Entweder bei <strong>einheimischen Familien</strong> in den Dörfern, oder ich hab meinen Schlafsack einfach in kleinen Restaurants und Gaststätten ausgerollt.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Hattest du keine Angst, dass dir das Rad geklaut wird?</p>
+        <p class="a"><span class="who">Hørmy</span>Nein, überhaupt nicht. Das Schloss hab ich die ganze Reise nicht gebraucht. Sorgen hab ich mir eher wegen der Technik gemacht. Ich hatte <strong>mindestens fünf Platten</strong> und ein <strong>abgerissenes Schaltauge</strong>.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Was rätst du Leuten, die das nachmachen wollen?</p>
+        <p class="a"><span class="who">Hørmy</span>Nehmt euer <strong>eigenes Rad aus Deutschland</strong> mit. Das kennt ihr schon gut.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Was hattest du unterwegs an?</p>
+        <p class="a"><span class="who">Hørmy</span>Meistens ganz normale Radlerhosen. Ohne Unterhose.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Was hat Radfahren mit Punk zu tun?</p>
+        <p class="a"><span class="who">Hørmy</span>Sich den Berg hochquälen und dann runterheizen, das ist dieselbe <strong>Einstellung wie beim Punkrock</strong>.</p>
+      </div>
+
+      <div class="ex">
+        <p class="q"><span class="who">Pogoradio</span>Wie lange warst du unterwegs?</p>
+        <p class="a"><span class="who">Hørmy</span>Drei Monate, insgesamt <strong>4.000 Kilometer</strong>. Das gleichmäßige Treten ist wie eine Art Meditation. Ungefähr die Hälfte der Zeit, so eineinhalb Monate, lag ich aber auch einfach entspannt in der <strong>Hängematte</strong> und hab Gras geraucht.</p>
+      </div>
+
+      <p class="protocol">Gesprächsprotokoll: Fragen und Antworten sind sinngemäß nach dem Interview wiedergegeben, nicht wortgetreu.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p>Pogoradio-Interview-Reihe · Juz Mannheim, 2007</p>
+  </div>
+</footer>
+
+</body></html>

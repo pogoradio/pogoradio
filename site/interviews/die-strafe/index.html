@@ -1,0 +1,272 @@
+<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Pogoradio trifft Die Strafe</title><style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style></head><body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=IBM+Plex+Mono:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400&family=Permanent+Marker&display=swap">
+<style>
+/* Layout: lautes neonpinkes Plakat oben, darunter ruhige Magazinseite – Mitschnitt mit Zeitstempeln, Steckbrief als Randspalte */
+:root {
+  --paper: #f6f4f5;
+  --ink: #141113;
+  --muted: #5e565b;
+  --pink: #ff2d95;
+  --pink-ink: #c4005f;
+  --on-pink: #141113;
+  --mast: #141113;
+  --on-mast: #f6f4f5;
+  --dot: rgba(20, 17, 19, .2);
+  --void: #0b0a0b;
+  --sticker: #ffffff;
+
+  --display: "Anybody", "Arial Narrow", "Helvetica Neue", Impact, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --marker: "Permanent Marker", "Comic Sans MS", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121012; --ink: #f2eef0; --muted: #a79ea3; --pink: #ff3d9e; --pink-ink: #ff6cb6;
+    --mast: #050405; --on-mast: #f2eef0; --void: #000000; --sticker: #f2eef0; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121012; --ink: #f2eef0; --muted: #a79ea3; --pink: #ff3d9e; --pink-ink: #ff6cb6;
+  --mast: #050405; --on-mast: #f2eef0; --void: #000000; --sticker: #f2eef0; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; }
+
+.wrap {
+  max-width: 76rem; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); }
+}
+
+/* Kopfleiste */
+.mast { background: var(--mast); color: var(--on-mast); }
+.mast .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 1.25rem; letter-spacing: .02em; text-transform: uppercase; }
+.rec { font-family: var(--mono); font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: .55rem; }
+.rec .dot { width: .7rem; height: .7rem; border-radius: 50%; background: var(--pink); animation: blink 1.2s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+
+/* Plakat */
+.hero { background: var(--pink); color: var(--on-pink); position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: 0 0 0 45%; pointer-events: none;
+  background-image: radial-gradient(var(--dot) 1.4px, transparent 1.9px); background-size: 10px 10px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 40%); mask-image: linear-gradient(90deg, transparent, #000 40%);
+}
+.hero .wrap { position: relative; display: grid; gap: 2.2rem; padding-block: 2.6rem 3.4rem; }
+@media (min-width: 860px) { .hero .wrap { grid-template-columns: minmax(0, 1fr) 16rem; align-items: end; padding-block: 3.6rem 4.4rem; } }
+.kicker { display: inline-block; background: var(--on-pink); color: var(--pink); font-family: var(--display); font-weight: 900; font-stretch: 110%;
+  text-transform: uppercase; letter-spacing: .06em; font-size: 1rem; padding: .3rem .7rem .25rem; transform: rotate(-1.5deg); }
+h1 {
+  margin: 1.1rem 0 2.2rem; font-family: var(--display); font-weight: 900; font-stretch: 55%;
+  text-transform: uppercase; font-size: clamp(3.2rem, 13vw, 8.6rem); line-height: .84; letter-spacing: -.005em; text-wrap: balance;
+}
+h1 .q { margin-left: -.32em; }
+h1 .knock { display: inline-block; background: var(--on-pink); color: var(--pink); padding: .02em .12em 0; margin-top: .06em; transform: rotate(-2.5deg); }
+.lede { max-width: 38rem; margin: 0; font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.45; font-weight: 500; }
+
+.album { justify-self: start; position: relative; width: min(15rem, 52vw); transform: rotate(3.5deg); margin-top: .6rem; }
+@media (min-width: 860px) { .album { justify-self: end; } }
+.album .sq { aspect-ratio: 1; max-width: 100%; background: var(--void); display: flex; align-items: flex-end; justify-content: space-between;
+  padding: .9rem; box-shadow: .55rem .55rem 0 var(--on-pink); }
+.album .sq span { font-family: var(--mono); font-size: .68rem; letter-spacing: .3em; color: #f2eef0; text-transform: uppercase; }
+.album .badge { position: absolute; top: -1.1rem; right: -1rem; width: 5.6rem; height: 5.6rem; border-radius: 50%;
+  background: var(--sticker); color: #141113; display: grid; place-items: center; text-align: center;
+  font-family: var(--marker); font-size: .95rem; line-height: 1.05; transform: rotate(14deg); border: 2px solid #141113; }
+.album figcaption { margin-top: .9rem; font-family: var(--mono); font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+.tear { height: 18px; background: var(--pink);
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 24px 100%;
+          mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 24px 100%; }
+
+/* Artikel */
+.page { display: grid; gap: 3rem; padding-block: 2.6rem 4rem; }
+@media (min-width: 980px) { .page { grid-template-columns: minmax(0, 1fr) 18rem; gap: 4rem; } }
+article { min-width: 0; max-width: 46rem; }
+
+.scene { font-size: 1.2rem; line-height: 1.6; margin: 0 0 2.6rem; }
+.scene::first-letter { float: left; font-family: var(--display); font-weight: 900; font-stretch: 60%; font-size: 4.6em; line-height: .8;
+  background: var(--pink); color: var(--on-pink); padding: .08em .1em 0; margin: .06em .14em 0 0; }
+
+mark { background: var(--pink); color: var(--on-pink); padding: 0 .14em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+.sec { display: flex; align-items: center; gap: .8rem; margin: 0 0 .6rem; font-family: var(--mono); font-size: .75rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.sec::after { content: ""; flex: 1; height: 4px; background: var(--ink); }
+
+.talk { list-style: none; margin: 0; padding: 0; }
+.turn { display: grid; gap: .35rem 1.4rem; padding-block: .85rem; }
+@media (min-width: 640px) { .turn { grid-template-columns: 8rem minmax(0, 1fr); } }
+.meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+@media (min-width: 640px) { .meta { flex-direction: column; align-items: flex-start; padding-top: .3rem; } }
+.who { font-family: var(--mono); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: .18rem .45rem .14rem; line-height: 1.2; }
+.q .who { background: var(--pink); color: var(--on-pink); }
+.a .who { background: var(--ink); color: var(--paper); }
+.tc { font-family: var(--mono); font-size: .72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.turn p { margin: 0; min-width: 0; }
+.q p { font-family: var(--display); font-stretch: 80%; font-weight: 750; font-size: 1.24rem; line-height: 1.3; }
+.a p { font-size: 1.13rem; line-height: 1.62; }
+.turn.cont { padding-top: 0; }
+
+.pull { margin: 2.4rem 0 2.6rem; transform: rotate(-1.4deg); }
+.pull p { margin: 0; font-family: var(--display); font-weight: 900; font-stretch: 58%; text-transform: uppercase;
+  font-size: clamp(2.1rem, 7vw, 3.6rem); line-height: 1.22; text-wrap: balance; }
+.pull span { background: var(--ink); color: var(--paper); padding: 0 .16em; box-shadow: .13em .13em 0 var(--pink);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.pull.alt { transform: rotate(1.2deg); }
+
+.stop { margin-top: 2.6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
+.stop .tc { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.stop strong { font-family: var(--display); font-weight: 900; font-stretch: 60%; font-size: clamp(4rem, 14vw, 7rem); line-height: .85;
+  background: var(--pink); color: var(--on-pink); padding: .06em .14em 0; transform: rotate(-3deg); display: inline-block; }
+
+/* Randspalte */
+aside { min-width: 0; }
+@media (min-width: 980px) { .rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.5rem); } }
+.card { border: 4px solid var(--ink); }
+.card h2 { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--display); font-weight: 900; font-stretch: 120%;
+  text-transform: uppercase; letter-spacing: .14em; font-size: 1.05rem; padding: .55rem .9rem .45rem; }
+dl { margin: 0; padding: .3rem .9rem .8rem; }
+dl div { padding-block: .55rem; border-bottom: 2px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+dl div:last-child { border-bottom: 0; }
+dt { font-family: var(--mono); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+dd { margin: .1rem 0 0; font-size: 1rem; line-height: 1.4; }
+.note { margin: 1.4rem 0 0; font-family: var(--mono); font-size: .75rem; line-height: 1.6; color: var(--muted); }
+.note b { color: var(--ink); font-weight: 600; }
+.scrawl { margin-top: 1.6rem; font-family: var(--marker); font-size: 1.35rem; line-height: 1.2; color: var(--pink-ink); transform: rotate(-4deg); }
+
+footer { background: var(--mast); color: var(--on-mast); }
+footer .wrap { padding-block: 1.6rem; display: flex; flex-wrap: wrap; gap: .6rem 2rem; justify-content: space-between; align-items: baseline; }
+footer p { margin: 0; font-family: var(--mono); font-size: .75rem; line-height: 1.6; }
+
+a:focus-visible, button:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .rec .dot { animation: none; } }
+</style>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="brand">Pogoradio</div>
+    <div class="rec"><span class="dot" aria-hidden="true"></span>Rec · Interview · Mannheim 2008</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Die Strafe</span>
+      <h1><span class="q">„</span>Wir proben nur noch gegen <span class="knock">Eintritt“</span></h1>
+      <p class="lede">Zwölf Jahre Bedenkzeit, eine teure Marketingagentur und am Ende doch die eigene Idee: Die Strafe aus Mönchengladbach haben ihr drittes Album „Schwarz“ draußen. Pogoradio hat das Trio nach der Show in Mannheim erwischt.</p>
+    </div>
+    <figure class="album" aria-label="Das neue Album Schwarz">
+      <div class="sq"><span>Die Strafe</span><span>Schwarz</span></div>
+      <div class="badge">Neu!<br>Nr. 3</div>
+      <figcaption>Neues Album: „Schwarz“</figcaption>
+    </figure>
+  </div>
+</section>
+<div class="tear" aria-hidden="true"></div>
+
+<div class="wrap">
+  <div class="page">
+    <article>
+      <p class="scene">Es beginnt, wie ein Interview nicht beginnen sollte: Der Mann mit dem MP3-Player hat den Bandnamen vergessen. „Verbrannte Erde“, hilft die Band aus – das war allerdings die andere Band des Abends. Ein englischsprachiger Gast versucht es mit „Punishment“, dann sitzt der Name: Die Strafe. Das Konzert ist vorbei, der Jägermeister steht bereit, und die Band stellt früh fest: <mark>„Wir sind alle strunzenblau – und du auch noch.“</mark></p>
+
+      <h2 class="sec">Der Mitschnitt</h2>
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:00:52</span></div><p>Euer neues Album heißt „Schwarz“. Da habt ihr euch ja was einfallen lassen.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:00:55</span></div><p>Wir haben zwölf Jahre nachgedacht und eine Marketingagentur beauftragt. Die hat Blau, Weiß, Grün und Gelb vorgeschlagen – und uns dafür <mark>mehr berechnet, als wir jemals an Platten verkaufen können</mark>. Also haben wir doch selbst entschieden.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:01:39</span></div><p>Ihr macht doch eigentlich Musik, bei der man schlechte Laune kriegt.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:01:43</span></div><p>Das schreiben immer alle. Stimmt aber nicht. Düsterpunk täuscht – wir sind eigentlich ganz lustige Kerle.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:01:53</span></div><p>Ihr kommt aus derselben Stadt wie EA80. Habt ihr Platten von denen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:02:14</span></div><p>Wir haben 2008. Was sind Platten? Das waren diese großen schwarzen Scheiben, mit denen man Leuten die Köpfe abschneiden konnte. Okay, wir geben’s zu: Wir kennen EA80. Flüchtig.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:02:38</span></div><p>Und was für eine Beziehung habt ihr zu denen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:02:42</span></div><p>Ich habe nur Sex mit meiner Freundin. Zu EA80 haben wir eine <mark>rein platonische Beziehung</mark>.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:02:58</span></div><p>Wer von euch hatte die Idee mit dem Namen „Schwarz“?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:03:02</span></div><p>Ich. Schwarz ist eine ganz neue Farbe. Die Telekom hat sich Magenta sichern lassen, ich hab’s mit Schwarz probiert. Das Patent- und Markenamt hat leider abgelehnt.</p></li>
+      </ol>
+
+      <blockquote class="pull"><p><span>Schwarz ist eine ganz neue Farbe.</span></p></blockquote>
+
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:08</span></div><p>Wir haben vorhin lange an einer Frage gefeilt: Mit wem hattest du zuletzt Sex? Und wenn ja, wieso?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:04:19</span></div><p>Wenn du dich nicht mehr dran erinnerst …</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:24</span></div><p>Ehrlich gesagt verstehe ich den Witz selbst nicht.</p></li>
+        <li class="turn q cont"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:29</span></div><p>Wie geht die Tour weiter?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:04:34</span></div><p>Sie hat in Mannheim angefangen und hört in Mannheim auf. Vom 8. März bis zum 8. März. Das nächste Konzert gibt’s 2020, wenn wieder zwölf Jahre um sind.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:47</span></div><p>Dann sind wir alle tot.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:04:50</span></div><p>Du hast zu viel Düsterpunk gehört.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:57</span></div><p>Wie schafft ihr es noch zu proben?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:09</span></div><p>Hat sich das heute angehört, als hätten wir geprobt? Wir proben nicht, wir spielen nur noch. Das heute war eine <mark>Probe mit Eintritt</mark>. Wir sind die einzige Band, die fürs Proben Geld kriegt. In Mönchengladbach werden die Proberäume rar. Also kommen wir drei Stunden hierher, proben eine Stunde und fahren drei Stunden zurück.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:39</span></div><p>Ich komm nicht drei Stunden.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:44</span></div><p>Doch.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:46</span></div><p>Okay, Schatz. Bei dir schon.</p></li>
+      </ol>
+
+      <blockquote class="pull alt"><p><span>Wir proben nicht. Wir spielen nur noch.</span></p></blockquote>
+
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:05:58</span></div><p>Wollt ihr euch nicht langsam auflösen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:06:01</span></div><p>Wollen schon. Wir versuchen das seit 16 Jahren. Wir schaffen es einfach nicht.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:06:15</span></div><p>Dann eben der Bundesvision Song Contest?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:06:19</span></div><p>Ich würde gern in kurzen Röckchen auftreten, mit Wind in den Haaren. Aber ich glaube, Ralph Siegel hätte was dagegen.</p></li>
+      </ol>
+
+      <blockquote class="pull"><p><span>Seit 16 Jahren versuchen wir, uns aufzulösen.</span></p></blockquote>
+
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:06:45</span></div><p>Nächster Punkt: der Nettoverdienst eurer Eltern. Wenn der nicht stimmt, seid ihr keine interessanten Interviewpartner.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:06:54</span></div><p>In welchem Leitfaden steht das denn? Während du noch lustig im Hoden deines Vaters rumgeschwommen bist, waren meine Eltern schon Rentner. Mein Vater ist 40 Jahre älter als ich.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:07:19</span></div><p>Trotz Pille? Hat deine Mutter die nicht genommen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:07:25</span></div><p>Eben nicht. An dem Tag nicht. Ist das hier eigentlich ein Interview?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:07:56</span></div><p>Brechen wir lieber ab. Alle hier sind ziemlich besoffen.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:08:39</span></div><p>Okay, ich mach die Scheiße aus. Tschüss!</p></li>
+      </ol>
+
+      <div class="stop"><span class="tc">■ Stop · 00:08:39</span><strong>Aus!</strong></div>
+    </article>
+
+    <aside>
+      <div class="rail">
+        <section class="card" aria-labelledby="sb">
+          <h2 id="sb">Steckbrief</h2>
+          <dl>
+            <div><dt>Band</dt><dd>Die Strafe, ein Trio</dd></div>
+            <div><dt>Aus</dt><dd>Mönchengladbach</dd></div>
+            <div><dt>Stil</dt><dd>Düsterpunk, sagt die Presse. „Ganz lustige Kerle“, sagt die Band.</dd></div>
+            <div><dt>Neues Album</dt><dd>„Schwarz“, Nummer drei</dd></div>
+            <div><dt>Tour</dt><dd>8. März bis 8. März, Mannheim</dd></div>
+            <div><dt>Nächstes Konzert</dt><dd>2020, laut Band</dd></div>
+            <div><dt>Proben</dt><dd>nur noch gegen Eintritt</dd></div>
+            <div><dt>Auflösung</dt><dd>seit 16 Jahren in Arbeit</dd></div>
+          </dl>
+        </section>
+        <p class="note"><b>Aufnahme:</b> MP3-Player, direkt nach dem Konzert in Mannheim. Länge 8:39 Minuten. Die Zeitangaben stammen aus dem Mitschnitt.</p>
+        <p class="scrawl">strunzenblau!</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Pogoradio · Interview mit Die Strafe</p>
+    <p>Aufgezeichnet nach dem Konzert in Mannheim, 2008</p>
+  </div>
+</footer>
+
+</body></html>

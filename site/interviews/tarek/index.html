@@ -1,0 +1,723 @@
+<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Tarek im Juz Mannheim</title><meta name="description" content="Pogoradio-Interview-Reihe: Tarek im Juz Mannheim, vor rund 20 Jahren. Abschrift im O-Ton."><style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style></head><body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: abgetipptes Bandprotokoll auf Kopierpapier. Eine Lesespalte, Sprecher im linken Rand,
+   Textmarker auf den Zitaten, Zitat-Kästen über die volle Breite, Kassette am Ende. */
+:root {
+  --paper: #e5e6e8;
+  --paper-deep: #d6d8dc;
+  --ink: #151517;
+  --ink-soft: #4a4d53;
+  --rule: #a7abb1;
+  --marker: #ff5aa9;
+  --marker-ink: #151517;
+  --shell: #1e1f22;
+  --shell-ink: #e5e6e8;
+  --window: rgba(0, 0, 0, .34);
+  --track: rgba(255, 255, 255, .2);
+  --tapecolor: #4b3428;
+  --tape: rgba(250, 248, 236, .62);
+  --shadow: rgba(10, 10, 14, .26);
+  --grain: .07;
+
+  --display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+  --mono: "Courier Prime", "Courier New", Courier, monospace;
+
+  --label-col: 9.5rem;
+  --col-gap: 1.75rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #161719;
+    --paper-deep: #212328;
+    --ink: #e4e5e3;
+    --ink-soft: #a3a6ac;
+    --rule: #44474d;
+    --marker: #ff5aa9;
+    --marker-ink: #151517;
+    --shell: #2a2c31;
+    --shell-ink: #e4e5e3;
+    --window: rgba(0, 0, 0, .4);
+    --track: rgba(255, 255, 255, .18);
+    --tapecolor: #4b3428;
+    --tape: rgba(232, 230, 216, .26);
+    --shadow: rgba(0, 0, 0, .55);
+    --grain: .12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #161719;
+  --paper-deep: #212328;
+  --ink: #e4e5e3;
+  --ink-soft: #a3a6ac;
+  --rule: #44474d;
+  --marker: #ff5aa9;
+  --marker-ink: #151517;
+  --shell: #2a2c31;
+  --shell-ink: #e4e5e3;
+  --window: rgba(0, 0, 0, .4);
+  --track: rgba(255, 255, 255, .18);
+  --tapecolor: #4b3428;
+  --tape: rgba(232, 230, 216, .26);
+  --shadow: rgba(0, 0, 0, .55);
+  --grain: .12;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+/* Kopierer-Korn */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: var(--grain);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .2em; }
+a:hover { text-decoration-color: var(--marker); }
+:focus-visible { outline: 3px solid var(--marker); outline-offset: 3px; border-radius: 2px; }
+
+.page {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(1.5rem, 5vw, 4rem) 3rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: .76rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Kopf ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+  border-bottom: 3px solid var(--ink);
+}
+.hero-text {
+  container-type: inline-size;
+  min-width: 0;
+  display: grid;
+  gap: 1.1rem;
+  justify-items: start;
+}
+h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: .84;
+  hyphens: manual;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+h1 .lead {
+  display: block;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-size: clamp(1.5rem, 7cqi, 2.6rem);
+  letter-spacing: .03em;
+  margin-bottom: .18em;
+}
+h1 .big {
+  display: block;
+  font-size: clamp(3rem, 13vw, 7rem);
+  font-size: clamp(3rem, 17cqi, 8.25rem);
+  letter-spacing: -.005em;
+}
+.dek {
+  margin: 0;
+  max-width: 44ch;
+  font-size: 1rem;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .9rem 1.4rem;
+}
+.stamp {
+  margin: 0;
+  display: inline-block;
+  border: 2px solid var(--ink);
+  padding: .3em .7em .25em;
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  transform: rotate(-2.5deg);
+}
+.jump { font-weight: 700; font-size: .92rem; }
+
+.photo {
+  margin: 0;
+  justify-self: center;
+  width: 100%;
+  max-width: 456px;
+  position: relative;
+  transform: rotate(1.8deg);
+}
+.photo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 20px var(--shadow));
+}
+.photo::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 116px;
+  height: 30px;
+  background: var(--tape);
+  transform: translateX(-50%) rotate(-5deg);
+  box-shadow: 0 1px 2px var(--shadow);
+  z-index: 1;
+}
+.photo figcaption {
+  margin-top: .8rem;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Zweites Foto mitten im Text */
+.photo.in-text { justify-self: start; max-width: 26rem; margin: 1.25rem 0 .75rem; transform: rotate(-1.4deg); }
+.photo.in-text::before { left: 36%; transform: translateX(-50%) rotate(4deg); }
+.photo.in-text figcaption { text-align: left; }
+
+/* ---------- Zweispaltige Zeilen (Sprecher | Text) ---------- */
+.row {
+  display: grid;
+  grid-template-columns: var(--label-col) minmax(0, 41rem);
+  column-gap: var(--col-gap);
+}
+.row > :only-child { grid-column: 2; }
+
+.intro {
+  margin-top: clamp(2.25rem, 5vw, 3.25rem);
+}
+.intro-body { display: grid; gap: 1em; font-size: 1.06rem; }
+.intro-body p { margin: 0; }
+.intro-body p:last-child { color: var(--ink-soft); font-size: .95rem; }
+
+.transcript {
+  margin-top: clamp(2.5rem, 6vw, 3.75rem);
+  display: grid;
+  gap: 1.7rem;
+}
+.who {
+  margin: 0;
+  padding-top: .28em;
+  font-weight: 700;
+  font-size: .76rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: right;
+}
+.tarek .who::after {
+  content: "";
+  display: block;
+  margin: .35rem 0 0 auto;
+  width: 2.2rem;
+  height: 5px;
+  background: var(--marker);
+}
+.host .who { color: var(--ink-soft); }
+.said { display: grid; gap: 1em; min-width: 0; }
+.said p { margin: 0; }
+.host .said { font-weight: 700; }
+
+mark {
+  color: var(--marker-ink);
+  background:
+    linear-gradient(100deg, transparent 0 .12em, var(--marker) .3em calc(100% - .3em), transparent calc(100% - .1em));
+  padding: .04em .32em .06em;
+  margin: 0 -.16em;
+  border-radius: .45em .2em .5em .25em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ---------- Zitat-Kästen ---------- */
+.pull {
+  margin: clamp(1.25rem, 4vw, 2.5rem) 0;
+  padding: 0;
+  font-family: var(--display);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.02;
+  font-size: clamp(2.4rem, 7.4vw, 5.4rem);
+  max-width: 15ch;
+  text-wrap: balance;
+}
+.pull p { margin: 0; }
+.pull p span {
+  color: var(--marker-ink);
+  background: var(--marker);
+  padding: 0 .14em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.pull cite {
+  display: block;
+  margin-top: 1.1rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .16em;
+  line-height: 1.4;
+}
+.pull.tilt-l { transform: rotate(-1.2deg); }
+.pull.tilt-r { transform: rotate(.9deg); margin-left: auto; text-align: right; }
+.pull.final {
+  max-width: 19ch;
+  font-size: clamp(2.2rem, 6.6vw, 4.9rem);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* ---------- Aufnahme ---------- */
+.tape-section {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  border-top: 3px solid var(--ink);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+  scroll-margin-top: 1.5rem;
+}
+.tape-intro { display: grid; gap: .8rem; min-width: 0; }
+.tape-intro h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: .9;
+  text-wrap: balance;
+}
+.tape-intro p { margin: 0; }
+.tape-facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .3rem 1rem;
+  font-size: .9rem;
+}
+.tape-facts dt {
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-top: .2em;
+}
+.tape-facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+.cassette {
+  width: 100%;
+  max-width: 34rem;
+  justify-self: end;
+  background: var(--shell);
+  color: var(--shell-ink);
+  border-radius: 16px;
+  padding: 1rem 1rem 1.15rem;
+  box-shadow: 0 16px 34px var(--shadow);
+}
+.c-label {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.c-band { height: 9px; background: var(--marker); }
+.c-label-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem 1rem;
+  flex-wrap: wrap;
+  padding: .55rem .8rem .6rem;
+}
+.c-side {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.c-title { font-weight: 700; font-size: .86rem; min-width: 0; }
+
+.c-window {
+  margin-top: .9rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  background: var(--window);
+  border-radius: 999px;
+  padding: .55rem 1.1rem;
+}
+.reel {
+  flex: none;
+  width: clamp(46px, 13vw, 66px);
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--shell-ink);
+  background:
+    radial-gradient(circle, var(--shell) 0 21%, transparent 22%),
+    repeating-conic-gradient(var(--shell-ink) 0deg 13deg, transparent 13deg 60deg);
+}
+.c-tape {
+  flex: 1;
+  min-width: 0;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--tapecolor);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+}
+.cassette.playing .reel { animation: spin 2.2s linear infinite; }
+.cassette.playing .reel + .c-tape + .reel { animation-duration: 3.1s; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+.play {
+  flex: none;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--marker);
+  color: var(--marker-ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform .12s ease;
+}
+.play:hover { transform: scale(1.05); }
+.play:active { transform: scale(.97); }
+.play svg { width: 24px; height: 24px; fill: currentColor; }
+.play .i-pause { display: none; }
+.play[data-state="playing"] .i-play { display: none; }
+.play[data-state="playing"] .i-pause { display: block; }
+.skip {
+  flex: none;
+  background: transparent;
+  color: var(--shell-ink);
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+  padding: .38rem .7rem;
+  cursor: pointer;
+}
+.skip:hover { color: var(--marker); }
+.seek { flex: 1; min-width: 0; }
+.seek input {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 8px;
+  margin: 0;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--marker) 0 var(--pct, 0%), var(--track) var(--pct, 0%) 100%);
+  cursor: pointer;
+}
+.seek input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--shell-ink);
+  border: 3px solid var(--marker);
+}
+.seek input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--shell-ink);
+  border: 3px solid var(--marker);
+}
+.seek input::-moz-range-track { background: transparent; }
+.times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5rem;
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+}
+.err {
+  margin: .9rem 0 0;
+  font-size: .85rem;
+  color: var(--shell-ink);
+  border-left: 4px solid var(--marker);
+  padding-left: .6rem;
+}
+
+footer {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  font-size: .8rem;
+  color: var(--ink-soft);
+}
+footer p { margin: 0; }
+
+/* ---------- Schmal ---------- */
+@media (max-width: 780px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .photo { max-width: 400px; }
+  .row { grid-template-columns: minmax(0, 1fr); row-gap: .35rem; }
+  .row > :only-child { grid-column: 1; }
+  .who { text-align: left; }
+  .tarek .who::after { margin-left: 0; }
+  .who:empty { display: none; }
+  .tape-section { grid-template-columns: minmax(0, 1fr); }
+  .cassette { justify-self: stretch; max-width: none; }
+  .pull.tilt-r { text-align: left; margin-left: 0; }
+}
+@media (max-width: 420px) {
+  .skip { padding: .34rem .5rem; font-size: .74rem; }
+  .play { width: 52px; height: 52px; }
+  .controls { gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cassette.playing .reel { animation: none; }
+  .play { transition: none; }
+}
+
+/* Kassette als Link zu SoundCloud */
+.cassette-link { display: block; text-decoration: none; transition: transform .15s ease; }
+.cassette-link:hover { transform: translateY(-3px) rotate(-.5deg); }
+.cassette-link:hover .reel { animation: spin 2.2s linear infinite; }
+.cassette-link:hover .reel + .c-tape + .reel { animation-duration: 3.1s; }
+.cassette-link:focus-visible { outline: 3px solid var(--marker); outline-offset: 4px; }
+.sc-go { margin-top: 1rem; display: flex; align-items: center; gap: .9rem; }
+.sc-text { display: grid; gap: .1rem; min-width: 0; font-weight: 700; font-size: 1.05rem; line-height: 1.25; }
+.sc-text small { font-weight: 400; font-size: .78rem; opacity: .75; }
+.sc-arrow { margin-left: auto; font-size: 1.4rem; line-height: 1; color: var(--marker); }
+@media (prefers-reduced-motion: reduce) {
+  .cassette-link, .cassette-link:hover { transition: none; transform: none; }
+  .cassette-link:hover .reel { animation: none; }
+}
+</style>
+
+<main class="page">
+
+  <header class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Pogoradio-Interview-Reihe</p>
+      <h1>
+        <span class="lead">Wir sind</span>
+        <span class="big">Berufs&shy;party&shy;löwen</span>
+      </h1>
+      <p class="dek">Tarek im Gespräch mit Pogoradio. Juz Mannheim, vor rund 20&nbsp;Jahren.</p>
+      <div class="hero-meta">
+        <p class="stamp">O-Ton · unzensiert</p>
+        <a class="jump" href="#aufnahme">Zur Aufnahme ↓</a>
+      </div>
+    </div>
+    <figure class="photo">
+      <img src="tarek.jpg" width="456" height="354" alt="Tarek in dunkelblauer Trainingsjacke mit Streifen an den Ärmeln, er fletscht die Zähne und zerrt am Reißverschluss.">
+      <figcaption>Tarek, damals 21, im Juz Mannheim</figcaption>
+    </figure>
+  </header>
+
+  <section class="intro row" aria-label="Einleitung">
+    <div class="intro-body">
+      <p>Ein Abend im Juz Mannheim, vor rund 20 Jahren. Pogoradio hält Tarek das Mikro hin, und Tarek legt los, bevor die erste Frage gestellt ist. Er ist 21, seine Videos stehen auf sabotakt.com, und er hat zu allem eine Meinung: zum Fernsehen, zu den Werten der anderen, zum ewigen Abwarten und zu der Bank, auf der das Interview gerade stattfindet.</p>
+      <p>Die Abschrift ist leicht redigiert und bleibt im O-Ton. Die Aufnahme zum Nachhören ist am Ende der Seite verlinkt.</p>
+    </div>
+  </section>
+
+  <article class="transcript" aria-label="Interview">
+
+    <div class="row turn tarek">
+      <p class="who">Tarek</p>
+      <div class="said">
+        <p>Pass auf, du Schlaftablette. Mein Statement ist einfach folgendes: Die Leute haben überhaupt keine Ansprüche. Die Ansprüche sind auf ein widerwärtig winziges Maß … Guck mal, jetzt kommt hier Interview. Jetzt kann ich gar nichts mehr. Die Ansprüche sind auf ein winzig kleines Maß reduziert, und deswegen sind die Leute auch alle Berufslangweiler. <mark>Aber wir, wir sind Berufspartylöwen, verstehst du das?</mark> Deswegen … was weiß ich was. Komm, frag mich was, dann gebe ich dir Antwort. Frag mich was! Soll ich jetzt einfach mal hier so Gas geben auf …</p>
+      </div>
+    </div>
+
+    <div class="row turn host">
+      <p class="who">Pogoradio</p>
+      <div class="said">
+        <p>Ich frag dich jetzt was. Hey Tarek, wie sieht’s aus bei dir? Was ist wichtiger: Drogen oder Sex?</p>
+      </div>
+    </div>
+
+    <div class="row turn tarek">
+      <p class="who">Tarek</p>
+      <div class="said">
+        <p>Ich weiß nicht. Ich werde mit beidem geradezu verwöhnt, deswegen ist mir das scheißegal. <mark>Geht lieber morgens mal, wenn ihr aufsteht, 20 Liegestütze machen</mark>, anstatt hier Drogen und Sex morgens kalt.</p>
+        <p>Ey, weißt du, von wegen Drogen und Sex: Die Leute glotzen einfach 24 Stunden am Tag Fernsehen, und deswegen sind sie total behinderte Scheißwichser, weil von wegen hier Kommunikation – es gibt überhaupt keine Kommunikation. Ist mir scheißegal.</p>
+      </div>
+    </div>
+
+    <div class="row turn host">
+      <p class="who">Pogoradio</p>
+      <div class="said">
+        <p>Bist du schuld dran, oder? Wegen dir gehen die Leute ins Internet und gucken sich deine Videos an.</p>
+      </div>
+    </div>
+
+    <div class="row turn tarek">
+      <p class="who">Tarek</p>
+      <div class="said">
+        <p><mark>Ich bin einfach nur geiler Reichtum.</mark></p>
+      </div>
+    </div>
+
+    <div class="row turn host">
+      <p class="who">Pogoradio</p>
+      <div class="said">
+        <p>Ja, aber wegen dir gucken sie sich die Videos an, gehen wegen dir ins Internet …</p>
+      </div>
+    </div>
+
+    <div class="row turn tarek">
+      <p class="who">Tarek</p>
+      <div class="said">
+        <p>Geh auf www.sabotakt.com und guck dir die scheiß Videos an und werde total verblödet, verstehst du? <mark>Ich mach das nicht, ich mach es einfach nur schlimmer</mark>, aber es ist mir scheißegal. In zehn Jahren ist eh alles runtergegangen, das ist doch alles …</p>
+      </div>
+    </div>
+
+    <blockquote class="pull tilt-l" aria-hidden="true">
+      <p><span>Die Perversen seid ihr!</span></p>
+      <cite>Tarek</cite>
+    </blockquote>
+
+    <div class="row turn host">
+      <p class="who">Pogoradio</p>
+      <div class="said">
+        <p>Wie kannst du so was verantworten?</p>
+      </div>
+    </div>
+
+    <div class="row turn tarek">
+      <p class="who">Tarek</p>
+      <div class="said">
+        <p><mark>Ey, ich habe einfach die Augen auf.</mark> Die Leute sind viel zu langsam für die ganze Scheiße, die können einfach nicht mithalten. Ey, weißt du, die Leute haben so kranke, ekelhafte, peinliche Werte und können damit überhaupt nichts anfangen. Aber weil sie selbst einfach nur zu faul sind, um ihre scheiß Werte einzuhalten, aber trotzdem geil drauf sind, dass alle anderen sie einhalten, müssen sie immer allen anderen einprügeln, dass alle anderen faul und dumm und langweilig sind. Aber ich sag nur: <mark>Die Perversen seid ihr! Die Perversen seid ihr!</mark></p>
+        <p>Ich glaub, hier ist’s zu laut … Ein Freund hat mir hier schon … So ein albern blöder Skinhead mit verwaschenen Scheißhosen – das ist echt der schlechtgekleidetste Kandidat an dem Abend – der wollte mir ernsthaft verbieten zu schreien. Was soll denn das? Ich müsste ja eigentlich nur schreien: Das Erste, was wir machen müssen, ist mal diese beschissene Bank, auf der wir das drittklassige Interview führen, erst mal mit einer Axt in Stücke hacken und die Einzelteile entweder auffressen oder ins Feuer schmeißen und das Feuer dann hier auf dem Riesenrad entzünden, <mark>dass die ganze Scheiße endlich wieder brennt!</mark> Das ist mir scheißegal, du kannst mich mal am Arsch lecken mit deiner beschissenen Früher-Kacke!</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <figure class="photo in-text">
+        <img src="tarek-sofa.jpg" width="800" height="1000" loading="lazy" alt="Tarek in dunkelblauer Trainingsjacke mit Streifen an den Ärmeln sitzt grinsend auf einem abgewetzten schwarzen Ledersofa und krallt beide Hände in seine Jacke.">
+        <figcaption>Tarek, ungefähr zur Zeit des Interviews</figcaption>
+      </figure>
+    </div>
+
+    <blockquote class="pull tilt-r" aria-hidden="true">
+      <p><span>Eine Minute kann ich doch nicht mehr warten!</span></p>
+      <cite>Tarek</cite>
+    </blockquote>
+
+    <div class="row turn tarek">
+      <p class="who">Tarek</p>
+      <div class="said">
+        <p>Ey, die neueste Errungenschaft auf deiner Pogoradio-Seite sind 100.000 Bilder von früher. Oh, wo Pogo-Raves und so … als ihr alle noch Haare am Sack gehabt habt, die noch nicht grau waren oder weiß. Ist mir scheißegal, verstehst du?</p>
+        <p>www.sabotakt.com – ich bin 21 Jahre, ich habe einen Riesenpenis, und <mark>morgen geht’s weiter und nicht gestern oder vorgestern oder heute!</mark> Es geht immer weiter, verstehst du? Wenn jetzt irgendeine Scheiße kommt: Das Einzige, was ihr in eurem langweiligen Leben lernt, ist abzuwarten. Und die Leute … ich kenne jetzt so viele Leute, die sind 20, 21, 22, und die sagen jetzt schon: „Dann warte ich mal noch ein Jahr.“ Ein Jahr, verstehst du? <mark>Eine Minute kann ich doch nicht mehr warten!</mark> Ein Jahr kann mich am Arsch lecken, ihr langweiligen, lahmarschigen Scheißhaufen! Ein Jahr abwarten – auf was denn, auf was denn?</p>
+        <p>Das Einzige, was ihr macht, ihr langweiligen Wichser, ist euer Abwarten zu gestalten – und das noch mit drittklassiger Scheiße! Wenn ihr es wenigstens mit was Anständigem machen würdet, was mal ein bisschen lustig ist. Aber euer Humor, der ist so was von unlustig, der ist so was von zum Einschlafen – <mark>und auf Schlafen habe ich leider überhaupt gar keine Lust.</mark> Ihr könnt meinetwegen jetzt ins Bett gehen, das ist mir scheißegal. Pogoradio von 23 bis 24 Uhr auf 105,4 Bermudafunk, jeden Mittwoch … dann geht hinterher halt. Mir ist das scheißegal. <mark>Zwei Stunden Schlaf für die Männer, drei für die Frauen, vier für die Idioten.</mark></p>
+      </div>
+    </div>
+
+    <blockquote class="pull final" aria-hidden="true">
+      <p><span>Zwei Stunden Schlaf für die Männer, drei für die Frauen, vier für die Idioten.</span></p>
+      <cite>Tarek, Juz Mannheim</cite>
+    </blockquote>
+
+  </article>
+
+  <section class="tape-section" id="aufnahme" aria-labelledby="tape-h">
+    <div class="tape-intro">
+      <p class="eyebrow">Zum Nachhören</p>
+      <h2 id="tape-h">Die Aufnahme</h2>
+      <p>Das ganze Interview als Mitschnitt, so wie es damals aufs Band ging. Die Aufnahme liegt auf SoundCloud.</p>
+      <dl class="tape-facts">
+        <dt>Ort</dt><dd>Juz Mannheim</dd>
+        <dt>Sendung</dt><dd>Pogoradio, damals mittwochs 23 bis 24 Uhr auf Bermudafunk 105,4</dd>
+      </dl>
+    </div>
+
+    <a class="cassette cassette-link" href="https://on.soundcloud.com/ToKwuV9t6ca7Jhb47a" target="_blank" rel="noopener">
+      <span class="c-label" style="display:block">
+        <span class="c-band" style="display:block"></span>
+        <span class="c-label-body">
+          <span class="c-side">A</span>
+          <span class="c-title">Pogoradio · Tarek · Juz Mannheim</span>
+        </span>
+      </span>
+      <span class="c-window" aria-hidden="true">
+        <span class="reel"></span>
+        <span class="c-tape"></span>
+        <span class="reel"></span>
+      </span>
+      <span class="sc-go">
+        <span class="play" aria-hidden="true"><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+        <span class="sc-text">Auf SoundCloud anhören<small>öffnet in einem neuen Tab</small></span>
+        <span class="sc-arrow" aria-hidden="true">↗</span>
+      </span>
+    </a>
+  </section>
+
+  <footer>
+    <p>Pogoradio-Interview-Reihe</p>
+    <p>Abschrift leicht redigiert, Wortlaut wie gesprochen.</p>
+  </footer>
+
+</main>
+
+
+</body></html>

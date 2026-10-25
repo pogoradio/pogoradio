@@ -1,0 +1,64 @@
+name: Auf Neocities veröffentlichen
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: neocities
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ZIP-Dateien entpacken
+        id: prep
+        run: |
+          shopt -s nullglob
+          zips=( *.zip *.ZIP )
+          for z in "${zips[@]}"; do
+            tmp=$(mktemp -d)
+            unzip -q -o "$z" -d "$tmp"
+            rm -rf "$tmp/__MACOSX"
+            src="$tmp"
+            while [ ! -e "$src/index.html" ] && [ ! -d "$src/interviews" ] && [ ! -d "$src/geschichten" ] \
+                  && [ "$(ls -A "$src" | wc -l)" -eq 1 ] && [ -d "$src/$(ls -A "$src")" ]; do
+              src="$src/$(ls -A "$src")"
+            done
+            mkdir -p site
+            if [ -f "$src/_loeschen.txt" ]; then
+              while IFS= read -r p || [ -n "$p" ]; do
+                p="${p%$'\r'}"
+                case "$p" in ""|*..*|/*) continue ;; esac
+                rm -rf "site/$p"
+              done < "$src/_loeschen.txt"
+              rm "$src/_loeschen.txt"
+            fi
+            cp -R "$src"/. site/
+            git rm -q --cached --ignore-unmatch "$z"
+            rm -f "$z" && rm -rf "$tmp"
+          done
+          if [ ${#zips[@]} -gt 0 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -q -m "ZIP entpackt" && git push origin "HEAD:${GITHUB_REF_NAME:-main}"
+          fi
+          if [ -f site/index.html ]; then echo "ready=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Ordner site/ zu Neocities hochladen
+        if: steps.prep.outputs.ready == 'true'
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
+          dist_dir: site
+          cleanup: true
+          neocities_supporter: false
+          preview_before_deploy: true
