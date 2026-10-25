@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Vageenas bei Pogoradio</title>
+<meta name="description" content="Pogoradio spricht 2006 mit Babette und René von den Vageenas: Bühnen-Training, deutsches Englisch, Fragen zum Alter (verboten), Wasser statt Bier und Hund Nancy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Caveat+Brush&family=Figtree:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fff3f8;
+  --card:#ffffff;
+  --ink:#17121c;
+  --muted:#6e5867;
+  --pink:#ff2f92;
+  --pink-soft:#ffd2e7;
+  --navy:#1f2550;
+  --red:#d8262f;
+  --yellow:#ffe338;
+  --rule:#f1bcd6;
+  --shadow:0 2px 0 rgba(23,18,28,.9);
+  --head-bg:#1f2550;
+  --head-ink:#fff3f8;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#1b1220;
+    --card:#271a2d;
+    --ink:#fbeef6;
+    --muted:#c7a9bc;
+    --pink:#ff5aa9;
+    --pink-soft:#4a2140;
+    --navy:#b9c0ff;
+    --red:#ff6b6b;
+    --yellow:#ffe338;
+    --rule:#4f2f47;
+    --shadow:0 2px 0 rgba(0,0,0,.9);
+    --head-bg:#363f8f;
+    --head-ink:#ffffff;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* Strichcode wie auf dem Bandbanner */
+.barcode{height:56px;background:
+  repeating-linear-gradient(90deg,
+    var(--navy) 0 4px, transparent 4px 9px,
+    var(--navy) 9px 11px, transparent 11px 14px,
+    var(--navy) 14px 21px, transparent 21px 25px,
+    var(--navy) 25px 27px, transparent 27px 33px,
+    var(--navy) 33px 38px, transparent 38px 41px,
+    var(--navy) 41px 42px, transparent 42px 47px);
+  border-bottom:4px solid var(--red)}
+
+.wrap{max-width:70rem;margin:0 auto;padding:0 16px}
+
+/* Titelseite */
+.cover{padding:28px 0 8px}
+.kicker{margin:0 0 10px;font:800 13px/1.3 Figtree,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+h1{margin:0;font:400 clamp(34px,11vw,124px)/.88 "Bowlby One",Impact,sans-serif;text-transform:uppercase;color:var(--navy);letter-spacing:-.01em}
+h1 .the{display:inline-block;font-size:.36em;vertical-align:.95em;margin-right:.18em;padding:.08em .3em;background:var(--pink);color:#fff;transform:rotate(-6deg)}
+.deck{max-width:38rem;margin:18px 0 0;font-size:clamp(19px,2.4vw,23px);line-height:1.45}
+.stickers{display:flex;flex-wrap:wrap;gap:12px 14px;margin:22px 0 0;padding:0;list-style:none}
+.st{padding:8px 14px;border:2px solid var(--ink);border-radius:999px;font:800 15px/1.2 Figtree,sans-serif;box-shadow:var(--shadow);background:var(--card)}
+.st--y{background:var(--yellow);color:#17121c;transform:rotate(-2deg)}
+.st--p{background:var(--pink);color:#fff;transform:rotate(1.5deg)}
+.st--w{font:400 21px/1.1 "Caveat Brush",cursive;transform:rotate(-1deg)}
+
+/* Fotos mit Klebestreifen */
+.photo{position:relative;margin:0;padding:10px 10px 12px;background:#fff;border:1px solid #e3c9d7;box-shadow:0 10px 24px rgba(60,10,40,.18)}
+.photo::before{content:"";position:absolute;top:-12px;left:50%;width:110px;height:26px;margin-left:-55px;background:rgba(255,227,56,.78);transform:rotate(-3deg)}
+.photo figcaption{margin-top:10px;font:400 20px/1.2 "Caveat Brush",cursive;color:#3a2a35}
+.hero{margin:34px auto 8px;max-width:58rem;transform:rotate(-.6deg)}
+
+.lead{max-width:44rem;margin:34px 0 0;font-size:19px}
+.lead strong{background:linear-gradient(transparent 58%,var(--pink-soft) 58%)}
+
+/* Abschnitte: Gespräch links, Einschub rechts */
+.part{display:grid;grid-template-columns:minmax(0,1fr) 18rem;gap:20px 48px;align-items:start;padding:40px 0 8px;border-top:2px dashed var(--rule);margin-top:36px}
+.part > h2{grid-column:1 / -1;margin:0;justify-self:start;padding:6px 14px 4px;background:var(--head-bg);color:var(--head-ink);font:400 clamp(22px,3.4vw,32px)/1.15 "Bowlby One",Impact,sans-serif;text-transform:uppercase;transform:rotate(-1deg)}
+.part > h2 .no{color:var(--yellow);margin-right:.4em}
+.talk{min-width:0}
+.side{min-width:0;display:grid;gap:22px}
+
+.turn{display:grid;grid-template-columns:5.6rem minmax(0,1fr);gap:0 16px;margin:0 0 14px}
+.who{margin:0;padding-top:.28em;font:800 12px/1.3 Figtree,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.said{margin:0}
+.q .who{color:var(--navy)}
+.q .said{font-weight:600;color:var(--navy)}
+.b .who{color:var(--pink)}
+.r .who{color:var(--red)}
+
+/* Steckbrief */
+.card{position:relative;padding:18px 18px 16px;background:var(--card);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--pink)}
+.card h3{margin:0 0 10px;font:400 30px/1 "Caveat Brush",cursive;color:var(--pink)}
+.card dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;font-size:15.5px;line-height:1.4}
+.card dt{font:800 11.5px/1.6 Figtree,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card dd{margin:0}
+.card--r{box-shadow:6px 6px 0 var(--red);transform:rotate(.7deg)}
+.card--r h3{color:var(--red)}
+.card--b{transform:rotate(-.8deg)}
+
+/* Platte als rotes Vinyl */
+.record{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center;padding:16px;background:var(--yellow);color:#17121c;border:2px solid #17121c;box-shadow:var(--shadow);transform:rotate(1deg)}
+.disc{width:96px;height:96px;border-radius:50%;background:
+  radial-gradient(circle,#17121c 0 4px,#fff 4px 15px,var(--pink) 15px 28px,#b3101a 28px 30px,#d8262f 30px 34px,#b3101a 34px 36px,#d8262f 36px 40px,#b3101a 40px 42px,#d8262f 42px 48px)}
+.record p{margin:0;font-size:15px;line-height:1.4}
+.record .title{font:400 22px/1.05 "Bowlby One",Impact,sans-serif;text-transform:uppercase;margin-bottom:6px}
+
+.pull{margin:0;padding:6px 0 6px 16px;border-left:6px solid var(--pink);font:400 clamp(26px,3vw,32px)/1.12 "Caveat Brush",cursive;color:var(--ink)}
+.pull cite{display:block;margin-top:8px;font:800 12px/1.3 Figtree,sans-serif;letter-spacing:.12em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+
+.note{margin:0;padding:12px 14px;background:var(--pink-soft);border-radius:4px;font-size:15px;line-height:1.5}
+.note b{display:block;font:800 11.5px/1.5 Figtree,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}
+
+.end{margin:52px 0 0;padding:22px 0 40px;border-top:4px solid var(--navy)}
+.protokoll{margin:0;font:600 14px/1.6 Figtree,sans-serif;color:var(--muted)}
+.bye{margin:18px 0 0;font:400 34px/1.1 "Caveat Brush",cursive;color:var(--pink);transform:rotate(-1.5deg);display:inline-block}
+
+@media (max-width:860px){
+  .part{grid-template-columns:minmax(0,1fr);gap:22px}
+  .side{max-width:30rem}
+  .side .photo{max-width:24rem}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:2px}
+  .who{padding-top:0}
+  .barcode{height:40px}
+  .hero{transform:none}
+  .card,.card--r,.card--b,.record{transform:none}
+  .record{grid-template-columns:72px minmax(0,1fr)}
+  .disc{width:72px;height:72px;background:radial-gradient(circle,#17121c 0 3px,#fff 3px 11px,var(--pink) 11px 21px,#b3101a 21px 23px,#d8262f 23px 26px,#b3101a 26px 28px,#d8262f 28px 31px,#b3101a 31px 32px,#d8262f 32px 36px)}
+}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<div class="barcode" aria-hidden="true"></div>
+
+<div class="wrap">
+<header class="cover">
+  <p class="kicker">Pogoradio auf Bermudafunk · Interview · 2006</p>
+  <h1><span class="the">The</span>Vageenas</h1>
+  <p class="deck">Sängerin Babette und Gitarrist René über Training auf der Bühne, deutsches Englisch, Fragen zum Alter (verboten!), Wasser statt Bier und einen Hund namens Nancy.</p>
+  <ul class="stickers">
+    <li class="st st--y">Neue Platte: Teenage Music</li>
+    <li class="st st--p">15 eigene Stücke · 0 Coversongs</li>
+    <li class="st st--w">„Sitzen geht ja schon mal gar nicht!“</li>
+  </ul>
+  <figure class="photo hero">
+    <img src="vageenas-tanzflaeche.jpg" width="1400" height="1006" alt="Konzertfoto: Links tanzt ein Punk mit rotem Irokesen, daneben singt Babette mit pinken Haaren, dahinter der Bassist in orangem Shirt, rechts René im rot-schwarz gestreiften Pullover mit weißer Gitarre. Im Hintergrund das Banner mit Strichcode.">
+    <figcaption>Vorne wird getanzt, wie es sich gehört. Babette in Pink, rechts René an der Gitarre.</figcaption>
+  </figure>
+</header>
+
+<p class="lead">Die Vageenas spielen seit 1994 Punkrock, die Band kommt vom Niederrhein. 2006 erscheint ihr Album <strong>„Teenage Music“</strong>. Nach dem Konzert sitzt Rüdi mit Babette und René zusammen, auf einem Stuhl, der die ganze Zeit quietscht.</p>
+
+<main>
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">01</span>Wie heißt ihr eigentlich?</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt quietschen wir mit dem Stuhl rum, egal. Hier ist Pogoradio auf Bermudafunk, und vor mir sitzt eine Band, nämlich … wie heißt ihr eigentlich?</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Vageenas.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vageenas. Manche sagen ja Vaginas. Das stimmt aber gar nicht, oder?</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Doch, Vaginas ist eigentlich das richtige Wort. Aber wir heißen Vageenas, weil wir uns auch falsch schreiben. Du bist aber schlecht vorbereitet, du kennst ja nicht mal unseren Namen!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Doch, weiß ich. Du bist Babette, richtig? Ich bin der Rüdi, und das ist René&nbsp;…</p></div>
+    <div class="turn r"><p class="who">René</p><p class="said">René mit Accent grave oder Accent aigu oder so. Mit Strich. Strich heißt das bei uns.</p></div>
+  </div>
+  <aside class="side">
+    <div class="card">
+      <h3>Die Band</h3>
+      <dl>
+        <dt>Gesang</dt><dd>Babette</dd>
+        <dt>Gitarre</dt><dd>René, mit Strich</dd>
+        <dt>Dazu</dt><dd>„der Süß und der Pier“ an Bass und Schlagzeug</dd>
+        <dt>Seit</dt><dd>1994</dd>
+        <dt>Schreibweise</dt><dd>absichtlich falsch</dd>
+      </dl>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">02</span>Training nur auf der Bühne</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du bist auf der Bühne total abgegangen. Machst du irgendein Workout, ein Training?</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Ja, immer auf der Bühne! Nordic Walking, Joggen … neulich sogar mit zwei Stöcken. Eigentlich trainiere ich nur auf der Bühne. Deshalb brauchen wir auch ganz viele Auftritte, damit ich fit bleibe.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und gesungen wird auf Englisch. Das klingt, als wärst du gerade frisch aus England eingetrudelt.</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Finde ich auch! Alle anderen sagen immer, ich singe total deutsches Englisch. Dabei finde ich mein Englisch total klasse. Ich verstehe gar nicht, was das soll. Das mit dem deutschen Englisch sagen übrigens meine eigenen Bandmitglieder.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mir kam es so vor, als würdest du dich auf der Bühne ein bisschen rechtfertigen. Wenn zwei von den 50 Leuten nicht getanzt haben, hast du dich gleich erklärt.</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Echt? Ich wollte die eigentlich beleidigen, nicht mich rechtfertigen! Man muss sich um die Leute kümmern. Zum Beispiel um die, die da in der Ecke saßen und eingepennt sind. Wir haben ein ganzes Programm gespielt, da muss man sich auch kümmern. Was sagst du dazu, René?</p></div>
+    <div class="turn r"><p class="who">René</p><p class="said">Man muss sich um die Leute kümmern, sag ich dazu. Wenn da jemand sitzt … Sitzen geht ja schon mal gar nicht!</p></div>
+  </div>
+  <aside class="side">
+    <figure class="photo">
+      <img src="vageenas-babette.jpg" width="900" height="1058" alt="Babette mit pinken Haaren, weißem T-Shirt, rosa Rock und karierten Strumpfhosen reckt auf der Bühne den Arm in die Höhe. Hinter ihr René an der Gitarre, links das Schlagzeug und das Bandbanner." loading="lazy">
+      <figcaption>Training läuft: Babette auf der Bühne, hinten René.</figcaption>
+    </figure>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">03</span>Die neue Platte</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Machen wir mal ein professionelles Interview: Ihr habt eine neue Platte rausgebracht.</p></div>
+    <div class="turn"><p class="who">Band</p><p class="said">Ja, ja, ja. Wir haben eine neue Platte rausgebracht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist aber keine professionelle Antwort auf meine professionelle Frage!</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Ich glaube, der Herr möchte auch mal was sagen.</p></div>
+    <div class="turn r"><p class="who">René</p><p class="said">Wir haben eine neue Platte rausgebracht. Sie heißt „Teenage Music“: 15 eigene Stücke, null Coversongs. Falls uns jemand von vor ungefähr zehn Jahren kennt: Wir haben uns verändert. Das war's.</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Und die Platte ist super, total klasse! Geht auf vageenas.de und kauft sie euch, die ist echt einsame Spitze. Rausgekommen ist sie bei Plastic Bomb.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die hab ich auch zugeschickt bekommen. Und dachte: Das klingt ja wie vor zehn Jahren.</p></div>
+    <div class="turn"><p class="who">Band</p><p class="said">Wie vor dreißig?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, wie die erste Platte vor zehn Jahren. Die Stimme hat sich nicht verbessert.</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Nee, eher verschlechtert. Aber gut so! Damals hab ich so schüchtern rumgepiepst, jetzt singe ich total cool. Ich bin einfach die Babette!</p></div>
+  </div>
+  <aside class="side">
+    <div class="record">
+      <div class="disc" aria-hidden="true"></div>
+      <div>
+        <p class="title">Teenage Music</p>
+        <p>15 eigene Stücke, 0 Coversongs. Digipack und rotes Vinyl. Erschienen 2006 bei Plastic Bomb.</p>
+      </div>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">04</span>Alter? Verboten.</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wo hast du eigentlich diese coolen jungen Mitmusiker aufgegabelt? Waren die von Anfang an dabei?</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Grundsätzlich verbiete ich Fragen, die mit dem Alter zu tun haben. Es gibt keine jungen oder alten Mitmusiker. Es gibt Musiker, die gut spielen, und welche, die schlecht spielen. Die guten haben sich gefunden: vier Leute, der Süß, der Pier, René und ich, die einfach eine coole Band machen wollen.</p></div>
+    <div class="turn"><p class="who">Band</p><p class="said">Mich nervt das immer mit dem Alter. Man sollte eine Band nicht danach beurteilen, ob jemand 20, 40 oder 43 ist. Es gibt Bands, die spielen mit 60 noch super, und welche mit 25 eben nicht. Punk ist keine Jugendbewegung mehr, und er war es auch noch nie. Alles, was man vom Alter abhängig macht, gehört in die Bravo. Punkrock sollte sich davon abheben. Es ist scheißegal, wie alt jemand auf der Bühne ist. Charlie Harper ist heute noch cool!</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Hauptsache, jeder macht das, woran er Spaß hat, statt Klischees zu erfüllen. Wenn wir morgen Lust hätten, Blues zu machen, wäre das auch okay.</p></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Alles, was man vom Alter abhängig macht, gehört in die Bravo.“<cite>The Vageenas</cite></blockquote>
+    <p class="note"><b>Anm. d. Red.</b>Charlie Harper singt seit 1976 bei den UK Subs und ist Jahrgang 1944. Beim Interview war er also Anfang 60.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">05</span>Wasser statt Bier</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Schönes Schlusswort eigentlich! Jetzt erst mal einen Schluck trinken. Trinken gehört doch bestimmt zum Punkrock?</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Für mich nicht! Ich bin Antialkoholikerin und Antiraucherin. Ich mache Nordic Walking, da kann man nicht so viel trinken. Seit ich als Embryo auf die Welt kam, trinke ich nichts. Höchstens an Silvester mal ein Viertelglas Sekt.</p></div>
+    <div class="turn r"><p class="who">René</p><p class="said">Das ist aber auch kein Grund, Lieder darüber zu schreiben oder sich Kreuze auf die Hand zu malen. Was ich nicht nachvollziehen kann: wie Leute in Fanzines feiern, wie viel sie gesoffen haben. Das hat null Information.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mir tut das ja eher leid für mich. Ich gehe um drei ins Bett, und die anderen erzählen bis fünf ihre Geschichten.</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Wenn du bis drei eine geile Zeit hattest, ist das doch klasse! Oder geh demnächst lieber um elf ins Bett.</p></div>
+    <div class="turn r"><p class="who">René</p><p class="said">Warum erzählt man anderen, dass man 30 Flaschen Bier getrunken hat? Das interessiert doch keinen.</p></div>
+  </div>
+  <aside class="side">
+    <div class="card card--b">
+      <h3>Steckbrief Babette</h3>
+      <dl>
+        <dt>Job</dt><dd>Gesang. Und Leute beleidigen, die sitzen.</dd>
+        <dt>Training</dt><dd>Nordic Walking, Joggen. Nur auf der Bühne.</dd>
+        <dt>Getränk</dt><dd>Wasser</dd>
+        <dt>Ausnahme</dt><dd>Silvester, ¼ Glas Sekt</dd>
+        <dt>Rauchen</dt><dd>nein</dd>
+        <dt>Englisch</dt><dd>„total klasse“</dd>
+      </dl>
+    </div>
+    <p class="note"><b>Anm. d. Red.</b>Das Kreuz auf dem Handrücken ist das Zeichen der Straight-Edge-Bewegung: kein Alkohol, keine Zigaretten, keine Drogen.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">06</span>Hobbys? Gibt's nicht.</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was interessiert dich denn hobbymäßig, Babette, außer Singen?</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Ich möchte einfach glücklich und gesund sein, mein Leben schön leben und mich jeden Tag an kleinen Dingen freuen. Nicht alles für selbstverständlich nehmen.</p></div>
+    <div class="turn r"><p class="who">René</p><p class="said">„Hobby“ ist eine Abwertung. Ich habe ein Skateboard, baue damit aber meistens Unfälle. Ein Bekannter nennt mich „Sports-René“, weil ich so sportlich bin.</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Ich gehe gerne Nordic Walking mit meinem Hund Nancy. Nancy hat leider eine Hautkrankheit, sonst würde ich sie rosa färben. Ein Bild von ihr ist auf vageenas.de unter „Pictures“, als Maskottchen.</p></div>
+  </div>
+  <aside class="side">
+    <figure class="photo">
+      <img src="vageenas-rene.jpg" width="900" height="1125" alt="René im rot-schwarz gestreiften Pullover spielt eine weiße Gitarre am Mikrofon. Hinter ihm das Schlagzeug und das Banner mit dem Bandnamen im Strichcode-Muster." loading="lazy">
+      <figcaption>René, mit Strich, vor dem Bandbanner.</figcaption>
+    </figure>
+    <div class="card card--r">
+      <h3>Steckbrief René</h3>
+      <dl>
+        <dt>Job</dt><dd>Gitarre</dd>
+        <dt>Name</dt><dd>mit Strich</dd>
+        <dt>Sport</dt><dd>Skateboard, meistens mit Unfall</dd>
+        <dt>Spitzname</dt><dd>Sports-René</dd>
+        <dt>Hobbys</dt><dd>„Hobby ist eine Abwertung.“</dd>
+        <dt>Nervt</dt><dd>Sauf-Angeberei in Fanzines</dd>
+      </dl>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">07</span>Kaufen oder runterladen?</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr habt jetzt die Chance, euch zu verkaufen!</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Kauft einfach unsere Platten!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und was haltet ihr davon, wenn sich die Kiddies das Zeug schwarz aus dem Internet runterladen?</p></div>
+    <div class="turn"><p class="who">Band</p><p class="said">Klasse! Völlig okay. Wir haben zwar ein schönes Digipack und rotes Vinyl. Aber wenn Leute kein Geld haben und es runterladen und dafür zu Konzerten kommen oder Merch kaufen, ist das völlig in Ordnung.</p></div>
+    <div class="turn r"><p class="who">René</p><p class="said">Die meisten Bands, die sich wegen so was anpissen, sind eh die großen mit viel Kohle. Für kleine Bands sind das Internet und MySpace eine super Möglichkeit.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vielen Dank für das Interview!</p></div>
+    <div class="turn b"><p class="who">Babette</p><p class="said">Danke für das schöne Tiger-Leoparden-Plüschfell-Mikrofon! Besucht vageenas.de und unsere MySpace-Seite. Ich trinke nur Wasser. Tschüss!</p></div>
+  </div>
+  <aside class="side">
+    <div class="card">
+      <h3>Maskottchen</h3>
+      <dl>
+        <dt>Name</dt><dd>Nancy</dd>
+        <dt>Art</dt><dd>Hund</dd>
+        <dt>Sport</dt><dd>Nordic Walking mit Babette</dd>
+        <dt>Farbe</dt><dd>wäre rosa, wenn die Haut es zuließe</dd>
+      </dl>
+    </div>
+  </aside>
+</section>
+
+</main>
+
+<footer class="end">
+  <p class="protokoll">Pogoradio auf Bermudafunk · 2006 · nach dem Konzert · Rüdi im Gespräch mit Babette und René von The Vageenas · Transkript redigiert und leicht gekürzt</p>
+  <p class="bye">Ich trinke nur Wasser – tschüss!</p>
+</footer>
+</div>
+</body>
+</html>
