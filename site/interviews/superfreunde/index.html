@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Superfreunde per Skype · Pogoradio</title>
+<meta name="description" content="Pogoradio 2005 per Skype-Konferenz mit Berten und Neiß von den Superfreunden aus dem Emsland: kein Bild, viel Hall, keine Rückkopplung, eine geheime neue Platte, Klingeltöne und der rausgeschmissene Bauer Bühl.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e6f1f9;
+  --window:#ffffff;
+  --title-a:#f6f9fc;
+  --title-b:#d3e5f2;
+  --frame:#a9c3d8;
+  --ink:#1c2733;
+  --muted:#566776;
+  --blue:#0b6fb8;
+  --sky:#18a7e6;
+  --r-bg:#d5ebfb; --r-ink:#0f3554;
+  --b-bg:#fff0bd; --b-ink:#4a3800;
+  --n-bg:#d9f2cf; --n-ink:#1e4413;
+  --s-bg:#ebeef1; --s-ink:#2a3640;
+  --note-bg:#fffbe6; --note-rule:#e8d68a;
+  --sys:#7a8a98;
+  --shadow:0 18px 40px -24px rgba(10,50,90,.45);
+  --round:"Nunito","Trebuchet MS","Segoe UI",Verdana,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a151e;
+    --window:#101d28;
+    --title-a:#1a2c3b;
+    --title-b:#14232f;
+    --frame:#2a4357;
+    --ink:#e2ebf2;
+    --muted:#98aabb;
+    --blue:#62c4ff;
+    --sky:#3cbcf5;
+    --r-bg:#123550; --r-ink:#d8edff;
+    --b-bg:#3a3214; --b-ink:#fbe9a6;
+    --n-bg:#1b3a1c; --n-ink:#d3f3c5;
+    --s-bg:#24303a; --s-ink:#dbe4eb;
+    --note-bg:#22200f; --note-rule:#5d5426;
+    --sys:#8496a6;
+    --shadow:0 18px 40px -20px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a151e;
+  --window:#101d28;
+  --title-a:#1a2c3b;
+  --title-b:#14232f;
+  --frame:#2a4357;
+  --ink:#e2ebf2;
+  --muted:#98aabb;
+  --blue:#62c4ff;
+  --sky:#3cbcf5;
+  --r-bg:#123550; --r-ink:#d8edff;
+  --b-bg:#3a3214; --b-ink:#fbe9a6;
+  --n-bg:#1b3a1c; --n-ink:#d3f3c5;
+  --s-bg:#24303a; --s-ink:#dbe4eb;
+  --note-bg:#22200f; --note-rule:#5d5426;
+  --sys:#8496a6;
+  --shadow:0 18px 40px -20px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 var(--round);overflow-x:hidden}
+a{color:var(--blue);text-underline-offset:.18em}
+.wrap{width:min(1120px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Fenster ---------- */
+.cover{padding:36px 0 30px}
+.win{background:var(--window);border:1px solid var(--frame);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.titlebar{
+  display:flex;align-items:center;gap:14px;padding:9px 14px;
+  background:linear-gradient(var(--title-a),var(--title-b));border-bottom:1px solid var(--frame);
+  font:700 13px/1.2 var(--round);color:var(--muted);
+}
+.lights{display:flex;gap:7px;flex:none}
+.lights i{width:12px;height:12px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.lights i:nth-child(1){background:#ff5f57}
+.lights i:nth-child(2){background:#febc2e}
+.lights i:nth-child(3){background:#28c840}
+.titlebar .tt{flex:1;min-width:0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.signal{display:flex;align-items:flex-end;gap:2px;height:14px;flex:none}
+.signal i{display:block;width:4px;background:var(--frame);border-radius:1px}
+.signal i:nth-child(1){height:4px;background:#e0533d}
+.signal i:nth-child(2){height:7px}
+.signal i:nth-child(3){height:10px}
+.signal i:nth-child(4){height:14px}
+
+.win-body{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0}
+.hero{padding:30px 32px 30px}
+.kicker{margin:0 0 12px;font:800 13px/1.3 var(--round);letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
+h1{margin:0;font:900 clamp(46px,8.4vw,104px)/.92 var(--round);letter-spacing:-.025em}
+h1 .die{display:block;font-size:.42em;font-weight:800;letter-spacing:0;color:var(--muted);margin-bottom:.1em}
+.sub{margin:16px 0 0;max-width:30em;font:700 clamp(19px,2.2vw,23px)/1.35 var(--round)}
+.lede{margin:14px 0 0;max-width:36em}
+
+.contacts{border-left:1px solid var(--frame);padding:22px 20px;background:linear-gradient(var(--window),color-mix(in srgb,var(--bg) 55%,var(--window)))}
+.contacts h2{margin:0 0 12px;font:800 13px/1.2 var(--round);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.contacts ul{margin:0;padding:0;list-style:none}
+.contacts li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center;padding:9px 0;border-top:1px solid color-mix(in srgb,var(--frame) 50%,transparent)}
+.contacts li:first-child{border-top:0}
+.av{position:relative;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:900 15px/1 var(--round)}
+.av::after{content:"";position:absolute;right:-2px;bottom:-2px;width:12px;height:12px;border-radius:50%;border:2px solid var(--window);background:var(--dot,#28c840)}
+.av.r{background:var(--r-bg);color:var(--r-ink)}
+.av.b{background:var(--b-bg);color:var(--b-ink)}
+.av.n{background:var(--n-bg);color:var(--n-ink)}
+.av.s{background:var(--s-bg);color:var(--s-ink)}
+.contacts .nm{display:block;font:800 16px/1.2 var(--round)}
+.contacts .st{display:block;font:400 14px/1.3 var(--round);color:var(--muted)}
+.contacts .st.off{font-style:italic}
+.timer{margin:16px 0 0;font:700 13px/1.3 ui-monospace,Menlo,Consolas,monospace;color:var(--muted)}
+
+/* ---------- Gespräch ---------- */
+main{padding:6px 0 30px}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px 48px;padding:30px 0 26px}
+.part h2{
+  grid-column:1/-1;margin:0 0 6px;display:flex;align-items:center;gap:12px;
+  font:800 clamp(20px,2.6vw,26px)/1.2 var(--round);color:var(--ink);
+}
+.part h2::before,.part h2::after{content:"";flex:1;height:1px;background:var(--frame)}
+.part h2::before{max-width:28px}
+.part h2 .ic{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sky);color:#fff;font:900 14px/1 var(--round);flex:none}
+
+.talk{min-width:0;max-width:720px}
+.turn{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start;margin:0 0 10px}
+.turn .av{width:34px;height:34px;font-size:14px}
+.turn .av::after{display:none}
+.bubble{min-width:0;justify-self:start;max-width:100%;padding:8px 14px 9px;border-radius:4px 16px 16px 16px}
+.bubble .who{margin:0 0 1px;font:800 12.5px/1.3 var(--round);letter-spacing:.03em}
+.bubble .said{margin:0}
+.turn.r{grid-template-columns:minmax(0,1fr) 34px}
+.turn.r .av{grid-column:2;grid-row:1}
+.turn.r .bubble{grid-column:1;grid-row:1;justify-self:end;border-radius:16px 4px 16px 16px}
+.turn.r .bubble{background:var(--r-bg);color:var(--r-ink)}
+.turn.b .bubble{background:var(--b-bg);color:var(--b-ink)}
+.turn.n .bubble{background:var(--n-bg);color:var(--n-ink)}
+.turn.s .bubble{background:var(--s-bg);color:var(--s-ink)}
+.turn .who{opacity:.75}
+.sysmsg{margin:14px 0;text-align:center;font:italic 400 15px/1.4 var(--round);color:var(--sys)}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:18px;align-self:start}
+.note{margin:0;padding:12px 15px 13px;background:var(--note-bg);border:1px solid var(--note-rule);border-radius:10px;font:400 15.5px/1.45 var(--round)}
+.note b{display:flex;align-items:center;gap:7px;margin:0 0 4px;font:800 12.5px/1.2 var(--round);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.note b::before{content:"i";display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--sky);color:#fff;font:900 11px/1 Georgia,serif;font-style:italic;letter-spacing:0;text-transform:none}
+.card{margin:0;background:var(--window);border:1px solid var(--frame);border-radius:10px;padding:14px 16px;font:400 15.5px/1.45 var(--round)}
+.card h3{margin:0 0 8px;font:800 13px/1.2 var(--round);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card ul{margin:0;padding:0;list-style:none}
+.card li{padding:6px 0;border-top:1px solid color-mix(in srgb,var(--frame) 50%,transparent)}
+.card li:first-child{border-top:0}
+.card li b{font-weight:800}
+.card li span{display:block;color:var(--muted);font-size:14px}
+.card .more{margin:10px 0 0;font-size:14.5px}
+.pull{margin:0;padding:14px 16px;border-radius:16px 16px 16px 4px;background:var(--sky);color:#fff;font:800 clamp(20px,2vw,24px)/1.25 var(--round)}
+.pull cite{display:block;margin-top:8px;font:700 12.5px/1.2 var(--round);font-style:normal;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+
+@media (max-width:960px){
+  .win-body{grid-template-columns:minmax(0,1fr)}
+  .contacts{border-left:0;border-top:1px solid var(--frame)}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px}
+}
+@media (max-width:560px){
+  body{font-size:17.5px}
+  .hero{padding:24px 18px}
+  .contacts{padding:18px}
+  .turn,.turn.r{grid-template-columns:28px minmax(0,1fr);gap:8px}
+  .turn .av{width:28px;height:28px;font-size:12px}
+  .turn.r .av{grid-column:1}
+  .turn.r .bubble{grid-column:2;justify-self:start;border-radius:4px 16px 16px 16px}
+  .titlebar .tt{text-align:left}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:20px 0 60px}
+.hangup{display:inline-flex;align-items:center;gap:10px;margin:0 0 16px;padding:10px 18px;border-radius:999px;background:#e0453a;color:#fff;font:800 16px/1 var(--round)}
+.protokoll{margin:0;max-width:46em;font:400 15px/1.55 var(--round);color:var(--muted)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="win">
+      <div class="titlebar">
+        <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="tt">Konferenzgespräch · Rüdi, Berten, Neiß</span>
+        <span class="signal" role="img" aria-label="Verbindung: schlecht"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="win-body">
+        <div class="hero">
+          <p class="kicker">Pogoradio auf Bermudafunk · 2005 · per Skype</p>
+          <h1><span class="die">Die</span>Superfreunde</h1>
+          <p class="sub">Ein Blitzinterview per Konferenzschaltung. Mit Knacken, Hall, warmem Bier und einer Platte, die noch geheim ist.</p>
+          <p class="lede">Die Superfreunde kommen aus dem Emsland, Rüdi sitzt in Mannheim. Also wird telefoniert, über das Internet, zu dritt. Bis das Interview für die Sendung am Mittwoch anfängt, dauert es eine Weile: Erst fehlt das Bild, dann der Ton, dann das Bier. Und eine richtig geile Rückkopplung will auch nicht kommen.</p>
+        </div>
+        <aside class="contacts" aria-label="Teilnehmer">
+          <h2>Im Gespräch</h2>
+          <ul>
+            <li><span class="av r" aria-hidden="true">R</span><span><span class="nm">Rüdi</span><span class="st">Online · überlegt sich eine Frage</span></span></li>
+            <li><span class="av b" aria-hidden="true" style="--dot:#febc2e">B</span><span><span class="nm">Berten</span><span class="st">Surft nebenbei im Pennerboard</span></span></li>
+            <li><span class="av n" aria-hidden="true" style="--dot:#febc2e">N</span><span><span class="nm">Neiß</span><span class="st">Müde · will unter die Dusche</span></span></li>
+            <li><span class="av s" aria-hidden="true" style="--dot:#9aa7b2">B</span><span><span class="nm">Bauer Bühl</span><span class="st off">Offline · rausgeschmissen</span></span></li>
+          </ul>
+          <p class="timer">Verbindung: schlecht · Hall: ja</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="ic" aria-hidden="true">1</span>Verbindung wird hergestellt …</h2>
+  <div class="talk">
+    <div class="turn s"><span class="av s" aria-hidden="true">S</span><div class="bubble"><p class="who">Superfreunde</p><p class="said">Aber nur bei dir.</p></div></div>
+    <div class="turn s"><span class="av s" aria-hidden="true">S</span><div class="bubble"><p class="who">Superfreunde</p><p class="said">Bei mir auch. So eine Scheiße.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ja, ihr habt halt schlechtes Equipment.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">So ein Quatsch. Ich habe hier eine Superanlage stehen.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Oh, das war jetzt aber gar nichts, oder? Echt kacke. Am besten macht man das nur zu zweit. Dann kommt ein super Sound. Eben beim Neiß jedenfalls. Bei dir ist immer noch kein Bild, Berten.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Was? Kann doch nicht sein. Ich habe sogar eins geändert.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Doch, ich habe ein neues Bild bei dir. Mit der Flasche?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ja, genau.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Wohl ein Scheiß-Equipment. Hast du die neueste Version runtergeladen?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Wer, ich? Ja, ich habe die neueste Version.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ich auch.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Du lügst doch.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Bei mir kann man gucken. Geht mal drauf: Skype, „Check for Update“. Und dann sagt mir das Gerät hier: Achtung, „You already have the latest Skype version installed“.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Das kommt bei mir auch. Aber du hast einen Scheiß-Mac.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Du hast ja eh keine Ahnung vom Computer. Du kannst gar nicht beurteilen, ob der scheiße ist.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Natürlich ist der scheiße. Hat doch kein Schwein. Dann ist das auch scheiße. Auf jeden Fall Müll.</p></div></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Mit „Bild“ ist das Profilbild bei Skype gemeint. Eine Kamera hatte 2005 keiner der drei am Laufen, siehe unten.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="ic" aria-hidden="true">2</span>Berten surft nebenbei</h2>
+  <div class="talk">
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Bei euch klappt’s ja super. Wie hörst du uns? Ist bei dir auch die ganze Zeit am Knacken und so ein Scheiß?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ja, auf jeden Fall. Ist ja ätzend. Mit Berten alleine war das schöner.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Was?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Mit Berten alleine war es viel schöner.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Das stimmt. Da hatte ich auch die Finger noch am Sack. Jetzt bin ich schon wieder nebenbei am Surfen.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Das ist ja das Problem. Deshalb wird die Verbindung scheiße, weil du die ganze Zeit nebenbei noch rumsurfst.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ich kann ja das Pennerboard schließen.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ja, mach mal alles weg, was irgendwie Strom braucht.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Soll ich den Papierkorb auch eben leeren?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ja, mach das Licht aus. Am besten vom Netz gehen.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich hole jetzt neues Bier.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ich gehe mal aus dem Netz, vielleicht wird’s dann besser.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Das Bier, das ich gerade habe, ist warm. Das ist abgestanden. Ich hole mal ein neues, kaltes.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Schütt’s weg, du Arsch.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Dann hole ich mir ein Glas Wasser.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Idiot. Wo soll ich denn jetzt noch Bier herkriegen? Ich renne doch nicht bis zur Tanke.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Also bei mir steht’s gut. Mhm. Lecker.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Wichser. Dafür rauche ich Sportzigaretten.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ich rauche ja nicht mehr.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Deswegen bist du auch so hässlich.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ja, genau.</p></div></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Mach mal alles weg, was irgendwie Strom braucht.“<cite>Rüdi, Netzwerktechniker</cite></blockquote>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="ic" aria-hidden="true">3</span>Keine Dateien hochladen, nur verlinken</h2>
+  <div class="talk">
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Berten?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ja?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ich habe das Interview mit Kill Allen Wrench bei mir auf die Seite gestellt. Jetzt kannst du es runterladen, wenn du Lust hast.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Mit wem?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Das ist ein bisschen kompliziert zu erklären. Geh einfach auf die Seite und guck dir das neueste Ding an. Aber lad jetzt nicht runter, während wir telefonieren.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Nein, mache ich ja nicht.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ich habe übrigens alle PNs im Pennerboard gelöscht und damit auch die Seite, wo ich selber hochladen kann. Die musst du mir noch mal schicken.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Das kann ich machen. Da steht einfach nur Loudblog hinten dran.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Laut wie laut?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Englisch. Loud. Blog.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Also laut und Blog.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ja. Und dann kommst du automatisch auf die Loginseite.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Da muss doch irgendwas dazwischen sein. Ein Punkt oder so.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Nein, du gibst die Adresse ein und dann ein Strichelchen.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ah, Strichelchen, sag das doch.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Klar. Strichelchen, Loudblog. Und keine Dateien hochladen, nur verlinken.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Weiß ich doch. Gut. Wir können ja eigentlich jetzt ein Interview machen. Für die Sendung am Mittwoch.</p></div></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Das Interview mit Kill Allen Wrench entstand am 30. April 2005 in Weinheim: <a href="../sabotakt-allen-wrench/">Sabotakt vs. Allen Wrench</a>.</p>
+    <p class="note"><b>Anm. d. Red.</b>Loudblog war eine kostenlose Software, mit der man Podcasts und Audioblogs auf die eigene Seite stellen konnte. Sie kam im April 2005 heraus. PN steht für private Nachricht im Forum.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="ic" aria-hidden="true">4</span>Rückkopplung gesucht</h2>
+  <div class="talk">
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ja, theoretisch.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich bin müde.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Der ist müde. Dann geht’s nicht. Dann wird es wohl nichts aus unserem Interview mit den Superfreunden. Dann muss ich das jetzt so in die Sendung reinschneiden.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich wollte sowieso austreten aus der …</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Du hast überhaupt keine Chance auszutreten. Du fliegst raus. Du bist mir am Wochenende so auf den Sack gegangen.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Das weiß ich. Macht mir nichts.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ist jetzt Zickenalarm bei euch? … Hallo, alle zusammen!</p></div></div>
+    <div class="turn s"><span class="av s" aria-hidden="true">S</span><div class="bubble"><p class="who">Superfreunde</p><p class="said">Eins, zwei, drei, vier.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ey, war ja gar nicht so schlimm. Das ging ja noch.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Dann Verstärker leiser, Berten, du Arsch.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">So, jetzt besser?</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Immer noch Hall.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Toll. Und ich verstehe dich nicht mehr, weil es zu leise ist.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ich wollte mal eine richtig geile Rückkopplung hören. Warte mal. Achtung! Ey, da passiert ja gar nichts.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich versuch’s auch mal.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ich habe gerade das Mikrofon an die Box gehalten, aber da passiert nichts.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Habe ich auch gemacht.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Kann ja mal aufdrehen. So, jetzt drehe ich mal auf hier.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Was machst du?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ich drehe mal auf. Bringt aber auch nichts.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Hab ich auch gerade gemacht.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">So schlecht ist dieses Skype doch gar nicht.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Der Neiß ist schon im Bett, oder was?</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich bin hier, du Arsch. Ich rede doch die ganze Zeit. Hallt bei mir auch wie Sau.</p></div></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Ich habe gerade das Mikrofon an die Box gehalten, aber da passiert nichts.“<cite>Berten</cite></blockquote>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="ic" aria-hidden="true">5</span>Blitzinterview</h2>
+  <div class="talk">
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Okay, machen wir jetzt ein Blitzinterview mit den Superfreunden.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ja.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Wann kommt eure neue Platte raus?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Nächste Woche. … Neiß, das musst du beantworten.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich weiß nicht. Die Platte ist noch geheim, oder?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ja, das soll noch keiner wissen.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Und auch nicht, dass sie rauskommt.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Und wann gibt’s endlich mal Klingeltöne von euch auf der Homepage zum Runterladen? Klingeltöne sind doch gerade total angesagt.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Geh doch mal auf die Homepage und guck mal, seit wann da nichts mehr aktualisiert wurde. Das faule Schwein. Bringt ja nichts. Anrufen tut eh kein Arsch.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Stimmt.</p></div></div>
+    <div class="sysmsg">Stille in der Leitung.</div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Rüdi, bist du noch da?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ja, ich bin noch da. Ich überlege mir gerade eine Frage. Mir fällt aber nichts ein.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Tja, dann.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Wie sieht’s aus mit der Zukunft der Superfreunde? Sieht schlecht aus, oder wie?</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Das sieht rosig aus wie immer, würde ich sagen.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ja, aber der Neiß will nie mitmachen.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Der Bauer Bühl hängt auch schon irgendwie drin, ohne Führerschein. Hat er eigentlich wieder einen Führerschein?</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Nee, ist weg. Der ist komplett weg. Der lässt sich von Mama und Papa zur Arbeit bringen.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ehrlich? Das ist ja erniedrigend.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Allerdings. Siehst du ihm auch an. Da haben wir ja nicht mal Ruhe vor dem.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich weiß ganz genau, dass ich den nicht sehen muss, wenn ich nicht selber zu ihm hinfahre.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Eben. Und kommen kann er nicht. Aber jetzt, wo wir den Bühl rausgeschmissen haben, kann es eigentlich losgehen mit den Superfreunden.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ja, wenn der Schubert dabei ist.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Der Schubert macht jetzt den Ersatz-Bühl. Aber das darfst du nicht senden, das ist ja eine Überraschung.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ach so. Aber der hört es ja eh nicht, der Bühl. Und der Schubert auch nicht.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Den Bühl geht das überhaupt nichts an. Der ist draußen.</p></div></div>
+  </div>
+  <aside class="side">
+    <div class="card">
+      <h3>Kontakte: Die Superfreunde</h3>
+      <ul>
+        <li><b>Metal Berten</b></li>
+        <li><b>Nazi Neiß</b><span>Schlagzeug, heißt auch Christian</span></li>
+        <li><b>Bauer Bühl</b><span>rausgeschmissen</span></li>
+        <li><b>Schubert</b><span>der neue Ersatz-Bühl, noch geheim</span></li>
+      </ul>
+      <p class="more">Bühnennamen, wie die Band sie selbst führte. Aus dem Emsland, die erste Platte hieß „Wir pissen im Viereck“. Die Homepage lief über eine .de.ms-Adresse.</p>
+    </div>
+    <p class="note"><b>Anm. d. Red.</b>2005 war das Jahr der Klingeltöne. Der Crazy Frog aus der Klingelton-Werbung kam mit „Axel F“ in mehreren Ländern auf Platz eins.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="ic" aria-hidden="true">6</span>Grüße von Vera</h2>
+  <div class="talk">
+    <div class="sysmsg">Irgendwer tippt.</div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Wer hackt da schon wieder rum?</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich nicht.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Entschuldigung.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Der tippt wieder E-Mails. An wen schreibst du denn?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Wem ich gerade schreibe?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ach, das ist ja echt. Das darf doch nicht sein. Wir machen hier gerade ein wichtiges Interview.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ach, scheiße, ganz vergessen. Ich soll euch beide übrigens von Vera grüßen.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Wie, uns beide? Die kennt mich doch gar nicht.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Danke.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Weil ich ihr vorhin erzählt habe, dass wir das nachher machen. Natürlich kennt die dich.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ah ja, die Vera von euch. Grüß zurück.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Mache ich.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Also dann wünsche ich euch noch einen schönen Abend. Ich gehe jetzt unter die Dusche.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Was? Mitten im Interview? … Na gut, das wird zusammengeschnitten, da merkt dann keiner was. Sagt halt mal eine Message. Wünscht euch ein Lied.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Nee, dann haben wir keine Wünsche.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Okay, dann wünscht euch was von euch. Aber die drei Lieder kenne ich schon. Die habe ich alle schon gespielt.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Habe ich dir die anderen noch nicht geschickt?</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ich habe drei Lieder von dir.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ich kann dir noch eins schicken, ein neues. Das suche ich mir gleich aus, dann schicke ich dir das, und das wünsche ich mir dann.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Ja, okay. Macht das. Aber dann muss Christian sich auch noch eins wünschen.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Was der Neiß sich wünschen soll? Weiß ich nicht. Das kann er vielleicht selber sagen.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich will „Lokenbach Fuck Off!“ von den Atomaren Übermenschen.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Okay. Das wird sich einrichten lassen.</p></div></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>„Lokenbach Fuck Off!“ von The Atomaren Übermenschen steht im Sendungsarchiv in der Songliste vom 28. Juni 2006. Die Superfreunde haben das Lied auch selbst gespielt, es ist auf „Apfel Birne“.</p>
+    <div class="card">
+      <h3>Im Pogoradio gelaufen</h3>
+      <ul>
+        <li><b>Unsere Fans sind Schweine</b><span>Surfpunk California</span></li>
+        <li><b>Man findet keine Freunde mit Salat</b><span>Surfpunk California</span></li>
+        <li><b>Ich hätt so gern ein Pony</b><span>Surfpunk California</span></li>
+        <li><b>Superfreunde regieren die Erde</b><span>Apfel Birne</span></li>
+        <li><b>Kein Bock</b><span>Apfel Birne</span></li>
+        <li><b>Bier is leer</b><span>Apfel Birne</span></li>
+      </ul>
+      <p class="more">Alle Songlisten stehen im <a href="/sendungen/">Sendungsarchiv</a>.</p>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="ic" aria-hidden="true">7</span>Anruf beendet</h2>
+  <div class="talk">
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Okay. Du, ich mache jetzt Schluss. Ich habe keinen Bock mehr.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Soll ich das deiner Freundin sagen, warum du Schluss machst?</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ja. Mit euch jetzt.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ach so.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Mir tut der Arm weh vom Telefonieren.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Hast du kein Clipmikro?</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Nee, ich habe einen Ständer.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ach, deswegen tut der Arm weh.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Einen Mikroständer.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Du hast wahrscheinlich ein Clipmikro, und der Arm tut trotzdem weh, weil du den ständig am Ständer hast.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Der hält wahrscheinlich die ganze Zeit den PC ans Ohr.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Da bekommt man schon Wichslaune bei so einer Konferenzschaltung.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Wir müssen uns alle mal Kameras holen, und dann machen wir das zusätzlich mit Kamera.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ich glaube, da wird’s interessanter.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Allerdings. Kann man das bei Skype machen, Kamera?</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Nee, da gibt’s andere Programme für. Ich habe so eine Scheißkamera, aber ich kriege die irgendwie nicht ans Laufen, weil da irgendwas nicht funktioniert.</p></div></div>
+    <div class="turn n"><span class="av n" aria-hidden="true">N</span><div class="bubble"><p class="who">Neiß</p><p class="said">Ja, du wahrscheinlich.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Nein. Ich habe schon tausend Foren nachgeguckt, und die haben alle gesagt, die wissen auch nicht, wie das geht.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Okay, ich muss den Scheiß noch zusammenschneiden. Ich mache jetzt Schluss. Ich habe keinen Bock mehr.</p></div></div>
+    <div class="turn b"><span class="av b" aria-hidden="true">B</span><div class="bubble"><p class="who">Berten</p><p class="said">Ab, du Penner.</p></div></div>
+    <div class="turn r"><span class="av r" aria-hidden="true">R</span><div class="bubble"><p class="who">Rüdi</p><p class="said">Okay.</p></div></div>
+    <div class="sysmsg">Anruf beendet.</div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Ich habe schon tausend Foren nachgeguckt, und die haben alle gesagt, die wissen auch nicht, wie das geht.“<cite>Berten über seine Kamera</cite></blockquote>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="hangup"><span aria-hidden="true">✆</span> Aufgelegt</p>
+  <p class="protokoll">Pogoradio auf Bermudafunk · 2005 · Rüdi per Skype-Konferenz mit Berten und Neiß von den Superfreunden · Transkript redigiert und gekürzt. Auf der Aufnahme sagt niemand, wer gerade spricht. Die Zuordnung ergibt sich aus dem Gespräch, wo das nicht klappt, steht „Superfreunde“. Die Adresse der Webseite ist weggelassen.</p>
+</footer>
+</body>
+</html>
