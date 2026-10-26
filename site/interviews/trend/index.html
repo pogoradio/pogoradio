@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend im Haus · Pogoradio</title>
+<meta name="description" content="Pogoradio am 27. März 2004 im Haus in Ludwigshafen mit Feezer und Peter von Trend aus Landau: Plastic-Bomb-Ausbildungslager, aufgeschürfte Kniescheiben, zwei Flamingos mit Badekappen und Völkerverständigung zwischen Mannheim und Ludwigshafen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Encode+Sans+Condensed:wght@500;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f7f3;
+  --sheet:#ffffff;
+  --ink:#1b1d1f;
+  --muted:#596064;
+  --rule:#c8cdd0;
+  --rule-strong:#1b1d1f;
+  --teal:#00726a;
+  --teal-soft:#e2f1ef;
+  --orange:#f28c00;
+  --orange-ink:#a85a00;
+  --box-shadow:0 1px 0 rgba(0,0,0,.05),0 10px 30px -18px rgba(0,0,0,.35);
+  --sans:"Source Sans 3","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --cond:"Encode Sans Condensed","Arial Narrow","Roboto Condensed",Arial,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#111416;
+    --sheet:#171b1d;
+    --ink:#e5e9ea;
+    --muted:#9ba4a8;
+    --rule:#2f3639;
+    --rule-strong:#e5e9ea;
+    --teal:#45c9bd;
+    --teal-soft:#15302e;
+    --orange:#ff9f1c;
+    --orange-ink:#ffb04a;
+    --box-shadow:0 1px 0 rgba(255,255,255,.03),0 10px 30px -18px rgba(0,0,0,.9);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111416;
+  --sheet:#171b1d;
+  --ink:#e5e9ea;
+  --muted:#9ba4a8;
+  --rule:#2f3639;
+  --rule-strong:#e5e9ea;
+  --teal:#45c9bd;
+  --teal-soft:#15302e;
+  --orange:#ff9f1c;
+  --orange-ink:#ffb04a;
+  --box-shadow:0 1px 0 rgba(255,255,255,.03),0 10px 30px -18px rgba(0,0,0,.9);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.55 var(--sans);overflow-x:hidden}
+a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+.wrap{width:min(1120px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Packung ---------- */
+.cover{padding:40px 0 36px;border-bottom:1px solid var(--rule)}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.kicker{margin:0 0 18px;font:500 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.gi{margin:0 0 6px;font:700 15px/1.3 var(--cond);letter-spacing:.04em;text-transform:uppercase;color:var(--teal)}
+h1{margin:0;font:900 clamp(76px,15vw,176px)/.86 var(--cond);letter-spacing:-.02em}
+h1 sup{font-size:.22em;font-weight:700;vertical-align:top;position:relative;top:.35em;margin-left:.06em;color:var(--muted)}
+.claim{margin:14px 0 0;font:700 clamp(20px,2.4vw,26px)/1.25 var(--cond);letter-spacing:.01em}
+.warn{
+  margin:24px 0 0;max-width:38em;padding:14px 16px;border:2px solid var(--rule-strong);
+  font:600 16px/1.45 var(--sans);background:var(--sheet);
+}
+.lede{margin:18px 0 0;max-width:38em}
+
+.box{
+  position:relative;background:var(--sheet);border:1px solid var(--rule);box-shadow:var(--box-shadow);
+  padding:22px 22px 18px;overflow:hidden;
+}
+.box::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:14px;
+  background:repeating-linear-gradient(90deg,var(--teal) 0 46px,var(--orange) 46px 62px,transparent 62px 70px);
+}
+.box .mk{margin:14px 0 2px;font:900 54px/.9 var(--cond);letter-spacing:-.02em}
+.box .mk span{font-size:.3em;font-weight:700;vertical-align:top;color:var(--muted)}
+.box .what{margin:0 0 14px;font:700 17px/1.25 var(--cond);text-transform:uppercase;letter-spacing:.04em;color:var(--teal)}
+.box dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font:400 15px/1.35 var(--sans);border-top:1px solid var(--rule);padding-top:12px}
+.box dt{font:500 12px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.box dd{margin:0}
+.box .qty{
+  position:absolute;right:16px;top:30px;width:70px;height:70px;border-radius:50%;
+  background:var(--orange);color:#1b1d1f;display:grid;place-items:center;text-align:center;
+  font:800 13px/1.05 var(--cond);text-transform:uppercase;transform:rotate(10deg);
+}
+.box .qty b{display:block;font-size:28px;font-weight:900}
+.box .lot{margin:14px 0 0;font:400 11px/1.4 var(--mono);color:var(--muted);letter-spacing:.04em}
+
+/* Inhaltsverzeichnis */
+.toc{margin:30px 0 0;padding:16px 0 0;border-top:2px solid var(--rule-strong);max-width:42em}
+.toc p{margin:0 0 8px;font:700 15px/1.3 var(--cond);text-transform:uppercase;letter-spacing:.06em}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:28px;font:400 16px/1.45 var(--sans)}
+.toc li{break-inside:avoid;padding:2px 0;display:grid;grid-template-columns:1.8em minmax(0,1fr)}
+.toc li span{font:500 14px/1.6 var(--mono);color:var(--teal)}
+.toc a{color:var(--ink);text-decoration:none}
+.toc a:hover{color:var(--teal);text-decoration:underline}
+
+/* ---------- Abschnitte ---------- */
+main{padding:10px 0 30px}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px 52px;padding:44px 0 38px;border-bottom:1px solid var(--rule)}
+.part:last-of-type{border-bottom:0}
+.part h2{grid-column:1/-1;margin:0 0 8px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 14px;align-items:baseline}
+.part h2 .no{
+  display:inline-grid;place-items:center;min-width:1.6em;height:1.6em;padding:0 .25em;border-radius:50%;
+  background:var(--teal);color:var(--paper);font:800 22px/1 var(--cond);transform:translateY(-.08em);
+}
+.part h2 .t{font:800 clamp(26px,3.4vw,38px)/1.08 var(--cond);letter-spacing:-.005em}
+.part h2 .t small{display:block;margin-top:6px;font:500 15px/1.3 var(--mono);letter-spacing:.02em;color:var(--muted);text-transform:none}
+
+.talk{min-width:0}
+.turn{display:grid;grid-template-columns:6.4em minmax(0,1fr);gap:0 18px;margin:0 0 12px}
+.turn .who{margin:.28em 0 0;font:500 12.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+.turn .said{margin:0}
+.turn.q .who{color:var(--muted)}
+.turn.q .said{font-weight:600}
+.turn.x .who{color:var(--orange-ink)}
+.turn.x .said{font-style:italic;color:var(--muted)}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:20px;align-self:start}
+.note{margin:0;border:1px solid var(--rule);border-top:4px solid var(--teal);background:var(--sheet);padding:14px 16px 14px;font:400 15.5px/1.45 var(--sans)}
+.note b{display:block;margin:0 0 6px;font:500 12px/1.2 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--teal)}
+.pull{margin:0;padding:16px 0 16px 16px;border-left:6px solid var(--orange);font:800 clamp(23px,2.3vw,28px)/1.15 var(--cond)}
+.pull cite{display:block;margin-top:10px;font:500 12px/1.2 var(--mono);font-style:normal;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.list-box{margin:0;border:1px solid var(--rule);background:var(--sheet);padding:14px 16px}
+.list-box h3{margin:0 0 10px;font:700 15px/1.2 var(--cond);text-transform:uppercase;letter-spacing:.06em}
+.list-box ul{margin:0;padding:0;list-style:none;font:400 15.5px/1.4 var(--sans)}
+.list-box li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:8px;padding:6px 0;border-top:1px solid var(--rule)}
+.list-box li:first-child{border-top:0}
+.list-box .y{font:500 13px/1.6 var(--mono);color:var(--muted)}
+
+@media (max-width:960px){
+  .cover-grid{grid-template-columns:minmax(0,1fr)}
+  .box{max-width:420px}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px}
+}
+@media (max-width:560px){
+  body{font-size:17.5px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:2px}
+  .turn .who{margin:0}
+  .toc ol{columns:1}
+  .part{padding:36px 0 30px}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:28px 0 60px;border-top:2px solid var(--rule-strong)}
+.protokoll{margin:0;max-width:46em;font:400 15px/1.55 var(--sans);color:var(--muted)}
+.bye{margin:18px 0 0;font:800 20px/1.2 var(--cond)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="cover">
+  <div class="wrap">
+    <p class="kicker">Pogoradio auf Bermudafunk · Das Haus, Ludwigshafen · 27. März 2004</p>
+    <div class="cover-grid">
+      <div>
+        <p class="gi">Gebrauchsinformation für Hörerinnen und Hörer</p>
+        <h1>Trend<sup>®</sup></h1>
+        <p class="claim">Punkrock aus Landau. Hergestellt in den Ausbildungslagern des Plastic Bomb.</p>
+        <p class="warn">Lesen Sie das ganze Interview sorgfältig durch, bevor Sie Trend live anwenden. Es enthält wichtige Informationen über Kniescheiben, Flamingos und die Völkerverständigung zwischen Mannheim und Ludwigshafen.</p>
+        <p class="lede">Trend haben gerade im Haus in Ludwigshafen gespielt. Das Plastic Bomb feiert die Band aus Landau als „Fehlfarben des neuen Jahrtausends“, in Landau selbst kennt sie angeblich keiner. Rüdi spricht nach dem Konzert mit Sänger Feezer und Schlagzeuger Peter. In der Nacht wird die Uhr umgestellt.</p>
+      </div>
+      <aside class="box" aria-label="Packungsangaben">
+        <p class="qty" aria-hidden="true"><span><b>14</b>Lieder</span></p>
+        <p class="mk">Trend<span>®</span></p>
+        <p class="what">Das Produkt · CD</p>
+        <dl>
+          <dt>Wirkstoffe</dt><dd>Feezer (Gesang), Peter (Schlagzeug)</dd>
+          <dt>Herkunft</dt><dd>Landau, Pfalz. Sänger aus der Nähe von Koblenz</dd>
+          <dt>Hersteller</dt><dd>Plastic Bomb Records, 2003</dd>
+          <dt>Anwendung</dt><dd>Live, nach Bedarf. Kniescheiben schützen.</dd>
+        </dl>
+        <p class="lot">CH.-B.: PBR-038 · VERW. BIS: SIEHE PLASTIC BOMB</p>
+      </aside>
+    </div>
+    <nav class="toc" aria-label="Inhalt">
+      <p>Was in diesem Interview steht</p>
+      <ol>
+        <li><span>1.</span><a href="#t1">Was ist Trend und woher kommt es?</a></li>
+        <li><span>2.</span><a href="#t2">Wie wird Trend hergestellt?</a></li>
+        <li><span>3.</span><a href="#t3">Was Trend enthält</a></li>
+        <li><span>4.</span><a href="#t4">Welche Nebenwirkungen sind möglich?</a></li>
+        <li><span>5.</span><a href="#t5">Besondere Vorsicht: Flamingos</a></li>
+        <li><span>6.</span><a href="#t6">Haltbarkeit</a></li>
+        <li><span>7.</span><a href="#t7">Wechselwirkungen mit der Pogo Presse</a></li>
+        <li><span>8.</span><a href="#t8">Herkunft: Landau</a></li>
+        <li><span>9.</span><a href="#t9">Unverträglichkeiten</a></li>
+        <li><span>10.</span><a href="#t10">Dosierung: Ludwigshafen</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">1</span><span class="t">Was ist Trend und woher kommt es?<small>Kniescheiben, Koblenz, das künstlichste aller Bundesländer</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und du bist der … von Trend.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ja, ich bin der Frontmann.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Der Frontmann. Ich habe schon gehört, du hast dir bei Konzerten schon mehrere Kniescheiben aufgeschürft. Du bist sehr intensiv auf der Bühne und davor.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ja. Das gehört irgendwie dazu.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was mich ja wundert: Ich komme aus Mannheim, der Sender ist aus Mannheim. Und dann hieß es plötzlich im Plastic Bomb: Trend, der Stern am Himmel. Das Plastic Bomb ist ja dieses Heft, das bundesweit vertrieben wird. Die haben euch sofort unter Vertrag genommen und als die Fehlfarben des neuen Jahrtausends gepriesen. Und dann höre ich: Die kommen aus Landau. Wie kann so was sein?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Bitte noch mal im Pfälzer Dialekt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, komm. Ich habe mich vorbereitet: Du kommst aus Koblenz.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Aus der Nähe von Koblenz. Ich bin also Rheinländer. Deswegen sind hier Rheinland und Pfalz verbunden. Die Synthese sozusagen. Endlich ist zusammengewachsen, was zusammengehört. Rheinland-Pfalz, das künstlichste aller Bundesländer. Es geht doch auch gemeinsam.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Fehlfarben sind eine Düsseldorfer Band, ihre erste Platte „Monarchie und Alltag“ von 1980 gilt als Klassiker der Neuen Deutschen Welle. „Jetzt wächst zusammen, was zusammengehört“ sagte Willy Brandt nach dem Mauerfall.</p>
+    <p class="note"><b>Anm. d. Red.</b>Rheinland-Pfalz wurde 1946 von der französischen Besatzungsmacht aus Gebieten zusammengesetzt, die vorher zu Bayern, Preußen und Hessen gehört hatten. Die Pfalz mit Landau gehörte zu Bayern.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">2</span><span class="t">Wie wird Trend hergestellt?<small>Ausbildungslager, Marionetten, Choreografen</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nächste Frage. Wie kommt ihr dazu, dass euch das Plastic Bomb sofort aufgenommen hat, auch in den Mailorder? Es gibt einen Haufen Bands, die anfangen, und ihr seid sofort von null auf hundert gestartet.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Um genau zu sein, sind wir von denen aufgesammelt worden. Vielmehr entführt. In den Plastic-Bomb-Ausbildungslagern im Ruhrpott, in stillgelegten Zechen, wurden wir jahrelang auf unseren Auftritt als Band vorbereitet.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wer schreibt euch eigentlich die Texte? Doch nicht der Sänger, oder?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ja, natürlich, was sonst? … Nein. Wir räumen jetzt auf mit so etwas, dass in der Punkrockszene die Bands ihre Texte und Stücke selber schreiben. Das macht natürlich alles das Plastic Bomb für uns. Wir sind da reine Marionetten.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Und das kommt dann per E-Mail?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Nee. Wir kriegen fertige Bänder geliefert und üben das dann mit Choreografen und Musiklehrern ein. Sehr professionell.</p></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Wir räumen jetzt auf mit so etwas, dass die Bands ihre Texte selber schreiben.“<cite>Feezer</cite></blockquote>
+    <p class="note"><b>Anm. d. Red.</b>Das Plastic Bomb ist ein Punk-Fanzine aus Duisburg mit eigenem Label und Mailorder. 2003 erschien dort „Das Produkt“, die erste CD von Trend.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">3</span><span class="t">Was Trend enthält<small>Ein Schlagzeuger, kein Abitur, Schuhgröße 45</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Findest du eigentlich gut, was er da so schwätzt?</p></div>
+    <div class="turn"><p class="who">Peter</p><p class="said">Ich gehöre nicht wirklich zur Band. Ich bin der Schlagzeuger.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ah, der Schlagzeuger. Der Typ hinten dran, von dem man eigentlich keine Bilder machen kann, weil der immer so unterbelichtet ist.</p></div>
+    <div class="turn"><p class="who">Peter</p><p class="said">Gott sei Dank.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Also, der Mann ist nicht unterbelichtet. Es fällt vielleicht manchmal zu wenig Licht auf ihn, aber unterbelichtet ist keiner von uns.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr alle Abitur? Du hast Abitur?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Nee, nee, nee. Irgendwelche Diplome von staatlicher Seite sagen ja nichts aus.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Schule ist Ländersache.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Sehr richtig bemerkt. Das haben die Länder ja auch nur von den Grundgesetzmachern übertragen bekommen, damit sie auch was zu tun haben. Also, irgendwelche Diplome sagen nichts über einen Menschen aus. Ich habe auch noch andere Qualitäten außer Abitur.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was willst du an dir positiv sagen? Was hast du für positive Eigenschaften? Außer der Schuhgröße. Was hast du für eine Schuhgröße? Das sind ja mindestens 45.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Nee, nee, die sehen nur so groß aus. Ich muss große Schuhe tragen, weil meine Füße nicht mehr so können. Qualitäten, das soll der Trainer beurteilen. Trainer Peter ist super. Ja, doch. Süßer Typ. Extrem angenehm im Bunker. Kreatives Köpfchen.</p></div>
+  </div>
+  <aside class="side">
+    <div class="list-box">
+      <h3>Zusammensetzung</h3>
+      <ul>
+        <li><span class="y">Ges.</span><span>Feezer, aus der Nähe von Koblenz</span></li>
+        <li><span class="y">Schl.</span><span>Peter, spielt Flöte und sammelt Witze</span></li>
+        <li><span class="y">Sonst.</span><span>Laut last.fm gehören außerdem Boris und Stolle zu Trend</span></li>
+      </ul>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">4</span><span class="t">Welche Nebenwirkungen sind möglich?<small>Ballsport, Fitnessstudio, Marionetten</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und was sind deine Hobbys? Das interessiert ja gerade die weiblichen Fans. Heute Abend war der Frauenanteil ziemlich hoch.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Wahrscheinlich nicht wegen Bocky.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das glaube ich nicht. Wahrscheinlich wegen Trend. Was sind denn eure Hobbys? Okay, ihr habt keine Zeit für Hobbys, ihr macht ja Musik.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Die Frage zielte doch schon auf die Hobbys mit den Fans. Zum Beispiel mit Eiern und Gewürzen. Öl. Mayonnaise. Nee. Das große Hobby ist natürlich der Sport.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was denn?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Alles, was mit Bällen zu tun hat. Ballsportarten. Keine Leichtathletik, kein Kunstturnen, kein Eiskunstlaufen. Springreiten, Motorsport, das ist auch alles verpönt. Der Ball muss im Mittelpunkt des Geschehens stehen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wir sind aber keine Sportsendung. Wir machen hier Punkrock.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ach, das ist jetzt Punkrock?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich wollte gerade von deinen Hobbys ablenken, weil das nichts taugt. Die Leute sind total desinteressiert.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Eben hast du noch gemeint, die weiblichen Fans sind sehr interessiert.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nicht an euren Hobbys, sondern mehr an euch. Du zum Beispiel bist schon ziemlich gut gebaut. Was machst du eigentlich?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ich gehe eigentlich sechsmal die Woche ins Fitnessstudio.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Da kann man sich aber leicht versprechen, oder?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Wieso versprechen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Sag das noch mal: sechsmal ins Fitnessstudio.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Sechsmal ins Fitnessstudio nach Mannheim. Da gehe ich halt hin und fi… Fitness machen. Aber ansonsten bin ich leidenschaftlicher Marionettenspieler.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Einhändig oder zweihändig?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Zweihändig natürlich.</p></div>
+  </div>
+  <aside class="side">
+    <blockquote class="pull">„Der Ball muss im Mittelpunkt des Geschehens stehen.“<cite>Feezer über seine Hobbys</cite></blockquote>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">5</span><span class="t">Besondere Vorsicht: Flamingos<small>Peter erzählt einen Witz</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und Peter, was magst du so?</p></div>
+    <div class="turn"><p class="who">Peter</p><p class="said">Ich spiele Flöte und sammle Witze.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dann erzähl mal einen Witz. Wir sind eine sehr ernste Sendung.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Mach mal das Bier auf hier, bitte.</p></div>
+    <div class="turn"><p class="who">Peter</p><p class="said">Ein Typ fährt über die Rheinbrücke und wird von der Polizei angehalten. Personenkontrolle. Machen Sie mal den Kofferraum auf. Im Kofferraum liegen zwei Flamingos. Sagt der Polizist: Was machen die Flamingos im Kofferraum? Das geht überhaupt nicht. Bringen Sie die sofort in den Zoo.</p></div>
+    <div class="turn"><p class="who">Peter</p><p class="said">Okay. Am nächsten Tag wieder Polizeikontrolle an der Brücke. Machen Sie mal den Kofferraum auf. Da liegen die beiden Flamingos drin, mit Badekappen auf. Sagt der Polizist: Was soll denn das? Ich habe doch gesagt, Sie sollen die in den Zoo bringen! Sagt der Typ: Gestern waren wir im Zoo. Heute gehen wir ins Schwimmbad.</p></div>
+    <div class="turn"><p class="who">Peter</p><p class="said">Super, oder?</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Der Witz ist auch mit Pinguinen bekannt. Bei Peter sind es Flamingos.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">6</span><span class="t">Haltbarkeit<small>Neue Lieder, die Post und die Zeitumstellung</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr vom Plastic Bomb schon ein paar neue Lieder zugeschickt bekommen? Für die neue CD zum Beispiel?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Wollen wir dem nicht vorgreifen? Ich denke, das wäre so eine Überraschung.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Feige Sau.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ja, ich bin feige. Das ist das Alter, da verlässt einen der Mut. Nee, es ist noch nichts. Heute war nichts in der Post, und vielleicht morgen. Nee, morgen ist Sonntag. Die Uhr wird vorgestellt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Heute Nacht?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Heute Nacht wird die Uhr vorgestellt. Nur mal als Information: kürzer schlafen.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>In der Nacht zum 28. März 2004 begann die Sommerzeit. Daran lässt sich der Abend datieren: Samstag, 27. März 2004.</p>
+    <div class="list-box">
+      <h3>Darreichungsformen</h3>
+      <ul>
+        <li><span class="y">2003</span><span>„Das Produkt“, CD</span></li>
+        <li><span class="y">2004</span><span>„Gott hat keine Flugzeuge“, Single</span></li>
+        <li><span class="y">2005</span><span>„Navigator“, CD</span></li>
+      </ul>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">7</span><span class="t">Wechselwirkungen mit der Pogo Presse<small>Ein Iro, ein Pogostück, ein Vorwort beim Catering</small></span></h2>
+  <div class="talk">
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Ich gehe schon mal Bier holen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich halte das Interview jetzt an.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Nee, doch nicht. Ich habe eh nichts zu sagen, mach ruhig weiter. Rüdi, hast du genug drauf?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, wir müssen noch ein paar coole Fragen stellen. Zum Beispiel: Der Bocky hat ja mit Pogoradio nichts zu tun. Der ist aber der Chefredakteur von der Pogo Presse.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Der hat doch keinen Iro. Dann kann er eigentlich schon nicht mehr Pogo.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe auch keinen Iro.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Heute nicht hochgestellt. Der ist aber scheiße rasiert, also gar nicht rasiert. Da müsste ich mich mal ein bisschen ranhalten.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Stehst du auf rasiert?</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Ich stehe auf komplett rasiert. Aber Rüdi, ich wollte eine Frage stellen, die hat er mir in den Mund gelegt: Ihr habt in einem Lied gesungen, die Pogo Presse wird irgendwas schreiben.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ich habe einfach nur gesagt: Die Leute waren so nett am Pogotanzen, besonders der eine mit dem weinroten T-Shirt. Da dachte ich, wir spielen noch ein richtiges Pogostück, damit die Pogo Presse auch was zu schreiben hat.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die Pogo Presse, ist das jetzt ein fester Begriff?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Der Name war natürlich schon bekannt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Weil das ein Heft aus Mannheim ist.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ja, das ist mir bekannt. Ich habe eben auch die aktuelle Ausgabe erworben und das Vorwort direkt beim Catering gelesen. Verschlungen sozusagen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">In der Redaktion von der Pogo Presse geht es ja ziemlich ab, habe ich gehört. Aber wir brauchen nicht über andere Sachen zu reden. Ich bin Pogoradio, das ist eine ganz andere Firma, eine komplett andere Baustelle.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">So gefällt mir das, wenn sich die Leute zoffen. Und wenn nicht alle so handzahm sind wie wir beim Plastic Bomb.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Die Pogo Presse ist ein Punk-Fanzine aus Mannheim, Bocky ihr Chefredakteur. Mit Pogoradio hat sie nichts zu tun, außer dem Pogo.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t8">
+  <h2 id="t8"><span class="no">8</span><span class="t">Herkunft: Landau<small>Keine Sau kennt sie, zwei Proberäume</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Apropos handzahm: Gestern war ich in Landau auf einem Konzert, im Fatal. Da habe ich mich mal umgehört. Den Markus mit dem Studio kennt ihr wahrscheinlich alle. Und ich habe gefragt: Sag mal, das kann ja wohl nicht angehen. Trend kommen aus Landau, und keine Sau kennt sie? Landauer Bands spielen ja eigentlich immer so lange in Landau, bis sie niemand mehr hören will.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Bis sie in Mannheim spielen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Genau. Und jetzt kommt plötzlich eine Band mit Fans irgendwo im Ausland, die kommt aus Landau, und keiner kennt sie. Da hat er mir erzählt, ihr hättet früher anders geheißen. Und deshalb wollt ihr nicht mit eurer Vergangenheit kokettieren, weil ihr da schlechte Vibrations rübergebracht habt.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Du bist gut vorbereitet. Aber da musst du noch eine Generation weiter zurückgehen.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">In Landau gibt es zwei Proberäume, einer davon am Bahnhof. Und aus jedem Proberaum kommen so fünf, sechs, sieben, acht Bands.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>„Gestern“ war Freitag, der 26. März 2004. Die alten Bandnamen sind auf der Aufnahme nicht sicher zu verstehen und fehlen deshalb.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t9">
+  <h2 id="t9"><span class="no">9</span><span class="t">Unverträglichkeiten<small>Präsidenten, Mütter und Pur</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie steht ihr zum Präsidenten?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Scheiße.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Welcher? Putin oder Bush?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich mache hier einfach nur ein Interview mit euch. Und ich bin eigentlich nur deshalb hier, weil es hier lecker Freibier gibt.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ja, genau. Wir können auch über Frauen weiterreden. Oder wir brechen das Interview jetzt ab. Mit deiner Mutter.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mit meiner Mutter? Was ist mit der? Die kann scheiße kochen.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Echt? Nee, alle Mütter kochen gut.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Meine macht es beruflich. Sie ist Köchin und kann nicht gut kochen.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Da macht sie aber nicht viel Geld beim Kochen, oder?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Doch.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Manche Leute machen hauptberuflich Musik und machen das auch scheiße.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Zum Beispiel Pur.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Oh ja, da vertut man sich.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Pur haben ja hier im Haus gespielt und gemeint, das wäre das schlechteste Konzert gewesen, das sie je gegeben haben. Da waren vier Leute anwesend.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Jetzt nichts Falsches sagen, sonst wird man nie groß.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Der Veranstalter hat gemeint, ihr wart schlecht.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Du warst also dabei. Du bist also Pur-Fan.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich bin kein Pur-Fan! Abbruch, Abbruch!</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Wladimir Putin war zwei Wochen vorher, am 14. März 2004, als russischer Präsident wiedergewählt worden. In den USA regierte George W. Bush.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t10">
+  <h2 id="t10"><span class="no">10</span><span class="t">Dosierung: Ludwigshafen<small>Max für Istanbul und die Völkerverständigung</small></span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was findet ihr so an Musik gut?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Zum Beispiel die Band, die da eben stand. Auch nicht schlecht. Super.</p></div>
+    <div class="turn x"><p class="who">Dazwischen</p><p class="said">Oh, Max für Istanbul!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Istanbul ist aber gefährlich. Ich würde mir überlegen, ob ich da auftrete. Vielleicht sollte man das nach Ludwigshafen verlegen.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Unbedingt. Oder nach Mannheim.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Stimmt es, dass Mannheimer normalerweise nicht nach Ludwigshafen auf Konzerte gehen?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Stimmt. Warum?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Deswegen sind wir ja jetzt gerade hier. Wir sind die Ausnahme. Völkerverständigung.</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Ihr müsst hier sein, weil hier Trend spielen. Da ist der Name Programm. Das ist ein neuer Trend.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das sind jetzt fünfzehn Minuten. Ich habe nur eine Stunde Sendung. Habt ihr noch irgendwas Wichtiges zu sagen?</p></div>
+    <div class="turn"><p class="who">Feezer</p><p class="said">Mannheimer, fahrt nach Ludwigshafen auf Konzerte. Und Ludwigshafener, fahrt nach Mannheim auf Konzerte. Und Xavier bleibt besser in Mannheim und macht keine Konzerte mehr.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, das war’s.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Max Mutzke hatte eine Woche vorher, am 19. März 2004, den deutschen Vorentscheid für den Eurovision Song Contest gewonnen. Der fand im Mai 2004 in Istanbul statt.</p>
+    <p class="note"><b>Anm. d. Red.</b>Mannheim und Ludwigshafen liegen sich am Rhein gegenüber, getrennt durch die Landesgrenze zwischen Baden-Württemberg und Rheinland-Pfalz. Xavier Naidoo ist Mannheimer und sang damals bei den Söhnen Mannheims.</p>
+    <blockquote class="pull">„Mannheimer, fahrt nach Ludwigshafen auf Konzerte. Und Ludwigshafener, fahrt nach Mannheim.“<cite>Feezer</cite></blockquote>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="protokoll">Pogoradio auf Bermudafunk · Das Haus, Ludwigshafen · Samstag, 27. März 2004 · Rüdi mit Feezer und Peter von Trend · Transkript redigiert und gekürzt. Wer was sagt, ist auf der Aufnahme nicht immer zu hören. Stimmen, die sich nicht zuordnen lassen, stehen als „Dazwischen“. Ein paar Stellen über Leute, die nicht dabei waren, sind weggelassen.</p>
+  <p class="bye">Zu Risiken und Nebenwirkungen fragen Sie Ihr Plastic Bomb.</p>
+</footer>
+</body>
+</html>
