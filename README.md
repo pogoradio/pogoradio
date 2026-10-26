@@ -21,14 +21,18 @@ site/
   favicon.ico, apple-touch-icon.png
   interviews/<name>/          eine Seite pro Interview: index.html + Bilder
   geschichten/<name>/         Geschichten und O-Töne
-  sendungen/                  Sendungsarchiv: alle Sendungen 2001–2017 mit Gast, Songliste, MP3-Dateiname
-  interview-archiv/           Interviews aus dem alten Blog pogoradio.de (2005–2015)
+  sendungen/                  Sendungsarchiv: alle Sendungen 2000–2018 mit Gast, Songliste, MP3-Dateiname
+  interview-archiv/           Interviews aus dem alten Blog pogoradio.de (2005–2015): Liste mit Suche
+  interview-archiv/<name>/    die Text-Interviews aus dem Blog, behutsam redigiert, je eine Seite mit eigenem Look
 ```
 
 Adressen: `pogoradio.neocities.org/interviews/<name>/`
 
 Sendungsarchiv und Interview-Archiv wurden aus der alten WordPress-Datenbank (Stand August 2017) erzeugt.
 Die Daten stecken als JSON direkt in der jeweiligen `index.html`. Die Datenbank selbst liegt nicht im Repo.
+Die 36 Text-Interviews im Interview-Archiv sind behutsam redigiert (Rechtschreibung, Zeichensetzung, einheitliches
+Frage-Antwort-Layout, tote Links entfernt; Inhalt und Ton unverändert). Die Liste verlinkt auf diese Seiten,
+die Suche durchsucht ihren Text.
 
 ## Neue Seite hinzufügen
 

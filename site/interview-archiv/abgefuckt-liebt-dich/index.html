@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abgefuckt liebt Dich – Pogoradio</title>
+<meta name="description" content="Wer steckt hinter der Punk-Community „Abgefuckt liebt Dich“? Jasmin hat 2008 für den Pogoradio-Blog Jan Rakete ausgefragt: Gründung, Finanzierung, Superpunks, Nazis, die mitlesen, und der große Plan.">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Spline+Sans+Mono:wght@400;600&amp;display=swap">
+<style>
+/* Ausgeschnittene Buchstaben in Lila und Gelb, laut wie die Seite selbst */
+:root { --display: "Dela Gothic One", Impact, "Arial Black", sans-serif; --body: "IBM Plex Sans", Georgia, "Times New Roman", serif; --mono: "Spline Sans Mono", "Courier New", ui-monospace, monospace; --display-case: uppercase; --radius: 0px; --q-weight: 700; --q-style: normal; --intro-style: normal; --bg: #f0edf5; --bg2: #dcd4e8; --paper: #fffeff; --ink: #1b1724; --soft: #625b70; --rule: #ddd6e8; --accent: #7b2ff7; --accent2: #ffd400; --headbg: #1b1724; --headink: #fffeff; --shadow: rgba(30,0,60,.2); --box-border: 1.5px solid #1b1724; --sheet-shadow: 8px 8px 0 #dcd4e8; --part-rule: 2px dotted #ddd6e8; --on-accent: #fff; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #13101a; --bg2: #0a0810; --paper: #1c1825; --ink: #efeaf7; --soft: #a39cb2; --rule: #322b40; --accent: #a77bff; --accent2: #ffd400; --headbg: #efeaf7; --headink: #13101a; --shadow: rgba(0,0,0,.6); --box-border: 1.5px solid #efeaf7; --sheet-shadow: 8px 8px 0 #0a0810; --part-rule: 2px dotted #322b40; --on-accent: #fff; color-scheme: dark; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.62 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: calc(68rem + 32px); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tiny { margin: 0; font: 700 .74rem/1.35 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.head { padding-block: clamp(2rem, 6vw, 3.75rem) 0; display: grid; gap: 1.3rem; }
+.head.center { justify-items: center; text-align: center; }
+.dek { margin: 0; max-width: 40rem; font-size: clamp(1.08rem, 2.3vw, 1.25rem); line-height: 1.5; text-wrap: pretty; }
+.source { color: var(--soft); }
+h1 { overflow-wrap: break-word; hyphens: manual; }
+
+.main { padding-block: clamp(2.25rem, 5vw, 3.5rem) 2rem; display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 45rem); gap: clamp(1.75rem, 4vw, 3.25rem); justify-content: space-between; align-items: start; }
+.main.solo { grid-template-columns: minmax(0, 45rem); justify-content: center; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); display: grid; gap: 1.4rem; min-width: 0; }
+.box { border: var(--box-border); background: var(--paper); padding: 1rem 1rem 1.1rem; display: grid; gap: .6rem; border-radius: var(--radius); }
+.box h2 { margin: 0; font: 400 1.15rem/1.1 var(--display); text-transform: var(--display-case); letter-spacing: .03em; }
+.box ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .05rem; }
+.box ol a { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: .2rem; padding: .16rem 0; font: 400 .9rem/1.3 var(--mono); text-decoration: none; }
+.box ol a span:first-child { color: var(--accent); font-weight: 700; }
+.box ol a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.box dl { margin: 0; display: grid; gap: .5rem; }
+.box dt { font: 700 .86rem/1.2 var(--mono); }
+.box dd { margin: .05rem 0 0; font-size: .9rem; line-height: 1.38; color: var(--soft); }
+
+.sheet { background: var(--paper); border: var(--box-border); border-radius: var(--radius); box-shadow: var(--sheet-shadow); padding: clamp(1.4rem, 4.5vw, 2.75rem) clamp(1rem, 4vw, 2.6rem) clamp(1.4rem, 4vw, 2.4rem); display: grid; gap: clamp(2rem, 4.5vw, 2.75rem); min-width: 0; }
+.intro p { margin: 0 0 .9em; font-style: var(--intro-style); }
+.intro p:last-child { margin-bottom: 0; }
+.intro { font-size: 1.04em; }
+.part { display: grid; gap: 1rem; scroll-margin-top: 1.25rem; }
+.part h2 { margin: 0; display: flex; align-items: baseline; gap: .6rem; font: 400 clamp(1.35rem, 3.6vw, 1.75rem)/1.15 var(--display); text-transform: var(--display-case); letter-spacing: .02em; text-wrap: balance; }
+.part h2 .no { color: var(--accent); font-family: var(--mono); font-weight: 700; font-size: .66em; letter-spacing: 0; }
+.part + .part { padding-top: clamp(1.75rem, 4vw, 2.3rem); border-top: var(--part-rule); }
+.turn { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); gap: 1rem; }
+.turn .who { margin: 0; padding-top: .3em; font: 700 .72rem/1.25 var(--mono); letter-spacing: .07em; text-transform: uppercase; text-align: right; color: var(--accent); overflow-wrap: anywhere; }
+.turn.q .who { color: var(--soft); }
+.turn .say { display: grid; gap: .65em; min-width: 0; }
+.turn .say p { margin: 0; text-wrap: pretty; }
+.turn.q .say { font-weight: var(--q-weight); font-style: var(--q-style); }
+.turn.q .say em { font-style: normal; }
+.say a, .intro a { text-decoration-color: var(--accent); text-underline-offset: .18em; overflow-wrap: anywhere; }
+.say ul { margin: 0; padding-left: 1.2em; }
+.aside { font-style: italic; font-weight: 400; color: var(--soft); }
+.outro p { margin: 0 0 .6em; color: var(--soft); font-style: italic; }
+.scene { margin: .2rem 0; padding: .6rem .9rem; border-left: 3px solid var(--accent); color: var(--soft); font-style: italic; font-size: .95em; }
+.note { margin: 0; padding-top: 1.1rem; border-top: var(--part-rule); font: 400 .82rem/1.5 var(--mono); color: var(--soft); }
+footer { padding-block: 1rem 3rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); }
+.foot { border-top: var(--box-border); padding-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font: 400 .84rem/1.4 var(--mono); }
+.foot p { margin: 0; }
+.foot a { text-decoration-color: var(--accent); text-underline-offset: .2em; }
+@media (max-width: 880px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 600px) {
+  .side { grid-template-columns: minmax(0, 1fr); }
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .turn .who { text-align: left; }
+}
+
+.hd { width: min(100%, 46rem); display: grid; gap: .9rem; justify-items: start; text-align: left; }
+.hd .tiny { background: var(--paper); padding: .3rem .6rem; transform: rotate(-1deg); box-shadow: 0 1px 3px var(--shadow); }
+.hd h1 { margin: 0; display: flex; flex-wrap: wrap; gap: .3rem .45rem; font: 400 clamp(2rem, 8vw, 4.3rem)/1 var(--display); text-transform: var(--display-case); }
+.hd h1 span { display: inline-block; padding: .08em .22em .04em; background: var(--headbg); color: var(--headink); box-shadow: 3px 3px 0 var(--shadow); }
+.hd h1 span:nth-child(3n+2) { background: var(--accent); color: var(--on-accent); transform: rotate(1.6deg); }
+.hd h1 span:nth-child(3n) { background: var(--paper); color: var(--ink); border: 2px solid var(--ink); transform: rotate(-1.2deg); }
+.hd h1 span:nth-child(3n+1) { transform: rotate(-.6deg); }
+.hd .items { margin: 0; display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; font: 400 .84rem/1.4 var(--mono); }
+
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="wrap head">
+  <div class="hd"><p class="tiny">Punk-Community · seit 2004</p><h1 aria-label="Abgefuckt liebt Dich!"><span>Abgefuckt</span><span>liebt</span><span>Dich!</span></h1><p class="items"><span>Jan Rakete</span><span>fast 60.000 Mitglieder</span><span>Superpunks</span></p></div>
+  <p class="dek">Wer steckt hinter der Punk-Community Abgefuckt liebt Dich? Jasmin hat Jan Rakete ausgefragt: über die Band, die die Seite gegründet hat, Server, Superpunks, Nazis, die mitlesen, und den großen Plan.</p>
+  <p class="tiny source">Aus dem alten Pogoradio-Blog · 2008 · von Jasmin</p>
+</header>
+
+<main class="wrap main">
+  <aside class="side"><div class="box"><h2>Kurz notiert</h2><dl><div><dt>Was</dt><dd>Abgefuckt liebt Dich (ALD), Online-Community für Punks</dd></div><div><dt>Seit</dt><dd>März 2004</dd></div><div><dt>Gegründet von</dt><dd>der Band Abgefuckt</dd></div><div><dt>Im Gespräch</dt><dd>Jan Rakete</dd></div><div><dt>Mitglieder</dt><dd>fast 60.000 (Stand 2008)</dd></div><div><dt>Partnerseite</dt><dd>die Chaotenzentrale von Nix-Gut</dd></div></dl></div></aside>
+  <article class="sheet" aria-label="Interview">
+    <div class="intro"><p>Sie haben Namen wie „KotAmBein“, „Pippibella“ oder „Analkeks“ und hängen in Gruppen rum, die „Mitfickzentrale“, „Zu Faul Um Beim Sex Oben Zu Sein“ oder „Biertrinken gegen Nazis“ heißen. Die Leute bei ABGEFUCKT LIEBT DICH (im Folgenden ALD genannt).</p><p>Die meisten von uns sind mittlerweile wahrscheinlich bei ALD angemeldet, wenn nicht, war man es mal oder ist früher oder später irgendwann mal darauf gestoßen oder hat zumindest schon davon gehört. Der ein oder andere mag sogar vielleicht schon die Liebe seines Lebens, oder wenn nicht, dann jedenfalls den einen oder anderen neuen Freund kennengelernt haben.</p><p>Doch wenn man mal genauer wissen möchte, was oder wer denn eigentlich genau hinter dem Ganzen steckt, dann wird es schwer. Nirgends konnte ich weitere Infos über ALD finden.</p><p>Normalerweise ist der erste Weg, wenn ich mich im Internet über irgendetwas oder irgendwen erkundigen möchte, Wikipedia, da findet man ja über alles irgendwelche Informationen, aber selbst da konnte ich nicht fündig werden. Tatsächlich haben sie auch mal versucht, einen neutralen Bericht über sich reinzusetzen. Sekunden nach dem Reinsetzen wurde er von Leuten, die scheinbar nichts zu tun haben, wild diskutiert. Interessanterweise gab es dort wirklich Leute, die die Seite kannten und sogar was zur Entstehungsgeschichte (die schon irgendwie außergewöhnlich ist) beitragen konnten. Andere haben es dann allerdings anders gesehen. Die letzte Aussage war dann einfach: „Ich kenne die Seite nicht. Thema geschlossen.“ Aber das ist nun mal Wikipedia: Die Masse entscheidet, was richtig und was falsch ist. Wenn es Wikipedia zu Galileos Zeiten schon gegeben hätte, würden vermutlich immer noch alle glauben, dass die Sonne sich um die Erde dreht und nicht andersrum.</p><p>Deshalb war es also höchste Zeit, mal genauer nachzuhaken und Jan Rakete, einen der Macher von ALD, anzuschreiben und ihn auszuquetschen.</p><p>ALD wurde bereits im März 2004 von den Mitgliedern der (ehemaligen) Band „Abgefuckt“ gegründet. Die Idee war einfach, eine Internetseite zu haben, auf der man schnell Menschen kennenlernen kann, die zu einem passen. Das passiert nun mal am ehesten über gleichen Musikgeschmack, gleiche Interessen, gleiche Lieblings-Filme und -Bücher und auch ähnlichen Klamotten-Geschmack.</p><p>Das Ganze erinnert irgendwie an einen Abklatsch vom Studivz, Singlebörsen oder Myspace, ist es aber nicht: ALD hat jetzt gerade seinen vierten Geburtstag hinter sich. Studivz gab es erst 2 Jahre später, Myspace war damals Jan und dem ganzen Rest von Europa noch gar nicht bekannt. Darum konnte sich ALD daran auch kein Vorbild nehmen. ALD sollte eine Single-Börse, eigentlich eine Parodie auf diese, sein. Speziell für Punks, mit einem absolut unmöglichen Design und schrägem Namen. Als dann diese ganze Community-Welle herüberkam und es auf einmal wichtig war, dass man möglichst viele unbekannte, virtuelle Freunde hat, musste sich ALD dem Ganzen ein wenig anpassen, um nicht alle seine Mitglieder zu verlieren. Primär ist ALD aber zum Kennenlernen und Kontakt halten gedacht. Die Foren, das Magazin und das Band-Portal sind eigentlich nur Beigabe.</p><p>ALD wurde also von der Band „ABGEFUCKT“ gegründet. Deren Bekanntheitsgrad ist natürlich enorm gestiegen. Sie haben diesen Erfolg aber nie ausgenutzt und sich dem ALD-Publikum angepasst. Mit ein bisschen mehr Party-Liedern über den Punk-Alltag hätten sie auch ganze Hallen gefüllt, aber ihren Indie-Rock-Punk mit ja eher traurigen Texten wollte dann doch keiner hören. Aufgelöst haben sie sich aus Zeitgründen und unterschiedlichen Zielvorstellungen. Musik machen sie natürlich trotzdem weiter: Fabian spielt jetzt in einer Hardcore-Band und Jan macht derzeit ein paar Demos im Bereich Elektropunk unter dem Namen „Fortschrittsparty“.</p><p>Natürlich stellt sich die Frage, gerade für Internetidioten wie mich, wie so eine ALD-Firma denn funktioniert. Wie viele Leute da wohl arbeiten? Bringt das Kohle? Full-Time-Job oder Nebenverdienst oder ehrenamtliche Mitarbeit? Steht der Porsche schon vorm Einfamilienhaus? ALD ist ein Full-Time-Job, der mit einem Nebenverdienst bezahlt wird. Bei ALD arbeiten 3 Leute (Programmierung, Betreuung und Organisation) und ein paar freiwillige Administratoren. Zusätzlich wird die Server-Verwaltung, Buchhaltung und alles andere von der uns sehr verbundenen Firma „basecom“ übernommen. Wenn wir diese Tätigkeiten alle „normal“ bezahlen müssten, wäre ALD nicht wirtschaftlich. So können wir uns aber Ressourcen teilen, brauchen nur einen Buchhalter und kriegen aufgrund der Masse neue Server auch billiger, und sparen so Geld. Wir sind alle Studenten, darum kommen wir auch mit wenig Geld hin. Was nach dem Studium kommt, wissen sie noch nicht. Da müssen sie alle Preise dann eben verdoppeln.</p><p>Apropos Preise. Das alles kostet natürlich auch ne Menge Geld, Server, Technik und hin und wieder auch mal ein Anwalt müssen bezahlt werden, ebenso wollen die Mitarbeiter ja auch ein wenig Kohle sehen… Stellt sich die Frage, wie das Ganze finanziert wird.</p><p>ALD finanziert sich nur von den Werbeeinnahmen (Fanzines, Tattoostudios, Szeneshops, Label etc. können ihre Banner anzeigen lassen, Bands und Veranstalter können Flyerwerbung für ihre Konzerte/Festivals/Touren machen) und den Superpunks (mit einem Superpunkkonto hat man mehr Optionen als mit einem normalen Konto. Man kann beispielsweise mehr Fotos auf sein Profil stellen, sehen, welche User das Profil zuletzt besucht haben, sein Profil farblich selbst gestalten und viel mehr). Mehr Einnahmen haben sie nicht. Die Anti-Aids-Kampagne beispielsweise bringt übrigens kein Geld, das machen sie, weil ihnen das Thema am Herzen liegt. ALD bringt viele Leute zusammen, auch körperlich, und da muss das Thema Verhütung und Schutz einfach präsent sein. Auch für ihre Organspende-Initiative gab es kein Geld. Das hat nur Geld und noch mehr Zeit gekostet, aber wenn dadurch tatsächlich Menschenleben gerettet werden, dann hat sich das gelohnt.</p><p>Über den Erfolg waren sie dann aber doch überrascht. Wenn man täglich damit zu tun hat, dann denkt man daran natürlich nicht. Aber wenn Freunde, die ich schon lange nicht mehr gesehen habe, fragen: „Und, wie viele Leute sind da auf der komischen Seite angemeldet? 20.000?“ und ich sage dann: „Fast 60.000.“, und die sagen: „Wow.“, dann wird einem das erst wieder bewusst, erklärt mir Jan.</p><p>Pro Tag melden sich 100 bis 120 Leute an, 20-30% der Anmeldungen werden wieder gelöscht. Wie viele und warum genau, das hängt von der Laune der Administratoren ab. Die Anzahl der nicht freigegebenen Fotos liegt bei unter 5% der täglich über 1000 eingesendeten Fotos.</p><p>Insgesamt gibt es 350 aktive Bands und ca. 4.600 Gruppen.</p><p>Zivil-Polizisten oder Nazis müssen sich nicht anmelden. Die können alles, natürlich bis auf die persönlichen Nachrichten, von außen lesen, wenn sie wollen. Nirgendwo im Internet kann man sich sicher sein, dass seine Daten vor dem Zugriff anderer geschützt sind. Es gibt Hacker, die das Pentagon lahmlegen. Und dort arbeiten Profis. Es gibt immer jemanden, der schlauer ist als man selbst. Damit muss man rechnen. ALD und auch sonst niemand im Internet kann absolute Sicherheit garantieren, darum versuchen sie es gar nicht. Sie wollen ihre Mitglieder da auch nicht anlügen oder etwas vorgaukeln. Dadurch, dass es keine privaten Profile und Gruppen gibt, schärfen sie die Leute eher im Umgang mit dem Medium Internet.</p><p>Ärger, Drohungen und Ähnliches hatten sie schon alles. Nicht nur von Rechten, das muss leider dazu gesagt werden. Dass so was an ihnen einfach abprallt, stimmt natürlich nicht, aber man wird mit der Zeit stumpfer. Wenn es zu krass wird, ruft der Firmen-Anwalt die Polizei an und ab da geht dann alles seinen Gang. In solchen Fällen haben sie keine Berührungsängste.</p><p>ALD gibt es bisher nur für Deutschland, Österreich und die Schweiz. Schon mal drüber nachgedacht, das Ganze international aufzuziehen? „Wenn wir ALD internationalisieren wollten, dann müssten wir auch Leute vor Ort haben, die dort Werbung für uns machen. Das ist schon mal schwierig zu steuern. Was ist dann, wenn sich Nazi-„Skins“ aus Polen anmelden? Ich kenne die einschlägigen Bands aus Polen nicht, und kann auch kein Polnisch. Wir müssten also Muttersprachler haben, die sich zudem in der dortigen Szene auskennen. Und ab da ist es für uns einfach eine Nummer zu groß. Derzeit wird von der Firma „Google“ die Schnittstelle „OpenSocial“ entwickelt. Damit soll es möglich sein, dass sich Mitglieder von ALD auch mit Mitgliedern von Myspace unterhalten können, ohne dass sie dort angemeldet sein müssen. Sobald das wirklich funktioniert, werden wir es auch bei uns einbauen. Da hat man dann die globale Vernetzung.“</p><p>Und dann gibt es ja auch noch die Chaotenzentrale von Nix-Gut… „Die Chaotenzentrale stellt faktisch keinen Unterschied zu ALD dar. Wir wurden von Nix-Gut angesprochen, ob wir unsere ALD-Software an die verkaufen, damit die eine eigene Community aufbauen können. Dann hab ich gesagt, dass das ja blöd ist, wenn wir uns Konkurrenz machen. Dann haben die gesagt, ja, schon, aber wir erreichen ja vielleicht noch mehr andere Leute als ihr und die sollen sich irgendwo anmelden können, aber natürlich so, dass wir auch was davon haben und nicht an ALD immer Geld für Werbung ausgeben müssen, sondern auch „eigene“ Mitglieder haben. Ja, und so war halt die Lösung, dass die Leute, die sich bei der Chaotenzentrale anmelden, von Nix-Gut beworben werden und die, die sich bei ALD anmelden, von uns beworben werden. Unterhalten können sich aber alle untereinander. Darum macht es keinen Unterschied, wo man sich anmeldet. Ich kann bis jetzt auch nicht feststellen, dass sich Hippies, Ois, Punks an einer bestimmten Seite anmelden. Die Mitglieder der Chaotenzentrale sind aber alle im Schnitt ein halbes Jahr jünger als die von ALD.“</p><p>Wie sieht es aus mit dem geselligen Beisammensein? Bereits gab es ja zwei mehr oder weniger gelungene ALD-Treffen (Nord und Süd), wird es in Zukunft regelmäßig Veranstaltungen geben? Treffen, Partys oder Konzerte? Oder gar vielleicht mal ein richtig groß aufgezogenes ALD-Festival?</p><p>ALD-Treffen wird es wieder geben, aber sie selbst haben zur Organisation solcher Treffen keine Zeit und kennen auch die Gegebenheiten vor Ort nicht. Darum müssen sie sich auf örtliche Veranstalter verlassen. Und da sind auch genug unzuverlässige dabei. Ein Festival ist finanziell ein zu hohes Risiko. Sie sponsoren lieber die vorhandenen Festivals wie dieses Jahr wieder das „Force Attack“, „Spirit from the Streets“, „Endless Summer“ … Ist einfacher. „Durch ein eigenes Festival werden unsere Penisse auch nicht größer.“ Wo er recht hat, hat er recht.</p><p>Zum Ende wie immer die Frage, was die Zukunft bringt: „Das Netz ist ständig in Bewegung. Natürlich müssen wir gucken, ob andere ähnliche Internet-Seiten ganz tolle neue Sachen einbauen, die die Mitglieder bei uns auch gerne hätten. Andererseits wollen wir die Punkers ja auch nicht zu lange am Computer halten. Eine halbe Stunde ALD am Tag reicht völlig und die grundsätzlichen Funktionen haben wir ja. Bald wird es wohl die Möglichkeit geben, statt Text-Nachrichten auch Webcam-Nachrichten zu schicken. Der große Plan aber ist natürlich die Weltherrschaft.“</p></div>
+    
+    <div class="outro"><p>Ganz egal, wie es weitergeht, ich bin sicher, dass wir von ALD noch Großes erwarten können und ich bin JAN RAKETE 1. dankbar, dass er diese Marktlücke entdeckt und auf großartige Weise gestopft hat und 2. dankbar, dass er so unglaublich schnell auf meine Fragen geantwortet hat.</p><p><em>Jasmin</em></p></div>
+    <p class="note">Aus dem alten Pogoradio-Blog. Ein Bericht mit Antworten von Jan Rakete, kein klassisches Frage-Antwort-Interview. Behutsam redigiert: Rechtschreibung, Zeichensetzung und Absätze angepasst, der Wortlaut ist unverändert.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p><a href="/interview-archiv/">← Alle Interviews aus dem Blog</a></p>
+    <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

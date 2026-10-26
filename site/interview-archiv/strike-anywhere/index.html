@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Strike Anywhere – Pogoradio</title>
+<meta name="description" content="Interview mit Thomas Barnett von Strike Anywhere aus dem Pogoradio-Blog (2010): zehn Jahre Band, die Warped Tour als Lehre, der Wechsel zu Bridge 9, Touren mit Rise Against und das Album „Iron Front“.">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&amp;family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap">
+<style>
+/* Ein Streichholzschachtel-Etikett: Strike Anywhere heißen die Hölzer, die überall zünden */
+:root { --display: "Alfa Slab One", Impact, "Arial Black", sans-serif; --body: "IBM Plex Serif", Georgia, "Times New Roman", serif; --mono: "IBM Plex Mono", "Courier New", ui-monospace, monospace; --display-case: uppercase; --radius: 0px; --q-weight: 700; --q-style: normal; --intro-style: normal; --bg: #ece4d6; --bg2: #dacdb6; --paper: #fffaf0; --ink: #1a120c; --soft: #61574c; --rule: #ddd2bf; --accent: #b3261e; --accent2: #1a120c; --headbg: #b3261e; --headink: #fff4dc; --shadow: rgba(0,0,0,.22); --box-border: 1.5px solid #1a120c; --sheet-shadow: 8px 8px 0 #dacdb6; --part-rule: 2px dotted #ddd2bf; --on-accent: #fff; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #140f0b; --bg2: #0b0806; --paper: #1e1813; --ink: #f2e9da; --soft: #aa9f8f; --rule: #382f26; --accent: #ff6a55; --accent2: #f2e9da; --headbg: #8e1d17; --headink: #fff4dc; --shadow: rgba(0,0,0,.55); --box-border: 1.5px solid #f2e9da; --sheet-shadow: 8px 8px 0 #0b0806; --part-rule: 2px dotted #382f26; --on-accent: #fff; color-scheme: dark; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.62 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: calc(68rem + 32px); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tiny { margin: 0; font: 700 .74rem/1.35 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.head { padding-block: clamp(2rem, 6vw, 3.75rem) 0; display: grid; gap: 1.3rem; }
+.head.center { justify-items: center; text-align: center; }
+.dek { margin: 0; max-width: 40rem; font-size: clamp(1.08rem, 2.3vw, 1.25rem); line-height: 1.5; text-wrap: pretty; }
+.source { color: var(--soft); }
+h1 { overflow-wrap: break-word; hyphens: manual; }
+
+.main { padding-block: clamp(2.25rem, 5vw, 3.5rem) 2rem; display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 45rem); gap: clamp(1.75rem, 4vw, 3.25rem); justify-content: space-between; align-items: start; }
+.main.solo { grid-template-columns: minmax(0, 45rem); justify-content: center; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); display: grid; gap: 1.4rem; min-width: 0; }
+.box { border: var(--box-border); background: var(--paper); padding: 1rem 1rem 1.1rem; display: grid; gap: .6rem; border-radius: var(--radius); }
+.box h2 { margin: 0; font: 400 1.15rem/1.1 var(--display); text-transform: var(--display-case); letter-spacing: .03em; }
+.box ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .05rem; }
+.box ol a { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: .2rem; padding: .16rem 0; font: 400 .9rem/1.3 var(--mono); text-decoration: none; }
+.box ol a span:first-child { color: var(--accent); font-weight: 700; }
+.box ol a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.box dl { margin: 0; display: grid; gap: .5rem; }
+.box dt { font: 700 .86rem/1.2 var(--mono); }
+.box dd { margin: .05rem 0 0; font-size: .9rem; line-height: 1.38; color: var(--soft); }
+
+.sheet { background: var(--paper); border: var(--box-border); border-radius: var(--radius); box-shadow: var(--sheet-shadow); padding: clamp(1.4rem, 4.5vw, 2.75rem) clamp(1rem, 4vw, 2.6rem) clamp(1.4rem, 4vw, 2.4rem); display: grid; gap: clamp(2rem, 4.5vw, 2.75rem); min-width: 0; }
+.intro p { margin: 0 0 .9em; font-style: var(--intro-style); }
+.intro p:last-child { margin-bottom: 0; }
+.intro { font-size: 1.04em; }
+.part { display: grid; gap: 1rem; scroll-margin-top: 1.25rem; }
+.part h2 { margin: 0; display: flex; align-items: baseline; gap: .6rem; font: 400 clamp(1.35rem, 3.6vw, 1.75rem)/1.15 var(--display); text-transform: var(--display-case); letter-spacing: .02em; text-wrap: balance; }
+.part h2 .no { color: var(--accent); font-family: var(--mono); font-weight: 700; font-size: .66em; letter-spacing: 0; }
+.part + .part { padding-top: clamp(1.75rem, 4vw, 2.3rem); border-top: var(--part-rule); }
+.turn { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); gap: 1rem; }
+.turn .who { margin: 0; padding-top: .3em; font: 700 .72rem/1.25 var(--mono); letter-spacing: .07em; text-transform: uppercase; text-align: right; color: var(--accent); overflow-wrap: anywhere; }
+.turn.q .who { color: var(--soft); }
+.turn .say { display: grid; gap: .65em; min-width: 0; }
+.turn .say p { margin: 0; text-wrap: pretty; }
+.turn.q .say { font-weight: var(--q-weight); font-style: var(--q-style); }
+.turn.q .say em { font-style: normal; }
+.say a, .intro a { text-decoration-color: var(--accent); text-underline-offset: .18em; overflow-wrap: anywhere; }
+.say ul { margin: 0; padding-left: 1.2em; }
+.aside { font-style: italic; font-weight: 400; color: var(--soft); }
+.outro p { margin: 0 0 .6em; color: var(--soft); font-style: italic; }
+.scene { margin: .2rem 0; padding: .6rem .9rem; border-left: 3px solid var(--accent); color: var(--soft); font-style: italic; font-size: .95em; }
+.note { margin: 0; padding-top: 1.1rem; border-top: var(--part-rule); font: 400 .82rem/1.5 var(--mono); color: var(--soft); }
+footer { padding-block: 1rem 3rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); }
+.foot { border-top: var(--box-border); padding-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font: 400 .84rem/1.4 var(--mono); }
+.foot p { margin: 0; }
+.foot a { text-decoration-color: var(--accent); text-underline-offset: .2em; }
+@media (max-width: 880px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 600px) {
+  .side { grid-template-columns: minmax(0, 1fr); }
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .turn .who { text-align: left; }
+}
+
+.hd { position: relative; width: min(100%, 40rem); background: var(--headbg); color: var(--headink); border-radius: 50% / 22%; padding: clamp(1.6rem, 5vw, 2.6rem) clamp(1.2rem, 6vw, 3.5rem) clamp(1.4rem, 4.5vw, 2.3rem); box-shadow: 0 0 0 3px var(--headbg), 0 0 0 5px var(--accent2), 0 14px 30px var(--shadow); display: grid; gap: .55rem; text-align: center; }
+.hd::before { content: ""; position: absolute; inset: 9px; border: 1.5px solid var(--accent2); border-radius: 50% / 22%; pointer-events: none; }
+.hd .tiny { color: var(--accent2); }
+.hd h1 { margin: 0; font: 400 clamp(2rem, 8vw, 4.2rem)/.95 var(--display); text-transform: var(--display-case); letter-spacing: .01em; text-wrap: balance; }
+.hd .ribbon { justify-self: center; margin: .3rem 0; padding: .3rem 1.4rem .25rem; background: var(--accent); color: var(--on-accent); font: 400 clamp(1rem, 3.2vw, 1.3rem)/1.1 var(--display); letter-spacing: .14em; text-transform: uppercase; clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%, 4% 50%); }
+.hd .items { margin: .2rem 0 0; padding: .55rem 0 0; border-top: 1px dashed var(--accent2); display: flex; flex-wrap: wrap; justify-content: center; gap: .2rem 1.2rem; font: 400 .82rem/1.4 var(--mono); }
+@media (max-width: 600px) { .hd, .hd::before { border-radius: 40% / 14%; } }
+
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="wrap head center">
+  <div class="hd"><p class="tiny">Zündhölzer · Tour 2010</p><h1>Strike Anywhere</h1><p class="ribbon">Iron Front</p><p class="tiny">Zündet überall</p><p class="items"><span>Thomas Barnett</span><span>Bridge 9</span><span>München</span></p></div>
+  <p class="dek">Thomas Barnett in München über zehn Jahre ohne Businessplan, sechs Wochen Staub auf der Warped Tour, Ostküste gegen Westküste, Hockeyhallen mit Rise Against und warum „Iron Front“ nach den alten Platten klingt.</p>
+  <p class="tiny source">Aus dem alten Pogoradio-Blog · August 2010 · gekürzt aus „Punkrock!“ #12</p>
+</header>
+
+<main class="wrap main">
+  <aside class="side"><nav class="box" aria-labelledby="toc-h"><h2 id="toc-h">Inhalt</h2><ol><li><a href="#zehn-jahre"><span>01</span><span>Zehn Jahre</span></a></li><li><a href="#bridge-9-rise-against"><span>02</span><span>Bridge 9 &amp; Rise Against</span></a></li><li><a href="#iron-front"><span>03</span><span>Iron Front</span></a></li></ol></nav><div class="box"><h2>Kurz notiert</h2><dl><div><dt>Im Gespräch</dt><dd>Thomas Barnett (Gesang, Texte)</dd></div><div><dt>Wo</dt><dd>München, auf Tour mit Pennywise und A Wilhelm Scream</dd></div><div><dt>Neues Album</dt><dd>„Iron Front“ bei Bridge 9</dd></div><div><dt>Klassiker</dt><dd>„Change Is A Sound“, „Exit English“</dd></div><div><dt>Neu an der Gitarre</dt><dd>Mark Miller für Matt Sherwood</dd></div><div><dt>Interview</dt><dd>für „Punkrock!“ #12</dd></div></dl></div></aside>
+  <article class="sheet" aria-label="Interview">
+    <div class="intro"><p>Strike Anywhere sind wohl eine der erfolgreichsten Hardcore-Punk-Bands der Welt. Die Alben „Change Is A Sound“ und „Exit English“ gehören zu den Must-Haves und Klassikern des Genres und durch beständiges Touren hat sich die Band eine große Fanbase weltweit erspielt. Anlässlich einer Tour mit Pennywise und A Wilhelm Scream kam die Band erneut nach Deutschland und machte unter anderem Halt in München, wo ich die Chance hatte, mit Thomas Barnett, dem Sänger und Texter der Band, zu sprechen. Das ist jedes Mal ein ganz besonderes Vergnügen, denn Thomas ist einer der angenehmsten Interviewpartner überhaupt und weiß viel zu erzählen, auch wenn das Interview dann häufig in die weltpolitischen Sphären abschweift. Aber auch über die deutsche Politik weiß der Mann Bescheid und ist interessiert. Und so plauderten wir erst mal gut 15 Minuten über die Lage in Deutschland und im Rest der Welt, bevor wir das Interview begannen, um über die vielen Dinge, die es rund um seine Band zu berichten gibt, zu sprechen.</p></div>
+    <section class="part" id="zehn-jahre"><h2><span class="no">01</span>Zehn Jahre</h2><div class="turn q"><p class="who">Punkrock!</p><div class="say"><p>Thomas, ihr habt letztes Jahr 10-jähriges Jubiläum gefeiert – herzlichen Glückwunsch. Bist du zufrieden mit eurer bisherigen Karriere?</p></div></div><div class="turn"><p class="who">Thomas</p><div class="say"><p>Danke. Aber wir sehen das Ganze nicht unbedingt als Karriere an, sondern eher als das, was wir eben tun. Ich fühle mich wirklich geehrt, dass wir die Chance haben, immer noch die Musik zu spielen, die wir lieben und an die wir glauben. Es ist großartig, sich in einer weltweiten Punk-Community zu bewegen, die mit uns singt und die ihre Ideen verwirklicht. Es ist auch sehr interessant, in einer Zeit zu touren, in der niemand mehr Musik zu kaufen scheint. Das macht das Ganze spannend, da es schwieriger wird und wir immer Schritt für Schritt planen müssen und eine gewisse Sicherheit nicht mehr haben. Aber das ist eben wiederum Punkrock! Es gibt keinen Businessplan und keine Karriere, jedenfalls nicht im ursprünglichen Sinn, die man seiner Familie erklären kann. Es ist eher unsere persönliche Mission, die unser Leben bestimmt und die wir lieben.</p></div></div><div class="turn q"><p class="who">Punkrock!</p><div class="say"><p>Gibt’s Dinge, die du bereust oder anders machen würdest?</p></div></div><div class="turn"><p class="who">Thomas</p><div class="say"><p>Nein, eigentlich nicht. Es gab natürlich einige Dinge, wie einige Touren oder Shows, die etwas seltsam waren und die wir heute nicht mehr so machen würden. Aber wir haben viel gelernt. Wir haben, zum Beispiel, 2005 die Warped Tour gespielt. Das war wirklich komisch. Aber wir haben dennoch ein paar wichtige Connections gemacht und coole Leute getroffen. Wir sind dadurch auch an Orte gekommen, in denen wir sonst nie gespielt hätten und waren sechs Wochen lang voller Staub und Sand. Nach sechs Wochen mussten wir die Tour verlassen, um uns Jobs zu suchen und eine Weile Abstand von Punkrock zu gewinnen. Wir mussten uns erst mal wieder neu finden und orientieren. Ohne die Warped Tour hätten wir wahrscheinlich einfach weitergemacht wie vorher und das alles für selbstverständlich angesehen. Aber die Warped Tour ist eben das Beispiel schlechthin für eine Kommerzialisierung der Jugendkulturen und eine Oberflächlichkeit, die damit Einzug hält. Es ist egal, ob Punk, Metal oder Emo. Alles soll den Kids verkauft werden und es ist extrem schwierig, als Band, die etwas zu sagen hat und für die das Ganze eben mehr ist als nur Musik, da nicht unterzugehen in dieser unglaublich großen Masse an Bands und Stilen. Es war für uns wichtig, die Warped Tour mal zu spielen, um zu wissen, dass wir das nie wieder mitmachen müssen. Das wäre die einzige Sache, die mir einfällt, die ich bereue, aber es war eher eine Lernerfahrung.</p></div></div><div class="turn q"><p class="who">Punkrock!</p><div class="say"><p>Ich dachte eigentlich eher an so was wie „Oh Gott, hatten wir damals schreckliche Frisuren“?</p></div></div><div class="turn"><p class="who">Thomas</p><div class="say"><p>Haha, oh nein. Wir haben immer noch schreckliche Frisuren. Solche Sachen musst du mich dann in 20 Jahren fragen.</p></div></div></section><section class="part" id="bridge-9-rise-against"><h2><span class="no">02</span>Bridge 9 &amp; Rise Against</h2><div class="turn q"><p class="who">Punkrock!</p><div class="say"><p>Es ist viel passiert bei Strike Anywhere. Neues Label, neues Album. Kann es sein, dass es schwieriger ist, eure Platte zu bekommen, seit ihr bei Bridge 9 seid?</p></div></div><div class="turn"><p class="who">Thomas</p><div class="say"><p>Das hab ich bisher noch nicht gehört. Ich glaube aber, Bridge 9 verkauft viel direkt übers Internet. Die Kids in Osteuropa kennen „Iron Front“ besser als die anderen Alben. In England ist Bridge 9 bekannter und besser erhältlich als Fat. Aber ich denke, dass Bridge 9 ein bisschen mehr im Underground verwurzelt ist als Fat Wreck Chords, die eher ein wenig distanziert wirken. Aber ich kann mir schon vorstellen, dass der Vertrieb nicht so gut ist, da Fat einfach ein viel größeres Label ist. Aber wir suchen uns unser Label selbstverständlich nicht nach diesen Kriterien aus. Es muss für uns einfach passen. Für uns ist vor allem wichtig, welche Werte die Leute haben und dass das Label einen guten Bezug zur Subkultur hat und wir unsere komplette künstlerische Freiheit haben. Es fällt mir auch etwas schwer, mittlerweile einen Bezug zu den ganzen Dingen, die Fat Mike verkörpert, macht und die er zelebriert, zu haben. Ich glaube zwar, dass er ein Genie ist, aber so Sachen wie seine Cokie-The-Clown-Nummer oder das Abfeiern von Drogen versteh ich nicht unbedingt. Aber die Westküste ist eben eine andere Welt als die Ostküste. Unsere Szene hat eher die Nähe zur DIY-Kultur der Washingtoner Szene beibehalten, während die Labels und Bands von der Westküste reich geworden sind. Für uns ist das einfach eine ganz andere Welt und Bridge 9 versteht uns da als Ostküstenlabel auch von der Mentalität und Herangehensweise einfach besser. Sie sind zwar viel kleiner, aber haben immer noch diese Aggression, Attitüde und den Sinn für die kleinen, aber wichtigen Details, die wir schätzen.</p></div></div><div class="turn q"><p class="who">Punkrock!</p><div class="say"><p>Als wir uns das letzte Mal gesehen haben, wart ihr mit Rise Against auf Tour. Wie war es, diese riesigen ausverkauften Hallen zu spielen?</p></div></div><div class="turn"><p class="who">Thomas</p><div class="say"><p>Das war echt verrückt. Es waren immer zwischen 3000 und 4000 Leute bei den Shows. In Hamburg haben wir sogar in einer riesigen Hockeyhalle oder einem ähnlichen Sportstadion gespielt. Das war echt irre. Aber es war toll. Rise Against sind echt super Leute, mit denen man super touren kann. Sie sind einfach gute Menschen und haben die richtigen Ideale. Und auch wenn sie mittlerweile unglaublich erfolgreich sind und riesige Hallen spielen, macht es immer noch jedes Mal Spaß, mit ihnen zu touren, weil sie immer noch sie selbst geblieben sind. Ich glaube auch, sie wissen, dass die Oldschool-Fans Probleme mit solch riesigen Shows haben, aber das ist eben ein Deal, den sie eingegangen sind. Es ist aber auch gut, denn Rise Against sind, wenn man so will, die einzigen in der Rockwelt, die für ihre Ideale wie Tierrechte, ihre politischen Ansichten oder für revolutionäre Ideen einstehen. Wenn irgendjemand so groß sein sollte, bin ich froh, dass sie es sind.</p></div></div></section><section class="part" id="iron-front"><h2><span class="no">03</span>Iron Front</h2><div class="turn q"><p class="who">Punkrock!</p><div class="say"><p>Lass uns über die neue Platte reden. Hurra! Der alte Punkrock-Sound ist zurück!</p></div></div><div class="turn"><p class="who">Thomas</p><div class="say"><p>Genau! Gefällt es dir?</p></div></div><div class="turn q"><p class="who">Punkrock!</p><div class="say"><p>Ja, es hat mich vor allem an eure Jade-Tree-Alben erinnert.</p></div></div><div class="turn"><p class="who">Thomas</p><div class="say"><p>Als wir begannen, die Musik für „Iron Front“ zu schreiben, erinnerten uns die neuen Stücke ziemlich an diese Alben. Ich glaube, dass vieles daher kommt, dass wir einen neuen Gitarristen haben. Mark Miller ersetzte Matt Sherwood und da er jünger ist als wir, ist er mit „Change Is A Sound“ aufgewachsen. Als wir anfingen, die Musik zu schreiben, wollte er dieses Gefühl wieder einfangen. Weißt du, bei uns steuern alle Gitarrenparts und Ideen bei und am Ende geben sie mir die Stücke und ich versuche, die Texte dazu zu schreiben und dem Song ein bestimmtes Gefühl zu geben. Und wir wollten dieses Gefühl der ersten Platten wieder kreieren und ich freue mich, dass dir das aufgefallen ist. Wir sind sehr zufrieden, wie „Iron Front“ klingt.</p></div></div></section>
+    <div class="outro"><p><em>Das komplette Interview gibt es in Ausgabe #12 des Fanzines „Punkrock!“.</em></p></div>
+    <p class="note">Aus dem alten Pogoradio-Blog. Behutsam redigiert: Rechtschreibung, Zeichensetzung und Absätze angepasst, der Wortlaut ist unverändert.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p><a href="/interview-archiv/">← Alle Interviews aus dem Blog</a></p>
+    <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kommando Vollsaufen – Pogoradio</title>
+<meta name="description" content="Interview mit Kommando Vollsaufen aus dem Pogoradio-Blog (2005): die Erfinder des Penner Rock über ihr Demo-Tape, den Jungbusch, Paderborner ohne Dosenpfand und die Hauptstadt von Usbekistan.">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Courier+Prime:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
+<style>
+/* Layout: oben ein Bieretikett als Kopf (Penner Rock, abgefüllt im Jungbusch), darunter links die
+   „Zutaten“ als Inhaltsverzeichnis und die Besetzung, rechts das Interview auf hellem Papier.
+   Hell: Kraftpapier. Dunkel: Flaschenglas. */
+:root {
+  --bg: #e7dfca;
+  --bg-2: #ddd3ba;
+  --ink: #1e1b15;
+  --soft: #6a604f;
+  --paper: #fbf7ec;
+  --rule: #d9cfb5;
+  --green: #1f3a2a;
+  --green-ink: #f3ead2;
+  --red: #b3281b;
+  --gold: #b8892b;
+  --hl: rgba(184, 137, 43, .22);
+  --shadow: rgba(40, 30, 10, .18);
+
+  --slab: "Alfa Slab One", "Rockwell", "Roboto Slab", Georgia, serif;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --type: "Courier Prime", "Courier New", ui-monospace, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121c16;
+    --bg-2: #18241c;
+    --ink: #ece4cf;
+    --soft: #a59c86;
+    --paper: #1b2820;
+    --rule: #2d3e33;
+    --green: #24452f;
+    --green-ink: #f3ead2;
+    --red: #e45a43;
+    --gold: #d6a648;
+    --hl: rgba(214, 166, 72, .2);
+    --shadow: rgba(0, 0, 0, .45);
+    color-scheme: dark;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.0625rem/1.62 var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 2px; }
+.wrap {
+  max-width: calc(68rem + 32px);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.tiny {
+  margin: 0;
+  font: 700 .74rem/1.3 var(--type);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Etikett ---------- */
+.head { padding-block: clamp(2rem, 6vw, 3.75rem) 0; display: grid; justify-items: center; gap: 1.4rem; text-align: center; }
+.label {
+  position: relative;
+  width: min(100%, 40rem);
+  background: var(--green);
+  color: var(--green-ink);
+  border-radius: 50% / 22%;
+  padding: clamp(1.6rem, 5vw, 2.6rem) clamp(1.2rem, 6vw, 3.5rem) clamp(1.4rem, 4.5vw, 2.3rem);
+  box-shadow: 0 0 0 3px var(--green), 0 0 0 5px var(--gold), 0 14px 30px var(--shadow);
+  display: grid;
+  gap: .55rem;
+}
+.label::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50% / 22%;
+  pointer-events: none;
+}
+.label .tiny { color: var(--gold); }
+.label h1 {
+  margin: 0;
+  font-family: var(--slab);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 8.4vw, 4.4rem);
+  line-height: .95;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.ribbon {
+  justify-self: center;
+  margin: .3rem 0;
+  padding: .3rem 1.4rem .25rem;
+  background: var(--red);
+  color: #fff6e6;
+  font: 400 clamp(1rem, 3.2vw, 1.3rem)/1.1 var(--slab);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%, 4% 50%);
+}
+.contents {
+  margin: .2rem 0 0;
+  padding: .55rem 0 0;
+  border-top: 1px dashed rgba(214, 166, 72, .6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .2rem 1.2rem;
+  font: 400 .82rem/1.4 var(--type);
+}
+.dek { margin: 0; max-width: 40rem; font-size: clamp(1.08rem, 2.3vw, 1.25rem); line-height: 1.5; text-wrap: pretty; }
+.source { color: var(--soft); }
+
+/* ---------- Hauptteil ---------- */
+.main {
+  padding-block: clamp(2.25rem, 5vw, 3.5rem) 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 45rem);
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  justify-content: space-between;
+  align-items: start;
+}
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); display: grid; gap: 1.4rem; min-width: 0; }
+.box {
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  padding: 1rem 1rem 1.1rem;
+  display: grid;
+  gap: .6rem;
+}
+.box h2 { margin: 0; font: 400 1.15rem/1.1 var(--slab); text-transform: uppercase; letter-spacing: .03em; }
+.box ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .05rem; }
+.box ol a {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  gap: .2rem;
+  padding: .16rem 0;
+  font: 400 .92rem/1.3 var(--type);
+  text-decoration: none;
+}
+.box ol a span:first-child { color: var(--red); font-weight: 700; }
+.box ol a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.box dl { margin: 0; display: grid; gap: .5rem; }
+.box dt { font: 700 .88rem/1.2 var(--type); }
+.box dd { margin: .05rem 0 0; font-size: .9rem; line-height: 1.35; color: var(--soft); }
+
+.sheet {
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--bg-2);
+  padding: clamp(1.4rem, 4.5vw, 2.75rem) clamp(1rem, 4vw, 2.6rem) clamp(1.4rem, 4vw, 2.4rem);
+  display: grid;
+  gap: clamp(2rem, 4.5vw, 2.75rem);
+  min-width: 0;
+}
+.part { display: grid; gap: 1rem; scroll-margin-top: 1.25rem; }
+.part h2 {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  font: 400 clamp(1.35rem, 3.6vw, 1.75rem)/1.15 var(--slab);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+.part h2 .no { color: var(--red); font-family: var(--type); font-weight: 700; font-size: .7em; letter-spacing: 0; }
+.part + .part { padding-top: clamp(1.75rem, 4vw, 2.3rem); border-top: 2px dotted var(--rule); }
+.turn { display: grid; grid-template-columns: 6.4rem minmax(0, 1fr); gap: 1rem; }
+.who {
+  margin: 0;
+  padding-top: .28em;
+  font: 700 .74rem/1.2 var(--type);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--red);
+}
+.turn.q .who { color: var(--soft); }
+.turn p:not(.who) { margin: 0; min-width: 0; text-wrap: pretty; }
+.turn.q p:not(.who) { font-weight: 700; }
+.aside { font-style: italic; font-weight: 400; color: var(--soft); }
+.motto {
+  margin: 0;
+  padding: .2rem 0 .1rem;
+  font: 400 clamp(1.25rem, 3.4vw, 1.6rem)/1.25 var(--slab);
+  color: var(--red);
+  text-align: center;
+}
+.note {
+  margin: 0;
+  padding-top: 1.1rem;
+  border-top: 2px solid var(--rule);
+  font: 400 .84rem/1.5 var(--type);
+  color: var(--soft);
+}
+
+footer { padding-block: 1rem 3rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); }
+.foot {
+  border-top: 1.5px solid var(--ink);
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+  font: 400 .84rem/1.4 var(--type);
+}
+.foot p { margin: 0; }
+.foot a { text-decoration-color: var(--red); text-underline-offset: .2em; }
+
+@media (max-width: 880px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 600px) {
+  .side { grid-template-columns: minmax(0, 1fr); }
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .who { text-align: left; }
+  .sheet { box-shadow: 5px 5px 0 var(--bg-2); }
+  .label { border-radius: 40% / 14%; }
+  .label::before { border-radius: 40% / 14%; }
+}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="wrap head">
+  <div class="label">
+    <p class="tiny">Pogo Presse · Interview · 2005</p>
+    <h1>Kommando Vollsaufen</h1>
+    <p class="ribbon">Penner Rock</p>
+    <p class="tiny">Abgefüllt im Jungbusch · Mannheim</p>
+    <p class="contents"><span>Inhalt: 4 Penner</span><span>Demo-Tape</span><span>ohne Dosenpfand</span></p>
+  </div>
+  <p class="dek">Die Erfinder des Penner Rock über ihr Demo-Tape, Auftrittsverbot in Darmstadt, Paderborner ohne Dosenpfand und die Hauptstadt von Usbekistan.</p>
+  <p class="tiny source">Aus dem alten Pogoradio-Blog</p>
+</header>
+
+<main class="wrap main">
+  <aside class="side">
+    <nav class="box" aria-labelledby="z-h">
+      <h2 id="z-h">Zutaten</h2>
+      <ol>
+        <li><a href="#vorstellung"><span>01</span><span>Wer seid ihr?</span></a></li>
+        <li><a href="#auftritte"><span>02</span><span>Auftritte</span></a></li>
+        <li><a href="#penner-rock"><span>03</span><span>Penner Rock</span></a></li>
+        <li><a href="#bullen"><span>04</span><span>Bullen &amp; Bandgeschichte</span></a></li>
+        <li><a href="#essen"><span>05</span><span>Essen &amp; Bier</span></a></li>
+        <li><a href="#politik"><span>06</span><span>Vorbilder &amp; Politik</span></a></li>
+        <li><a href="#welt"><span>07</span><span>Große weite Welt</span></a></li>
+        <li><a href="#freunde"><span>08</span><span>Freunde</span></a></li>
+        <li><a href="#schluss"><span>09</span><span>Zum Schluss</span></a></li>
+      </ol>
+    </nav>
+    <div class="box">
+      <h2>Besetzung</h2>
+      <dl>
+        <div><dt>Käpt’n</dt><dd>Kapitänsmütze, „labert wie ein Buch“</dd></div>
+        <div><dt>Kotze</dt><dd>spielt „irgendeinen Scheiß“</dd></div>
+        <div><dt>Koma</dt><dd>Bass, Schalke-Hose</dd></div>
+        <div><dt>Dose</dt><dd>Schlagzeug, „zwei Takte“</dd></div>
+        <div><dt>Jasmin</dt><dd>fährt die Band zu Konzerten</dd></div>
+      </dl>
+    </div>
+  </aside>
+
+  <article class="sheet" aria-label="Interview">
+
+    <section class="part" id="vorstellung">
+      <h2><span class="no">01</span>Wer seid ihr?</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Wer seid ihr? Stellt euch mal kurz vor!</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Käpt’n.</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Kotze.</p></div>
+      <div class="turn"><p class="who">Dose</p><p>Dose.</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Koma.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Euer erstes Album heißt „Penner Rock“. Was habt ihr euch dabei gedacht?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Eigentlich ist es nur ein Demo-Tape. Wir haben uns gedacht: „Scheiß auf alle Neckarstädter. Wir machen sie alle platt.“ Ansonsten haben wir nur gesoffen und uns nichts dabei gedacht.</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Wir stehen halt voll hinter der Penner-Ideologie. Auf jeden Fall.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ich muss kurz dazu sagen, dass das, was Kotze jetzt gesagt hat, voll schlecht war.</p></div>
+    </section>
+
+    <section class="part" id="auftritte">
+      <h2><span class="no">02</span>Auftritte</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Wie fandet ihr euren Auftritt bei Bauer Bühl?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Also eigentlich war der Scheiße. Ich hab nix gegen Bauern, aber Bauern sind eigentlich voll Scheiße. Allgemein war es ein recht guter Bauernhof. Obwohl er Scheiße war.</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Der Bauernhof war echt gut. Aber unser Auftritt war Scheiße.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Die Idioten haben zu viel Export gekauft, aber das Pils war gut.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Seid ihr schon an vielen Orten aufgetreten, und wo war es am besten?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ich als Käpt’n würde mal sagen, unser geilstes Konzert war im Jungbusch. Im Jungbusch, da, wo wir herstammen. Da, wo wir am liebsten spielen. Dort ist der Penner Rock geboren, und da ist auch unser geilstes Konzert gewesen. Und in Stuttgart war es auch nicht schlecht. Stuttgart ist quasi unsere zweite Heimat. Aber unsere erste Heimat ist natürlich heimatlicher.</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Stuttgart war am geilsten, und da hat der Koma auch ein Zimmer.</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Ich fand es in Darmstadt in der Oetinger Villa am besten. Nur leider haben wir da jetzt Auftrittsverbot. Ich glaube, weil Alge dort in den Backstage gepisst hat und Käpt’n die Türen bekritzelt oder so.</p></div>
+    </section>
+
+    <section class="part" id="penner-rock">
+      <h2><span class="no">03</span>Penner Rock</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Ich weiß, dass ihr diese Frage oft hört, aber ich muss sie trotzdem stellen: Warum gebt ihr euch so viel Mühe, Penner Rock zu spielen?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ich beantworte diese Frage im Namen der ganzen Band Kommando Vollsaufen. Es ist eine schwierige Frage. Viel steckt dahinter. Viel kann passieren. Aber wir machen Penner Rock. Wir leben Penner Rock. Es ist nicht nur in unserem Kopf, es ist in unserem Herzen. Alles in uns dringt nach außen, und was von uns nach außen dringt, ist Penner Rock. Wir leben Penner Rock, und wir werden auch Penner Rock sterben. Nichts von uns ist ohne Penner Rock, und Penner Rock kann nicht ohne uns sein. Unser wahres Leben ist Penner Rock, und Penner Rock ist unser wahres Leben. Es kann nicht anders sein. Penner Rock kann nicht ohne uns sein.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Eure Lieder zeugen von einzigartiger Art und Weise. Wie schafft ihr es, innerhalb kürzester Zeit so viele gute Lieder zu machen?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Das ist eine gute Frage. Metulski, ich bin dir sehr verbunden, dass du diese Frage gestellt hast. Es ist quasi gar kein Thema für uns. Es ist quasi gar kein Problem. Wir sind eine Band, und eine Band sind wir. „Kommando Vollsaufen“, das heißt nicht nur „Vollsaufen“. Sondern es heißt „Kommando“ – „Vollsaufen“. Quasi, wenn wir in einem Raum sind, dann hat das quasi was an sich, was man „Kommando Vollsaufen“ nennen kann. Wir sind quasi eine Band, die sich eine „Band“ nennen kann. Das sind wir wirklich. Wenn ich ab und zu mal so ein paar Einwürfe mache, so textlich, da kommen gleich die anderen und machen Musik und andere Texte dazu. Das ist auch gut so. Und deswegen sind wir so ein Erfolg.</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Der Koma und ich spielen irgendeinen Scheiß, das passt dann gut zusammen, der Dose hat zwei Takte, die wechselt er immer ab, und der Käpt’n labert wie ein Buch.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Mein persönliches Lieblingslied von euch ist „Eine neue Leber ist wie ein neues Leben“. Was ist euer Lieblingslied von euch?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Man kann das einfach nicht so sagen. Von Kommando Vollsaufen sind alle Lieder einfach total geil, und es gibt kein Lied, das schlecht ist, weil wir einfach die besten Penner Rocker aller Zeiten sind. Ich wüsste gar nicht, wenn man mich fragen würde, was mein persönliches Lieblingslied ist, weil ich mag einfach alle Lieder. Das Ding ist auch: Ich als Käpt’n, ich steh auf der Bühne, und die anderen spielen ein Lied, da bin ich froh, wenn ich überhaupt noch den Text weiß. Und das sind dann auch meine Lieblingslieder, wo ich mir am besten den Text merken kann. Und jetzt will ich mal, dass der Schlagzeuger was sagen darf. <span class="aside">(gibt das Mikro an den Schlagzeuger weiter)</span></p></div>
+      <div class="turn"><p class="who">Dose</p><p>Mein Lieblingslied ist „An der Tankstelle nachts um halb eins“ und … <span class="aside">(Das Mikro wird ihm wieder weggerissen. Allgemeines Gelächter.)</span></p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Mein Lieblingslied ist „Frei sein, politisch sein“.</p></div>
+      <div class="turn"><p class="who">Koma</p><p>„Wir sind die Zukunft“.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p><span class="aside">(zum Käpt’n)</span> Du nennst dich ja selber Kapitän. Wieso? Warum hast du immer eine Kapitänsmütze auf, und warum hat Koma immer eine Schalke-Hose an?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Für meinen Bassisten kann ich quasi sprechen, weil ich ja der Käpt’n bin. Der Koma ist quasi ein Schalker. Und wir sind alles echte Penner. Mein Bassist ist ein echter Schalker. Er kommt quasi von Schalke. So’n bisschen. Und ich habe eine Kapitänsmütze an, weil ich der Käpt’n bin. Ich hab quasi für meine Mannschaft zu sorgen. Das ist quasi wie auf einem Schiff, unsere Mannschaft hier. Ich guck, dass die alle klar bleiben, und das ist quasi gar kein Thema. Und dann schau ich immer, und dann guck ich immer. Ich sag immer: „Bleibt klar, Jungs!“</p></div>
+    </section>
+
+    <section class="part" id="bullen">
+      <h2><span class="no">04</span>Bullen &amp; Bandgeschichte</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Ich habe gehört, dass bei eurer zweiten Probe bereits die Polizei kam. Erzähl mal!</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Wir haben geprobt und voll gerockt. Auf einmal klopfen die Bullen an die Tür und meinten, dass der Gesang Scheiße wär.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Das ist ein bisschen untertrieben. Es war um einiges krasser. Also: Wir haben geprobt, es war massig was los, es ging ab wie Drecksau, da kamen die vorbei. Eine Stunde lang haben die geklopft, und wir haben nicht aufgemacht. Nein, die lassen wir nicht rein. Weil da ist quasi so ein Ding: Penner hassen Bullen. Wir hassen sie. Wir mögen keine Bullen. Noch nie haben uns Bullen was zu essen vorbeigebracht. Sie sind unsere Feinde. Nonnen sind unsere Freunde. Die von der Bahnhofsmission.</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Und Punks natürlich.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Jaaahh, Punks. Die haben ab und zu mal ein Bier über für uns. Das sind unsere Freunde. Die sind cool.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Vielleicht könnt ihr mal was zur Bandgeschichte erzählen. Wie ist das Ganze entstanden?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Wir haben da so am Schifferhäusel gestanden, der Koma und ich. Da hat der Koma zu mir gesagt: „Hast du noch Bier?“ Und da hab ich gesagt: „Scheiße, Koma!“ Und Koma hat gesagt: „Scheiße, Käpt’n!“ Und dann hab ich gemeint: „Scheiße, Koma!“ Und dann hat er zu mir gemeint: „Scheiße, Käpt’n!“ Und dann hab ich gesagt: „Scheiße, Koma, wir müssen Penner Rock machen!“ Und dann hab ich noch gemeint: „Das ist wohl wahr, Koma!“ Und dann hab ich noch gemeint: „Scheiße, klar, Koma, wir machen Penner Rock.“ Und dann … Schnell … Schhh-wwwwup-s-di-w-u-pp … <span class="aside">(Gelächter. Der Kapitän bringt kein Wort mehr heraus außer einem „schh … www … upp …“)</span></p></div>
+    </section>
+
+    <section class="part" id="essen">
+      <h2><span class="no">05</span>Essen &amp; Bier</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Was ist euer Lieblingsessen?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Also quasi hab ich viele Lieblingsessen. Ich muss sagen, wir von Kommando Vollsaufen, wir essen gern, und wir essen auch gern viel. Aber auch wenn wir wenig zu essen kriegen, essen wir gern.</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Wir trinken auch gern.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ja, das stimmt auch. Da hat der Koma vollkommen recht, wir trinken auch gern viel. Also ich mag eigentlich alles. Außer Käse. Aber Steak zum Beispiel. Oder ein großes Stück Fleisch. Aber ohne Käse.</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Ich finde es immer gut, wenn wir was zu essen bekommen auf unseren Konzerten, was nich ganz so scharf is.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ja, also ich muss sagen, der Koma hat kein Plan vom Essen. Ein bisschen schon. Aber Bigos mag der Koma überhaupt nich. Also, da hat er kein Bock. So von Schärfe hat er kein Plan, aber Bigos mag er nicht. Nee, das mag er gar nicht. Geil finde ich Yum Yum. Yum Yum ist voll das geile Essen, und da wird mir auch der Dose recht geben. <span class="aside">(hält Dose das Mikro hin)</span></p></div>
+      <div class="turn"><p class="who">Dose</p><p>Ja, das stimmt.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Du darfst ausnahmsweise auch mal drei Wörter mehr sagen. Komm, sag noch drei Wörter.</p></div>
+      <div class="turn"><p class="who">Dose</p><p>Eins, zwei, drei.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Was ist euer Lieblingsbier?</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Andreas Pils.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Also ich muss sagen, dass ich Andreas Pils noch nie getrunken habe. Aber in unserem Jungbusch-Supermarket gibt es Paderborner, ohne Dosenpfand. Und das ist mein Lieblingsbier. Das Paderborner ist das beste Bier. Auf jeden Fall zurzeit. Wenn es was Besseres gibt, sag ich Bescheid.</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Beim Paderborner ist das Preis-Leistungs-Verhältnis gut. Deswegen trinken wir das.</p></div>
+    </section>
+
+    <section class="part" id="politik">
+      <h2><span class="no">06</span>Vorbilder &amp; Politik</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Habt ihr irgendwelche Vorbilder, an denen ihr euch musikalisch orientiert?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Vorbilder? Das ist so eine Frage. Also quasi sind wir ja die Vorbilder für alle uns nachkommenden Menschen. Falls noch welche nachkommen … Als menschliche Vorbilder, zum Beispiel für den Koma: Da sitzt immer so ein Typ vor dem Jungbusch-Kiosk, der kann kaum einen Schritt weit gehen. Das ist quasi ein Vorbild für den Koma. Ansonsten sind wir ja die Generation, die Penner Rock erfunden hat. Wir sind die Zukunft. Es kommt vielleicht nach uns irgendetwas. Wir wissen nicht, was es sein wird. Aber vor uns hat es nichts gegeben.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Würdet ihr euch als eine politische Band bezeichnen?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Das ist so ein Ding. Manche sehen uns politisch, manche nicht. Also, so mit dem Dosenpfand, da bin ich ja schon dagegen, obwohl ich auch irgendwo dafür bin. Aber man muss das alles differenziert betrachten. Wir sind ja auch keine einseitigen Menschen. Wir sind ja Penner Rocker, und man muss das von der Penner-Rock-Seite her sehen. Und da sind wir die politischsten Penner Rocker, die es überhaupt gibt, weil wir ja auch die einzigsten Penner Rocker sind, die es überhaupt gibt. Und wenn es andere gibt, dann sollen sie erst mal kommen.</p></div>
+    </section>
+
+    <section class="part" id="welt">
+      <h2><span class="no">07</span>Große weite Welt</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Wo möchtet ihr denn gerne noch spielen?</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Auf dem Biermarathon.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Da spielen wir sowieso. Wo ich gern mal spielen würde, das wäre quasi Kanada oder Australien. Also da werden wir auch spielen. Vielleicht klappt es dieses Jahr nicht mehr, leider. Das Problem an Kanada ist, dass es so nah an USA liegt. Da darf man Bier nur in Plastiktüten saufen. Das ist für uns nicht akzeptabel. Das finden wir nicht korrekt. Man soll überall Bier trinken dürfen, wo man gerade steht und liegt, wo man gerade ist. Auch wo man gerade essen tut, ist Bier immer in Ordnung. Und deswegen möchten wir in USA nicht spielen. Aber Australien wäre ein Ort, da würden wir mal hinfliegen.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Wie heißt die Hauptstadt von Usbekistan?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Berlin und Bayern. Usbekistan und die Hauptstadt, das wird voll oft überschätzt. Quasi ist das so: Wo ich ein Bier habe, da bin ich zu Hause. Und wo Bier ist, sind wir daheim. Für mich ist es eigentlich egal, wo Usbekistan ist. Oder wo die Hauptstadt von Usbekistan ist. Die Hauptstadt von Usbekistan ist dort, wo es Bier gibt! Usbekistan ist dort, wo Kommando Vollsaufen zu Hause ist. Und wo es Bier gibt.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Auf eurem Demo-Tape ist auch ein Hund zu sehen. Seid ihr tierlieb?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Das war schon immer so bei Pennern. Penner und Hunde, die haben sich lieb.</p></div>
+    </section>
+
+    <section class="part" id="freunde">
+      <h2><span class="no">08</span>Freunde</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Jasmin, du hast Kommando Vollsaufen schon ein paar Mal zu Konzerten gefahren. Wie geht es dir dabei?</p></div>
+      <div class="turn"><p class="who">Jasmin</p><p>Es ist manchmal schon ganz schön anstrengend. Vor allem habe ich noch nie eine Band gesehen, die sich selbst so abfeiert. Die hören auf dem Weg zu ihrem Konzert die ganze Zeit ihr eigenes Tape und singen mit und freuen sich. Die können sogar die Intros und alles auswendig.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Gibt es Leute, die ihr gut leiden könnt?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Da gibt es einige. Den Papa vom Schifferhäusel zum Beispiel. Der hat auch immer eine Dachdeckerjacke an. Der ist korrekt.</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Ich möchte an dieser Stelle alle Leute grüßen, die das möglich gemacht haben, was wir heute sind. Die dafür gesorgt haben, dass wir Penner Rock machen können, dass wir immer unseren Weg gehen. Diejenigen, die immer dabei gewesen sind, bei all unseren Sachen, wenn wir irgendetwas gebraucht haben, die uns unterstützt haben. Ein Danke an alle, die es möglich gemacht haben, dass wir heute so einen großen Erfolg haben.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ja, quasi stimmt das alles. Und ich möchte auch dem einen danken, der immer in seinem Rollstuhl vorm Kiosk sitzt. Der ist der korrekteste Typ der Welt. Der sagt auch ab und zu mal „Hallo“ zu mir. Und deswegen mag ich den. Eigentlich müsste der bei uns in der Band spielen. Aber der kann leider nix. Er ist auch zeitlich verhindert.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Mit welchen Bands seid ihr befreundet?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Wir sind mit einigen Bands befreundet. Eigentlich mit allen. Aber mit einigen auch nicht. Wir sind ja quasi die Band, die sich die Freunde selber aussucht. Die Frage ist im Grunde schon falsch. Es darf nicht heißen: „Mit welchen Bands seid IHR befreundet?“, sondern es muss heißen: „Welche Bands sind mit EUCH befreundet?“ Und mit uns sind quasi alle befreundet, die keine Deppen sind.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Seid ihr sehr stolz darauf, so etwas Großartiges wie Penner Rock erschaffen zu haben?</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ja, natürlich. Das ist doch klar. Wir haben Penner Rock geschaffen. Die Idee der neuen Welt. Gerade jetzt, wo das Zeitalter des Penner Rock kommt. Viele werden uns folgen, aber nur wenige werden uns verstehen.</p></div>
+    </section>
+
+    <section class="part" id="schluss">
+      <h2><span class="no">09</span>Zum Schluss</h2>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Warum ist der Käpt’n euer Kapitän?</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Der Käpt’n sagt immer: „Immer erst den Käpt’n fragen, dann nachdenken, was der Käpt’n gesagt hat, und dann weißt du auch, was zu tun ist.“ Der Käpt’n hilft uns bei schwierigen Entscheidungen und passt auf seine Leute auf. Aber eigentlich ist das alles ein großer Scheiß. Weil der Käpt’n nur denkt, dass er das macht.</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ich kann da gar nicht viel hinzufügen, außer, dass ich der Käpt’n bin. Ich achte auf meine Mannschaft wie der Vater auf seine Jünglinge. Ich muss sagen, ich mach das gut.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Nennt mir drei Gründe, warum ich mir ein Kommando-Vollsaufen-Tape kaufen soll!</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Wir sind gut, wir brauchen Geld, und der Käpt’n spielt mit.</p></div>
+      <div class="turn"><p class="who">Koma</p><p>Wir brauchen mehr Bier.</p></div>
+      <div class="turn q"><p class="who">Pogo Presse</p><p>Vielen Dank für das Interview. Wollt ihr zum Schluss noch was loswerden?</p></div>
+      <div class="turn"><p class="who">Kotze</p><p>Eine neue Leber ist wie ein neues Leben!</p></div>
+      <div class="turn"><p class="who">Käpt’n</p><p>Ich weiß nicht, was ich gern loswerden will. Von Kommando Vollsaufen will ich eigentlich niemanden loswerden. Wir sind eine Einheit. Wir sind eine Band. Es gibt niemanden, den ich davon loswerden will. Dann wären wir nicht mehr Kommando Vollsaufen. Aber das schlechte Wetter will ich gern loswerden. Ich hätte gern jetzt an die 25 Grad im Schatten, ein bisschen Sonnenschein, dazu einen Strand und eine Strandbar. Dann wäre alles wunderbar.</p></div>
+      <p class="motto">Eine neue Leber ist wie ein neues Leben.</p>
+    </section>
+
+    <p class="note">Aus dem alten Pogoradio-Blog, Interview der Pogo Presse von 2005. Behutsam redigiert: Rechtschreibung, Zeichensetzung und Absätze angepasst, der Wortlaut ist unverändert.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p><a href="/interview-archiv/">← Alle Interviews aus dem Blog</a></p>
+    <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lights Out! – Pogoradio</title>
+<meta name="description" content="Interview mit Lights Out! aus der Region Stuttgart aus dem Pogoradio-Blog (2009): das Album „Destroy – Create“, Emo-Oi!, eigenständiger Sound und Parolengeblöke auf Punkkonzerten.">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap">
+<style>
+/* Ausgeschnittene Buchstaben: Licht aus, Schere an */
+:root { --display: "Rubik Mono One", Impact, "Arial Black", sans-serif; --body: "IBM Plex Sans", Georgia, "Times New Roman", serif; --mono: "IBM Plex Mono", "Courier New", ui-monospace, monospace; --display-case: uppercase; --radius: 0px; --q-weight: 700; --q-style: normal; --intro-style: normal; --bg: #e8e8e4; --bg2: #d2d2cc; --paper: #fdfdfb; --ink: #0f0f10; --soft: #58585c; --rule: #d5d5cf; --accent: #4a7d00; --accent2: #0f0f10; --headbg: #0f0f10; --headink: #fdfdfb; --shadow: rgba(0,0,0,.25); --box-border: 1.5px solid #0f0f10; --sheet-shadow: 8px 8px 0 #d2d2cc; --part-rule: 2px dotted #d5d5cf; --on-accent: #fff; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d0d0e; --bg2: #060607; --paper: #171718; --ink: #ececea; --soft: #9d9d9a; --rule: #2c2c2e; --accent: #b6f23a; --accent2: #ececea; --headbg: #ececea; --headink: #0d0d0e; --shadow: rgba(0,0,0,.6); --box-border: 1.5px solid #ececea; --sheet-shadow: 8px 8px 0 #060607; --part-rule: 2px dotted #2c2c2e; --on-accent: #fff; color-scheme: dark; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.62 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: calc(68rem + 32px); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tiny { margin: 0; font: 700 .74rem/1.35 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.head { padding-block: clamp(2rem, 6vw, 3.75rem) 0; display: grid; gap: 1.3rem; }
+.head.center { justify-items: center; text-align: center; }
+.dek { margin: 0; max-width: 40rem; font-size: clamp(1.08rem, 2.3vw, 1.25rem); line-height: 1.5; text-wrap: pretty; }
+.source { color: var(--soft); }
+h1 { overflow-wrap: break-word; hyphens: manual; }
+
+.main { padding-block: clamp(2.25rem, 5vw, 3.5rem) 2rem; display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 45rem); gap: clamp(1.75rem, 4vw, 3.25rem); justify-content: space-between; align-items: start; }
+.main.solo { grid-template-columns: minmax(0, 45rem); justify-content: center; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); display: grid; gap: 1.4rem; min-width: 0; }
+.box { border: var(--box-border); background: var(--paper); padding: 1rem 1rem 1.1rem; display: grid; gap: .6rem; border-radius: var(--radius); }
+.box h2 { margin: 0; font: 400 1.15rem/1.1 var(--display); text-transform: var(--display-case); letter-spacing: .03em; }
+.box ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .05rem; }
+.box ol a { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: .2rem; padding: .16rem 0; font: 400 .9rem/1.3 var(--mono); text-decoration: none; }
+.box ol a span:first-child { color: var(--accent); font-weight: 700; }
+.box ol a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.box dl { margin: 0; display: grid; gap: .5rem; }
+.box dt { font: 700 .86rem/1.2 var(--mono); }
+.box dd { margin: .05rem 0 0; font-size: .9rem; line-height: 1.38; color: var(--soft); }
+
+.sheet { background: var(--paper); border: var(--box-border); border-radius: var(--radius); box-shadow: var(--sheet-shadow); padding: clamp(1.4rem, 4.5vw, 2.75rem) clamp(1rem, 4vw, 2.6rem) clamp(1.4rem, 4vw, 2.4rem); display: grid; gap: clamp(2rem, 4.5vw, 2.75rem); min-width: 0; }
+.intro p { margin: 0 0 .9em; font-style: var(--intro-style); }
+.intro p:last-child { margin-bottom: 0; }
+.intro { font-size: 1.04em; }
+.part { display: grid; gap: 1rem; scroll-margin-top: 1.25rem; }
+.part h2 { margin: 0; display: flex; align-items: baseline; gap: .6rem; font: 400 clamp(1.35rem, 3.6vw, 1.75rem)/1.15 var(--display); text-transform: var(--display-case); letter-spacing: .02em; text-wrap: balance; }
+.part h2 .no { color: var(--accent); font-family: var(--mono); font-weight: 700; font-size: .66em; letter-spacing: 0; }
+.part + .part { padding-top: clamp(1.75rem, 4vw, 2.3rem); border-top: var(--part-rule); }
+.turn { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); gap: 1rem; }
+.turn .who { margin: 0; padding-top: .3em; font: 700 .72rem/1.25 var(--mono); letter-spacing: .07em; text-transform: uppercase; text-align: right; color: var(--accent); overflow-wrap: anywhere; }
+.turn.q .who { color: var(--soft); }
+.turn .say { display: grid; gap: .65em; min-width: 0; }
+.turn .say p { margin: 0; text-wrap: pretty; }
+.turn.q .say { font-weight: var(--q-weight); font-style: var(--q-style); }
+.turn.q .say em { font-style: normal; }
+.say a, .intro a { text-decoration-color: var(--accent); text-underline-offset: .18em; overflow-wrap: anywhere; }
+.say ul { margin: 0; padding-left: 1.2em; }
+.aside { font-style: italic; font-weight: 400; color: var(--soft); }
+.outro p { margin: 0 0 .6em; color: var(--soft); font-style: italic; }
+.scene { margin: .2rem 0; padding: .6rem .9rem; border-left: 3px solid var(--accent); color: var(--soft); font-style: italic; font-size: .95em; }
+.note { margin: 0; padding-top: 1.1rem; border-top: var(--part-rule); font: 400 .82rem/1.5 var(--mono); color: var(--soft); }
+footer { padding-block: 1rem 3rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); }
+.foot { border-top: var(--box-border); padding-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font: 400 .84rem/1.4 var(--mono); }
+.foot p { margin: 0; }
+.foot a { text-decoration-color: var(--accent); text-underline-offset: .2em; }
+@media (max-width: 880px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 600px) {
+  .side { grid-template-columns: minmax(0, 1fr); }
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .turn .who { text-align: left; }
+}
+
+.hd { width: min(100%, 46rem); display: grid; gap: .9rem; justify-items: start; text-align: left; }
+.hd .tiny { background: var(--paper); padding: .3rem .6rem; transform: rotate(-1deg); box-shadow: 0 1px 3px var(--shadow); }
+.hd h1 { margin: 0; display: flex; flex-wrap: wrap; gap: .3rem .45rem; font: 400 clamp(2rem, 8vw, 4.3rem)/1 var(--display); text-transform: var(--display-case); }
+.hd h1 span { display: inline-block; padding: .08em .22em .04em; background: var(--headbg); color: var(--headink); box-shadow: 3px 3px 0 var(--shadow); }
+.hd h1 span:nth-child(3n+2) { background: var(--accent); color: var(--on-accent); transform: rotate(1.6deg); }
+.hd h1 span:nth-child(3n) { background: var(--paper); color: var(--ink); border: 2px solid var(--ink); transform: rotate(-1.2deg); }
+.hd h1 span:nth-child(3n+1) { transform: rotate(-.6deg); }
+.hd .items { margin: 0; display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; font: 400 .84rem/1.4 var(--mono); }
+
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="wrap head">
+  <div class="hd"><p class="tiny">Region Stuttgart · 2009</p><h1 aria-label="Lights Out!"><span>Lights</span><span>Out!</span></h1><p class="items"><span>Destroy – Create</span><span>Emo-Oi!</span><span>Yo-Yo Records</span></p></div>
+  <p class="dek">One nation full of assholes: Lights Out! über „Destroy – Create“, Emo-Oi!, eine Band namens Riot Brigade, die angeblich niemand kennt, und ausführlich über Sprechchöre, Herdenverhalten und den Unterschied zum Oktoberfest.</p>
+  <p class="tiny source">Aus dem alten Pogoradio-Blog · November 2009 · Interview: Mr. Alf Garnett</p>
+</header>
+
+<main class="wrap main">
+  <aside class="side"><nav class="box" aria-labelledby="toc-h"><h2 id="toc-h">Inhalt</h2><ol><li><a href="#destroy-create"><span>01</span><span>Destroy – Create</span></a></li><li><a href="#eigenstaendig"><span>02</span><span>Eigenständig?</span></a></li><li><a href="#parolengebloeke"><span>03</span><span>Parolengeblöke</span></a></li></ol></nav><div class="box"><h2>Kurz notiert</h2><dl><div><dt>Aus</dt><dd>Region Stuttgart</dd></div><div><dt>Seit</dt><dd>2006</dd></div><div><dt>Neues Album</dt><dd>„Destroy – Create“, LP bei Yo-Yo Records, CD bei Dead Beat Records</dd></div><div><dt>Stil laut Band</dt><dd>Emo-Oi!</dd></div><div><dt>Querverbindung</dt><dd>Fritz und Jo spielen auch bei Riot Brigade</dd></div><div><dt>Fragen</dt><dd>Mr. Alf Garnett</dd></div></dl></div></aside>
+  <article class="sheet" aria-label="Interview">
+    <div class="intro"><p>Alle Jahre wieder bringt die Region um Stuttgart neue Bands hervor, die einen aufhorchen lassen und sich auf die eine oder andere Weise positiv von der gewohnten Masse abheben. Umso besser, wenn sie dann auch noch so eine provokante und kritische Attitüde an den Tag legen wie das beim 2006 gegründeten Vierer LIGHTS OUT! der Fall ist. Mir sind zwar ehrlich gesagt nicht sonderlich viele Fragen eingefallen, aber dafür sind einige der Antworten umso ausführlicher geworden. <em>Here goes:</em></p></div>
+    <section class="part" id="destroy-create"><h2><span class="no">01</span>Destroy – Create</h2><div class="turn q"><p class="who">Alf Garnett</p><div class="say"><p>Eure erste Single war ein ziemlicher Hammer &amp; stellt für mich immer noch eine der geilsten Punkrockproduktionen der letzten Jahre in unserem Bundesland dar. Für Dezember 2008 ist ein neues Album namens „Destroy – Create“ angekündigt. Was könnt ihr dazu sagen? Hat sich irgendetwas im Vergleich zur 7″ geändert, z. B. anderer Sound, andere Themen, anderes Label …?</p></div></div><div class="turn"><p class="who">Lights Out!</p><div class="say"><p>Na ja, was ist zu so einer typischen Eingangsfrage zu sagen? Es hat sich insofern was geändert, als dass wir uns auf unsere Weise und nach unserer Meinung optimiert haben. Und abgesehen davon, dass wir sowieso die geilste Punk/Hardcore-Band sind, ist der Sound natürlich besser denn je! Die Themen sind wohl etwas persönlicher ausgefallen als sonst. Aber keine Angst, der geneigte „Hardcorepunk“ wird auch auf typische Popsongs mit typisch szenerelevanten Texten stoßen, an denen er/sie/es seine/ihre beengte Weltsicht bestätigt bekommt ;-) Unseren Musikstil bezeichnen wir seit Neuestem als Emo-Oi! Die Platte kommt am 10. Januar als LP auf <em>Yo-Yo Records</em> und als CD bis Mitte Januar 2009 bei dem US-Label <em>Dead Beat Records</em>.</p></div></div><div class="turn q"><p class="who">Alf Garnett</p><div class="say"><p>Ihr habt ja alle bereits vorher schon in irgendwelchen Bands gespielt bzw. tut das immer noch, von denen ganz besonders Fritz’ und Jos andere Band, RIOT BRIGADE, zu nennen sind. Würde mich interessieren, wo genau ihr den Unterschied zwischen diesen beiden Bands seht, und was in dem Zusammenhang den besonderen Reiz von LIGHTS OUT! ausmacht.</p></div></div><div class="turn"><p class="who">Lights Out!</p><div class="say"><p>Jo? Fritz? – Wer ist das? Wir kennen keine Band, die RIOT BRIGADE heißt!</p></div></div></section><section class="part" id="eigenstaendig"><h2><span class="no">02</span>Eigenständig?</h2><div class="turn q"><p class="who">Alf Garnett</p><div class="say"><p>Euer Sound zeichnet sich meiner Meinung nach ja durch eine rotzige Mischung aus frühem Punkrock und ebenso frühem Hardcore aus. Wie seht ihr das, stellt das noch einen relativ eigenständigen Sound dar, oder gibt’s mittlerweile einige Bands, die in dieselbe Richtung gehen? PRESS GANG, z. B.</p></div></div><div class="turn"><p class="who">Lights Out!</p><div class="say"><p>Gibt es bei Punkrock oder Hardcore noch „eigenständige Sounds“? Kann es generell in der Rockmusik, wozu Punk und Hardcore musikgeschichtlich zählen, noch neue Sounds geben? Das müsste hier alles erst mal definiert werden <em>[Anm.: Na ja, Eigenständigkeit muss nicht heißen, etwas völlig Neues zu schaffen, sondern kann auch bedeuten, verschiedene bereits vorhandene Sachen auf kreative Art miteinander zu verbinden und sich damit von der Masse der zeitgenössischen Bands abzuheben …]</em>. – So wie wir das sehen, wiederholen sich in der Musikgeschichte sowohl Sounds als auch rebellische Attitüden immer wieder. Die heutige Musikszene ist definitiv eine Retromusikszene, in der sich bestimmte Anwandlungen im Lauf der Jahre wiederholen etc. – Um das alles jetzt aber nicht zu negativ darzustellen: Wir finden schon, dass es heute noch innovative Sounds gibt und auch immer wieder Sachen kreiert werden, die vorher so nicht da waren. Aber das Rad neu erfinden kann heute ganz bestimmt auch keine Punkband mehr … das ist durch! Um zurück zu deiner Frage zu kommen: Was unsere Einflüsse angeht, hast du insofern recht, als dass wir alle wohl viel alten Punk- und Hardcore-Sound hören und das natürlich auch in unsere Musik einfließt. Letztendlich machen wir auch nichts Neues, und wenn du so einen Sound machst, ist musikalische Weiterentwicklung auch nur begrenzt möglich … da würden wir dann lieber ein anderes Projekt unter anderem Namen starten. Letztendlich haben wir alle Bock auf so einen Sound und finden das viel interessanter als so manchen neuen szenerelevanten Scheiß. Metalcore sucks! – Wir finden, dass es auf die Energie in der Musik und die damit verbundene Attitüde ankommt, wer unseren Sound wie definiert, ist uns scheißegal, wir machen das hier schließlich nicht für euch, sondern für uns! – In Europa gibt es zurzeit sicherlich auch einige Bands, die sich auch auf altes Punkzeux zw. 1970 und ’85 berufen, da geht auch viel in eine musikalische Richtung, wir denken jedoch, dass die meisten der Bands recht eigenständig und innovativ sind, auch eben im Gegensatz zu anderen Sparten wie oben genannter Metalcore, wo alles in der Belanglosigkeit versinkt. Deshalb ist auch der PRESS GANG/LIGHTS OUT!-Vergleich für’n Arsch! PRESS GANG sind Kumpels von uns, und wir finden die auch sehr geil, aber beide Bands spielen einen sehr unterschiedlichen Sound und sind auch textlich sehr verschieden. Was uns verbindet, ist wohl eine gewisse „Fuck you!“-Attitüde, die höchstwahrscheinlich aus angepisster Langeweile in irgendwelchen „Szeneghettos“ hervorgerufen wurde, und natürlich, dass wir gerne Geschlechtsverkehr mit Pogo haben würden!</p></div></div></section><section class="part" id="parolengebloeke"><h2><span class="no">03</span>Parolengeblöke</h2><div class="turn q"><p class="who">Alf Garnett</p><div class="say"><p>Thema Parolengeblöke auf Konzerten: Auf dem 10-Jahres-Konzert von REJECTED YOUTH in Nürnberg habt ihr euch über Sprechchöre à la „Antifa Hooligans!“ lustig gemacht. Sprechchöre wie „Antifa Hooligans“ oder „Alerta antifascista“ sind auf Konzerten weiß Gott keine Seltenheit. Seht ihr so was eher in Übereinstimmung mit OI POLLOI als positive Möglichkeiten für eine rege Publikumsbeteiligung oder eher kritisch als Gruppenritual bzw. Herdenverhalten? Wiegt die Message schwerer oder die Frage nach Kreativität und Individualität?</p></div></div><div class="turn"><p class="who">Lights Out!</p><div class="say"><p>Das ist eine Frage, über die an anderen Stellen Bücher geschrieben werden! – Wir sehen das auf jeden Fall eher kritisch – es ist definitiv Gruppenritual und Herdenverhalten, und ehrlich gesagt fragen wir uns manchmal, was eigentlich der Unterschied zwischen dem Oktoberfest und einem Punkkonzert darstellt, außer vielleicht die Bierpreise?! – Warum machen Menschen so was? Weil es sich geil anfühlt, in einer Gruppe rumzugrölen, sich als etwas Besseres zu fühlen. Gleichzeitig scheint es so, als reiche es in gewissen Kreisen aus, durch das Tragen der „richtigen“ Klamotten und das Grölen der „richtigen“ Phrasen als cooler Typ zu gelten, was ja an sich schon total behämmert ist. Ist aber auch ein Jugendphänomen, welches kulturell fest verankert ist, und wir selbst können uns auch nicht davon ausschließen, so was schon mal cool gefunden zu haben, und manchmal macht so was ja auch Spaß oder ist zumindest interessant. Letztendlich ist es aber definitiv kein politischer Akt mit Sinn, es ist nichts anderes, als ins Fußballstadion zu gehen. Was hat denn so was mit „Message“ zu tun? – Saufen, Grölen, Sex … Natürlich ist es trotzdem tausendmal cooler, wenn Kids „Antifa Hooligans“ oder „Alerta antifascista“ rufen, als irgendwelche andere hohle Scheiße, wobei so Parolen wie „Antifa Hooligans“ definitiv total inhaltslos sind und wir mit so was einfach nix gemein haben. Bei der 10-Jahre-R.Y.-Feier war das auch noch mal so ein spezielles Ding: Schätzungsweise bestand der Großteil des Publikums aus weißen, deutschen Mittelstandskindern meist männlichen Geschlechts, die meisten trugen Iros, Nieten, schwarze Klamotten … Szene-Dresscodes eben. Hat das etwas mit „Individualität“ zu tun? – Wir müssen uns auch überlegen, dass wir hier definitiv über eine Szene reden, nix anderes wie bei Hip-Hop oder Techno auch – nur dass „unsere“ Szene politischer geprägt ist, was aber noch lange nichts über eine gewisse Reflektiertheit aussagt, und sie sich letztendlich im Verhalten nicht von gesamtgesellschaftlichen Verhaltensmustern unterscheidet. Ernsthafte Politik ist definitiv was anderes, und für uns ist auch klar, dass das beim Großteil von Punk einfach mit zur Etikette gehört. Deshalb hegen wir eigentlich kaum Ansprüche von dieser Seite, im Gegenteil – manchmal brauchen wir sie gar nicht, denn das kann auch woanders ausgelebt werden. Mit LIGHTS OUT! möchten wir Konzerte spielen, auf die wir auch selbst gerne gehen würden. Keiner hat Bock auf Kompromisse! Wer’s scheiße findet, soll sich halt verpissen, wer nicht – auch gut! Es gibt genug Leute, die einfach auch nur nett sind und Bock haben, was zu tun, rauszukommen, seinen Horizont zu erweitern oder zumindest ein Bewusstsein dafür zu haben, und das hat überhaupt nix damit zu tun, ob jetzt einer die „richtigen“ szenerelevanten Klischees aufweisen kann, oder ob er jetzt schon mal „Antifa Hooligans“ auf ’ner Demo gegrölt hat. Dass Bands wie OI POLLOI so was als „positive Möglichkeit für rege Publikumsresonanz“ sehen, finden wir bezeichnend <em>[Anm.: Ich muss dazu sagen, dass Deek von OI POLLOI den Begriff der Publikumsbeteiligung im Zusammenhang mit mitgröltauglichen Refrains à la COCKNEY REJECTS ins Spiel gebracht hat, nicht in Bezug auf politische Parolen zwischen den Liedern. Meiner Meinung nach läuft das letztendlich aber auf dasselbe hinaus, sodass ich nicht glaube, ihn in meiner Frage völlig falsch wiedergegeben zu haben.]</em>. Rege Publikumsresonanz kann auch anders ablaufen, als besoffen vor der Bühne Parolen zu grölen, z. B. kann besoffen gestagedived oder vor die Bühne gekotzt werden, das ist wenigstens ehrlich! Klar, so was, was OI POLLOI machen, funktioniert ja auch, das ist klar und hängt auch wieder damit zusammen, dass unsere Szene sich nur wenig vom Rest der Gesellschaft unterscheidet. – Jede/r kann für sich selbst entscheiden, wie er/sie das hält, und letztendlich hängt auch viel davon ab, was der „Konsument“ in einer Band sieht. Mit LIGHTS OUT! haben wir keinen Bock, Leuten zu sagen, was falsch oder richtig ist … Das schließt sich aber irgendwie auch oft schon aus, weil die Musik halt nicht so populär bzw. auch nur in Subszenen populär ist, in denen wir uns evtl. wohler fühlen, weil sie unserer Definition von „Punk“ näherkommen, was in sich ja auch schon wieder keinen Sinn macht <em>[Anm.: Aha, haben wir da jetzt endlich einen Hinweis auf die „Subszene“, nach der ich in der letzten Frage vergeblich gefischt hatte?]</em>.</p><p>Wir halten Kreativität und Individualität definitiv höher, als irgendeine angebliche Message! Lange bevor wir selbst zu Punk kamen, waren das wohl mal Werte, die diese Subkultur ausgezeichnet haben, heute scheinen es objektiv betrachtet oftmals nur noch hohle Phrasen. Um noch mal auf das R.Y.-Jubiläum zurückzukommen: Für uns war das aber definitiv auch mal cool, vor so großem Publikum zu spielen, und das hat sehr viel Spaß gemacht! Für Jay war es einfach in einem gewissen Moment befremdlich und komisch, dass die Leute so Parolen gerufen haben, die erst mal nix mit unserem Konzert zu tun hatten, deshalb hat er was gesagt, wieso sollte er das nicht tun? Anscheinend haben sich da auch einige vor den Kopf gestoßen gefühlt und uns später drauf angehauen … hat ja witzigerweise schon was gebracht. – Bei R.Y. hat später der Keks eine Ankündigung zu ’ner Demo in Nürnberg gemacht, da haben die Leute ihn mit „Alerta Antifascista“-Rufen übertönt, sodass kein Schwein mehr verstehen konnte, was der gesagt hat. Da mussten wir eigentlich nur noch lachen …</p></div></div><div class="turn q"><p class="who">Alf Garnett</p><div class="say"><p>Letzte Worte an Freunde, Feinde und Verwandte?</p></div></div><div class="turn"><p class="who">Lights Out!</p><div class="say"><p>Für Punk – gegen alles! Kauft die neue Platte bei Dead Beat Records!!!!! Oi!</p></div></div></section>
+    <div class="outro"><p><em>Mr. Alf Garnett</em></p></div>
+    <p class="note">Aus dem alten Pogoradio-Blog. Behutsam redigiert: Rechtschreibung, Zeichensetzung und Absätze angepasst, der Wortlaut ist unverändert.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p><a href="/interview-archiv/">← Alle Interviews aus dem Blog</a></p>
+    <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

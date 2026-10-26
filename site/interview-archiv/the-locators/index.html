@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Locators – Pogoradio</title>
+<meta name="description" content="Kurzinterview mit Simon von The Locators aus Kopenhagen aus dem Pogoradio-Blog (2010): Siebdruck um fünf Uhr früh, Songideen aufs Handy, Gangs, das Ungdomshuset und Kopenhagen.">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&amp;family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Courier+Prime:wght@400;700&amp;display=swap">
+<style>
+/* Ein dänisches Nummernschild am Hot Rod, wie es das Cover verspricht */
+:root { --display: "Holtwood One SC", Impact, "Arial Black", sans-serif; --body: "Crimson Pro", Georgia, "Times New Roman", serif; --mono: "Courier Prime", "Courier New", ui-monospace, monospace; --display-case: uppercase; --radius: 0px; --q-weight: 700; --q-style: normal; --intro-style: normal; --bg: #ebe6dd; --bg2: #d7cfc2; --paper: #fffcf6; --ink: #15110e; --soft: #5d5650; --rule: #dad2c6; --accent: #c8102e; --accent2: #c8102e; --headbg: #15110e; --headink: #fffcf6; --shadow: rgba(0,0,0,.22); --box-border: 1.5px solid #15110e; --sheet-shadow: 8px 8px 0 #d7cfc2; --part-rule: 2px dotted #dad2c6; --on-accent: #fff; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #12100e; --bg2: #0a0908; --paper: #1c1916; --ink: #efe9e1; --soft: #a69e94; --rule: #342e29; --accent: #ff5a6a; --accent2: #ff5a6a; --headbg: #efe9e1; --headink: #12100e; --shadow: rgba(0,0,0,.55); --box-border: 1.5px solid #efe9e1; --sheet-shadow: 8px 8px 0 #0a0908; --part-rule: 2px dotted #342e29; --on-accent: #fff; color-scheme: dark; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.62 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: calc(68rem + 32px); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tiny { margin: 0; font: 700 .74rem/1.35 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.head { padding-block: clamp(2rem, 6vw, 3.75rem) 0; display: grid; gap: 1.3rem; }
+.head.center { justify-items: center; text-align: center; }
+.dek { margin: 0; max-width: 40rem; font-size: clamp(1.08rem, 2.3vw, 1.25rem); line-height: 1.5; text-wrap: pretty; }
+.source { color: var(--soft); }
+h1 { overflow-wrap: break-word; hyphens: manual; }
+
+.main { padding-block: clamp(2.25rem, 5vw, 3.5rem) 2rem; display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 45rem); gap: clamp(1.75rem, 4vw, 3.25rem); justify-content: space-between; align-items: start; }
+.main.solo { grid-template-columns: minmax(0, 45rem); justify-content: center; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); display: grid; gap: 1.4rem; min-width: 0; }
+.box { border: var(--box-border); background: var(--paper); padding: 1rem 1rem 1.1rem; display: grid; gap: .6rem; border-radius: var(--radius); }
+.box h2 { margin: 0; font: 400 1.15rem/1.1 var(--display); text-transform: var(--display-case); letter-spacing: .03em; }
+.box ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .05rem; }
+.box ol a { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: .2rem; padding: .16rem 0; font: 400 .9rem/1.3 var(--mono); text-decoration: none; }
+.box ol a span:first-child { color: var(--accent); font-weight: 700; }
+.box ol a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.box dl { margin: 0; display: grid; gap: .5rem; }
+.box dt { font: 700 .86rem/1.2 var(--mono); }
+.box dd { margin: .05rem 0 0; font-size: .9rem; line-height: 1.38; color: var(--soft); }
+
+.sheet { background: var(--paper); border: var(--box-border); border-radius: var(--radius); box-shadow: var(--sheet-shadow); padding: clamp(1.4rem, 4.5vw, 2.75rem) clamp(1rem, 4vw, 2.6rem) clamp(1.4rem, 4vw, 2.4rem); display: grid; gap: clamp(2rem, 4.5vw, 2.75rem); min-width: 0; }
+.intro p { margin: 0 0 .9em; font-style: var(--intro-style); }
+.intro p:last-child { margin-bottom: 0; }
+.intro { font-size: 1.04em; }
+.part { display: grid; gap: 1rem; scroll-margin-top: 1.25rem; }
+.part h2 { margin: 0; display: flex; align-items: baseline; gap: .6rem; font: 400 clamp(1.35rem, 3.6vw, 1.75rem)/1.15 var(--display); text-transform: var(--display-case); letter-spacing: .02em; text-wrap: balance; }
+.part h2 .no { color: var(--accent); font-family: var(--mono); font-weight: 700; font-size: .66em; letter-spacing: 0; }
+.part + .part { padding-top: clamp(1.75rem, 4vw, 2.3rem); border-top: var(--part-rule); }
+.turn { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); gap: 1rem; }
+.turn .who { margin: 0; padding-top: .3em; font: 700 .72rem/1.25 var(--mono); letter-spacing: .07em; text-transform: uppercase; text-align: right; color: var(--accent); overflow-wrap: anywhere; }
+.turn.q .who { color: var(--soft); }
+.turn .say { display: grid; gap: .65em; min-width: 0; }
+.turn .say p { margin: 0; text-wrap: pretty; }
+.turn.q .say { font-weight: var(--q-weight); font-style: var(--q-style); }
+.turn.q .say em { font-style: normal; }
+.say a, .intro a { text-decoration-color: var(--accent); text-underline-offset: .18em; overflow-wrap: anywhere; }
+.say ul { margin: 0; padding-left: 1.2em; }
+.aside { font-style: italic; font-weight: 400; color: var(--soft); }
+.outro p { margin: 0 0 .6em; color: var(--soft); font-style: italic; }
+.scene { margin: .2rem 0; padding: .6rem .9rem; border-left: 3px solid var(--accent); color: var(--soft); font-style: italic; font-size: .95em; }
+.note { margin: 0; padding-top: 1.1rem; border-top: var(--part-rule); font: 400 .82rem/1.5 var(--mono); color: var(--soft); }
+footer { padding-block: 1rem 3rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); }
+.foot { border-top: var(--box-border); padding-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font: 400 .84rem/1.4 var(--mono); }
+.foot p { margin: 0; }
+.foot a { text-decoration-color: var(--accent); text-underline-offset: .2em; }
+@media (max-width: 880px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 600px) {
+  .side { grid-template-columns: minmax(0, 1fr); }
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .turn .who { text-align: left; }
+}
+
+.hd { display: grid; gap: 1rem; justify-items: center; text-align: center; }
+.hd .plate { display: grid; grid-template-columns: auto 1fr; align-items: stretch; background: #fbfbf7; color: #111; border: 4px solid #111; border-radius: 10px; box-shadow: 0 0 0 3px #fbfbf7, 0 14px 30px var(--shadow); min-width: min(100%, 30rem); overflow: hidden; }
+.hd .eu { background: #1f4fa8; color: #fff; display: grid; align-content: end; justify-items: center; padding: .5rem .55rem .45rem; gap: .25rem; font: 700 1.1rem/1 var(--mono); }
+.hd .eu::before { content: ""; width: 1.5rem; height: 1.5rem; border-radius: 50%; border: 2px dotted #ffd200; }
+.hd .num { padding: .25rem 1.2rem .2rem; font: 400 clamp(2.4rem, 11vw, 5rem)/1.1 var(--display); letter-spacing: .04em; white-space: nowrap; }
+.hd .tiny { color: var(--accent); }
+.hd h1 { margin: 0; font: 400 clamp(1.6rem, 5vw, 2.4rem)/1.05 var(--display); text-transform: var(--display-case); }
+.hd .items { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .2rem 1.2rem; font: 400 .82rem/1.4 var(--mono); color: var(--soft); }
+.hd .plate { border-color: #c8102e; }
+.hd .num { font-size: clamp(2rem, 9vw, 4.2rem); }
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="wrap head center">
+  <div class="hd"><p class="tiny">Kopenhagen · 2010</p><div class="plate" aria-hidden="true"><span class="eu">DK</span><span class="num">LO 10 05</span></div><h1>The Locators</h1><p class="items"><span>Simon</span><span>The End Of The World</span><span>Gorilla Angreb</span><span>Los Retardos</span></p></div>
+  <p class="dek">Der pure Rock’n’Roll-Lifestyle: Sänger Simon über Bahnenziehen um halb sechs, zehn Stunden Shirts drucken, Riffs auf dem Handy, Schießereien zwischen Gangs, das geräumte Ungdomshuset und eine kleine Stadt, die sich gerne groß gibt.</p>
+  <p class="tiny source">Aus dem alten Pogoradio-Blog · August 2010 · Interview: Bocky</p>
+</header>
+
+<main class="wrap main">
+  <aside class="side"><div class="box"><h2>Kurz notiert</h2><dl><div><dt>Aus</dt><dd>Kopenhagen</dd></div><div><dt>Debüt</dt><dd>„The End Of The World“</dd></div><div><dt>Im Gespräch</dt><dd>Simon (Gesang)</dd></div><div><dt>Vorher</dt><dd>Gorilla Angreb und Los Retardos, andere spielten bei Nekromantix</dd></div><div><dt>Fragen</dt><dd>Bocky</dd></div></dl></div></aside>
+  <article class="sheet" aria-label="Interview">
+    <div class="intro"><p>Als ich das Debütalbum „The End Of The World“ der Dänen in den Player pfriemelte, war ich umgehend von ihrem Sound total überrascht. Denn vom Cover her erwartete ich eine lackaffige Greaser-Kapelle, die von mörderisch viel Alkohol, langweiligen Kartenspielen und leicht bekleideten Tanten mit mindestens Körbchengröße D träumt. Doch stattdessen erwies sich die Scheibe als kleine Überraschung, da ihr Sound rein gar nicht aufgesetzt wirkt, stattdessen erstaunlich klar ist, weil er absichtlich nicht hinterher aufgemotzt wurde. Das machte mich natürlich neugierig. Denn um so authentisch bleiben zu können, muss man schon einiges an Erfahrung an seinen Instrumenten haben. So wunderte es mich nur wenig, dass ein Teil der Band ihre Fertigkeiten bei Nekromantix oder Gorilla Angreb unter Beweis gestellt hatten. Deshalb lasst euch erzählen, worin Sänger Simon die Parallelen zwischen den Ramones und Iggy Pop sieht, oder wie sein Verhältnis zu Musik ist.</p></div>
+    <section class="part" id="simons-tag"><h2><span class="no">01</span>Simons Tag</h2><div class="turn q"><p class="who">Bocky</p><div class="say"><p>Hi Simon, na, wie war dein Tag, was hast du so gemacht?</p></div></div><div class="turn"><p class="who">Simon</p><div class="say"><p>Mein Tag war soweit in Ordnung, danke der Nachfrage. Ich bin um 5.30 Uhr aufgestanden, auf mein Fahrrad gesprungen und zum Schwimmbad gefahren. Nachdem ich 40 Minuten lang meine Bahnen gezogen hatte, machte ich mich auf den Weg zu meiner Druckwerkstatt, wo ich 10 Stunden Shirts gedruckt habe. Hinterher habe ich mir noch ’nen schönen Tag mit meiner Frau und unserem Hund gemacht. Wie du siehst, der pure Rock’n’Roll-Lifestyle, haha.</p></div></div><div class="turn q"><p class="who">Bocky</p><div class="say"><p>Heftig, beginnt jeder Tag bei dir so und was druckst du denn so?</p></div></div><div class="turn"><p class="who">Simon</p><div class="say"><p>Nein, nicht jeder Tag beginnt so. Normalerweise stehe ich um 5 Uhr auf und gehe direkt zum Arbeiten. Ich drucke Logos, Bandshirts und Schlüsselbänder. All so’n Scheiß eben. Designs mache ich aber nicht selbst, dafür fehlt mir die Zeit. Ich drucke einfach nur nach Vorlage.</p></div></div><div class="turn q"><p class="who">Bocky</p><div class="say"><p>Wann hattest du denn deine letzte Idee für einen Song?</p></div></div><div class="turn"><p class="who">Simon</p><div class="say"><p>Gerade erst heute. Es war eine Idee für ein Gitarrenriff. In meiner Werkstatt habe ich eine alte Gitarre und einen verranzten Verstärker und immer wenn ich eine Idee habe, dann stoppe ich kurz und nehme das auf mein Handy auf. Das klappt ziemlich gut und so vergesse ich nichts, um an neuen Songs basteln zu können. Hm, der letzte Text, an dem ich arbeitete, heißt „Hold Your Horses“ und handelt von einer hirnlosen Gang, die hier in Kopenhagen ihr Unwesen treibt und rumballert. Das ist tatsächlich so ’ne Geschichte, die zwischen Gangs wegen Drogen abgeht. Die ballern sich wirklich gegenseitig ab. Grundsätzlich zwar nichts Schlechtes, aber deshalb sind viele Leute sehr nervös und noch schlimmer, deshalb tauchen immer mehr Bullen auf.</p></div></div></section><section class="part" id="kopenhagen"><h2><span class="no">02</span>Kopenhagen</h2><div class="turn q"><p class="who">Bocky</p><div class="say"><p>Das letzte Mal, dass ich was von Cops in Kopenhagen hörte, war in Kombination mit dem Ungdomshuset. Wie war deine Beziehung zu diesem Squat?</p></div></div><div class="turn"><p class="who">Simon</p><div class="say"><p>Das erste Mal, dass ich dort war, war in den frühen 90ern. Ich habe den Laden geliebt. Mit Gorilla Angreb und den Los Retardos (zwei Bands, in denen Simon vorher spielte, Anm. Bocky) waren wir es gewohnt, dort aufzunehmen, zu proben oder dort auf der Bühne zu stehen. Es war ein ganz spezieller und äußerst großartiger Laden. Traurig, dass es mit der Räumung enden musste. Aber es gibt wieder ein neues Haus und das ist gut.</p></div></div><div class="turn q"><p class="who">Bocky</p><div class="say"><p>Hört sich doch großartig an. Mal schauen, was sich daraus entwickelt. Ansonsten muss ich sagen, dass ich von Kopenhagen herzlich wenig weiß. Gibt es etwas, das man wissen sollte?</p></div></div><div class="turn"><p class="who">Simon</p><div class="say"><p>Na ja, Kopenhagen ist eine kleine Stadt, die sich gerne groß gibt. Klar gibt es ein paar gute Bars, klasse Veranstaltungsläden und eine Handvoll brauchbare Plattenläden. Der Rest der Stadt besteht hauptsächlich aus hippen Läden, Discos und solchen teuren Kaffee-Latte-Cafés, die kein Mensch braucht. Wusstest du, dass die Stadt zu den fünf teuersten Städten weltweit gezählt wird? Aber es ist o. k. so, ich mag Kopenhagen. Man muss nur wissen, wohin man geht und wohin eben nicht. Am meisten mag ich den Sommer hier, wenn viele Leute in Parks oder anderswo draußen sitzen und ich viel mit dem Fahrrad unterwegs bin. Im Sommer gibt es hier auch viele Open-Air-Veranstaltungen. Was jedoch neue tolle Bands betrifft, muss ich zugeben, bin ich nicht auf dem aktuellsten Stand. Aber es gibt schon einige in den verschiedensten Stilen unserer Subkultur.</p></div></div></section>
+    <div class="outro"><p><em>Das komplette Interview gibt es in Ausgabe #12 des Fanzines „Punkrock!“.</em></p></div>
+    <p class="note">Aus dem alten Pogoradio-Blog. Behutsam redigiert: Rechtschreibung, Zeichensetzung und Absätze angepasst, der Wortlaut ist unverändert.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p><a href="/interview-archiv/">← Alle Interviews aus dem Blog</a></p>
+    <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

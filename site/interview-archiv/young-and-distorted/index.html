@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pogoradio im Young &amp; Distorted – Pogoradio</title>
+<meta name="description" content="Interview mit Rüdi über das Pogoradio aus dem Fanzine „Young &amp; Distorted“ #5 (2009): der Bermudafunk, Fanzines davor, warum er die Sendung allein macht und besondere Gäste im Studio.">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap">
+<style>
+/* Eine Schablone auf der Wand der Alten Feuerwache */
+:root { --display: "Saira Stencil One", Impact, "Arial Black", sans-serif; --body: "Atkinson Hyperlegible", Georgia, "Times New Roman", serif; --mono: "IBM Plex Mono", "Courier New", ui-monospace, monospace; --display-case: uppercase; --radius: 0px; --q-weight: 700; --q-style: normal; --intro-style: normal; --bg: #e5ebea; --bg2: #cdd8d6; --paper: #fbfdfd; --ink: #0f1817; --soft: #526260; --rule: #d1dcda; --accent: #00806f; --accent2: #e1352b; --headbg: #0f1817; --headink: #f2fbf9; --shadow: rgba(0,0,0,.2); --box-border: 1.5px solid #0f1817; --sheet-shadow: 8px 8px 0 #cdd8d6; --part-rule: 2px dotted #d1dcda; --on-accent: #fff; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1413; --bg2: #070b0b; --paper: #151e1d; --ink: #e6efed; --soft: #97a8a5; --rule: #29393b; --accent: #37d1b9; --accent2: #ff6a5c; --headbg: #1d2b29; --headink: #f2fbf9; --shadow: rgba(0,0,0,.55); --box-border: 1.5px solid #e6efed; --sheet-shadow: 8px 8px 0 #070b0b; --part-rule: 2px dotted #29393b; --on-accent: #fff; color-scheme: dark; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.62 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: calc(68rem + 32px); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tiny { margin: 0; font: 700 .74rem/1.35 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.head { padding-block: clamp(2rem, 6vw, 3.75rem) 0; display: grid; gap: 1.3rem; }
+.head.center { justify-items: center; text-align: center; }
+.dek { margin: 0; max-width: 40rem; font-size: clamp(1.08rem, 2.3vw, 1.25rem); line-height: 1.5; text-wrap: pretty; }
+.source { color: var(--soft); }
+h1 { overflow-wrap: break-word; hyphens: manual; }
+
+.main { padding-block: clamp(2.25rem, 5vw, 3.5rem) 2rem; display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 45rem); gap: clamp(1.75rem, 4vw, 3.25rem); justify-content: space-between; align-items: start; }
+.main.solo { grid-template-columns: minmax(0, 45rem); justify-content: center; }
+.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); display: grid; gap: 1.4rem; min-width: 0; }
+.box { border: var(--box-border); background: var(--paper); padding: 1rem 1rem 1.1rem; display: grid; gap: .6rem; border-radius: var(--radius); }
+.box h2 { margin: 0; font: 400 1.15rem/1.1 var(--display); text-transform: var(--display-case); letter-spacing: .03em; }
+.box ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .05rem; }
+.box ol a { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: .2rem; padding: .16rem 0; font: 400 .9rem/1.3 var(--mono); text-decoration: none; }
+.box ol a span:first-child { color: var(--accent); font-weight: 700; }
+.box ol a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.box dl { margin: 0; display: grid; gap: .5rem; }
+.box dt { font: 700 .86rem/1.2 var(--mono); }
+.box dd { margin: .05rem 0 0; font-size: .9rem; line-height: 1.38; color: var(--soft); }
+
+.sheet { background: var(--paper); border: var(--box-border); border-radius: var(--radius); box-shadow: var(--sheet-shadow); padding: clamp(1.4rem, 4.5vw, 2.75rem) clamp(1rem, 4vw, 2.6rem) clamp(1.4rem, 4vw, 2.4rem); display: grid; gap: clamp(2rem, 4.5vw, 2.75rem); min-width: 0; }
+.intro p { margin: 0 0 .9em; font-style: var(--intro-style); }
+.intro p:last-child { margin-bottom: 0; }
+.intro { font-size: 1.04em; }
+.part { display: grid; gap: 1rem; scroll-margin-top: 1.25rem; }
+.part h2 { margin: 0; display: flex; align-items: baseline; gap: .6rem; font: 400 clamp(1.35rem, 3.6vw, 1.75rem)/1.15 var(--display); text-transform: var(--display-case); letter-spacing: .02em; text-wrap: balance; }
+.part h2 .no { color: var(--accent); font-family: var(--mono); font-weight: 700; font-size: .66em; letter-spacing: 0; }
+.part + .part { padding-top: clamp(1.75rem, 4vw, 2.3rem); border-top: var(--part-rule); }
+.turn { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); gap: 1rem; }
+.turn .who { margin: 0; padding-top: .3em; font: 700 .72rem/1.25 var(--mono); letter-spacing: .07em; text-transform: uppercase; text-align: right; color: var(--accent); overflow-wrap: anywhere; }
+.turn.q .who { color: var(--soft); }
+.turn .say { display: grid; gap: .65em; min-width: 0; }
+.turn .say p { margin: 0; text-wrap: pretty; }
+.turn.q .say { font-weight: var(--q-weight); font-style: var(--q-style); }
+.turn.q .say em { font-style: normal; }
+.say a, .intro a { text-decoration-color: var(--accent); text-underline-offset: .18em; overflow-wrap: anywhere; }
+.say ul { margin: 0; padding-left: 1.2em; }
+.aside { font-style: italic; font-weight: 400; color: var(--soft); }
+.outro p { margin: 0 0 .6em; color: var(--soft); font-style: italic; }
+.scene { margin: .2rem 0; padding: .6rem .9rem; border-left: 3px solid var(--accent); color: var(--soft); font-style: italic; font-size: .95em; }
+.note { margin: 0; padding-top: 1.1rem; border-top: var(--part-rule); font: 400 .82rem/1.5 var(--mono); color: var(--soft); }
+footer { padding-block: 1rem 3rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); }
+.foot { border-top: var(--box-border); padding-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font: 400 .84rem/1.4 var(--mono); }
+.foot p { margin: 0; }
+.foot a { text-decoration-color: var(--accent); text-underline-offset: .2em; }
+@media (max-width: 880px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 600px) {
+  .side { grid-template-columns: minmax(0, 1fr); }
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .turn .who { text-align: left; }
+}
+
+.hd { width: 100%; padding: clamp(1.6rem, 5vw, 2.8rem) clamp(1.1rem, 5vw, 2.6rem); background: var(--headbg); color: var(--headink); position: relative; display: grid; gap: .8rem; box-shadow: inset 0 0 80px rgba(0,0,0,.25); }
+.hd::before { content: ""; position: absolute; inset: 0; opacity: .22; pointer-events: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .7 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.hd > * { position: relative; }
+.hd .tape { justify-self: start; margin: 0; background: var(--paper); color: var(--ink); padding: .3rem .8rem .25rem; transform: rotate(-1.5deg); font: 700 .74rem/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,.2); }
+.hd h1 { margin: 0; font: 400 clamp(2.5rem, 10.5vw, 6rem)/.92 var(--display); text-transform: var(--display-case); color: var(--accent); text-shadow: 0 0 14px color-mix(in srgb, var(--accent) 45%, transparent); text-wrap: balance; }
+.hd .sub { margin: 0; font: 400 clamp(1rem, 2.6vw, 1.25rem)/1.3 var(--display); text-transform: var(--display-case); letter-spacing: .05em; }
+.hd .items { margin: 0; display: flex; flex-wrap: wrap; gap: .3rem 1.3rem; font: 400 .82rem/1.4 var(--mono); opacity: .9; }
+
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="wrap head">
+  <div class="hd"><p class="tape">Young &amp; Distorted #5 · 2009</p><h1>Pogoradio</h1><p class="sub">Rüdi im Bermudafunk</p><p class="items"><span>105,4 Heidelberg</span><span>89,6 Mannheim</span><span>mittwochs 23 Uhr</span></p></div>
+  <p class="dek">Diesmal stellt jemand anderes die Fragen: Rüdi über den Bermudafunk als Freies Radio, dreißig Fanzine-Ausgaben vor der ersten Sendung, warum Radio wie Dating ist, Do it yourself am Mikro und Gäste, die 500 Kilometer anreisen.</p>
+  <p class="tiny source">Aus dem Fanzine „Young &amp; Distorted“ #5 · im Pogoradio-Blog im Dezember 2009</p>
+</header>
+
+<main class="wrap main">
+  <aside class="side"><nav class="box" aria-labelledby="toc-h"><h2 id="toc-h">Inhalt</h2><ol><li><a href="#bermudafunk"><span>01</span><span>Bermudafunk</span></a></li><li><a href="#wie-alles-anfing"><span>02</span><span>Wie alles anfing</span></a></li><li><a href="#allein-am-mikro"><span>03</span><span>Allein am Mikro</span></a></li><li><a href="#gaeste-im-studio"><span>04</span><span>Gäste im Studio</span></a></li></ol></nav><div class="box"><h2>Kurz notiert</h2><dl><div><dt>Sender</dt><dd>bermuda.funk – Freies Radio Rhein-Neckar</dd></div><div><dt>Pogoradio seit</dt><dd>2000</dd></div><div><dt>Sendezeit 2009</dt><dd>mittwochs, 23 bis 24 Uhr</dd></div><div><dt>Frequenzen</dt><dd>105,4 (Heidelberg), 89,6 (Mannheim)</dd></div><div><dt>Davor</dt><dd>rund 30 Fanzine-Ausgaben, zuletzt „Pogo Presse“</dd></div><div><dt>Fragen</dt><dd>„Young &amp; Distorted“ #5</dd></div></dl></div></aside>
+  <article class="sheet" aria-label="Interview">
+    <div class="intro"><p>In der aktuellen fünften Ausgabe des Fanzines „Young &amp; Distorted“ ist ein Interview mit Punkrock-Radiosendungsmachern. Unter anderem mit Rüdi vom Pogoradio:</p></div>
+    <section class="part" id="bermudafunk"><h2><span class="no">01</span>Bermudafunk</h2><div class="turn q"><p class="who">Young &amp; Distorted</p><div class="say"><p><strong>Seit wann gibt es das Pogoradio denn genau? In welchem Zusammenhang steht es mit der Entstehung des Bermudafunks?</strong></p></div></div><div class="turn"><p class="who">Rüdi</p><div class="say"><p>Der „bermuda.funk Freies Radio Rhein-Neckar e.V.“ beschallt seit dem Jahre 2000 die Rhein-Neckar-Region. Genauso lange schon gibt es die Sendung „Pogoradio“. Jeden Mittwoch von 23 bis 24 Uhr auf 105,4 in Heidelberg und 89,6 in Mannheim und Umgebung. Aber auch als Live-Stream unter www.bermudafunk.org. Der Bermudafunk ist ein Freies Radio. Also unabhängig und mitgliederorientiert. Es kann sich jede Person für einen Sendeplatz bewerben und das Radio durch Mitarbeit unterstützen. Es gibt im Moment, glaub ich, über 100 Sendungen. Jedes Mitglied arbeitet unentgeltlich, bis auf irgendwelche halben Stellen im Verwaltungsapparat. Da kenn ich mich aber nicht so aus. Das steht bestimmt alles auf der Bermudafunk-Webseite ausführlich. Vom Land bekommen wir aber auch Finanz-Zuschüsse und da gibt es ja auch noch die Mitgliedsbeiträge. So können wir uns die Technik und das Inventar bezahlen. Die Studios und die Verwaltung befinden sich in einem städtischen Gebäude (Alte Feuerwache). Dafür müssen wir, glaub ich, keine oder auf jeden Fall kaum Miete bezahlen. Mit so Finanzkram kenn ich mich überhaupt nicht aus. Da gibt es zum Glück beim Bermudafunk ziemlich fähige Leute.</p></div></div></section><section class="part" id="wie-alles-anfing"><h2><span class="no">02</span>Wie alles anfing</h2><div class="turn q"><p class="who">Young &amp; Distorted</p><div class="say"><p><strong>Bist du Gründungsmitglied beim Bermudafunk? Wie kamst du damals auf die Idee, selber eine Radiosendung auf die Beine zu stellen?</strong></p></div></div><div class="turn"><p class="who">Rüdi</p><div class="say"><p>Zur ersten Frage: Nein. Zur zweiten: Vor der Radiosendung habe ich Punk-Fanzines mit Freunden zusammen gebastelt. Soweit ich mich erinnern kann, ungefähr 30 Ausgaben unter verschiedenen Namen. Zuletzt bei der „Pogo Presse“. Die Möglichkeit, mein Mitteilungsbedürfnis auch über das Radio zu befriedigen, war umso interessanter. Das Interesse an dem Medium Fanzine ist aber dadurch auf null geschrumpft. Zudem pflege ich ja auch noch eine Webseite, www.pogoradio.de. Dort kann ich mich ja auch noch austoben. Diese betreibe ich übrigens mit dem „Punkrock-Fanzine“. Wir teilen uns die Webseite, um dadurch unseren Besuchern mehr anbieten zu können. Aber noch mal auf deine Frage zurückzukommen: Eigentlich weiß ich nicht wirklich, wieso ich mich jede Woche hinstelle und eine Sendung produziere. Aber bestimmt aus demselben Grund, weshalb du ein Fanzine machst und andere Jungs und Mädels in einer Band spielen. Man sucht doch immer einen Grund zum Saufen und sich in der Öffentlichkeit zu blamieren.</p></div></div><div class="turn q"><p class="who">Young &amp; Distorted</p><div class="say"><p><strong>Hehe, ja, irgendwer muss es ja machen. Erzähl doch mal überblicksmäßig von den ersten Sendungen, wie waren die Anfänge für dich?</strong></p></div></div><div class="turn"><p class="who">Rüdi</p><div class="say"><p>Keine Ahnung. Ich schätze mal, es muss eine aufregende Zeit gewesen sein. Aber es interessiert mich nicht, sonst hätte ich schon mal darüber nachgedacht. Ich finde es sehr mühselig, irgendwelchen alten Zeiten nachzuhängen und Revue passieren zu lassen. Der letzte Abend, die letzte Sendung, das sind die Dinge, über die ich nachdenke und mir Gedanken mache. Aber was vor 8-9 Jahren war, ist nicht meine Baustelle. Die Sendungen liegen übrigens alle noch im Internet auf meinem Server. Wenn irgendein Wahnsinniger mit extrem viel Tagesfreizeit Lust hat, kann er sie gerne alle anhören. Zum Zeitpunkt dieses Interviews wären das 432 Stunden Gelaber mit Punkrockgedudel. Viel Spaß! Aber ich versuche trotzdem, deine Frage zu beantworten: Das ist wie beim Sex. Beim ersten Mal voll aufregend, aber schlecht. Danach dann immer besser mit Blick nach vorne. Dann gab’s schon ein paar Mal ein paar Hänger und dann lief’s mal wieder überraschend gut. Jede Sendung ist irgendwie vergleichbar mit einem Date. Und es macht süchtig, weil irgendwann klappt die perfekte Sendung: Großartiger Gast, flotte Sprüche, super Punkrock, geile Message, Abrechnung mit allen Arschlöchern und fertig. Dann hör ich auf. Aber so weit bin ich noch nie gekommen.</p></div></div></section><section class="part" id="allein-am-mikro"><h2><span class="no">03</span>Allein am Mikro</h2><div class="turn q"><p class="who">Young &amp; Distorted</p><div class="say"><p><strong>Na gut, nach neun Jahren noch genau zu wissen, was damals so passierte, dürfte wohl wirklich nicht ganz einfach sein. Hast du von Anfang an die Sendung alleine, also als einziger Moderator gemacht? Wenn ja, warum machst du die Show überwiegend allein? Ist wahrscheinlich einfacher, weil man sich mit niemandem absprechen muss …!?</strong></p></div></div><div class="turn"><p class="who">Rüdi</p><div class="say"><p>Ich verstehe die Frage nicht. Eigentlich hab ich doch immer mindestens einen Gast in der Sendung. Hast du die Sendung überhaupt schon mal gehört?</p></div></div><div class="turn q"><p class="who">Young &amp; Distorted</p><div class="say"><p><strong>Natürlich, die letzten 10 hab ich mir sicher angehört. Mir ist klar, dass du Gäste in der Sendung hast, aber ich wollte darauf hinaus, dass du der Einzige bist, der für den Aufbau und die Vorbereitung der Sendung zuständig ist. Heißt, du scheinst keinen zweiten Moderator zu haben, der praktisch auch mal mitmacht. War das schon immer so? Und wenn ja, warum?</strong></p></div></div><div class="turn"><p class="who">Rüdi</p><div class="say"><p>Also, meine Erfahrung ist die: Wenn man was auch alleine machen kann, dann sollte man das auch tun. Das geht schneller und kostet weitaus weniger Energie und Nerven, als vielleicht einer denken mag. Es heißt ja auch „Do it yourself“ und nicht „Such ’ne andere Person, die deinen Job macht.“ Zudem weiß man, wer’s verbockt hat, wenn mal was danebengehen sollte. Das gilt natürlich nur für die Sendung. Im Bermudafunk bin ich ja nicht alleine, sondern eins von vielen fleißigen Rädchen im großen Getriebe.</p></div></div></section><section class="part" id="gaeste-im-studio"><h2><span class="no">04</span>Gäste im Studio</h2><div class="turn q"><p class="who">Young &amp; Distorted</p><div class="say"><p><strong>Du hast ja schon einen ganzen Haufen an Gästen im Studio gehabt, gibt es ein besonders einprägsames Erlebnis mit einem Gast??</strong></p></div></div><div class="turn"><p class="who">Rüdi</p><div class="say"><p>Es gab welche, die habe ich erst während der Sendung kennengelernt und mit denen bin ich seitdem befreundet. Andere fahren extra für eine Sendung über 500 km und da ist die Freude meinerseits dann besonders groß. Da ich die Sendung zu Hause vorproduzieren kann, wird dann meist so eine Sendung am Wochenende aufgezeichnet. Die Band „Kriminal Pogo“ aus Los Angeles machte bei mir einen Abstecher auf ihrer Europatournee. Die kannte ich vorher nur übers Internet. Dann riefen sie kurz vorher an und quartierten sich bei uns in die Küche. Aufgrund des Alkoholpegels kam es dann leider nicht mehr zur Sendung. Brutal Polka aus Israel schauen regelmäßig – also einmal im Jahr – vorbei. Festivalveranstalter wie Daniel vom „Back To Future“ oder Alex vom „Punk im Pott“ scheuen keine Mühen und fahren hunderte von Kilometern wegen einer Sendung extra nach Mannheim. Das empfinde ich als großes Kompliment. Man lernt einen Haufen interessanter Menschen kennen. Während des Gesprächs in der Sendung kommen auch ganz andere Themen auf den Tisch wie wenn man sich abends auf einem Konzert trifft und zuquasselt.</p></div></div><div class="turn q"><p class="who">Young &amp; Distorted</p><div class="say"><p><strong>Sehr fein, das hört sich ja recht spannend an. Gibt es noch etwas offensichtlich Wichtiges und Spannendes aus deinem Leben als Radiomacher zu erzählen? Ansonsten danke ich fürs schnelle Beantworten meiner Fragen.</strong></p></div></div><div class="turn"><p class="who">Rüdi</p><div class="say"><p>Wenn’s was Wichtiges geben sollte, werde ich die Gelegenheit nutzen und es in meiner Radiosendung kundtun. Auf meiner Webseite www.pogoradio.de haben auch Menschen außerhalb der Rhein-Neckar-Region die Möglichkeit, jederzeit meinen Sendungen als Podcast zu lauschen. Viel Spaß!</p></div></div></section>
+    
+    <p class="note">Aus dem alten Pogoradio-Blog. Behutsam redigiert: Rechtschreibung, Zeichensetzung und Absätze angepasst, der Wortlaut ist unverändert.</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p><a href="/interview-archiv/">← Alle Interviews aus dem Blog</a></p>
+    <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
