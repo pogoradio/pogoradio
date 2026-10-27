@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supernichts vor dem Sonic Ballroom · Pogoradio</title>
+<meta name="description" content="Pogoradio am 31. Juli 2009 vor dem Sonic Ballroom in Köln mit Frank Franksen und Harry Krischner von Supernichts: Bier aus dem Schuh, zehn Jahre Sonic Ballroom, LP statt Download, Flatrate-Bordelle und die Frage, wann Punker scheiße sind.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#efe8dc;
+  --sleeve:#e4dac8;
+  --ink:#191614;
+  --muted:#5f574e;
+  --rule:#c9bda8;
+  --label:#d93a24;
+  --label-ink:#fff6e8;
+  --vinyl:#151413;
+  --groove:#262422;
+  --sticker:#ffd84a;
+  --sticker-ink:#1b1712;
+  --note-bg:#f8f3ea;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --display:"Syne","Arial Black",Impact,sans-serif;
+  --mono:"Azeret Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14110f;
+    --sleeve:#1f1a16;
+    --ink:#ece4d6;
+    --muted:#a69c8d;
+    --rule:#3a332c;
+    --label:#e2482f;
+    --label-ink:#fff6e8;
+    --vinyl:#050505;
+    --groove:#1a1918;
+    --sticker:#ffd84a;
+    --sticker-ink:#1b1712;
+    --note-bg:#1c1814;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14110f;
+  --sleeve:#1f1a16;
+  --ink:#ece4d6;
+  --muted:#a69c8d;
+  --rule:#3a332c;
+  --label:#e2482f;
+  --label-ink:#fff6e8;
+  --vinyl:#050505;
+  --groove:#1a1918;
+  --sticker:#ffd84a;
+  --sticker-ink:#1b1712;
+  --note-bg:#1c1814;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 19px/1.55 var(--serif);overflow-x:hidden}
+a{color:inherit;text-decoration-color:var(--label);text-decoration-thickness:2px;text-underline-offset:.18em}
+.wrap{width:min(1140px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Hülle und Platte ---------- */
+.cover{overflow:hidden;padding:40px 0 44px;border-bottom:2px solid var(--ink)}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:40px;align-items:center}
+.kicker{margin:0 0 16px;font:400 13px/1.45 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font:800 clamp(52px,9.4vw,124px)/.86 var(--display);letter-spacing:-.035em;text-transform:uppercase;overflow-wrap:anywhere}
+h1 .sn-a{display:block}
+h1 .sn-b{display:block;color:var(--label)}
+.sub{margin:20px 0 0;max-width:30em;font:600 clamp(20px,2.3vw,25px)/1.3 var(--serif)}
+.lede{margin:14px 0 0;max-width:36em}
+
+.record{position:relative;aspect-ratio:1/1;width:100%;max-width:460px;justify-self:end}
+.record .sleeve{
+  position:absolute;left:0;top:0;width:78%;height:78%;z-index:1;
+  background:var(--sleeve);border:2px solid var(--ink);
+  display:flex;flex-direction:column;justify-content:flex-start;gap:8px;padding:16px 16px 14px;
+  box-shadow:6px 8px 0 rgba(0,0,0,.14);
+}
+.record .sleeve .s1{font:800 clamp(22px,3vw,34px)/.95 var(--display);text-transform:uppercase;letter-spacing:-.02em}
+.record .sleeve .s2{font:400 12px/1.45 var(--mono);color:var(--muted)}
+.record .disc{
+  position:absolute;right:0;bottom:0;width:78%;height:78%;border-radius:50%;z-index:2;
+  background:
+    radial-gradient(circle at 50% 50%,var(--paper) 0 2.2%,transparent 2.3%),
+    radial-gradient(circle at 50% 50%,var(--label) 0 26%,transparent 26.3%),
+    repeating-radial-gradient(circle at 50% 50%,var(--vinyl) 0 2px,var(--groove) 2px 3px),
+    var(--vinyl);
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.6);
+}
+.record .disc::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 210deg,transparent 0 12%,rgba(255,255,255,.12) 16%,transparent 22% 62%,rgba(255,255,255,.08) 66%,transparent 72%);
+}
+.record .lbl{
+  position:absolute;right:39%;bottom:39%;transform:translate(50%,50%);z-index:3;width:30%;
+  text-align:center;color:var(--label-ink);font:600 clamp(8px,1.05vw,11px)/1.25 var(--mono);letter-spacing:.04em;text-transform:uppercase;
+  pointer-events:none;
+}
+.record .lbl b{display:block;margin-bottom:2.2em;font:800 clamp(10px,1.3vw,14px)/1 var(--display);letter-spacing:0}
+.hype{
+  position:absolute;right:0;top:2%;z-index:4;width:132px;height:132px;border-radius:50%;
+  background:var(--sticker);color:var(--sticker-ink);display:grid;place-items:center;text-align:center;
+  font:800 14px/1.1 var(--display);text-transform:uppercase;transform:rotate(12deg);padding:12px;
+  box-shadow:2px 3px 0 rgba(0,0,0,.18);
+}
+.hype small{display:block;margin-top:4px;font:400 10px/1.25 var(--mono);text-transform:none}
+
+/* Trackliste */
+.tracklist{margin:34px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px;max-width:820px}
+.tracklist h2{margin:0 0 8px;font:400 13px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tracklist ol{margin:0 0 18px;padding:0;list-style:none;border-top:2px solid var(--ink)}
+.tracklist li{display:grid;grid-template-columns:2.4em minmax(0,1fr);border-bottom:1px solid var(--rule);padding:6px 0;font:400 17px/1.35 var(--serif)}
+.tracklist li span{font:600 13px/1.6 var(--mono);color:var(--label)}
+.tracklist a{text-decoration:none}
+.tracklist a:hover{text-decoration:underline}
+
+/* ---------- Seiten ---------- */
+main{padding:10px 0 20px}
+.side-head{margin:44px 0 0;display:flex;align-items:center;gap:18px}
+.side-head .disc-s{width:56px;height:56px;border-radius:50%;flex:none;
+  background:radial-gradient(circle,var(--paper) 0 6%,var(--label) 6.5% 30%,var(--vinyl) 31%),var(--vinyl);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+.side-head h2{margin:0;font:800 clamp(32px,5vw,56px)/1 var(--display);text-transform:uppercase;letter-spacing:-.02em}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:16px 52px;padding:36px 0 30px;border-bottom:1px solid var(--rule)}
+.part h3{grid-column:1/-1;margin:0 0 8px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 16px;align-items:baseline}
+.part h3 .no{font:600 15px/1 var(--mono);color:var(--label-ink);background:var(--label);padding:6px 8px;border-radius:3px}
+.part h3 .t{font:800 clamp(25px,3.2vw,36px)/1.08 var(--serif);letter-spacing:-.01em}
+
+.talk{min-width:0}
+.turn{display:grid;grid-template-columns:5.4em minmax(0,1fr);gap:0 18px;margin:0 0 13px}
+.turn .who{margin:.32em 0 0;font:600 12.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.turn .said{margin:0}
+.turn.q .who{color:var(--label)}
+.turn.q .said{font-style:italic}
+.turn.ro .who{color:var(--muted)}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:20px;align-self:start}
+.note{margin:0;padding:14px 16px;background:var(--note-bg);border:1px solid var(--rule);font:400 16px/1.45 var(--serif)}
+.note b{display:block;margin:0 0 5px;font:600 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--label)}
+.sticker{
+  margin:0;align-self:flex-start;max-width:260px;padding:18px 20px;border-radius:999px 999px 999px 999px / 60% 60% 60% 60%;
+  background:var(--sticker);color:var(--sticker-ink);font:800 19px/1.2 var(--serif);text-align:center;transform:rotate(-3deg);
+  box-shadow:2px 3px 0 rgba(0,0,0,.18);
+}
+.sticker cite{display:block;margin-top:6px;font:400 11px/1.2 var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase}
+.credits{margin:0;padding:14px 16px;border:2px solid var(--ink);font:400 15.5px/1.45 var(--serif)}
+.credits h4{margin:0 0 8px;font:600 12px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.credits dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px}
+.credits dt{font:400 12px/1.7 var(--mono);color:var(--muted);text-transform:uppercase}
+.credits dd{margin:0}
+
+@media (max-width:960px){
+  .cover-grid{grid-template-columns:minmax(0,1fr)}
+  .record{justify-self:start;max-width:380px}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px}
+}
+@media (max-width:560px){
+  body{font-size:18px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:2px}
+  .turn .who{margin:0}
+  .tracklist{grid-template-columns:minmax(0,1fr)}
+  .hype{width:104px;height:104px;font-size:12px}
+  .record .lbl{font-size:7px}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:30px 0 64px}
+.runout{margin:0 0 16px;font:800 clamp(22px,3vw,30px)/1.1 var(--display);text-transform:uppercase}
+.protokoll{margin:0;max-width:46em;font:400 14px/1.6 var(--mono);color:var(--muted)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="cover-grid">
+      <div>
+        <p class="kicker">Pogoradio auf Bermudafunk · vor dem Sonic Ballroom, Köln · 31. Juli 2009</p>
+        <h1><span class="sn-a">Super</span><span class="sn-b">nichts</span></h1>
+        <p class="sub">Frank Franksen und Harry Krischner nach dem Konzert zum zehnten Geburtstag ihrer Stammkneipe. Harry hat einen Schuh in der Hand. Es ist nicht seiner.</p>
+        <p class="lede">Supernichts haben gerade im Sonic Ballroom in Köln-Ehrenfeld gespielt, der Laden feiert sein Zehnjähriges. Draußen auf dem Bürgersteig redet Rüdi mit Sänger Harry und Gitarrist Frank über Bier aus Damenschuhen, LPs, die keiner kauft, Flatrate-Bordelle und die Frage, wann Punker scheiße sind. Später kommt noch der Aushilfsschlagzeuger dazu.</p>
+      </div>
+      <div class="record" aria-hidden="true">
+        <div class="sleeve"><span class="s1">Supernichts</span><span class="s2">Live vor dem Sonic Ballroom<br>31.07.2009 · Seite A + B</span></div>
+        <div class="disc"></div>
+        <div class="lbl"><b>Pogoradio</b>33⅓</div>
+        <p class="hype">Mit Bier aus dem Schuh<small>Sauerländer Art</small></p>
+      </div>
+    </div>
+    <nav class="tracklist" aria-label="Inhalt">
+      <div>
+        <h2>Seite A</h2>
+        <ol>
+          <li><span>A1</span><a href="#a1">Ein Schuh aus dem Sauerland</a></li>
+          <li><span>A2</span><a href="#a2">Stammkneipe</a></li>
+          <li><span>A3</span><a href="#a3">Die Leute verstehen das</a></li>
+          <li><span>A4</span><a href="#a4">Fünfzehn neue Songs</a></li>
+          <li><span>A5</span><a href="#a5">Lieber eine LP</a></li>
+        </ol>
+      </div>
+      <div>
+        <h2>Seite B</h2>
+        <ol>
+          <li><span>B1</span><a href="#b1">Morrissey mit Baby</a></li>
+          <li><span>B2</span><a href="#b2">Flatrate</a></li>
+          <li><span>B3</span><a href="#b3">Deutschland braucht Deutschpunk</a></li>
+          <li><span>B4</span><a href="#b4">Bullen, Punker, Krankenwagen</a></li>
+          <li><span>B5</span><a href="#b5">Der letzte Schluck</a></li>
+        </ol>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="side-head"><span class="disc-s" aria-hidden="true"></span><h2>Seite A</h2></div>
+
+<section class="part" aria-labelledby="a1">
+  <h3 id="a1"><span class="no">A1</span><span class="t">Ein Schuh aus dem Sauerland</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, guten Abend. Hier ist Pogoradio auf Bermudafunk. Ich habe hier gerade zwei Kandidaten von Supernichts. Und du hast einen leckeren Schuh.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ja, das ist ein Schuh von einem Mädchen aus dem Sauerland. Wir haben auf der Bühne aus diesem Schuh getrunken, frisches Kölsch. Und es schmeckte auf der Bühne so ein bisschen nach Sauerländer Bier. Deswegen habe ich gesagt, dass es wie Sauerländer Bier schmeckt. Und in der Tat: Das Mädchen kommt aus dem Sauerland. Meine Geschmacksnerven haben mich heute Abend nicht betrogen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Sag mal den Namen.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Den habe ich noch nicht erfahren.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, wir machen ja ein Interview. Eure Namen.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ach so, ich dachte, du meinst den Namen von dem Mädchen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die Leute hören jetzt erst mal nur Radio, und die wollen wissen, mit wem ich hier gerade Interview mache.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Mit Harry und mit Frank.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Frank, Gitarrist und Sänger von Supernichts.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay. Du hast gerade einen Schuh in der Hand. Und die Frau rennt jetzt nur mit einem Schuh rum.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Die rennt mit einem Schuh rum. Was aber auch eine gewisse ausgleichende Gerechtigkeit ist, weil ich heute meine beiden Schuhe verloren habe. Jetzt habe ich Ersatzschuhe an. Aber die beiden Schuhe, die ich auf der Bühne anhatte, sind im Publikum gelandet. Es wurde Bier aus ihnen getrunken, und keine Ahnung, wo sie gelandet sind. Weg sind sie auf jeden Fall.</p></div>
+  </div>
+  <aside class="side">
+    <div class="credits">
+      <h4>Besetzung laut last.fm</h4>
+      <dl>
+        <dt>Gesang</dt><dd>Harry Krischner</dd>
+        <dt>Gitarre</dt><dd>Frank Franksen, dabei seit 1993</dd>
+        <dt>Bass</dt><dd>Jim Pansen</dd>
+        <dt>Schlagz.</dt><dd>Achim Arschloch, früher Knochenfabrik</dd>
+        <dt>Aushilfe</dt><dd>Chris (Bass), Chef vom Sonic Ballroom, und Roman (Schlagzeug)</dd>
+      </dl>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="a2">
+  <h3 id="a2"><span class="no">A2</span><span class="t">Stammkneipe</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wir stehen hier vor dem Sonic Ballroom. Da war heute die Zehn-Jahres-Party, und ihr habt dort gespielt, muss man dazu sagen. Habt ihr irgendeine besondere Beziehung zum Sonic Ballroom?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ja. Erstens ist das mehr oder weniger unsere Stammkneipe. Wir gehen nach der Probe ständig dahin. Zweitens spiele ich auch in der Fußballmannschaft vom Sonic Ballroom. Und drittens ist unser Aushilfsbassist der Chef vom Sonic Ballroom, der Chris.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr schon mal das Backstage gesehen? Das ist ja im ersten Stock, ne?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ja, genau. Da kann man ganz gut drin schlafen. In abgenutzten, dreckigen Betten.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Hast du da schon mal geschlafen?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Habe ich auch schon mal gemacht. Ist aber schon etwas länger her. Heute fahre ich natürlich wie immer mit dem Taxi nach Hause, der letzte Bus ist ja schon weg. Deswegen werde ich heute Nacht nicht in den Betten vom Sonic Ballroom schlafen.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Der Sonic Ballroom ist eine Punkkneipe in Köln-Ehrenfeld, in der früheren Eckkneipe „Jägerhof“. Am Wochenende nach dem 31. Juli 2009 feierte er sein zehnjähriges Jubiläum.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="a3">
+  <h3 id="a3"><span class="no">A3</span><span class="t">Die Leute verstehen das</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie war euer Konzert für euch?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Super. Hast du ja von der Bühne aus gesehen. Gute Stimmung. Die Leute verstehen hier in Köln, was wir machen. In Mannheim ist das ganz anders, aber hier ist es super.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr habt ja auch anspruchsvolle Texte, kann man sagen.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ja. Aber es war interessant heute Abend, weil sehr viele Leute da waren, die wir überhaupt nicht kannten. Normalerweise kennt man immer die Leute, die vorne vor der Bühne rumstehen. Heute waren Leute da, die wir noch nie gesehen haben, und die konnten trotzdem alle Texte auswendig und haben alles mitgesungen. Das ist immer ein schönes Phänomen mit Supernichts.</p></div>
+  </div>
+  <aside class="side">
+    <p class="sticker">„In Mannheim ist das ganz anders.“<cite>Harry, in einem Mannheimer Radio</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="a4">
+  <h3 id="a4"><span class="no">A4</span><span class="t">Fünfzehn neue Songs</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was sind so eure Pläne? Die letzte Platte war ja eigentlich super geil, diese „Hamburg Köln Belgrad“.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">„Hamburg Köln Belgrad“ war die vorletzte Platte. Die danach war, das wirst du sicherlich wissen, „Fixpunkte &amp; Bojen“.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Stimmt.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Die war eigentlich genauso gut. Und die nächste wird dann auch noch mal genauso gut.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist die schon in Planung?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Die ist in Planung. Wir haben fünfzehn Songs fertig. Eigentlich wollten wir im Januar aufnehmen. Mal gucken, ob das klappt. Und dann Mitte nächsten Jahres.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Die nächste Platte hieß „Immer wenn ich musst du“. Im Pogoradio lief sie laut Sendungsarchiv ab November 2010, also ein paar Monate später als geplant.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="a5">
+  <h3 id="a5"><span class="no">A5</span><span class="t">Lieber eine LP</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die Frage ist ja immer: Bringt es überhaupt noch was, Platten aufzunehmen? Die ganzen Kiddies laden sich doch alles aus dem Internet runter. Wer kauft dir noch einen harten Tonträger?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Das stimmt. Du kannst natürlich kein Geld damit verdienen. Aber für uns gehört das dazu, einen festen Tonträger zu haben. Dann kann man sich überlegen, ob man den Rest noch irgendwie anderweitig vermarktet, über T-Shirts …</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">T-Shirts sowieso.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">… ist ja keine Frage. Oder über irgendwelche Internetplattformen, keine Ahnung. Muss man gucken, wie es da weitergeht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aber euer Plan ist trotzdem, eine CD zu produzieren.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Eine CD und eine Platte. Auf jeden Fall. Man verdient ja schon seit Jahren mit den Tonträgern kein Geld. Trotzdem machen wir sie, weil wir Spaß dran haben und weil wir das machen wollen. Wir haben nie nur CDs gemacht, immer auch LPs. Die verkaufen sich kaum, aber das ist uns egal, weil wir gerne LPs haben wollen. Wir vernichten mehr LPs, als wir verkaufen. Die sind anstrengend mitzuschleppen, und dann ist die Hälfte wieder kaputt oder im Auto zu heiß geworden oder so eine Scheiße. Aber das gehört halt ein bisschen dazu. Für mich ist es immer noch geiler, eine LP von uns rauszuholen, als eine CD auszupacken.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Wegen der Größe, ne?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ja, die ist größer. Es ist auch gemütlicher. Es ist einfach ein größerer Akt, eine LP anzuhören.</p></div>
+  </div>
+  <aside class="side">
+    <p class="sticker">„Wir vernichten mehr LPs, als wir verkaufen.“<cite>Frank</cite></p>
+  </aside>
+</section>
+
+<div class="side-head"><span class="disc-s" aria-hidden="true"></span><h2>Seite B</h2></div>
+
+<section class="part" aria-labelledby="b1">
+  <h3 id="b1"><span class="no">B1</span><span class="t">Morrissey mit Baby</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wann hast du deine letzte LP gekauft, und welche war das?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Da muss ich überlegen. Was war deine letzte?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ich glaube, das war eine von Social Distortion. Die vorletzte, die sie rausgebracht haben.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wolltest du die extra auf LP und nicht auf CD?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Nein, die habe ich als LP gesehen und dann gekauft.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Im Plattenladen?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Im Plattenladen, ja.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Bei mir war die allerletzte Platte, die ich gekauft habe, die neue von Morrissey. Auf LP.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die mit dem Baby in der Hand?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Genau. Kennst dich aber gut aus. Hörst du Morrissey auch?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee. Ich habe gar keinen Plattenspieler. Ich lade mir alles aus dem Internet runter.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ach so. Das ist ja asozial.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist aber Punkrock.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Das ist kein Punkrock.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du meinst, wenn man sich was aus dem Internet runterlädt, ist das kontra Punk?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Also, wie gesagt: Für mich ist eine LP schon wichtiger als irgendwas runterzuladen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Echt? Wichtiger als Sex?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Nee, Quatsch. Warum denkst du plötzlich immer an Sex? Nur weil du eine Freundin in Köln hast, oder?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe dir nur blöd in die Augen geschaut.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Seit er eine Freundin in Köln hat, sieht er ein bisschen aus wie Quentin Tarantino, oder?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Stimmt. Hat eine gewisse Ähnlichkeit.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich finde eher wie Dustin Hoffman in „Rain Man“.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Oder in „From Dusk Till Dawn“. Auf jeden Fall braucht er sich nicht zu verstecken. Wir haben übrigens gerade noch unseren zweiten Aushilfsschlagzeuger dazubekommen, den Roman.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Davon weiß ich ja gar nichts.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>„Years of Refusal“ von Morrissey erschien im Februar 2009. Auf dem Cover hält er ein Baby, den Sohn seines stellvertretenden Tourmanagers.</p>
+    <p class="note"><b>Anm. d. Red.</b>In „From Dusk Till Dawn“ spielt Quentin Tarantino selbst mit. Dustin Hoffman nicht.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="b2">
+  <h3 id="b2"><span class="no">B2</span><span class="t">Flatrate</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, der möchte auch noch was zum Interview beitragen, glaube ich. Aber erst mal: Was hältst du eigentlich von diesen ganzen Flatrate-Bordellen, die jetzt gerade geschlossen werden?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Werden die? Keine Ahnung. Ich habe einen beeindruckenden Bericht über die Flatrate-Bordelle gesehen. Da habe ich gelernt: Man bezahlt 99 Euro und darf so viel ficken, wie man will. Der Witz dabei ist, dass keiner von denen, die dahingehen, mehr als zweimal ficken schafft.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ja, das habe ich auch gelesen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Kann man sagen, ihr seid sehr belesen.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Es ist Schwachsinn. Du kannst auch in einen normalen Puff gehen, zweimal ficken und bezahlst 66 Euro. Wenn man das jetzt mal durch drei teilen würde und sagt, maximal dreimal kann man an einem Abend … Also ist es Schwachsinn, für 99 Euro ins Flatrate-Modell zu gehen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also findest du es gut, dass sie geschlossen worden sind, weil es absolute Abzocke ist.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ja. Als Geschäftsmodell gescheitert. Völlig gescheitert. Da verdienen sich irgendwelche schwäbischen Bordellbesitzer dumm und dämlich. Das ist dasselbe, wie wenn du zu McDonald’s gehst und den Kaffee frei hast. Dann trinkst du zwei Tassen Kaffee, mehr trinkst du nämlich auch nicht, aber du zahlst für den Scheiß zehn Euro. Verstehst du?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wann hast du das letzte Mal gedacht: Scheiße, da habe ich Geld ausgegeben und nichts davon gehabt?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ey, du stellst hier Fragen. Das letzte Mal, als ich 99 Euro im Flatrate-Puff bezahlt habe. Da habe ich gedacht: Wäre ich mal lieber für 66 Euro in den anderen Puff gegangen. Das habe ich echt schwer bereut.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Danke für diese Antworten.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Am Sonntag, dem 26. Juli 2009, durchsuchte die Polizei vier Häuser einer Flatrate-Bordellkette, bei Stuttgart, im Ruhrgebiet und bei Berlin. Geworben wurde dort mit 70 Euro. Der Tagesspiegel titelte zwei Tage später: „Mehr als zwei Mal kann kaum einer.“</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="b3">
+  <h3 id="b3"><span class="no">B3</span><span class="t">Deutschland braucht Deutschpunk</span></h3>
+  <div class="talk">
+    <div class="turn"><p class="who">Harry</p><p class="said">War’s das schon? Brauchst du nicht noch ein bisschen was zur Musik?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ach so, ja, klar. Was haltet ihr von Deutschpunk? Musik im Allgemeinen und Supernichts im Speziellen.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Mach du mal eine Frage hier.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aushilfsgitarrist oder Schlagzeuger?</p></div>
+    <div class="turn ro"><p class="who">Roman</p><p class="said">Schlagzeuger. Jetzt pass auf. Deutschpunk ist eine wichtige Sache, und du weißt genau wie ich: Deutschland braucht Deutschpunk. Was trägst du dazu bei, dass das Leben in diesem Staate besser wird?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Das ist eine doofe Frage. Was hat das mit Deutschpunk zu tun?</p></div>
+    <div class="turn ro"><p class="who">Roman</p><p class="said">Deutschpunk trägt doch gar nichts dazu bei, dass das Leben in diesem Staat besser wird.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Natürlich.</p></div>
+    <div class="turn ro"><p class="who">Roman</p><p class="said">Nee, aber mal was anderes. Ich hatte noch eine andere Frage auf Lager. Die habe ich leider vergessen.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Dann sag du uns noch mal, wie du so schnell abgenommen hast.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Sport. Im Fitnessstudio angemeldet, alles mitgemacht, was sie da angeboten haben, und auf Süßigkeiten verzichtet.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Auf Süßigkeiten verzichten, das ist das Entscheidende. Man darf einfach keine Schokolade mehr fressen.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">So sieht’s aus. Saufen kannst du. Das ist nicht das Entscheidende. Fressen kannst du auch, was du willst. Du musst bloß so viel Sport machen, dass alles wieder rausgeht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Auch ein Flatrate-Modell, oder was?</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Auch da, ja.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ich bin ja inzwischen auch schon der Sportler. Ich fahre am Tag 24 Kilometer Fahrrad.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Echt jetzt?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ohne Scheiß. Jeden Tag.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Jeden Tag?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Nur unter der Woche, zur Arbeit. Zwölf Kilometer hin und zwölf zurück.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wo arbeitest du denn?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Zwölf Kilometer von zu Hause entfernt.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Das ist jetzt so eine Matheaufgabe: Er arbeitet zwölf Kilometer von zu Hause entfernt und fährt jeden Tag einmal hin und zurück. Wie viele Kilometer fährt er pro Woche?</p></div>
+  </div>
+  <aside class="side">
+    <p class="sticker">Lösung: 120 Kilometer.<cite>Bei fünf Arbeitstagen</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="b4">
+  <h3 id="b4"><span class="no">B4</span><span class="t">Bullen, Punker, Krankenwagen</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Da fahren die Bullen vorbei. Was habt ihr für eine Einstellung zu Bullen? Sind Bullen gut für Deutschland oder schlecht?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Bullen können ganz okay sein. Können auch scheiße sein.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie Punker?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Wann sind Punker scheiße? Die Antwort kennst du doch.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nein, ich will sie von dir hören.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Punker sind natürlich scheiße, wenn sie bei zwei Euro Eintritt für ein Konzert noch jammern und ihren Hund noch mit reinhaben wollen, am liebsten noch runterhandeln und anschließend alles vollkotzen und keine Ahnung von Musik haben. Das ist das Allerschlimmste an Punkern.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist halt die Jugend.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Das hat doch mit Jugend nichts zu tun.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Doch. Die sind halt unangenehm.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Das ist deine Theorie.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Unsereins ist halt einfach zu alt.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Das ist Quatsch. Guck dich mal um, Rüdi, bitte schön. Hier sind vielleicht zehn Prozent unter vierzig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich muss jetzt sofort aufhören, sonst wird die Sendung zu lang. Gibt’s noch irgendwas Abschließendes zu sagen?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ich finde alle Bullen richtig scheiße.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Alle?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Ich mag die gar nicht.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ey, das ist jetzt aber ein Krankenwagen.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Krankenwagen. Scheiß-Bullen.</p></div>
+  </div>
+  <aside class="side">
+    <p class="sticker">„Hier sind vielleicht zehn Prozent unter vierzig.“<cite>Frank über das Publikum</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="b5">
+  <h3 id="b5"><span class="no">B5</span><span class="t">Der letzte Schluck</span></h3>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich hätte noch eine Frage. Die habe ich Frank, glaube ich, schon mal gestellt. Diese Krankenschwester, ne? Es wurde gesagt, ihr stellt da Frauen als Sexobjekte hin. Wie rechtfertigt ihr das bitte schön im Punkkontext?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Die Frau sieht gut aus, und wir sehen auch gut aus. Was ist der Unterschied zwischen ihr und uns?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Der Rock wahrscheinlich.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Diese Frage hat dir doch deine Pippilotta-Bauwagenhure aus dem AZ diktiert, oder was?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich muss glaube ich mal Schluss machen. Die Sendung ist schon voll.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Nee, weil du den ganzen Scheiß wieder schneiden musst.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, genau.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Aber richtig schneiden. Nicht aus dem Kontext reißen und so.</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Die Essenz des ganzen Abends lautet: Alle Bullen sind wirklich scheiße. Und da muss man sagen: Ich habe immer noch diesen Schuh in der Hand. Wenn eine Polizistin diesen Schuh tragen würde, würde ich ihn scheiße finden. Aber es war ein Mädchen aus dem Sauerland. Deswegen finde ich ihn gut.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist da noch ein Schluck drin?</p></div>
+    <div class="turn"><p class="who">Harry</p><p class="said">Leider nicht. Ich habe alles ausgetrunken.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Aber Rüdi, die Frage ist jetzt noch: Was kannst du dafür tun, dass wir noch berühmter werden?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das wäre eine gute Frage.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Du spielst uns ja schon relativ häufig, das ist schon mal gut. Du hast Musikgeschmack.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und ihr verdient keinen Pfennig dran, ne? GEMA-technisch.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Ja, eben. Genau.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und da frage ich mich halt, wann es so weit ist, dass ihr mich verklagt.</p></div>
+    <div class="turn"><p class="who">Frank</p><p class="said">Keine Sorge.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, danke. Tschüss. Und zurück ins Studio.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Knapp drei Jahre später, am 9. Mai 2012, war Frank noch einmal bei Pogoradio. Thema der Sendung: die GEMA. Frank ist Rechtsanwalt für Urheber- und Medienrecht.</p>
+    <p class="note"><b>Anm. d. Red.</b>Supernichts liefen im Pogoradio oft, das <a href="/sendungen/">Sendungsarchiv</a> listet Songs von „Hamburg Köln Belgrad“ bis „Dispo Dancing“. Die Aufnahme dieses Interviews steht im <a href="/interview-archiv/#supernichts">Interview-Archiv</a>.</p>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="runout">Ende von Seite B. Bitte nicht umdrehen.</p>
+  <p class="protokoll">Pogoradio auf Bermudafunk · vor dem Sonic Ballroom, Köln-Ehrenfeld · 31. Juli 2009 · Rüdi mit Frank Franksen und Harry Krischner von Supernichts, dazu Aushilfsschlagzeuger Roman · Transkript redigiert und gekürzt. Wer was sagt, ist auf der Aufnahme nicht immer sicher zu hören, die Zuordnung folgt dem Gespräch.</p>
+</footer>
+</body>
+</html>
