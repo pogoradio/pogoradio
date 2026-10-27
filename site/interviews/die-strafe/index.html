@@ -1,17 +1,15 @@
-<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Pogoradio trifft Die Strafe</title><style id="pgr-bar-css">
-.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#121110;color:#ece8e1;border-bottom:1px solid #2c2a27;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
-.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
-.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
-.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
-.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
-</style></head><body>
-<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
-
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pogoradio trifft Die Strafe</title>
+<meta name="description" content="Pogoradio-Interview mit Die Strafe aus Mönchengladbach nach dem Konzert in Mannheim am 8. März 2008: das neue Album „Schwarz“, eine teure Marketingagentur, Düsterpunk mit guter Laune, Proben gegen Eintritt und 16 Jahre vergebliche Auflösung.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=IBM+Plex+Mono:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400&family=Permanent+Marker&display=swap">
 <style>
-/* Layout: lautes neonpinkes Plakat oben, darunter ruhige Magazinseite – Mitschnitt mit Zeitstempeln, Steckbrief als Randspalte */
+/* Layout: lautes neonpinkes Plakat oben, darunter ruhige Magazinseite, Steckbrief als Randspalte */
 :root {
   --paper: #f6f4f5;
   --ink: #141113;
@@ -24,11 +22,11 @@
   --dot: rgba(20, 17, 19, .2);
   --void: #0b0a0b;
   --sticker: #ffffff;
-
   --display: "Anybody", "Arial Narrow", "Helvetica Neue", Impact, sans-serif;
   --body: "Newsreader", Georgia, "Times New Roman", serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
   --marker: "Permanent Marker", "Comic Sans MS", cursive;
+  color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -41,8 +39,12 @@
   --mast: #050405; --on-mast: #f2eef0; --void: #000000; --sticker: #f2eef0; color-scheme: dark;
 }
 
-* { box-sizing: border-box; }
-body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; overflow-x: hidden; }
+img { max-width: 100%; }
+a { color: inherit; }
 
 .wrap {
   max-width: 76rem; margin-inline: auto;
@@ -80,7 +82,7 @@ h1 .q { margin-left: -.32em; }
 h1 .knock { display: inline-block; background: var(--on-pink); color: var(--pink); padding: .02em .12em 0; margin-top: .06em; transform: rotate(-2.5deg); }
 .lede { max-width: 38rem; margin: 0; font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.45; font-weight: 500; }
 
-.album { justify-self: start; position: relative; width: min(15rem, 52vw); transform: rotate(3.5deg); margin-top: .6rem; }
+.album { justify-self: start; position: relative; width: min(15rem, 52vw); transform: rotate(3.5deg); margin: .6rem 0 0; }
 @media (min-width: 860px) { .album { justify-self: end; } }
 .album .sq { aspect-ratio: 1; max-width: 100%; background: var(--void); display: flex; align-items: flex-end; justify-content: space-between;
   padding: .9rem; box-shadow: .55rem .55rem 0 var(--on-pink); }
@@ -105,23 +107,25 @@ article { min-width: 0; max-width: 46rem; }
 
 mark { background: var(--pink); color: var(--on-pink); padding: 0 .14em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
-.sec { display: flex; align-items: center; gap: .8rem; margin: 0 0 .6rem; font-family: var(--mono); font-size: .75rem; font-weight: 600;
-  letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.sec { display: flex; align-items: center; gap: .8rem; margin: 2.8rem 0 .6rem; font-family: var(--mono); font-size: .78rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted); scroll-margin-top: 1.5rem; }
+.sec:first-of-type { margin-top: 0; }
+.sec .no { background: var(--ink); color: var(--paper); padding: .18rem .45rem .14rem; letter-spacing: .08em; }
 .sec::after { content: ""; flex: 1; height: 4px; background: var(--ink); }
 
 .talk { list-style: none; margin: 0; padding: 0; }
-.turn { display: grid; gap: .35rem 1.4rem; padding-block: .85rem; }
+.turn { display: grid; gap: .35rem 1.4rem; padding-block: .7rem; }
 @media (min-width: 640px) { .turn { grid-template-columns: 8rem minmax(0, 1fr); } }
-.meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
-@media (min-width: 640px) { .meta { flex-direction: column; align-items: flex-start; padding-top: .3rem; } }
+.meta { display: flex; align-items: baseline; }
+@media (min-width: 640px) { .meta { padding-top: .3rem; } }
 .who { font-family: var(--mono); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: .18rem .45rem .14rem; line-height: 1.2; }
 .q .who { background: var(--pink); color: var(--on-pink); }
 .a .who { background: var(--ink); color: var(--paper); }
-.tc { font-family: var(--mono); font-size: .72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .turn p { margin: 0; min-width: 0; }
 .q p { font-family: var(--display); font-stretch: 80%; font-weight: 750; font-size: 1.24rem; line-height: 1.3; }
 .a p { font-size: 1.13rem; line-height: 1.62; }
 .turn.cont { padding-top: 0; }
+@media (min-width: 640px) { .turn.cont .meta { visibility: hidden; } }
 
 .pull { margin: 2.4rem 0 2.6rem; transform: rotate(-1.4deg); }
 .pull p { margin: 0; font-family: var(--display); font-weight: 900; font-stretch: 58%; text-transform: uppercase;
@@ -131,14 +135,14 @@ mark { background: var(--pink); color: var(--on-pink); padding: 0 .14em; -webkit
 .pull.alt { transform: rotate(1.2deg); }
 
 .stop { margin-top: 2.6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
-.stop .tc { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.stop .tc { font-family: var(--mono); font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); font-variant-numeric: tabular-nums; }
 .stop strong { font-family: var(--display); font-weight: 900; font-stretch: 60%; font-size: clamp(4rem, 14vw, 7rem); line-height: .85;
   background: var(--pink); color: var(--on-pink); padding: .06em .14em 0; transform: rotate(-3deg); display: inline-block; }
 
 /* Randspalte */
 aside { min-width: 0; }
-@media (min-width: 980px) { .rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.5rem); } }
 .card { border: 4px solid var(--ink); }
+.card + .card { margin-top: 1.6rem; }
 .card h2 { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--display); font-weight: 900; font-stretch: 120%;
   text-transform: uppercase; letter-spacing: .14em; font-size: 1.05rem; padding: .55rem .9rem .45rem; }
 dl { margin: 0; padding: .3rem .9rem .8rem; }
@@ -146,6 +150,12 @@ dl div { padding-block: .55rem; border-bottom: 2px dashed color-mix(in srgb, var
 dl div:last-child { border-bottom: 0; }
 dt { font-family: var(--mono); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 dd { margin: .1rem 0 0; font-size: 1rem; line-height: 1.4; }
+.toc { margin: 0; padding: .5rem .9rem .8rem; list-style: none; }
+.toc li { border-bottom: 2px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+.toc li:last-child { border-bottom: 0; }
+.toc a { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .3rem; padding: .45rem 0; text-decoration: none; font-size: 1rem; line-height: 1.3; }
+.toc a span { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--pink-ink); padding-top: .12rem; }
+.toc a:hover { text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 2px; }
 .note { margin: 1.4rem 0 0; font-family: var(--mono); font-size: .75rem; line-height: 1.6; color: var(--muted); }
 .note b { color: var(--ink); font-weight: 600; }
 .scrawl { margin-top: 1.6rem; font-family: var(--marker); font-size: 1.35rem; line-height: 1.2; color: var(--pink-ink); transform: rotate(-4deg); }
@@ -157,6 +167,16 @@ footer p { margin: 0; font-family: var(--mono); font-size: .75rem; line-height: 
 a:focus-visible, button:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .rec .dot { animation: none; } }
 </style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
 
 <header class="mast">
   <div class="wrap">
@@ -184,80 +204,179 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--pink); outline-
 <div class="wrap">
   <div class="page">
     <article>
-      <p class="scene">Es beginnt, wie ein Interview nicht beginnen sollte: Der Mann mit dem MP3-Player hat den Bandnamen vergessen. „Verbrannte Erde“, hilft die Band aus – das war allerdings die andere Band des Abends. Ein englischsprachiger Gast versucht es mit „Punishment“, dann sitzt der Name: Die Strafe. Das Konzert ist vorbei, der Jägermeister steht bereit, und die Band stellt früh fest: <mark>„Wir sind alle strunzenblau – und du auch noch.“</mark></p>
+      <p class="scene">Mannheim, Samstag, 8. März 2008. Das Konzert ist vorbei, der Jägermeister steht bereit, und der Mann mit dem MP3-Player hat den Bandnamen vergessen. Auf beiden Seiten des Mikrofons ist niemand mehr ganz nüchtern, die Band stellt es selbst fest: <mark>„Wir sind alle strunzenblau – und du auch noch.“</mark></p>
 
-      <h2 class="sec">Der Mitschnitt</h2>
+      <h2 class="sec" id="t1"><span class="no">01</span>Wie heißt ihr noch mal?</h2>
       <ol class="talk">
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:00:52</span></div><p>Euer neues Album heißt „Schwarz“. Da habt ihr euch ja was einfallen lassen.</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:00:55</span></div><p>Wir haben zwölf Jahre nachgedacht und eine Marketingagentur beauftragt. Die hat Blau, Weiß, Grün und Gelb vorgeschlagen – und uns dafür <mark>mehr berechnet, als wir jemals an Platten verkaufen können</mark>. Also haben wir doch selbst entschieden.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:01:39</span></div><p>Ihr macht doch eigentlich Musik, bei der man schlechte Laune kriegt.</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:01:43</span></div><p>Das schreiben immer alle. Stimmt aber nicht. Düsterpunk täuscht – wir sind eigentlich ganz lustige Kerle.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:01:53</span></div><p>Ihr kommt aus derselben Stadt wie EA80. Habt ihr Platten von denen?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:02:14</span></div><p>Wir haben 2008. Was sind Platten? Das waren diese großen schwarzen Scheiben, mit denen man Leuten die Köpfe abschneiden konnte. Okay, wir geben’s zu: Wir kennen EA80. Flüchtig.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:02:38</span></div><p>Und was für eine Beziehung habt ihr zu denen?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:02:42</span></div><p>Ich habe nur Sex mit meiner Freundin. Zu EA80 haben wir eine <mark>rein platonische Beziehung</mark>.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:02:58</span></div><p>Wer von euch hatte die Idee mit dem Namen „Schwarz“?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:03:02</span></div><p>Ich. Schwarz ist eine ganz neue Farbe. Die Telekom hat sich Magenta sichern lassen, ich hab’s mit Schwarz probiert. Das Patent- und Markenamt hat leider abgelehnt.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Guten Abend! Ich mache hier ein Interview mit der Band … wie heißt ihr noch mal?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Verbrannte Erde.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Nee, das war die andere Band.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Du bist schlecht vorbereitet. Dürfen wir das mal sagen? … Hello – nice to meet you!</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Yes, we have some questions for the band. The name is Verbrannte Erde … nein!</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Punishment! Die Strafe!</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Die Strafe. Genau. Ihr habt ja heute eine neue Platte rausgebracht.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Heute, ja genau. Unsere dritte. Wenn du das sendest, ist sie natürlich schon lange draußen. Sie heißt „Schwarz“.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Da habt ihr euch ja was einfallen lassen mit dem Namen „Schwarz“.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Ja, ja. Wir haben zwölf Jahre darüber nachgedacht und eine Marketingagentur beauftragt. Die sollte herausfinden, was zu uns passt und was in Zeiten wie diesen gut ankommt. Die hatten auch mehrere Namen. Dann fiel uns auf, dass sie uns für die Namenssuche <mark>mehr berechnet haben, als wir jemals an Platten verkaufen können</mark>. Letztendlich haben wir dann doch selbst entschieden. Die anderen Namen von der Agentur waren halt doof.</p></li>
+      </ol>
+
+      <h2 class="sec" id="t2"><span class="no">02</span>Düsterpunk mit guter Laune</h2>
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wart ihr überrascht, dass ihr hier in Mannheim so gut ankommt?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Nö. Wir haben extra Mönchengladbach gemieden und sind weit weggefahren, damit die Stimmung besser ist als bei uns zu Hause.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Aber eigentlich macht ihr doch Musik, bei der die Stimmung eher scheiße ist.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Hattest du den Eindruck, dass die Stimmung heute scheiße war?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Na ja, ihr macht schon Musik, bei der man eher ein bisschen mies gelaunt ist.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Das schreiben immer alle. Stimmt aber gar nicht. Düsterpunk, oder? Genau – das täuscht. Eigentlich sind wir <mark>ganz lustige Kerle</mark>. Hast du uns schon mal gehört?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Ja, ja. Habt ihr schon mal von EA80 gehört? Kennt ihr nicht, oder? Orientiert ihr euch auch nicht dran? Habt ihr Platten von denen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Nie gehört.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wir dachten, ihr kennt sie, weil ihr aus derselben Stadt kommt und die Musik sich vielleicht ähnelt.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Mönchengladbach … ja, da gibt es noch eine Band.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Aber musikalisch habt ihr gar keinen Bezug zu denen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Kennen wir nicht. Und Platten? Wir haben 2008. Was sind Platten? Kann ich dir kurz erklären: Du nimmst unser Interview gerade mit einem MP3-Player auf. Deshalb dürften dir Platten ziemlich unbekannt vorkommen.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>So ist es.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Das waren diese großen schwarzen Scheiben, mit denen man anderen Leuten die Köpfe abschneiden konnte. Okay, wir geben’s zu: Wir kennen die.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Und EA80 kennt ihr?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Flüchtig.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Und habt ihr irgendeine Beziehung zu dieser Person?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Nein, ich habe nur Sex mit meiner Freundin. Können wir das Thema jetzt abschließen? … Na gut, eine Beziehung zu EA80 haben wir schon. Aber keinen Sex. Eine <mark>rein platonische Beziehung</mark>.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>So, jetzt kommen wir zu den eigentlichen Fragen.</p></li>
+      </ol>
+
+      <h2 class="sec" id="t3"><span class="no">03</span>Wer hat’s erfunden?</h2>
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wer von euch dreien hat sich denn den Namen „Schwarz“ ausgedacht?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Das war, glaube ich, Budde. Es gibt ein Lied, das heißt „Schwarz“.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Das bin ich. Ich hatte die Idee.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Das hier ist das Mikrofon. Da musst du reinsprechen.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Ach so. Okay, noch mal: Ich habe den Namen erfunden. Schwarz – das ist eine ganz neue Farbe. Eigentlich gibt es an diesem Wort gar keine Rechte. Die Telekom hat sich ja Magenta sichern lassen. Ich hab’s mit Schwarz probiert, aber das Deutsche Patent- und Markenamt hat leider abgelehnt. War aber schon sehr kompliziert.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Der Titelsong heißt halt „Schwarz“, und deswegen heißt die Platte so. Die Marketingagentur hatte Blau, Weiß, Grün und Gelb vorgeschlagen. Aber wir haben uns dann doch für Schwarz entschieden.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Ist Mönchengladbach eigentlich überhaupt noch bereit für euch? Mönchengladbach … Mönchen …</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Mönche und Gladbach. Die Gladbach war irgendwie ein Fluss, an dem die Mönche im Kloster gelebt haben. Ach nee, das war andersrum.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Aber mal im Ernst: Braucht Mönchengladbach überhaupt noch Bands?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Traurig, aber ja. Immer mehr. Du solltest solche Interviews nicht nach dem Auftritt machen. Wir sind alle strunzenblau – und du auch noch.</p></li>
       </ol>
 
       <blockquote class="pull"><p><span>Schwarz ist eine ganz neue Farbe.</span></p></blockquote>
 
+      <h2 class="sec" id="t4"><span class="no">04</span>Die Frage aller Fragen – und die Tour</h2>
       <ol class="talk">
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:08</span></div><p>Wir haben vorhin lange an einer Frage gefeilt: Mit wem hattest du zuletzt Sex? Und wenn ja, wieso?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:04:19</span></div><p>Wenn du dich nicht mehr dran erinnerst …</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:24</span></div><p>Ehrlich gesagt verstehe ich den Witz selbst nicht.</p></li>
-        <li class="turn q cont"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:29</span></div><p>Wie geht die Tour weiter?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:04:34</span></div><p>Sie hat in Mannheim angefangen und hört in Mannheim auf. Vom 8. März bis zum 8. März. Das nächste Konzert gibt’s 2020, wenn wieder zwölf Jahre um sind.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:47</span></div><p>Dann sind wir alle tot.</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:04:50</span></div><p>Du hast zu viel Düsterpunk gehört.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:04:57</span></div><p>Wie schafft ihr es noch zu proben?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:09</span></div><p>Hat sich das heute angehört, als hätten wir geprobt? Wir proben nicht, wir spielen nur noch. Das heute war eine <mark>Probe mit Eintritt</mark>. Wir sind die einzige Band, die fürs Proben Geld kriegt. In Mönchengladbach werden die Proberäume rar. Also kommen wir drei Stunden hierher, proben eine Stunde und fahren drei Stunden zurück.</p></li>
-        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:39</span></div><p>Ich komm nicht drei Stunden.</p></li>
-        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:44</span></div><p>Doch.</p></li>
-        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:05:46</span></div><p>Okay, Schatz. Bei dir schon.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wir haben noch eine Frage, die wir vorhin lange ausgearbeitet haben: Mit wem hattest du zuletzt Sex? Und wenn ja, wieso?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Wenn du dich nicht mehr daran erinnerst …</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Ich bin tief …</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>… enttäuscht.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>„Wann hattest du Sex, und wenn ja …“ – also, ich verstehe den Witz darin selbst nicht. Viel zu privat. Wie geht es weiter? Die Tour ist in Mannheim gestartet und hört …</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>… auch in Mannheim wieder auf. Da schließt sich der Kreis. Die Tour geht vom 8. März bis zum 8. März. Das nächste Konzert findet dann 2020 statt, weil dann wieder zwölf Jahre um sind.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Dann sind wir ja schon alle tot.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Dann kommt die vierte Platte raus. Du bist aber pessimistisch. Du hast zu viel Düsterpunk gehört.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Echt? Ja, das macht einen kaputt.</p></li>
+      </ol>
+
+      <h2 class="sec" id="t5"><span class="no">05</span>Proben gegen Eintritt</h2>
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wie schafft ihr es eigentlich noch zu proben? Ihr wohnt ja alle ganz woanders. Du wohnst doch in Berlin oder München?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Nee. Nicht mehr.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wie schafft ihr es dann noch, zusammenzukommen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Hat sich das heute angehört, als hätten wir geprobt?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Hab ich gar nicht drauf geachtet.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Wir proben nicht. Wir spielen nur noch. Das heute war eine Probe – eine, bei der wir <mark>Eintritt genommen</mark> haben. Wir sind die einzige Band, die fürs Proben Geld kriegt. Wir proben jetzt nur noch in Mannheim. Jeden Freitag.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Samstag.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Samstag? Ja, genau. Das ist halt das Problem: In Mönchengladbach werden die Proberäume rar. Also kommen wir drei Stunden hierher, proben eine Stunde und fahren dann wieder drei Stunden nach Hause.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Wir kommen drei Stunden? Ich komm nicht drei Stunden.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Doch.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Okay, Schatz. Bei dir schon.</p></li>
       </ol>
 
       <blockquote class="pull alt"><p><span>Wir proben nicht. Wir spielen nur noch.</span></p></blockquote>
 
+      <h2 class="sec" id="t6"><span class="no">06</span>Auflösen? Klappt nicht</h2>
       <ol class="talk">
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:05:58</span></div><p>Wollt ihr euch nicht langsam auflösen?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:06:01</span></div><p>Wollen schon. Wir versuchen das seit 16 Jahren. Wir schaffen es einfach nicht.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:06:15</span></div><p>Dann eben der Bundesvision Song Contest?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:06:19</span></div><p>Ich würde gern in kurzen Röckchen auftreten, mit Wind in den Haaren. Aber ich glaube, Ralph Siegel hätte was dagegen.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Und sonst? Ist in eurer Band alles okay?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Ja. Schön bist du.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Es ist sehr schön mit uns. Wir drei haben uns sehr lieb.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wollt ihr euch langsam auflösen oder so?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Wollen schon.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Ich löse mich auf.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Wir schaffen es einfach nicht. Wir versuchen das seit 16 Jahren, aber es klappt nicht.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Mit Auflösen kann man viel Geld verdienen. Ihr könntet einen richtigen Kult um euch erschaffen und euch dann auflösen. Oder ihr geht zum Bundesvision Song Contest?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Nö.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Doch, ich mag das. Ich würde gern in kurzen Röckchen auftreten, mit Wind in den Haaren und so. Fänd ich total cool. Aber ich glaube, Ralph Siegel hätte da was dagegen.</p></li>
       </ol>
 
       <blockquote class="pull"><p><span>Seit 16 Jahren versuchen wir, uns aufzulösen.</span></p></blockquote>
 
+      <h2 class="sec" id="t7"><span class="no">07</span>Familienangelegenheiten</h2>
       <ol class="talk">
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:06:45</span></div><p>Nächster Punkt: der Nettoverdienst eurer Eltern. Wenn der nicht stimmt, seid ihr keine interessanten Interviewpartner.</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:06:54</span></div><p>In welchem Leitfaden steht das denn? Während du noch lustig im Hoden deines Vaters rumgeschwommen bist, waren meine Eltern schon Rentner. Mein Vater ist 40 Jahre älter als ich.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:07:19</span></div><p>Trotz Pille? Hat deine Mutter die nicht genommen?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:07:25</span></div><p>Eben nicht. An dem Tag nicht. Ist das hier eigentlich ein Interview?</p></li>
-        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span><span class="tc">00:07:56</span></div><p>Brechen wir lieber ab. Alle hier sind ziemlich besoffen.</p></li>
-        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span><span class="tc">00:08:39</span></div><p>Okay, ich mach die Scheiße aus. Tschüss!</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Apropos Siegel – darf ich jemanden grüßen?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Klar.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Hallo, Papa!</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Was für ein Verhältnis hast du zu deiner Mutter? Das war eigentlich die Frage. Die hätte schon ganz am Anfang kommen müssen: Der Nettoverdienst eurer Eltern ist wichtig für das Interview. Sonst hätten wir abgebrochen. Wenn eure Eltern nicht gut verdienen, seid ihr keine interessanten Interviewpartner.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Oh. In welchem Interview-Leitfaden steht das denn?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Den hat mein Vater entwickelt, und ihr seid die ersten Opfer. Wir haben es vorhin vergessen, deswegen holen wir das jetzt nach.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Während du noch lustig und locker im Hoden deines Vaters rumgeschwommen bist, waren meine Eltern schon Rentner.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Das zählt aber nicht. Du bist also ein Nachzügler?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Mein Vater ist 40 Jahre älter als ich.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Trotz Pille?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Ja.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Hat deine Mutter denn die Pille genommen?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Eben nicht. An dem Tag nicht. Ist das hier eigentlich ein Interview?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Wie alt war deine Mutter, als du auf die Welt kamst?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Oh, lass mich kurz …</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Okay, machen wir weiter.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Möchtest du einen Jägermeister?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Yes! … Ich auch.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Ich auch. Ist das ein echter?</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Ja.</p></li>
+        <li class="turn a cont"><div class="meta"><span class="who">Die Strafe</span></div><p>Dann hätte ich jetzt auch gern einen echten.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Super. Habt ihr da irgendwie einen Vertrag unterschrieben?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Brechen wir das Interview lieber ab. Alle hier sind ziemlich besoffen.</p></li>
+      </ol>
+
+      <h2 class="sec" id="t8"><span class="no">08</span>Werbeblock</h2>
+      <ol class="talk">
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Ihr müsst jetzt wirklich ein bisschen Werbung für Pogoradio machen. Kennt ihr eigentlich Pogoradio? Die Sendung?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Ja.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Woher kennst du die?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Aus dem Internet.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Ehrlich? Du hast Internet?</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Nein.</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Für einen Computer mit Internet musst du nämlich GEZ bezahlen. Fünf Euro im Monat.</p></li>
+        <li class="turn a"><div class="meta"><span class="who">Die Strafe</span></div><p>Es gibt ja Internetcafés. Da geh ich gelegentlich hin. Schlimmer als Puff. Und ich zahle GEZ, hallo?</p></li>
+        <li class="turn q"><div class="meta"><span class="who">Pogoradio</span></div><p>Interessiert mich nicht. Ich zahle auch. Okay, ich mach die Scheiße aus. Tschüss!</p></li>
       </ol>
 
       <div class="stop"><span class="tc">■ Stop · 00:08:39</span><strong>Aus!</strong></div>
     </article>
 
     <aside>
-      <div class="rail">
-        <section class="card" aria-labelledby="sb">
-          <h2 id="sb">Steckbrief</h2>
-          <dl>
-            <div><dt>Band</dt><dd>Die Strafe, ein Trio</dd></div>
-            <div><dt>Aus</dt><dd>Mönchengladbach</dd></div>
-            <div><dt>Stil</dt><dd>Düsterpunk, sagt die Presse. „Ganz lustige Kerle“, sagt die Band.</dd></div>
-            <div><dt>Neues Album</dt><dd>„Schwarz“, Nummer drei</dd></div>
-            <div><dt>Tour</dt><dd>8. März bis 8. März, Mannheim</dd></div>
-            <div><dt>Nächstes Konzert</dt><dd>2020, laut Band</dd></div>
-            <div><dt>Proben</dt><dd>nur noch gegen Eintritt</dd></div>
-            <div><dt>Auflösung</dt><dd>seit 16 Jahren in Arbeit</dd></div>
-          </dl>
-        </section>
-        <p class="note"><b>Aufnahme:</b> MP3-Player, direkt nach dem Konzert in Mannheim. Länge 8:39 Minuten. Die Zeitangaben stammen aus dem Mitschnitt.</p>
-        <p class="scrawl">strunzenblau!</p>
-      </div>
+      <section class="card" aria-labelledby="sb">
+        <h2 id="sb">Steckbrief</h2>
+        <dl>
+          <div><dt>Band</dt><dd>Die Strafe, ein Trio</dd></div>
+          <div><dt>Aus</dt><dd>Mönchengladbach</dd></div>
+          <div><dt>Stil</dt><dd>Düsterpunk, sagt die Presse. „Ganz lustige Kerle“, sagt die Band.</dd></div>
+          <div><dt>Neues Album</dt><dd>„Schwarz“, Nummer drei</dd></div>
+          <div><dt>Tour</dt><dd>8. März bis 8. März, Mannheim</dd></div>
+          <div><dt>Nächstes Konzert</dt><dd>2020, laut Band</dd></div>
+          <div><dt>Proben</dt><dd>nur noch gegen Eintritt</dd></div>
+          <div><dt>Auflösung</dt><dd>seit 16 Jahren in Arbeit</dd></div>
+        </dl>
+      </section>
+      <nav class="card" aria-labelledby="ih">
+        <h2 id="ih">Inhalt</h2>
+        <ol class="toc">
+          <li><a href="#t1"><span>01</span>Wie heißt ihr noch mal?</a></li>
+          <li><a href="#t2"><span>02</span>Düsterpunk mit guter Laune</a></li>
+          <li><a href="#t3"><span>03</span>Wer hat’s erfunden?</a></li>
+          <li><a href="#t4"><span>04</span>Die Frage aller Fragen</a></li>
+          <li><a href="#t5"><span>05</span>Proben gegen Eintritt</a></li>
+          <li><a href="#t6"><span>06</span>Auflösen? Klappt nicht</a></li>
+          <li><a href="#t7"><span>07</span>Familienangelegenheiten</a></li>
+          <li><a href="#t8"><span>08</span>Werbeblock</a></li>
+        </ol>
+      </nav>
+      <p class="note"><b>Aufnahme:</b> MP3-Player, direkt nach dem Konzert in Mannheim. Länge 8:39 Minuten. Die Tour ging „vom 8. März bis zum 8. März“, das Konzert war also am Samstag, dem 8. März 2008.</p>
+      <p class="scrawl">strunzenblau!</p>
     </aside>
   </div>
 </div>
@@ -265,8 +384,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--pink); outline-
 <footer>
   <div class="wrap">
     <p>Pogoradio · Interview mit Die Strafe</p>
-    <p>Aufgezeichnet nach dem Konzert in Mannheim, 2008</p>
+    <p>Aufgezeichnet nach dem Konzert in Mannheim, 8. März 2008</p>
   </div>
 </footer>
 
-</body></html>
+</body>
+</html>

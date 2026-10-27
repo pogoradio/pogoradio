@@ -8,446 +8,223 @@
 <meta name="description" content="Interviews, Gespräche und Geschichten aus dem Archiv von Pogoradio: Sabotakt, Superfreunde, Tarek, Red Union, Trend, Fabulous Disaster, Toxoplasma, The Vageenas, Hørmy, Brutal Knights, Zwakkelmann, Die Strafe, Krank, Lost Lyrics, Supernichts, Slime, Egotronic und mehr. Dazu das Sendungsarchiv mit allen Sendungen und Songlisten von 2000 bis 2018.">
 <style>
 :root {
-  --bg: #121110;
-  --bg-hover: #191816;
+  --bg: #262523;
+  --panel: #2f2e2b;
+  --panel-hover: #353430;
   --fg: #ece8e1;
-  --fg-soft: #c9c4bb;
-  --muted: #958f86;
-  --rule: #2c2a27;
-  --accent: #ff4d3d;
+  --fg-soft: #cfcac1;
+  --muted: #a39e95;
+  --rule: #403e3a;
+  --accent: #ff5a4a;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color-scheme: dark;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font: 400 1.0625rem/1.55 var(--sans);
-  -webkit-font-smoothing: antialiased;
-}
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1rem/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-
-.wrap {
-  max-width: calc(56rem + 32px);
-  margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
+.wrap { max-width: calc(72rem + 32px); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 
 /* Kopf */
-.head {
-  padding-top: calc(env(safe-area-inset-top, 0px) + clamp(2.5rem, 9vw, 6rem));
-  padding-bottom: clamp(2.25rem, 6vw, 3.5rem);
-  display: grid;
-  grid-template-columns: minmax(0, 19rem) minmax(0, 1fr);
-  gap: clamp(1.75rem, 5vw, 4rem);
-  align-items: end;
-}
-h1.logo { margin: 0; font-size: 1rem; line-height: 1; }
-h1.logo img { display: block; width: 100%; height: auto; }
-.head-text { min-width: 0; padding-bottom: .4rem; }
-@media (max-width: 640px) {
-  .head { grid-template-columns: minmax(0, 1fr); }
-  h1.logo { max-width: 14rem; }
-}
-.kicker {
-  margin: 0 0 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  font-size: .75rem;
-  font-weight: 600;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.kicker::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
-h1 {
-  margin: 0;
-  font-weight: 900;
-  font-size: clamp(3rem, 14vw, 7.75rem);
-  line-height: .88;
-  letter-spacing: -.045em;
-  text-transform: uppercase;
-}
-.lead {
-  margin: 1.5rem 0 0;
-  max-width: 36rem;
-  font-size: clamp(1.1rem, 2.4vw, 1.3rem);
-  line-height: 1.5;
-  color: var(--fg-soft);
-}
+.head { padding-top: calc(env(safe-area-inset-top, 0px) + clamp(1.75rem, 5vw, 3rem)); padding-bottom: 1.5rem; display: flex; align-items: center; gap: 1.1rem; }
+.head img { width: 64px; height: auto; display: block; flex: none; }
+.head h1 { margin: 0; font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1; font-weight: 900; letter-spacing: -.03em; text-transform: uppercase; }
+.head .sub { margin: .35rem 0 0; font-size: .82rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.intro { margin: 0; padding: 0 0 1.4rem; max-width: 46rem; color: var(--fg-soft); font-size: 1.05rem; }
+.index { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 2.5rem; padding: 1rem 0; list-style: none; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.index a { display: inline-flex; align-items: baseline; gap: .45rem; padding: .45rem .8rem; border-radius: 999px; background: var(--panel); text-decoration: none; font-size: .9rem; font-weight: 600; }
+.index a span { color: var(--muted); font-weight: 500; font-variant-numeric: tabular-nums; }
+.index a:hover { background: var(--panel-hover); }
 
-/* Listen */
-.block { padding-bottom: clamp(2.5rem, 7vw, 4rem); }
-.block h2 {
-  margin: 0;
-  padding-bottom: .8rem;
-  border-bottom: 1px solid var(--fg);
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: .75rem;
-  font-weight: 600;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
+/* Abschnitte */
+.block { padding-bottom: 3rem; scroll-margin-top: 1rem; }
+.block h2 { margin: 0 0 1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 1rem; font-size: .75rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--fg-soft); }
 .block h2 span { color: var(--muted); font-variant-numeric: tabular-nums; }
-.list { list-style: none; margin: 0; padding: 0; }
+.cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.card { position: relative; display: flex; flex-direction: column; padding: 1rem 1.1rem 1.1rem 1.25rem; background: var(--panel); border-radius: 6px; transition: background-color .15s ease; }
+.card::before { content: ""; position: absolute; left: 0; top: 1rem; bottom: 1rem; width: 3px; border-radius: 0 2px 2px 0; background: var(--c); }
+.card:hover { background: var(--panel-hover); }
+.meta { margin: 0 0 .4rem; font-size: .8rem; color: var(--muted); line-height: 1.35; }
+.meta .y { font-weight: 700; color: var(--fg-soft); font-variant-numeric: tabular-nums; margin-right: .5rem; }
+.card h3 { margin: 0; font-size: 1.2rem; line-height: 1.2; font-weight: 750; letter-spacing: -.01em; text-wrap: balance; }
+.card h3 a { text-decoration: none; }
+.card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 6px; }
+.card:hover h3 a { text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 2px; text-underline-offset: .18em; }
+.teaser { margin: .5rem 0 0; color: var(--fg-soft); font-size: .93rem; line-height: 1.5; text-wrap: pretty; }
+.extras { margin: auto 0 0; padding: .8rem 0 0; list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; font-size: .75rem; }
+.extras li { padding: .15rem .5rem; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); }
+.extras li.lnk { padding: 0; border: 0; position: relative; z-index: 1; }
+.extras li.lnk a { display: inline-block; padding: .2rem .6rem; border-radius: 999px; background: var(--fg); color: var(--bg); font-weight: 650; text-decoration: none; }
+.extras li.lnk a:hover { background: #fff; }
 
-.item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr) auto;
-  gap: 1.5rem;
-  padding: 1.6rem .25rem 1.6rem 1.15rem;
-  border-bottom: 1px solid var(--rule);
-  transition: background-color .15s ease;
-}
-.item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.75rem;
-  bottom: 1.75rem;
-  width: 3px;
-  border-radius: 2px;
-  background: var(--c);
-}
-.item:hover { background: var(--bg-hover); }
-.when {
-  margin: 0;
-  padding-top: .2rem;
-  font-weight: 700;
-  font-size: 1rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--muted);
-}
-.item h3 {
-  margin: 0;
-  font-size: clamp(1.3rem, 3vw, 1.6rem);
-  line-height: 1.18;
-  font-weight: 750;
-  letter-spacing: -.012em;
-  text-wrap: balance;
-}
-.item h3 a { text-decoration: none; }
-.item h3 a::after { content: ""; position: absolute; inset: 0; }
-.item:hover h3 a { text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 2px; text-underline-offset: .2em; }
-.where { margin: .3rem 0 0; font-size: .92rem; color: var(--muted); }
-.teaser { margin: .7rem 0 0; max-width: 40rem; color: var(--fg-soft); text-wrap: pretty; }
-.extras {
-  margin: .85rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-  font-size: .8rem;
-}
-.extras li {
-  padding: .2rem .55rem;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  color: var(--muted);
-}
-.extras a {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  padding: .2rem .65rem;
-  margin: -.2rem -.55rem;
-  border-radius: 999px;
-  background: var(--fg);
-  color: var(--bg);
-  font-weight: 650;
-  text-decoration: none;
-}
-.extras li:has(a) { border-color: transparent; }
-.extras a:hover { background: #fff; }
-.go {
-  align-self: center;
-  font-size: 1.4rem;
-  line-height: 1;
-  color: var(--muted);
-  transition: transform .15s ease, color .15s ease;
-}
-.item:hover .go { color: var(--fg); transform: translateX(4px); }
-
-/* Fuß */
-.foot {
-  padding-top: 1.25rem;
-  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: .4rem 1.5rem;
-  font-size: .82rem;
-  color: var(--muted);
-}
+.foot { padding-top: 1.25rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font-size: .82rem; color: var(--muted); border-top: 1px solid var(--rule); }
 .foot p { margin: 0; }
 
-@media (max-width: 640px) {
-  .item { grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; padding-left: 1rem; }
-  .item::before { top: 1.6rem; bottom: 1.6rem; }
-  .when { grid-column: 1 / -1; padding: 0; font-size: .85rem; }
-  .go { align-self: start; padding-top: .3rem; }
+@media (max-width: 960px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .cards { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .head img { width: 52px; }
+  .index a { font-size: .85rem; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .item, .go { transition: none; }
-}
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
 </style>
 </head>
 <body>
 
-<header class="wrap head">
-  <h1 class="logo"><img src="pogoradio-logo.png" width="452" height="380" alt="Pogoradio"></h1>
-  <div class="head-text">
-  <p class="kicker">Bermudafunk 105,4 · mittwochs 23–24 Uhr</p>
-  <p class="lead">Interviews, Gespräche und Geschichten aus dem Archiv: backstage im Juz Mannheim, im Café Egal, im Café Central und im Gebäude 9, nach dem Konzert oder spät in der Nacht.</p>
+<header class="wrap">
+  <div class="head">
+    <img src="pogoradio-logo.png" width="452" height="380" alt="">
+    <div>
+      <h1>Pogoradio</h1>
+      <p class="sub">Archiv · Bermudafunk 105,4 · 2000–2018</p>
+    </div>
   </div>
+  <p class="intro">Interviews, Gespräche und Geschichten aus achtzehn Jahren Punkrock-Radio: backstage im Juz Mannheim, im Café Egal und im Sonic Ballroom, am Telefon oder spät in der Nacht vor der Tür.</p>
+  <ul class="index">
+    <li><a href="#gespraeche">Gespräche <span>17</span></a></li>
+    <li><a href="#geschichten">Geschichten <span>2</span></a></li>
+    <li><a href="sendungen/">Sendungsarchiv <span>602</span></a></li>
+    <li><a href="interview-archiv/">Interviews aus dem Blog <span>49</span></a></li>
+  </ul>
 </header>
 
 <main class="wrap">
-
-  <section class="block" aria-labelledby="h-gespraeche">
+  <section class="block" id="gespraeche" aria-labelledby="h-gespraeche">
     <h2 id="h-gespraeche">Gespräche <span>17</span></h2>
-    <ol class="list">
-
-      <li class="item" style="--c:#ff5aa9">
-        <p class="when">2002</p>
-        <div>
-          <h3><a href="interviews/tarek/">Tarek im Juz Mannheim</a></h3>
-          <p class="where">Juz Mannheim · Herbst 2002</p>
-          <p class="teaser">Tarek, damals 21, legt los, bevor die erste Frage gestellt ist: über Fernsehen, die Werte der anderen und die Bank, auf der das Interview stattfindet.</p>
-          <ul class="extras"><li>Foto</li><li>Aufnahme</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+    <ol class="cards">
+      <li class="card" style="--c:#ff5aa9">
+        <p class="meta"><span class="y">2002</span>Juz Mannheim · Herbst 2002</p>
+        <h3><a href="interviews/tarek/">Tarek im Juz Mannheim</a></h3>
+        <p class="teaser">Tarek, damals 21, legt los, bevor die erste Frage gestellt ist: über Fernsehen, die Werte der anderen und die Bank, auf der das Interview stattfindet.</p>
+        <ul class="extras"><li>Foto</li><li>Aufnahme</li></ul>
       </li>
-
-      <li class="item" style="--c:#d22b1f">
-        <p class="when">2004</p>
-        <div>
-          <h3><a href="interviews/red-union/">Red Union im Café Egal</a></h3>
-          <p class="where">Café Egal, Jungbusch, Mannheim</p>
-          <p class="teaser">Die Punkband aus Novi Sad über einen Veranstalter, der nicht zahlt, Serben in Deutschland und eine Wahl daheim. Das Konzert hat die Polizei nach 15 Minuten beendet.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#d22b1f">
+        <p class="meta"><span class="y">2004</span>Café Egal, Jungbusch, Mannheim</p>
+        <h3><a href="interviews/red-union/">Red Union im Café Egal</a></h3>
+        <p class="teaser">Die Punkband aus Novi Sad über einen Veranstalter, der nicht zahlt, Serben in Deutschland und eine Wahl daheim. Das Konzert hat die Polizei nach 15 Minuten beendet.</p>
       </li>
-
-      <li class="item" style="--c:#14b3a6">
-        <p class="when">2004</p>
-        <div>
-          <h3><a href="interviews/trend/">Trend im Haus</a></h3>
-          <p class="where">Das Haus, Ludwigshafen · 27. März 2004</p>
-          <p class="teaser">Die Band aus Landau wurde angeblich vom Plastic Bomb entführt und in stillgelegten Zechen ausgebildet. Dazu zwei Flamingos mit Badekappen und Völkerverständigung zwischen Mannheim und Ludwigshafen.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#14b3a6">
+        <p class="meta"><span class="y">2004</span>Das Haus, Ludwigshafen · 27. März 2004</p>
+        <h3><a href="interviews/trend/">Trend im Haus</a></h3>
+        <p class="teaser">Die Band aus Landau wurde angeblich vom Plastic Bomb entführt und in stillgelegten Zechen ausgebildet. Dazu zwei Flamingos mit Badekappen und Völkerverständigung zwischen Mannheim und Ludwigshafen.</p>
       </li>
-
-      <li class="item" style="--c:#ef6fa2">
-        <p class="when">2004</p>
-        <div>
-          <h3><a href="interviews/fabulous-disaster/">Fabulous Disaster im Juz</a></h3>
-          <p class="where">Juz Mannheim · Sommer 2004</p>
-          <p class="teaser">Die Punkband aus San Francisco über ein Festival, an das sich keiner erinnert, Containern, eine Nacht mit Courtney Love und Kaffee von Dunkin' Donuts.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#ef6fa2">
+        <p class="meta"><span class="y">2004</span>Juz Mannheim · Sommer 2004</p>
+        <h3><a href="interviews/fabulous-disaster/">Fabulous Disaster im Juz</a></h3>
+        <p class="teaser">Die Punkband aus San Francisco über ein Festival, an das sich keiner erinnert, Containern, eine Nacht mit Courtney Love und Kaffee von Dunkin' Donuts.</p>
       </li>
-
-      <li class="item" style="--c:#ffd400">
-        <p class="when">2005</p>
-        <div>
-          <h3><a href="interviews/sabotakt-allen-wrench/">Sabotakt vs. Allen Wrench</a></h3>
-          <p class="where">Café Central, Weinheim · 30. April 2005</p>
-          <p class="teaser">Matze und Tarek von Sabotakt, Tina und Rüdi von Pogoradio treffen backstage auf Allen Wrench von Kill Allen Wrench. Hauptkampf: Armdrücken.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#ffd400">
+        <p class="meta"><span class="y">2005</span>Café Central, Weinheim · 30. April 2005</p>
+        <h3><a href="interviews/sabotakt-allen-wrench/">Sabotakt vs. Allen Wrench</a></h3>
+        <p class="teaser">Matze und Tarek von Sabotakt, Tina und Rüdi von Pogoradio treffen backstage auf Allen Wrench von Kill Allen Wrench. Hauptkampf: Armdrücken.</p>
       </li>
-
-      <li class="item" style="--c:#18a7e6">
-        <p class="when">2005</p>
-        <div>
-          <h3><a href="interviews/superfreunde/">Die Superfreunde per Skype</a></h3>
-          <p class="where">Konferenzschaltung ins Emsland · 2005</p>
-          <p class="teaser">Kein Bild, viel Hall, keine Rückkopplung. Dann ein Blitzinterview mit Berten und Neiß über die geheime neue Platte, Klingeltöne und den rausgeschmissenen Bauer Bühl.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#18a7e6">
+        <p class="meta"><span class="y">2005</span>Konferenzschaltung ins Emsland · 2005</p>
+        <h3><a href="interviews/superfreunde/">Die Superfreunde per Skype</a></h3>
+        <p class="teaser">Kein Bild, viel Hall, keine Rückkopplung. Dann ein Blitzinterview mit Berten und Neiß über die geheime neue Platte, Klingeltöne und den rausgeschmissenen Bauer Bühl.</p>
       </li>
-
-      <li class="item" style="--c:#2b9a6c">
-        <p class="when">2005</p>
-        <div>
-          <h3><a href="interviews/toxoplasma/">Toxoplasma im Juz</a></h3>
-          <p class="where">Juz Mannheim · 17. Dezember 2005</p>
-          <p class="teaser">Die Deutschpunk-Band aus Neuwied über alte Lieder, die gefloppte Metal-Platte, das eigene Tonstudio und eine Tour mit The Exploited und Dritte Wahl.</p>
-          <ul class="extras"><li>Flyer</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#2b9a6c">
+        <p class="meta"><span class="y">2005</span>Juz Mannheim · 17. Dezember 2005</p>
+        <h3><a href="interviews/toxoplasma/">Toxoplasma im Juz</a></h3>
+        <p class="teaser">Die Deutschpunk-Band aus Neuwied über alte Lieder, die gefloppte Metal-Platte, das eigene Tonstudio und eine Tour mit The Exploited und Dritte Wahl.</p>
+        <ul class="extras"><li>Flyer</li></ul>
       </li>
-
-      <li class="item" style="--c:#e14fc8">
-        <p class="when">2006</p>
-        <div>
-          <h3><a href="interviews/vageenas/">The Vageenas im Juz</a></h3>
-          <p class="where">Juz Mannheim · 2006</p>
-          <p class="teaser">Babette trainiert nur auf der Bühne, verbietet Fragen zum Alter und trinkt nur Wasser. René findet schon das Wort „Hobby“ abwertend.</p>
-          <ul class="extras"><li>Fotos</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#e14fc8">
+        <p class="meta"><span class="y">2006</span>Juz Mannheim · 2006</p>
+        <h3><a href="interviews/vageenas/">The Vageenas im Juz</a></h3>
+        <p class="teaser">Babette trainiert nur auf der Bühne, verbietet Fragen zum Alter und trinkt nur Wasser. René findet schon das Wort „Hobby“ abwertend.</p>
+        <ul class="extras"><li>Fotos</li></ul>
       </li>
-
-      <li class="item" style="--c:#8467d6">
-        <p class="when">2007</p>
-        <div>
-          <h3><a href="interviews/hoermy/">Hørmy auf Radreise</a></h3>
-          <p class="where">Juz Mannheim, morgens um halb vier</p>
-          <p class="teaser">Der frühere Sänger von Lønd Lørds Ønd über drei Monate mit dem Rad durch Burma, Thailand und Laos: 4.000 Kilometer und sehr viel Hängematte.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#8467d6">
+        <p class="meta"><span class="y">2007</span>Juz Mannheim, morgens um halb vier</p>
+        <h3><a href="interviews/hoermy/">Hørmy auf Radreise</a></h3>
+        <p class="teaser">Der frühere Sänger von Lønd Lørds Ønd über drei Monate mit dem Rad durch Burma, Thailand und Laos: 4.000 Kilometer und sehr viel Hängematte.</p>
       </li>
-
-      <li class="item" style="--c:#3d7fe0">
-        <p class="when">2007</p>
-        <div>
-          <h3><a href="interviews/brutal-knights/">Brutal Knights im Tourbus</a></h3>
-          <p class="where">Juz Mannheim · 14. Oktober 2007</p>
-          <p class="teaser">Die Punkband aus Toronto über 40 Tage Europa, zwei kaputte Autos, Raststätten, einen Sexshop mit 14.000 Filmen und eine Matratzenschlacht in Mailand.</p>
-          <ul class="extras"><li>Fotos</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#3d7fe0">
+        <p class="meta"><span class="y">2007</span>Juz Mannheim · 14. Oktober 2007</p>
+        <h3><a href="interviews/brutal-knights/">Brutal Knights im Tourbus</a></h3>
+        <p class="teaser">Die Punkband aus Toronto über 40 Tage Europa, zwei kaputte Autos, Raststätten, einen Sexshop mit 14.000 Filmen und eine Matratzenschlacht in Mailand.</p>
+        <ul class="extras"><li>Fotos</li></ul>
       </li>
-
-      <li class="item" style="--c:#e8b400">
-        <p class="when">2008</p>
-        <div>
-          <h3><a href="interviews/zwakkelmann/">Zwakkelmann am Telefon</a></h3>
-          <p class="where">Live am Telefon · Sommer 2008</p>
-          <p class="teaser">Schlaffke, früher Sänger von Schließmuskel, über Hamminkeln als Mittelpunkt der Erde, die Vollhorst-Zugfahrt nach Düsseldorf und Musik für gescheiterte Existenzen.</p>
-          <ul class="extras"><li>Foto</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#e8b400">
+        <p class="meta"><span class="y">2008</span>Live am Telefon · Sommer 2008</p>
+        <h3><a href="interviews/zwakkelmann/">Zwakkelmann am Telefon</a></h3>
+        <p class="teaser">Schlaffke, früher Sänger von Schließmuskel, über Hamminkeln als Mittelpunkt der Erde, die Vollhorst-Zugfahrt nach Düsseldorf und Musik für gescheiterte Existenzen.</p>
+        <ul class="extras"><li>Foto</li></ul>
       </li>
-
-      <li class="item" style="--c:#ff2d95">
-        <p class="when">2008</p>
-        <div>
-          <h3><a href="interviews/die-strafe/">Pogoradio trifft Die Strafe</a></h3>
-          <p class="where">Mannheim, nach der Show</p>
-          <p class="teaser">Die Strafe aus Mönchengladbach über ihr drittes Album „Schwarz“, eine teure Marketingagentur und Proben gegen Eintritt.</p>
-          <ul class="extras"><li><a href="interviews/die-strafe/komplett.html">Komplettes Gespräch</a></li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#ff2d95">
+        <p class="meta"><span class="y">2008</span>Mannheim · 8. März 2008, nach der Show</p>
+        <h3><a href="interviews/die-strafe/">Pogoradio trifft Die Strafe</a></h3>
+        <p class="teaser">Die Strafe aus Mönchengladbach über ihr drittes Album „Schwarz“, eine teure Marketingagentur und Proben gegen Eintritt.</p>
       </li>
-
-      <li class="item" style="--c:#ff6a13">
-        <p class="when">2008</p>
-        <div>
-          <h3><a href="interviews/krank/">Krank aus der Schweiz</a></h3>
-          <p class="where">Juz Mannheim · November 2008</p>
-          <p class="teaser">Käse, Toblerone, Heidi und die Schweizergarde: Die Punks mit dem Kunstblut geben keine einzige ernste Antwort. Am Ende will der Sänger Rüdi heiraten.</p>
-          <ul class="extras"><li>Fotos</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#ff6a13">
+        <p class="meta"><span class="y">2008</span>Juz Mannheim · November 2008</p>
+        <h3><a href="interviews/krank/">Krank aus der Schweiz</a></h3>
+        <p class="teaser">Käse, Toblerone, Heidi und die Schweizergarde: Die Punks mit dem Kunstblut geben keine einzige ernste Antwort. Am Ende will der Sänger Rüdi heiraten.</p>
+        <ul class="extras"><li>Fotos</li></ul>
       </li>
-
-      <li class="item" style="--c:#e0382d">
-        <p class="when">2009</p>
-        <div>
-          <h3><a href="interviews/lost-lyrics/">Lost Lyrics bei Pogoradio</a></h3>
-          <p class="where">Rüdi mit Holger, Steffen und Kati</p>
-          <p class="teaser">Fast 20 Jahre Band, kein einziger Hit und eine England-Flagge auf der Bühne. Die selbsternannten Wochenendpunks erklären, warum sie kein Deutschpunk sind.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#e0382d">
+        <p class="meta"><span class="y">2009</span>Rüdi mit Holger, Steffen und Kati</p>
+        <h3><a href="interviews/lost-lyrics/">Lost Lyrics bei Pogoradio</a></h3>
+        <p class="teaser">Fast 20 Jahre Band, kein einziger Hit und eine England-Flagge auf der Bühne. Die selbsternannten Wochenendpunks erklären, warum sie kein Deutschpunk sind.</p>
       </li>
-
-      <li class="item" style="--c:#d93a24">
-        <p class="when">2009</p>
-        <div>
-          <h3><a href="interviews/supernichts/">Supernichts vor dem Sonic Ballroom</a></h3>
-          <p class="where">Sonic Ballroom, Köln · 31. Juli 2009</p>
-          <p class="teaser">Zehn Jahre Sonic Ballroom, Bier aus dem Schuh eines Mädchens aus dem Sauerland und ein Plädoyer für die LP. Dazu Flatrate-Bordelle und die Frage, wann Punker scheiße sind.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#d93a24">
+        <p class="meta"><span class="y">2009</span>Sonic Ballroom, Köln · 31. Juli 2009</p>
+        <h3><a href="interviews/supernichts/">Supernichts vor dem Sonic Ballroom</a></h3>
+        <p class="teaser">Zehn Jahre Sonic Ballroom, Bier aus dem Schuh eines Mädchens aus dem Sauerland und ein Plädoyer für die LP. Dazu Flatrate-Bordelle und die Frage, wann Punker scheiße sind.</p>
       </li>
-
-      <li class="item" style="--c:#8fd11f">
-        <p class="when">2009</p>
-        <div>
-          <h3><a href="interviews/slime/">Slime sind wieder da</a></h3>
-          <p class="where">Rüdi mit Alex Schwers, dem neuen Schlagzeuger</p>
-          <p class="teaser">Fünfzehn Jahre nach dem letzten Konzert machen Slime weiter. Alex Schwers erklärt, warum man den alten Scheiß noch mal spielen darf und was ein Schrittzähler an der Snare bringt.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#8fd11f">
+        <p class="meta"><span class="y">2009</span>Rüdi mit Alex Schwers, dem neuen Schlagzeuger</p>
+        <h3><a href="interviews/slime/">Slime sind wieder da</a></h3>
+        <p class="teaser">Fünfzehn Jahre nach dem letzten Konzert machen Slime weiter. Alex Schwers erklärt, warum man den alten Scheiß noch mal spielen darf und was ein Schrittzähler an der Snare bringt.</p>
       </li>
-
-      <li class="item" style="--c:#d6336f">
-        <p class="when">2015</p>
-        <div>
-          <h3><a href="interviews/egotronic/">Egotronic im Gebäude 9</a></h3>
-          <p class="where">Gebäude 9, Köln · vor dem Konzert</p>
-          <p class="teaser">Torsun und die Band über die neue Platte, die Steuererklärung, den Fernsehgarten und sehr viele Schlagzeugstöcke.</p>
-          <ul class="extras"><li>Foto</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#d6336f">
+        <p class="meta"><span class="y">2015</span>Gebäude 9, Köln · vor dem Konzert</p>
+        <h3><a href="interviews/egotronic/">Egotronic im Gebäude 9</a></h3>
+        <p class="teaser">Torsun und die Band über die neue Platte, die Steuererklärung, den Fernsehgarten und sehr viele Schlagzeugstöcke.</p>
+        <ul class="extras"><li>Foto</li></ul>
       </li>
-
     </ol>
   </section>
 
-  <section class="block" aria-labelledby="h-geschichten">
+  <section class="block" id="geschichten" aria-labelledby="h-geschichten">
     <h2 id="h-geschichten">Geschichten <span>2</span></h2>
-    <ol class="list">
-
-      <li class="item" style="--c:#1a9aa6">
-        <p class="when">O-Ton</p>
-        <div>
-          <h3><a href="geschichten/samoa/">Busfahren in Samoa</a></h3>
-          <p class="where">Sprachaufnahme, Antwort an Matze</p>
-          <p class="teaser">Wer darf vorne sitzen, wer muss nach hinten, und wann sitzt einem eine samoanische Frau auf den Knien?</p>
-          <ul class="extras"><li>Sitzordnung zum Durchklicken</li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+    <ul class="cards">
+      <li class="card" style="--c:#1a9aa6">
+        <p class="meta"><span class="y">O-Ton</span>Sprachaufnahme, Antwort an Matze</p>
+        <h3><a href="geschichten/samoa/">Busfahren in Samoa</a></h3>
+        <p class="teaser">Wer darf vorne sitzen, wer muss nach hinten, und wann sitzt einem eine samoanische Frau auf den Knien?</p>
+        <ul class="extras"><li>Sitzordnung zum Durchklicken</li></ul>
       </li>
-
-      <li class="item" style="--c:#1f9a68">
-        <p class="when">O-Ton</p>
-        <div>
-          <h3><a href="geschichten/bregenz/">Bregenz</a></h3>
-          <p class="where">Miguel erzählt</p>
-          <p class="teaser">Ein verspäteter Zug, ein silbernes Fahrrad ohne Schloss und der Weg von Bregenz bis Innsbruck.</p>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+      <li class="card" style="--c:#1f9a68">
+        <p class="meta"><span class="y">O-Ton</span>Miguel erzählt</p>
+        <h3><a href="geschichten/bregenz/">Bregenz</a></h3>
+        <p class="teaser">Ein verspäteter Zug, ein silbernes Fahrrad ohne Schloss und der Weg von Bregenz bis Innsbruck.</p>
       </li>
-
-    </ol>
+    </ul>
   </section>
 
-  <section class="block" aria-labelledby="h-archiv">
+  <section class="block" id="archiv" aria-labelledby="h-archiv">
     <h2 id="h-archiv">Sendungsarchiv <span>602</span></h2>
-    <ol class="list">
-
-      <li class="item" style="--c:#ff4d3d">
-        <p class="when">2000–2018</p>
-        <div>
-          <h3><a href="sendungen/">Alle Sendungen</a></h3>
-          <p class="where">Datum, Gast und Songliste jeder Sendung</p>
-          <p class="teaser">Von den Anfängen bis zur letzten Folge 842 im Mai 2018: Wer war zu Gast, welche Songs liefen? Durchsuchbar nach Band, Song, Gast und Datum.</p>
-          <ul class="extras"><li>Suche</li><li><a href="interview-archiv/">Interviews aus dem Blog</a></li></ul>
-        </div>
-        <span class="go" aria-hidden="true">→</span>
+    <ul class="cards">
+      <li class="card" style="--c:#ff5a4a">
+        <p class="meta"><span class="y">2000–2018</span>Datum, Gast und Songliste jeder Sendung</p>
+        <h3><a href="sendungen/">Alle Sendungen</a></h3>
+        <p class="teaser">Von den Anfängen bis zur letzten Folge 842 im Mai 2018: Wer war zu Gast, welche Songs liefen? Durchsuchbar nach Band, Song, Gast und Datum.</p>
+        <ul class="extras"><li>Suche</li></ul>
       </li>
-
-    </ol>
+      <li class="card" style="--c:#c9c4bb">
+        <p class="meta"><span class="y">2005–2015</span>Texte und Aufnahmen aus dem alten Pogoradio-Blog</p>
+        <h3><a href="interview-archiv/">Interviews aus dem Blog</a></h3>
+        <p class="teaser">49 Interviews aus dem Blog auf pogoradio.de, als Text oder als Aufnahme. Wo es inzwischen eine eigene Seite gibt, führt ein Link dorthin.</p>
+      </li>
+    </ul>
   </section>
-
 </main>
 
 <footer class="wrap">
-  <div class="foot" style="border-top:1px solid var(--rule)">
+  <div class="foot">
     <p>Pogoradio · Archiv</p>
     <p>Bermudafunk 105,4 · mittwochs 23–24 Uhr</p>
     <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
