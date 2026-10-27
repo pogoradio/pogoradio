@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap">
 <style>
 /* Look: Autobahn. Asphalt als Grund, blaue Autobahnschilder als Kopf und Abschnitte,
-   gelbe Hinweisschilder für Zitate, Fotos wie Blitzerbilder. Fester Look für helles und dunkles System. */
+   gelbe Hinweisschilder für Zitate, Fotos wie Blitzerbilder. Hell oder dunkel wie das Gerät (siehe #farbmodus). */
 :root {
   --asphalt: #232529;
   --asphalt-2: #2c2f34;
@@ -287,7 +287,22 @@ footer p { margin: 0; }
 .pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
 .pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
 .pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
-</style></head>
+</style><style id="farbmodus">
+/* Hell: wie das Gerät */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { --asphalt: #ecebe6; --asphalt-2: #ffffff; --text: #1c1d20; --soft: #5b5f66; --rule: #d2d0c9; color-scheme: light; }
+  :root:not([data-theme="dark"]) body { background: radial-gradient(rgba(0, 0, 0, .045) 1px, transparent 1.2px) 0 0 / 5px 5px, var(--asphalt); }
+  :root:not([data-theme="dark"]) .who { color: var(--blue); }
+  :root:not([data-theme="dark"]) .turn.q .who, :root:not([data-theme="dark"]) .note .k { color: #7a6000; }
+  :root:not([data-theme="dark"]) .shot figcaption b { color: #a8acb3; }
+}
+:root[data-theme="light"] { --asphalt: #ecebe6; --asphalt-2: #ffffff; --text: #1c1d20; --soft: #5b5f66; --rule: #d2d0c9; color-scheme: light; }
+:root[data-theme="light"] body { background: radial-gradient(rgba(0, 0, 0, .045) 1px, transparent 1.2px) 0 0 / 5px 5px, var(--asphalt); }
+:root[data-theme="light"] .who { color: var(--blue); }
+:root[data-theme="light"] .turn.q .who, :root[data-theme="light"] .note .k { color: #7a6000; }
+:root[data-theme="light"] .shot figcaption b { color: #a8acb3; }
+</style>
+</head>
 <body>
 <div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
 

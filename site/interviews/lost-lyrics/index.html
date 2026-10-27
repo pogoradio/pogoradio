@@ -1,47 +1,48 @@
-<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Lost Lyrics bei Pogoradio</title><meta name="description" content="Pogoradio-Interview 2009 mit Lost Lyrics: Holger, Steffen und Kati über Wochenendpunk, Hulk Räckorz, die England-Flagge und warum sie kein Deutschpunk sind."><style id="pgr-bar-css">
-.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
-.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
-.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
-.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
-.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
-</style></head><body>
-<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
-
-
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lost Lyrics bei Pogoradio</title>
+<meta name="description" content="Pogoradio-Interview 2009 mit Lost Lyrics: Holger, Steffen und Kati über Wochenendpunk, Hulk Räckorz, die England-Flagge und warum sie kein Deutschpunk sind.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Libre+Franklin:ital,wght@0,400..800;1,400&display=swap">
 <style>
-/* Layout: Bühnenboden als Grund, oben Bandname und drei Backstage-Pässe, darunter links die Setlist
-   als Inhaltsverzeichnis, rechts das Interview auf einem mit Gaffa geklebten Blatt.
-   Bewusst ein einziger Look (dunkler Boden, helles Papier), der auf hellem und dunklem Host gleich bleibt. */
+/* Lost Lyrics: kompakt. Marker-Schrift und roter Strich wie auf einer Setlist,
+   kein Blatt und keine Pässe mehr, das Gespräch steht direkt auf dem Grund.
+   Hell oder dunkel wie das Gerät. */
 :root {
-  --floor: #22262d;
-  --floor-2: #2c313a;
-  --chalk: #ecede8;
-  --chalk-soft: #a8adb7;
-  --paper: #fafaf6;
-  --paper-ink: #1c1f26;
-  --paper-soft: #5c616c;
-  --paper-rule: #d9dad3;
-  --red: #e0382d;
-  --hl: rgba(224, 56, 45, .17);
-  --gaffer: rgba(58, 64, 78, .9);
-  --shadow: rgba(0, 0, 0, .45);
-
+  --bg: #f4f3ef;
+  --panel: #ffffff;
+  --ink: #1c1f26;
+  --soft: #5c616c;
+  --rule: #d9dad3;
+  --red: #c9302a;
+  --hl: rgba(224, 56, 45, .16);
+  --noise: 0;
   --marker: "Permanent Marker", "Comic Sans MS", "Chalkboard SE", cursive;
   --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
-
-  color-scheme: dark;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #22262d; --panel: #2c313a; --ink: #ecede8; --soft: #a8adb7; --rule: #3a404b;
+    --red: #ff5a4a; --hl: rgba(255, 90, 74, .26); --noise: .08; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #22262d; --panel: #2c313a; --ink: #ecede8; --soft: #a8adb7; --rule: #3a404b;
+  --red: #ff5a4a; --hl: rgba(255, 90, 74, .26); --noise: .08; color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body {
-  background: var(--floor);
-  color: var(--chalk);
-  font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.62;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--sans);
   -webkit-font-smoothing: antialiased;
 }
 body::after {
@@ -50,255 +51,151 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 40;
-  opacity: .1;
+  opacity: var(--noise);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 3px; }
 
 .wrap {
-  max-width: calc(70rem + 32px);
+  max-width: calc(62rem + 32px);
   margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 .label {
   margin: 0;
-  font-family: var(--sans);
   font-weight: 700;
-  font-size: .74rem;
+  font-size: .72rem;
   letter-spacing: .16em;
   text-transform: uppercase;
+  color: var(--soft);
 }
 
 /* ---------- Kopf ---------- */
-.head { padding-block: clamp(2rem, 6vw, 4rem) 0; display: grid; gap: 1rem; }
-.head .label { color: var(--chalk-soft); }
+.head { padding-block: clamp(1.75rem, 5vw, 2.75rem) 1.25rem; display: grid; gap: .7rem; }
 h1 {
   margin: 0;
   font-family: var(--marker);
   font-weight: 400;
-  font-size: clamp(3.4rem, 13vw, 8.5rem);
-  line-height: .95;
-  letter-spacing: .01em;
-  color: var(--chalk);
-  position: relative;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  line-height: 1;
   justify-self: start;
 }
-h1 svg {
-  display: block;
-  width: 100%;
-  height: .2em;
-  margin-top: -.05em;
-}
+h1 svg { display: block; width: 100%; height: .18em; margin-top: -.02em; }
 h1 svg path { fill: none; stroke: var(--red); stroke-width: 7; stroke-linecap: round; }
-.dek { margin: 0; max-width: 38rem; font-size: clamp(1.1rem, 2.3vw, 1.3rem); line-height: 1.5; color: var(--chalk); }
+.dek { margin: 0; max-width: 40rem; font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.5; }
 
-/* Backstage-Pässe */
-.passes {
-  margin: clamp(1.75rem, 4vw, 2.75rem) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 15rem));
-  gap: clamp(.9rem, 3vw, 1.8rem);
-}
-.pass {
-  position: relative;
-  background: linear-gradient(135deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 38%), var(--paper);
-  color: var(--paper-ink);
-  border-radius: 12px;
-  padding: 2.1rem 1rem 1rem;
-  box-shadow: 0 10px 22px var(--shadow);
-  display: grid;
-  gap: .2rem;
-  min-width: 0;
-}
-.pass::before {
-  content: "";
-  position: absolute;
-  top: .7rem;
-  left: 50%;
-  width: 2.4rem;
-  height: .55rem;
-  transform: translateX(-50%);
+.crew { margin: .3rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .45rem .6rem; }
+.crew li {
+  display: inline-flex; align-items: baseline; gap: .45rem;
+  padding: .3rem .7rem .32rem;
+  border: 1.5px solid var(--rule);
   border-radius: 999px;
-  background: var(--floor);
+  font-size: .88rem;
+  line-height: 1.3;
 }
-.pass:nth-child(1) { transform: rotate(-2.2deg); }
-.pass:nth-child(2) { transform: rotate(1.4deg); }
-.pass:nth-child(3) { transform: rotate(-.8deg); }
-.pass .band { font-size: .64rem; color: var(--paper-soft); }
-.pass .name { margin: .25rem 0 0; font-family: var(--marker); font-size: 1.9rem; line-height: 1.05; }
-.pass .role { margin: 0; font-weight: 700; font-size: .95rem; }
-.pass .since {
-  margin: .5rem 0 0;
-  padding-top: .5rem;
-  border-top: 2px solid var(--red);
-  font-size: .82rem;
-  color: var(--paper-soft);
+.crew b { font-family: var(--marker); font-weight: 400; font-size: 1.05rem; }
+.crew span { color: var(--soft); }
+
+.setlist {
+  margin: 0;
+  padding: .7rem 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
 }
+.setlist ol { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; }
+.setlist a { display: inline-flex; gap: .35rem; align-items: baseline; font-family: var(--marker); font-size: 1rem; line-height: 1.3; text-decoration: none; }
+.setlist a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.setlist .no { color: var(--red); }
 
 /* ---------- Hauptteil ---------- */
 .main {
-  padding-block: clamp(2.5rem, 6vw, 4rem) 2rem;
+  padding-block: 1.25rem 1.5rem;
   display: grid;
-  grid-template-columns: minmax(0, 15rem) minmax(0, 46rem);
-  gap: clamp(1.75rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1fr) 13rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
-  justify-content: space-between;
 }
-.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.5rem); display: grid; gap: 1.6rem; min-width: 0; }
+.facts { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1rem); margin: 0; padding-top: .6rem; border-top: 3px solid var(--red); display: grid; gap: .55rem; }
+.facts dl { margin: 0; display: grid; gap: .45rem; font-size: .86rem; line-height: 1.35; }
+.facts dt { color: var(--soft); font-size: .74rem; }
+.facts dd { margin: 0; font-weight: 600; }
 
-.setlist {
-  background: var(--paper);
-  color: var(--paper-ink);
-  padding: 1.1rem 1.1rem 1.2rem;
-  border-radius: 2px;
-  box-shadow: 0 8px 18px var(--shadow);
-  transform: rotate(-1.2deg);
-  position: relative;
-}
-.setlist::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  width: 84px;
-  height: 22px;
-  transform: translateX(-50%) rotate(2deg);
-  background: var(--gaffer);
-}
-.setlist h2 { margin: 0 0 .5rem; font-family: var(--marker); font-weight: 400; font-size: 1.5rem; line-height: 1.1; }
-.setlist ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .1rem; }
-.setlist a {
-  display: grid;
-  grid-template-columns: 1.5rem minmax(0, 1fr);
-  align-items: baseline;
-  gap: .3rem;
-  padding: .18rem 0;
-  font-family: var(--marker);
-  font-size: 1.08rem;
-  line-height: 1.25;
-  text-decoration: none;
-}
-.setlist a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
-.setlist .no { color: var(--red); }
-.setlist .encore { margin-top: .4rem; padding-top: .4rem; border-top: 2px dashed var(--paper-rule); }
-
-.note {
-  border: 1.5px solid var(--chalk-soft);
-  border-radius: 6px;
-  padding: 1rem 1rem 1.1rem;
-  display: grid;
-  gap: .7rem;
-}
-.note .label { color: var(--chalk-soft); }
-.note dl { margin: 0; display: grid; gap: .55rem; font-size: .88rem; line-height: 1.4; }
-.note dt { color: var(--chalk-soft); font-size: .76rem; }
-.note dd { margin: 0; font-weight: 600; }
-
-/* Blatt */
-.sheet {
-  position: relative;
-  background: var(--paper);
-  color: var(--paper-ink);
-  border-radius: 2px;
-  padding: clamp(1.6rem, 5vw, 3.25rem) clamp(1.1rem, 4.5vw, 3rem) clamp(1.6rem, 4vw, 2.75rem);
-  box-shadow: 0 16px 34px var(--shadow);
-  display: grid;
-  gap: clamp(2.25rem, 5vw, 3rem);
-  min-width: 0;
-}
-.sheet::before, .sheet::after {
-  content: "";
-  position: absolute;
-  top: -12px;
-  width: 110px;
-  height: 28px;
-  background: var(--gaffer);
-}
-.sheet::before { left: -18px; transform: rotate(-24deg); }
-.sheet::after { right: -18px; transform: rotate(22deg); }
-
-.set { display: grid; gap: 1.1rem; scroll-margin-top: 1.5rem; }
+.talk { min-width: 0; }
+.set { padding-block: 1.1rem 1rem; scroll-margin-top: 1rem; }
+.set + .set { border-top: 1px solid var(--rule); }
 .set h2 {
-  margin: 0;
+  margin: 0 0 .7rem;
   display: flex;
   align-items: baseline;
-  gap: .6rem;
+  gap: .5rem;
   font-family: var(--marker);
   font-weight: 400;
-  font-size: clamp(1.7rem, 4.4vw, 2.3rem);
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
   line-height: 1.1;
 }
 .set h2 .no { color: var(--red); flex: none; }
-.set + .set { padding-top: clamp(2rem, 4.5vw, 2.6rem); border-top: 2px solid var(--paper-rule); margin-top: calc(-1 * clamp(.25rem, 1vw, .4rem)); }
 
-.turn {
-  display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr);
-  gap: 1.1rem;
-}
+.turn { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: .9rem; margin: 0 0 .55rem; }
 .who {
   margin: 0;
-  padding-top: .3em;
+  padding-top: .32em;
   font-weight: 800;
-  font-size: .72rem;
+  font-size: .7rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   text-align: right;
   color: var(--red);
 }
-.turn.q .who { color: var(--paper-soft); }
+.turn.q .who { color: var(--soft); }
 .turn p:not(.who) { margin: 0; min-width: 0; }
 .turn.q p:not(.who) { font-weight: 700; }
-.aside { font-style: italic; color: var(--paper-soft); }
-.sheet strong {
+.aside { font-style: italic; color: var(--soft); }
+.talk strong {
   font-weight: 700;
   background: linear-gradient(transparent 58%, var(--hl) 58% 96%, transparent 96%);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   padding: 0 .06em;
 }
-.protocol {
-  margin: 0;
-  padding-top: 1.2rem;
-  border-top: 2px solid var(--paper-rule);
-  font-size: .82rem;
-  line-height: 1.5;
-  color: var(--paper-soft);
-}
+.protocol { margin: .6rem 0 0; padding-top: .9rem; border-top: 1px solid var(--rule); font-size: .8rem; line-height: 1.5; color: var(--soft); }
 
-footer { padding-block: 1.5rem 3rem; }
+footer { padding-block: .5rem 2.5rem; }
 .foot {
-  border-top: 1px solid var(--floor-2);
-  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: .4rem 1.5rem;
   font-size: .8rem;
-  color: var(--chalk-soft);
+  color: var(--soft);
 }
 .foot p { margin: 0; }
 
 /* ---------- Schmal ---------- */
-@media (max-width: 900px) {
-  .main { grid-template-columns: minmax(0, 1fr); }
-  .side { position: static; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+@media (max-width: 820px) {
+  .main { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .facts { position: static; order: -1; }
+  .facts dl { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem 1rem; }
 }
-@media (max-width: 640px) {
-  .passes { grid-template-columns: minmax(0, 1fr); max-width: 22rem; }
-  .pass { padding: 1.9rem 1rem .9rem; }
-  .side { grid-template-columns: minmax(0, 1fr); }
-  .turn { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
-  .who { text-align: left; }
-  .sheet::before, .sheet::after { width: 80px; }
-  .sheet::before { left: -8px; }
-  .sheet::after { right: -8px; }
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  .turn { grid-template-columns: minmax(0, 1fr); gap: .1rem; margin-bottom: .7rem; }
+  .who { text-align: left; padding-top: 0; }
 }
 </style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
 
 <header class="wrap head">
   <p class="label">Pogoradio-Interview-Reihe · 2009</p>
@@ -306,58 +203,29 @@ footer { padding-block: 1.5rem 3rem; }
     <svg viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 90 6, 180 16, 260 9 S 360 7, 396 11"/></svg>
   </h1>
   <p class="dek">Fast 20 Jahre Band, kein einziger Hit und eine England-Flagge auf der Bühne. Rüdi von Pogoradio im Gespräch mit den selbsternannten Wochenendpunks.</p>
-
-  <ul class="passes" aria-label="Besetzung 2009">
-    <li class="pass">
-      <p class="label band">Lost Lyrics · Backstage</p>
-      <p class="name">Holger</p>
-      <p class="role">Gesang, Gitarre</p>
-      <p class="since">Mitgründer, seit 1990</p>
-    </li>
-    <li class="pass">
-      <p class="label band">Lost Lyrics · Backstage</p>
-      <p class="name">Steffen</p>
-      <p class="role">Schlagzeug</p>
-      <p class="since">seit sechs, sieben Jahren</p>
-    </li>
-    <li class="pass">
-      <p class="label band">Lost Lyrics · Backstage</p>
-      <p class="name">Kati</p>
-      <p class="role">Bass</p>
-      <p class="since">seit rund fünf Jahren</p>
-    </li>
+  <ul class="crew" aria-label="Besetzung 2009">
+    <li><b>Holger</b><span>Gesang, Gitarre · Mitgründer, seit 1990</span></li>
+    <li><b>Steffen</b><span>Schlagzeug · seit sechs, sieben Jahren</span></li>
+    <li><b>Kati</b><span>Bass · seit rund fünf Jahren</span></li>
   </ul>
 </header>
 
+<nav class="wrap" aria-label="Setlist">
+  <div class="setlist">
+    <ol>
+      <li><a href="#vorstellung"><span class="no">1</span><span>Vorstellung</span></a></li>
+      <li><a href="#platten"><span class="no">2</span><span>Touren &amp; Platten</span></a></li>
+      <li><a href="#damals"><span class="no">3</span><span>Damals &amp; heute</span></a></li>
+      <li><a href="#flagge"><span class="no">4</span><span>Allergie &amp; Flaggen</span></a></li>
+      <li><a href="#deutschpunk"><span class="no">5</span><span>Kein Deutschpunk</span></a></li>
+      <li><a href="#festivals"><span class="no">6</span><span>Festivals</span></a></li>
+      <li><a href="#zugabe"><span class="no">Z</span><span>Zugabe: Frauen am Bass</span></a></li>
+    </ol>
+  </div>
+</nav>
+
 <main class="wrap main">
-  <aside class="side">
-    <nav class="setlist" aria-labelledby="sl-h">
-      <h2 id="sl-h">Setlist</h2>
-      <ol>
-        <li><a href="#vorstellung"><span class="no">1</span><span>Vorstellung</span></a></li>
-        <li><a href="#platten"><span class="no">2</span><span>Touren &amp; Platten</span></a></li>
-        <li><a href="#damals"><span class="no">3</span><span>Damals &amp; heute</span></a></li>
-        <li><a href="#flagge"><span class="no">4</span><span>Allergie &amp; Flaggen</span></a></li>
-        <li><a href="#deutschpunk"><span class="no">5</span><span>Kein Deutschpunk</span></a></li>
-        <li><a href="#festivals"><span class="no">6</span><span>Festivals</span></a></li>
-        <li class="encore"><a href="#zugabe"><span class="no">Z</span><span>Zugabe: Frauen am Bass</span></a></li>
-      </ol>
-    </nav>
-
-    <div class="note">
-      <p class="label">Backstage-Zettel</p>
-      <dl>
-        <div><dt>Gegründet</dt><dd>1990</dd></div>
-        <div><dt>Label</dt><dd>Hulk Räckorz</dd></div>
-        <div><dt>Vertrieb</dt><dd>früher SPV, bald Edel</dd></div>
-        <div><dt>Neue CD</dt><dd>alle vier bis fünf Jahre</dd></div>
-        <div><dt>Live immer dabei</dt><dd>„Allergie“, CD von 1997</dd></div>
-        <div><dt>Ganz am Anfang</dt><dd>zwei CDs mit englischen Texten</dd></div>
-      </dl>
-    </div>
-  </aside>
-
-  <article class="sheet" aria-label="Interview">
+  <article class="talk" aria-label="Interview">
 
     <section class="set" id="vorstellung">
       <h2><span class="no">1</span>Vorstellung</h2>
@@ -419,6 +287,18 @@ footer { padding-block: 1.5rem 3rem; }
 
     <p class="protocol">Gesprächsprotokoll: Fragen und Antworten sind sinngemäß nach dem Interview wiedergegeben, nicht wortgetreu. Wörtlich übernommen sind nur die Stellen in Anführungszeichen.</p>
   </article>
+
+  <aside class="facts" aria-label="Backstage-Zettel">
+    <p class="label">Backstage-Zettel</p>
+    <dl>
+      <div><dt>Gegründet</dt><dd>1990</dd></div>
+      <div><dt>Label</dt><dd>Hulk Räckorz</dd></div>
+      <div><dt>Vertrieb</dt><dd>früher SPV, bald Edel</dd></div>
+      <div><dt>Neue CD</dt><dd>alle vier bis fünf Jahre</dd></div>
+      <div><dt>Live immer dabei</dt><dd>„Allergie“, CD von 1997</dd></div>
+      <div><dt>Ganz am Anfang</dt><dd>zwei CDs mit englischen Texten</dd></div>
+    </dl>
+  </aside>
 </main>
 
 <footer class="wrap">
@@ -428,4 +308,5 @@ footer { padding-block: 1.5rem 3rem; }
   </div>
 </footer>
 
-</body></html>
+</body>
+</html>

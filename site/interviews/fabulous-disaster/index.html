@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,600;0,800;1,400&display=swap">
 <style>
 /* Look: Speisekarte aus einem amerikanischen Diner. Rosa Wand, Schachbrettboden,
-   cremefarbene Karte mit schwarzem Rand. Fester Look, gleich auf hellem und dunklem System. */
+   cremefarbene Karte mit schwarzem Rand. Hell oder dunkel wie das Gerät (siehe #farbmodus). */
 :root {
   --wall: #f4cfdd;
   --card: #fffaf1;
@@ -261,7 +261,24 @@ footer p { margin: 0; }
 .pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
 .pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
 .pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
-</style></head>
+</style><style id="farbmodus">
+/* Dunkel: wie das Gerät */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --wall: #2a1820; --card: #1d1719; --ink: #f6eee6; --ink-soft: #bcaeb3; --rule: #3d2e35; --pink-ink: #ff8fbc; --mint-ink: #86dcc6; color-scheme: dark; }
+  :root:not([data-theme="light"]) .checker { background: repeating-conic-gradient(#120d0f 0 25%, #f6eee6 0 50%) 0 0 / 28px 28px; }
+  :root:not([data-theme="light"]) .board { background: #120f10; color: #f6eee6; }
+  :root:not([data-theme="light"]) .note { background: #16231f; }
+  :root:not([data-theme="light"]) .pull, :root:not([data-theme="light"]) .pull p { color: #1d1819; }
+  :root:not([data-theme="light"]) .card { box-shadow: 8px 8px 0 var(--pink); }
+}
+:root[data-theme="dark"] { --wall: #2a1820; --card: #1d1719; --ink: #f6eee6; --ink-soft: #bcaeb3; --rule: #3d2e35; --pink-ink: #ff8fbc; --mint-ink: #86dcc6; color-scheme: dark; }
+:root[data-theme="dark"] .checker { background: repeating-conic-gradient(#120d0f 0 25%, #f6eee6 0 50%) 0 0 / 28px 28px; }
+:root[data-theme="dark"] .board { background: #120f10; color: #f6eee6; }
+:root[data-theme="dark"] .note { background: #16231f; }
+:root[data-theme="dark"] .pull, :root[data-theme="dark"] .pull p { color: #1d1819; }
+:root[data-theme="dark"] .card { box-shadow: 8px 8px 0 var(--pink); }
+</style>
+</head>
 <body>
 <div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
 

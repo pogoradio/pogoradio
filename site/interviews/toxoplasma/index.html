@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
 <style>
 /* Look: Laborbefund. Die Band ist nach der Toxoplasmose benannt, also bekommt sie einen Befundbericht:
-   Formularkopf, Petrischale, roter Stempel, Abschnitte als Befunde. Fester Look für helles und dunkles System. */
+   Formularkopf, Petrischale, roter Stempel, Abschnitte als Befunde. Hell oder dunkel wie das Gerät (siehe #farbmodus). */
 :root {
   --paper: #eef3ef;
   --form: #ffffff;
@@ -304,7 +304,22 @@ footer { border-top: 2px solid var(--ink); }
 .pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
 .pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
 .pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
-</style></head>
+</style><style id="farbmodus">
+/* Dunkel: wie das Gerät */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #0f1512; --form: #17201b; --ink: #e4ece6; --ink-soft: #9fb0a6; --rule: #2b3a32; --lab: #45b585; --lab-deep: #7fd8ad; --lab-soft: #1d3329; --stamp: #ff6157; --hl: rgba(69, 181, 133, .28); color-scheme: dark; }
+  :root:not([data-theme="light"]) .sheet-top { background: #1d5a40; }
+  :root:not([data-theme="light"]) .anamnese h2 { background: #1d5a40; color: #fff; }
+  :root:not([data-theme="light"]) .dish .rim { fill: #22302a; }
+  :root:not([data-theme="light"]) .stamp { mix-blend-mode: normal; }
+}
+:root[data-theme="dark"] { --paper: #0f1512; --form: #17201b; --ink: #e4ece6; --ink-soft: #9fb0a6; --rule: #2b3a32; --lab: #45b585; --lab-deep: #7fd8ad; --lab-soft: #1d3329; --stamp: #ff6157; --hl: rgba(69, 181, 133, .28); color-scheme: dark; }
+:root[data-theme="dark"] .sheet-top { background: #1d5a40; }
+:root[data-theme="dark"] .anamnese h2 { background: #1d5a40; color: #fff; }
+:root[data-theme="dark"] .dish .rim { fill: #22302a; }
+:root[data-theme="dark"] .stamp { mix-blend-mode: normal; }
+</style>
+</head>
 <body>
 <div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
 
