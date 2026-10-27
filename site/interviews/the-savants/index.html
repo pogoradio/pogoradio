@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Savants in Russland · Pogoradio</title>
+<meta name="description" content="Pogoradio im Juli 2008 per Skype mit Tobi, Sänger der Tübinger Punkband The Savants: zwei Konzerte in der Partnerstadt Petrosawodsk, bezahlt vom Kulturamt, 15 Stunden Zug bei geschlossenen Fenstern, Pressekonferenz und der Trick, wie andere Bands das nachmachen können.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5ef;
+  --panel:#fbfcf8;
+  --ink:#1d2320;
+  --muted:#5c665f;
+  --rule:#d5ddd2;
+  --red:#b3261e;
+  --red-ink:#a3221b;
+  --blue:#23439a;
+  --blue-ink:#23439a;
+  --violet:#6b3fa0;
+  --guil-a:rgba(35,67,154,.075);
+  --guil-b:rgba(179,38,30,.06);
+  --sheet:#eef3e8;
+  --sheet-2:#f5efe8;
+  --serif:"PT Serif",Georgia,"Times New Roman",serif;
+  --sans:"PT Sans","Trebuchet MS",Arial,sans-serif;
+  --mono:"PT Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121614;
+    --panel:#1a201c;
+    --ink:#e8eee6;
+    --muted:#a3ada5;
+    --rule:#2c352f;
+    --red-ink:#ff8a7e;
+    --blue-ink:#9db3ff;
+    --guil-a:rgba(157,179,255,.07);
+    --guil-b:rgba(255,138,126,.06);
+    --sheet:#18201b;
+    --sheet-2:#1d1a1b;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121614;
+  --panel:#1a201c;
+  --ink:#e8eee6;
+  --muted:#a3ada5;
+  --rule:#2c352f;
+  --red-ink:#ff8a7e;
+  --blue-ink:#9db3ff;
+  --guil-a:rgba(157,179,255,.07);
+  --guil-b:rgba(255,138,126,.06);
+  --sheet:#18201b;
+  --sheet-2:#1d1a1b;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18.5px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration-color:var(--blue);text-decoration-thickness:1.5px;text-underline-offset:.18em}
+.wrap{width:min(1140px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Passseite ---------- */
+.cover{position:relative;overflow:hidden;padding:54px 0 0;border-bottom:1px solid var(--rule);
+  background:
+    repeating-radial-gradient(circle at 12% 30%,transparent 0 9px,var(--guil-a) 9px 10px),
+    repeating-radial-gradient(circle at 88% 70%,transparent 0 11px,var(--guil-b) 11px 12px),
+    linear-gradient(160deg,var(--sheet),var(--sheet-2))}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:48px;align-items:start}
+.kicker{margin:0 0 18px;font:400 14px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font:700 clamp(44px,7.4vw,92px)/.98 var(--serif);letter-spacing:-.015em}
+h1 small{display:block;margin-top:10px;font:400 clamp(24px,3.4vw,40px)/1.1 var(--serif);font-style:italic;color:var(--blue-ink);letter-spacing:0}
+.cyr{margin:14px 0 0;font:400 16px/1.2 var(--mono);letter-spacing:.24em;color:var(--red-ink)}
+.lede{margin:24px 0 0;max-width:34em;font-size:19.5px}
+
+.visa{position:relative;margin:0;padding:18px 20px 0;background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+  box-shadow:0 1px 0 rgba(0,0,0,.04),0 18px 34px -24px rgba(0,0,0,.35);overflow:hidden}
+.visa::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(115deg,transparent 0 6px,var(--guil-a) 6px 7px)}
+.visa-head{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.visa-head b{font:700 22px/1 var(--serif);letter-spacing:.06em}
+.visa-head span{font:400 13px/1 var(--mono);letter-spacing:.16em;color:var(--red-ink)}
+.visa dl{position:relative;margin:12px 0 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px}
+.visa dt{font:400 12.5px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.visa dd{margin:0;font:700 16px/1.45 var(--sans)}
+.mrz{position:relative;margin:0 -20px;padding:10px 20px 12px;background:rgba(0,0,0,.035);border-top:1px solid var(--rule);
+  font:400 13.5px/1.45 var(--mono);letter-spacing:.12em;color:var(--muted);word-break:break-all}
+
+.stamp{position:absolute;z-index:2;pointer-events:none;font:700 12px/1.15 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-align:center;opacity:.78;mix-blend-mode:multiply}
+.stamp.round{width:122px;height:122px;border-radius:50%;border:3px double var(--blue-ink);color:var(--blue-ink);display:grid;place-items:center;padding:16px;transform:rotate(-14deg)}
+.stamp.box{padding:8px 12px;border:3px solid var(--red-ink);color:var(--red-ink);border-radius:4px;transform:rotate(8deg);font-size:13px}
+.stamp.box em{display:block;font-style:normal;font-size:20px;letter-spacing:.06em}
+.visa-wrap{position:relative;min-width:0}
+.s1{right:-44px;top:-42px}
+.s2{left:-44px;bottom:-26px}
+:root[data-theme="dark"] .stamp{mix-blend-mode:normal;opacity:.9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .stamp{mix-blend-mode:normal;opacity:.9}}
+
+.route{margin:42px 0 0;padding:12px 0 14px;border-top:1px dashed var(--rule);display:flex;flex-wrap:wrap;gap:6px 18px;font:400 14px/1.4 var(--mono);letter-spacing:.06em;color:var(--muted)}
+.route b{color:var(--ink);font-weight:400}
+
+/* Inhalt */
+.index{background:var(--panel);border-bottom:1px solid var(--rule)}
+.index ol{margin:0 auto;padding:14px max(16px,env(safe-area-inset-left,0px));list-style:none;width:min(1140px,100%);display:flex;flex-wrap:wrap;gap:6px 18px}
+.index a{display:inline-flex;gap:8px;align-items:baseline;padding:4px 0;text-decoration:none;font:700 16px/1.25 var(--sans)}
+.index a span{font:400 13px/1 var(--mono);color:var(--red-ink)}
+.index a:hover{text-decoration:underline}
+
+/* ---------- Gespräch ---------- */
+main{padding:6px 0 30px}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px 52px;padding:42px 0 32px;border-bottom:1px solid var(--rule)}
+.part:last-of-type{border-bottom:0}
+.part h2{grid-column:1/-1;margin:0 0 8px;display:flex;align-items:baseline;gap:14px;font:700 clamp(27px,3.3vw,38px)/1.12 var(--serif);letter-spacing:-.01em}
+.part h2 .no{flex:none;padding:3px 7px 2px;border:2px solid var(--red);color:var(--red-ink);border-radius:3px;font:400 15px/1 var(--mono);letter-spacing:.08em;transform:translateY(-.3em) rotate(-4deg)}
+
+.talk{min-width:0}
+.turn{display:grid;grid-template-columns:4.6em minmax(0,1fr);gap:0 16px;margin:0 0 12px}
+.turn .who{margin:.28em 0 0;font:400 13.5px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.turn .said{margin:0}
+.turn.q .who{color:var(--red-ink)}
+.turn.q .said{font-weight:700}
+.turn.t .who{color:var(--blue-ink)}
+.drop{margin:18px 0 18px;padding:8px 12px;border:1px dashed var(--rule);border-radius:4px;text-align:center;font:400 13.5px/1.4 var(--mono);letter-spacing:.06em;color:var(--muted)}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:22px;align-self:start}
+.note{margin:0;padding:12px 15px;background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--blue);font:400 16px/1.5 var(--sans)}
+.note b{display:block;margin:0 0 4px;font:400 12.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink)}
+.quote{margin:0;padding:4px 0 4px 16px;border-left:3px solid var(--red);font:italic 400 21px/1.35 var(--serif)}
+.quote cite{display:block;margin-top:8px;font:400 12.5px/1.2 var(--mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+.ticket{position:relative;margin:0;padding:14px 16px 14px 20px;background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+  background-image:radial-gradient(circle at 0 50%,var(--bg) 0 9px,transparent 10px),radial-gradient(circle at 100% 50%,var(--bg) 0 9px,transparent 10px)}
+.ticket::after{content:"";position:absolute;left:8px;top:12px;bottom:12px;border-left:2px dotted var(--rule)}
+.ticket .kind{display:flex;justify-content:space-between;gap:10px;margin:0 0 6px;font:400 12.5px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red-ink)}
+.ticket .from{margin:0;font:700 21px/1.2 var(--serif)}
+.ticket .from span{color:var(--muted);font-weight:400}
+.ticket dl{margin:10px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font:400 15px/1.4 var(--sans)}
+.ticket dt{font:400 12px/1.7 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ticket dd{margin:0;font-weight:700}
+
+.check{margin:0;padding:14px 16px 12px;background:var(--panel);border:1px solid var(--rule);border-top:4px solid var(--red)}
+.check h3{margin:0 0 8px;font:700 19px/1.2 var(--serif)}
+.check ol{margin:0;padding:0 0 0 1.3em;font:400 16px/1.45 var(--sans)}
+.check li{margin:0 0 5px}
+.check li::marker{font-family:var(--mono);color:var(--red-ink)}
+
+@media (max-width:960px){
+  .cover-grid{grid-template-columns:minmax(0,1fr)}
+  .visa-wrap{max-width:460px;margin-top:16px}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px}
+}
+@media (max-width:560px){
+  body{font-size:17.5px}
+  .cover{padding-top:40px}
+  .lede{font-size:18px}
+  .s1{right:-6px;top:-40px;width:100px;height:100px;font-size:10.5px;padding:12px}
+  .s2{left:-6px;bottom:-30px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:0}
+  .mrz{font-size:12px;letter-spacing:.06em}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:30px 0 64px;border-top:1px solid var(--rule)}
+.end .out{margin:0 0 10px;font:700 clamp(24px,3.4vw,34px)/1.15 var(--serif)}
+.end .out span{font:400 15px/1 var(--mono);letter-spacing:.2em;color:var(--red-ink);margin-left:10px}
+.protokoll{margin:0;max-width:46em;font:400 15.5px/1.55 var(--sans);color:var(--muted)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="cover-grid">
+      <div>
+        <p class="kicker">Pogoradio auf Bermudafunk · per Skype nach Tübingen · Juli 2008</p>
+        <h1>The Savants<small>Kulturbeauftragte in Russland</small></h1>
+        <p class="cyr" lang="ru">ТЮБИНГЕН → ПЕТРОЗАВОДСК</p>
+        <p class="lede">Eine Tübinger Punkband fliegt nach Russland, spielt vor tausend Leuten, gibt eine Pressekonferenz und wird in der Kneipe erkannt. Bezahlt hat das Kulturamt, weil Petrosawodsk Tübingens Partnerstadt ist. Rüdi ruft Sänger Tobi per Skype an und will wissen, wie das geht, damit andere Bands es nachmachen können.</p>
+      </div>
+      <div class="visa-wrap">
+      <aside class="visa" aria-label="Reisedaten">
+        <div class="visa-head"><b>VISUM</b><span lang="ru">ВИЗА</span></div>
+        <dl>
+          <dt>Name</dt><dd>The Savants</dd>
+          <dt>Aus</dt><dd>Tübingen</dd>
+          <dt>Ziel</dt><dd>Petrosawodsk, Karelien</dd>
+          <dt>Zweck</dt><dd>Kulturaustausch, zwei Konzerte</dd>
+          <dt>Dauer</dt><dd>8 Tage</dd>
+          <dt>Gage</dt><dd>Keine</dd>
+          <dt>Kosten</dt><dd>Kulturamt Tübingen</dd>
+          <dt>Visum</dt><dd>West-Ost-Gesellschaft</dd>
+          <dt>Bett</dt><dd>Gastfamilien</dd>
+        </dl>
+        <p class="mrz" aria-hidden="true">V&lt;RUSSAVANTS&lt;&lt;THE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>TUEBINGEN&lt;&lt;PETROSAWODSK&lt;&lt;8&lt;TAGE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+      </aside>
+      <div class="stamp round s1" aria-hidden="true">Kulturamt<br>Tübingen<br>bezahlt</div>
+      <div class="stamp box s2" aria-hidden="true"><em lang="ru">ПЕТРОЗАВОДСК</em>Einreise · 2 Konzerte</div>
+      </div>
+    </div>
+    <p class="route" aria-label="Reiseweg"><span><b>Stuttgart</b> → Flug →</span><span><b>Moskau</b> → 15 Stunden Zug →</span><span><b>Petrosawodsk</b></span></p>
+  </div>
+</header>
+
+<nav class="index" aria-label="Inhalt">
+  <ol>
+    <li><a href="#t1"><span>01</span>Die Partnerstadt</a></li>
+    <li><a href="#t2"><span>02</span>Mit Händen und Füßen</a></li>
+    <li><a href="#t3"><span>03</span>15 Stunden bei 80 Grad</a></li>
+    <li><a href="#t4"><span>04</span>Relativ dreist anfragen</a></li>
+    <li><a href="#t5"><span>05</span>Wie große Stars</a></li>
+    <li><a href="#t6"><span>06</span>Warum eine rotzige Punkband?</a></li>
+    <li><a href="#t7"><span>07</span>Fragen kostet nichts</a></li>
+    <li><a href="#t8"><span>08</span>Rotzig und gut</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">01</span>Die Partnerstadt</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hallo, hier ist der Rüdi vom Pogoradio.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Jo, hi.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du bist der Tobi von The Savants.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das ist richtig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe auf eurer Webseite gelesen, dass ihr in Russland auf Tour wart.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Eine Minitour. Wir waren acht Tage dort und sind bei einem ziemlich großen Festival aufgetreten. Die Stadt heißt Petrosawodsk und ist die Partnerstadt von Tübingen, so kam das zustande. Dort haben wir dann spontan noch einen zweiten Gig gespielt. Also, Tour war übertrieben, aber für zwei Konzerte waren wir dort.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das Ganze wurde also über die Stadt Tübingen organisiert, und ihr hattet das Glück, als Tübinger Band da als Aushängeschild aufzutreten?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">So ungefähr. Das Kulturamt in Tübingen hatte da seine Finger mit im Spiel. Und somit war das auch ganz geschickt, denn wir haben Flug-, Zug- und Reisekosten alles gestellt bekommen. Die haben das organisiert.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Viele Städte haben ja solche Partnerschaften. Kann das auch eine andere Band aus einer anderen Stadt machen, oder war das jetzt Zufall?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das weiß ich nicht genau. Wir haben uns damit eigentlich weniger beschäftigt, sind da zufällig drübergestolpert. Tübingen und Petrosawodsk machen ziemlich viele gemeinsame Geschichten. Da fliegen öfters Bands hin und her, meistens eher von Tübingen nach Russland, und …</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Oh, was ist denn jetzt los? Das Gespräch ist beendet. Ich rufe grad noch mal an.</p></div>
+    <p class="drop">Anruf beendet · Rüdi ruft noch mal an</p>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Jo, hallo.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Da war irgendwas, ne? Egal, wir machen weiter. Ihr seid da also zufällig drangekommen und habt sofort gesagt: Da fahren wir hin.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Klar. Wenn man so ein Angebot bekommt, dann lehnt man das nicht ab. Wir haben keine Sekunde bereut. Das war ein absolut supergenialer Trip, hat sich voll gelohnt.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Petrosawodsk ist die Hauptstadt der Republik Karelien und liegt am Onegasee. Partnerstadt von Tübingen ist sie seit Oktober 1989.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">02</span>Mit Händen und Füßen</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">War das ein Punkfestival oder ein ganz normales Rockfestival?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Nee. Das ist wohl das zweitgrößte Festival in Russland, und da spielen echt Bands aller Art. Viele rockige Bands, aber auch ziemlich viel Pop. Wir haben leider gar nichts gekannt, obwohl es wohl ziemlich große Bands waren. Aber die sind über die Grenzen hinaus halt nicht bekannt. Das war auch sehr international, wobei wir die einzige deutsche Band waren. Also wild gemischt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wie kamt ihr mit der Sprache zurecht?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Mit Händen und Füßen und Dolmetscher. Wir hatten einen Betreuer, der fließend Deutsch gesprochen hat. Mit Englisch kommt man da nicht arg weit, und Deutsch ist auch nicht wirklich super verbreitet. Ohne unseren Dolmetscher hätte es nicht geklappt. Den Rest haben wir wirklich mit Händen und Füßen hingekriegt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr seid nach Russland geflogen, und von da aus ging es mit einem Weiterflug weiter?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Nein. Wir sind von Stuttgart nach Moskau mit dem Flugzeug und ab da auf einer sehr abenteuerlichen 15-stündigen Zugfahrt von Moskau nach Petrosawodsk hochgedüst. Das ist in der Nähe von Sankt Petersburg, also schon eine ordentliche Strecke.</p></div>
+  </div>
+  <aside class="side">
+    <div class="ticket" aria-label="Flug">
+      <p class="kind"><span>Flug</span><span>STR → MOW</span></p>
+      <p class="from">Stuttgart <span>→</span> Moskau</p>
+      <dl><dt>Zahlt</dt><dd>Kulturamt Tübingen</dd><dt>Sprache</dt><dd>Hände, Füße, Dolmetscher</dd></dl>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">03</span>15 Stunden bei 80 Grad</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was hat euch dort am meisten geschockt? Gab es ein Erlebnis, von dem du wahrscheinlich noch in 20 Jahren erzählst?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Geschockt, weiß nicht. Eigentlich war alles viel positiver, als wir es erwartet hatten. Absolut genial. Die Zugfahrt war cool: ein vollbesetzter, riesengroßer Zug, an dem absolut kein einziges Fenster aufging. Wir sind da bei geschätzten 80 Grad 15 Stunden durch Russland gecruist. Ich glaube, das vergisst man nicht so schnell. Aber ansonsten waren die Leute extrem nett, und wir sind absolut gut aufgenommen worden. Vor allem in die Punkrockszene, die sie dort haben, das ist absolut genial. Wir haben viele, viele Bands kennengelernt, mit denen wir heute noch in Kontakt stehen. Vielleicht kriegen wir sogar einen Rückaustausch hin, dass eine Band von dort nach Tübingen kommt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das wäre eine teure Angelegenheit. Die kriegen das wahrscheinlich nicht von ihrer Stadt bezahlt.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das ist wohl genau das Problem, dass die Stadt Petrosawodsk da wenig Gelder zur Verfügung stellen wird. Müssen wir mal gucken, wie wir das hinkriegen.</p></div>
+  </div>
+  <aside class="side">
+    <div class="ticket" aria-label="Zugfahrt">
+      <p class="kind"><span lang="ru">Поезд</span><span>Zug</span></p>
+      <p class="from">Moskau <span>→</span> Petrosawodsk</p>
+      <dl><dt>Dauer</dt><dd>15 Stunden</dd><dt>Wagen</dt><dd>Voll besetzt</dd><dt>Fenster</dt><dd>Keins geht auf</dd><dt>Temp.</dt><dd>Geschätzt 80 Grad</dd></dl>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">04</span>Relativ dreist anfragen</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Kannst du noch jemandem einen Tipp geben, wie man so was in die Hand nimmt? Wie man Partnerschaften von Städten benutzt, um ins Ausland zu kommen?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ich habe keine Ahnung. Wahrscheinlich haben zumindest die größeren Städte immer Partnerstädte. Vielleicht einfach zum Kulturamt gehen, so haben wir es auch gemacht, und relativ dreist anfragen, ob die dann auch alles zahlen würden. Bei uns hat’s geklappt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Es war also eure Initiative?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Vielleicht hätten die das auch von selber gemacht. Aber wir haben uns beim Kulturamt gemeldet, sind dort eingeladen worden, und die haben uns daraufhin die Gelder zur Verfügung gestellt. Ich weiß nicht, ob sie es auch von sich aus gemacht hätten.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich meine, die Stadt Tübingen kommt ja nicht her und fragt euch, ob ihr Bock hättet, auf dem Festival zu spielen. Das müsst ja schon ihr machen, oder?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ach so, die Initiative, klar. Wir haben dort angefragt, ob wir spielen könnten, und denen ein Demo gegeben. Danach sind wir, wie gesagt, zum Kulturamt gegangen, und die haben uns das alles gesponsert.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist ja auch mal eine Idee: einfach gucken, welche Partnerstädte man hat. Ich weiß gar nicht, welche Partnerstädte Mannheim hat, aber ich glaube, ziemlich viele. Und da mal durchfragen. Oder war zuerst die Idee, auf diesem Festival zu spielen, und dann kam: Ah, das ist ja eine Partnerstadt?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Nee, wir wussten von dem Festival vorher gar nichts. Das hat sich alles so ergeben, als wir von dieser Aktion gehört hatten.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Von was für einer Aktion? Dass die Stadt so eine Reise bezahlt, wenn man da spielt?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Genau. Dass es diese Möglichkeit gibt, über die Stadt praktisch in Russland zu spielen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wie lang war die Vorbereitung, bis das alles geklappt hat?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Im Prinzip dauert das ewig lang. Ein Visum für Russland zu bekommen ist ein Riesenakt und megaviel Schreibarbeit. Das wurde aber zum Glück alles von der West-Ost-Gesellschaft übernommen, die diese Freundschaft am Laufen hält. Die haben das alles für uns gemacht, und somit war es für uns recht wenig Aufwand. Letztendlich haben wir ein paar Tage, bevor es losging, mitbekommen, wann die Züge fahren und wann genau die Flüge gehen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das war dann im Endeffekt wie so ein Pauschalurlaub für euch.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Urlaub? Wir waren ja Kulturbeauftragte. Deswegen darf man das nicht Urlaub nennen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Klar. Aber es war schon eine Art pauschal. Alles ist organisiert worden, mit Übernachtung und so weiter.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Genau, mit Gastfamilien. Das hat alles super geklappt.</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Urlaub? Wir waren ja Kulturbeauftragte.“<cite>Tobi über die Reise</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">05</span>Wie große Stars</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Auf eurer Seite habe ich gesehen, dass ihr da richtig wie große Stars empfangen werdet. Mit Pressekonferenz und Autogrammegeben. Das habt ihr in Tübingen bestimmt nicht.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Natürlich haben wir das! Nein. Das haben wir natürlich nicht. Aber komischerweise war es nach dem Auftritt, den viele Leute gesehen hatten, wirklich so, dass die Leute uns erkannt haben.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie erkannt? Von was?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ach so, von dem Auftritt, weil wir vorher auf der Bühne standen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vor wie vielen Leuten habt ihr da gespielt?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Bitte?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vor wie vielen Leuten habt ihr gespielt?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Während unseres Auftritts waren anscheinend knapp tausend Leute vor der Bühne.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also so viele, wie in eurem ganzen Leben jemals vor eurer Bühne standen, oder? Schätze ich mal.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Na ja, ein paar mehr als beim durchschnittlichen Auftritt, ja. Aber nachdem wir dort gespielt hatten, wurden wir wirklich oft erkannt, in der Stadt oder in der Kneipe. Wahrscheinlich auch, weil viel Presse dort war. Die hatten vorher schon viel Werbung im Radio und im Fernsehen gemacht, und wir haben ja auch Radiointerviews gegeben.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr habt dann Deutschland vertreten. Kann man so sagen, oder?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Genau, das hat man uns so gesagt. Wir vertreten Deutschland und sollten uns deswegen gut benehmen. Was wir gemacht haben.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist das von einem deutschen Amt ausgegangen, dass ihr euch gut benehmen sollt? Wer hat das gesagt?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das hat das Tübinger Kulturamt gesagt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ah ja, die haben euch das noch mal ins Gewissen geredet.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ja, natürlich. Wir waren nicht nur Vertreter unserer Stadt, sondern quasi des ganzen Landes.</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Wir vertreten Deutschland und sollten uns deswegen gut benehmen. Was wir gemacht haben.“<cite>Tobi, Vertreter des ganzen Landes</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">06</span>Warum eine rotzige Punkband?</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Musstet ihr da vorher irgendwie ins Gespräch? Ich meine, eine rotzige Punkband nimmt man doch nicht als Aushängeschild. Da nimmt man doch irgendeine Schülerband, die beim Sparkassenwettbewerb gewonnen hat.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das wundert uns bis heute. Vermutlich haben die sich unsere CD nie angehört. Ich weiß auch nicht, warum sie das gemacht haben, aber es war auf jeden Fall sehr cool. Uns hat das gefreut. Anscheinend fanden die Russen unsere Musik ganz toll, und deswegen kam aus Petrosawodsk wohl auch sofort eine Zusage.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Oder war es auch der Exotenbonus? Ihr habt die ja wahrscheinlich nichts gekostet. Ihr habt keine Gage gekriegt, mehr oder weniger nur Speis und Trank und Logis, und den Flug hat Deutschland bezahlt, oder?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Genau so war’s.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Im Endeffekt können die ja sagen: Ah, klar, sollen kommen, kosten ja nix.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das stimmt schon. Aber man hätte ja auch viele andere Bands nehmen können.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich will das jetzt nicht miesreden. Ich will bloß dahinterkommen, wie so was funktioniert. Es ist ja schon ein extremer Aufwand, wegen einem oder zwei Konzerten extra nach Russland zu fliegen und dann noch 15 Stunden im Zug zu hocken.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ich denke, die Musik wird ihnen schon auch gefallen haben. Gerade bei der Pressekonferenz kannten die Leute unsere Lieder. Wir wurden dort oft auf unsere CD angesprochen, und wir haben ja auch einen Videoclip und alles Mögliche. Das war jetzt nicht so, dass die uns nur genommen haben, weil wir aus Tübingen kommen. Die waren tatsächlich auch an unserer Musik interessiert. Mich hat es aber auch gewundert, muss ich sagen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Waren das richtige Pressevertreter von namhaften russischen Musikzeitschriften?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Anscheinend. Aber ich kann jetzt keine von denen nennen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Oder war das so eine Art Tübinger Tagblatt?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Nee, nee. Da waren sehr, sehr viele Fotografen mit sehr, sehr großen Kameras. Kam ja auch im Fernsehen, wie gesagt. Das war schon eine größere Geschichte.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, ich möchte das jetzt nicht kleinreden. Ich finde das klasse.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ja, klar.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Die Tübinger Lokalzeitung heißt Schwäbisches Tagblatt.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">07</span>Fragen kostet nichts</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich denke mal bloß: Der Mehrwert von dem ganzen Interview soll ja sein, dass man anderen Bands den Trick verrät, wie so was funktioniert. Dass sie das auch machen können.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Wie gesagt: einfach mal nachfragen. Wenn da irgendeine Partnerstadt ist, die solche Geschichten macht, warum nicht? Das ist ja auch im Interesse der Stadt. Die können das ja nicht einfach ignorieren, wenn da eine Band ist, die ins Ausland will.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die Reihenfolge geht also so: Man sucht sich eine Partnerstadt aus und guckt, was da los ist, am besten in so einem Veranstaltungskalender. Dann schreibt man die Veranstalter an und sagt: Wie sieht’s aus, wir spielen bei euch.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Genau.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und anschließend geht man zur Stadt und quatscht die zu.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">So in der Art könnte das funktionieren.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nach dem Motto: Hey, unsere Partnerstadt hat uns eingeladen, wir wollen da jetzt unbedingt hin, aber wir haben keine Kohle. Wie sieht’s aus mit Unterstützung?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Na ja, Fragen kostet ja nichts. Ich weiß nicht, ob die das in anderen Städten so machen, aber warum nicht? Kann man ja probieren.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr habt’s ja geschafft.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das stimmt. Aber wir hatten es auch mit extrem netten Leuten zu tun. Und die West-Ost-Gesellschaft muss hier auch noch mal genannt werden. Die hat sich schwer für uns eingesetzt und das ganz toll gemacht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aber ihr hattet doch nicht irgendwie Vetternwirtschaft im Hintergrund? Dass da eine Freundin oder eine Mutti arbeitet?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Nee. Über ein paar Ecken kannten wir da jemanden. Aber letztendlich war, denke ich, wirklich die Musik ausschlaggebend.</p></div>
+  </div>
+  <aside class="side">
+    <div class="check">
+      <h3>So geht’s, laut Rüdi und Tobi</h3>
+      <ol>
+        <li>Partnerstädte der eigenen Stadt raussuchen.</li>
+        <li>Nachsehen, was dort los ist, am besten im Veranstaltungskalender.</li>
+        <li>Veranstalter anschreiben, Demo hinschicken.</li>
+        <li>Zum Kulturamt gehen und relativ dreist fragen, ob die alles zahlen.</li>
+        <li>Jemanden finden, der das Visum erledigt.</li>
+        <li>Sich gut benehmen. Man vertritt das ganze Land.</li>
+      </ol>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t8">
+  <h2 id="t8"><span class="no">08</span>Rotzig und gut</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die werden wir jetzt gleich den Hörerinnen und Hörern vorspielen, von eurer CD. Die liegt mir allerdings nur als Demo vor. Aber das ist das gleiche Zeug, das auch auf eurer Myspace-Seite ist, oder?</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Oh Gott, wir haben 100.000 Demos. Ich weiß nicht, was dir vorliegt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das hat das gleiche Cover wie eure Platte. Wahrscheinlich habt ihr mir das als Demo geschickt, bevor die Platte rausgekommen ist.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das kann sein, ja.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Auf jeden Fall ist es rotzig und gut.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Das freut mich.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, dann bedanke ich mich für das Interview.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ja, klar.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Viel Erfolg. Und vielleicht kommt ihr mal nach Mannheim.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Bestimmt, vielleicht. Wir wollen eine kleinere Tour machen, mal gucken, ob es klappt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vielleicht kriegt ihr da ja auch wieder Unterstützung von der Stadt Tübingen.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ab jetzt fragen wir bei jedem Konzert an.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und vielleicht kriegt ihr einen Tourbus von der Freiwilligen Feuerwehr.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Wir werden die nicht mehr in Ruhe lassen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vollgetankt.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Ja.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, bis dann.</p></div>
+    <div class="turn t"><p class="who">Tobi</p><p class="said">Alles klar, danke, ciao.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, tschüss.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>In der Sendung vom 16. Juli 2008 liefen nach dem Interview „Prrrromilli“ und „The Savants“ vom Demo. Schon 2006 hatte Rüdi „Mighty Mighty Nothing“ gespielt. Später kamen im Pogoradio Lieder von „Mosquito Sunrise“ (ab 2010), „One Million Suns“ (2014) und „Zum Glück zu faul“ (2017).</p>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="out">Ende der Verbindung <span lang="ru">КОНЕЦ</span></p>
+  <p class="protokoll">Pogoradio auf Bermudafunk · per Skype nach Tübingen · Juli 2008 · Rüdi mit Tobi, Sänger von The Savants · Transkript redigiert und gekürzt. Gesendet am 16. Juli 2008, die Sendung steht im <a href="/sendungen/">Sendungsarchiv</a>.</p>
+</footer>
+</body>
+</html>
