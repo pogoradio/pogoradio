@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Bockwurschtbude · Pogoradio</title>
+<meta name="description" content="Pogoradio im Februar 2009 in München mit Mieschka Mayonaise, Schlagzeuger der Bockwurschtbude aus Frankfurt (Oder): Ossi-Punk, die GEMA, Konzerte für Spritgeld. Und dann interviewt Mieschka Rüdi zur 400. Sendung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Oswald:wght@500;600;700&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5efe3;
+  --card:#fffaf0;
+  --ink:#1d1a17;
+  --muted:#62594f;
+  --ketchup:#c8231b;
+  --ketchup-ink:#a81c15;
+  --senf:#f2b705;
+  --board:#1f1f1d;
+  --board-ink:#f4f1ea;
+  --rule:#d9cdb8;
+  --shadow:0 12px 30px -18px rgba(40,20,0,.55);
+  --serif:"Lora",Georgia,"Times New Roman",serif;
+  --cond:"Oswald","Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  --mono:"Overpass Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#18140f;
+    --card:#211b15;
+    --ink:#efe7da;
+    --muted:#ab9f8f;
+    --ketchup:#e0392f;
+    --ketchup-ink:#ff6a5f;
+    --senf:#f5c22e;
+    --board:#0c0c0b;
+    --board-ink:#f4f1ea;
+    --rule:#3b3229;
+    --shadow:0 12px 30px -16px rgba(0,0,0,.85);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#18140f;
+  --card:#211b15;
+  --ink:#efe7da;
+  --muted:#ab9f8f;
+  --ketchup:#e0392f;
+  --ketchup-ink:#ff6a5f;
+  --senf:#f5c22e;
+  --board:#0c0c0b;
+  --board-ink:#f4f1ea;
+  --rule:#3b3229;
+  --shadow:0 12px 30px -16px rgba(0,0,0,.85);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18.5px/1.6 var(--serif);overflow-x:hidden}
+a{color:inherit;text-decoration-color:var(--ketchup);text-decoration-thickness:2px;text-underline-offset:.18em}
+.wrap{width:min(1140px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Markise ---------- */
+.awning{height:56px;background:repeating-linear-gradient(90deg,var(--ketchup) 0 44px,#fbf6ec 44px 88px);position:relative}
+.awning::after{
+  content:"";position:absolute;left:0;right:0;bottom:-16px;height:16px;
+  background:radial-gradient(circle at 22px 0,var(--ketchup) 0 22px,transparent 22.5px) 0 0/88px 16px repeat-x,
+             radial-gradient(circle at 66px 0,#fbf6ec 0 22px,transparent 22.5px) 0 0/88px 16px repeat-x;
+}
+.cover{padding:52px 0 40px;border-bottom:4px solid var(--ink)}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:44px;align-items:center}
+.kicker{margin:0 0 18px;font:600 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sign{display:inline-block;max-width:100%;hyphens:manual;overflow-wrap:break-word;margin:0;padding:.14em .3em .1em;background:var(--board);color:var(--board-ink);border:4px solid var(--senf);
+  font:700 clamp(34px,6.2vw,72px)/.95 var(--cond);letter-spacing:.01em;text-transform:uppercase;box-shadow:8px 8px 0 var(--ketchup)}
+.sign small{display:block;font-size:.3em;letter-spacing:.24em;color:var(--senf);margin-bottom:.15em}
+.sub{margin:30px 0 0;max-width:32em;font:600 clamp(20px,2.3vw,25px)/1.35 var(--serif)}
+.lede{margin:14px 0 0;max-width:36em}
+
+.photo{margin:0;justify-self:end;width:100%;max-width:460px;background:#fffdf8;padding:12px 12px 14px;box-shadow:var(--shadow);transform:rotate(2.2deg);position:relative}
+.photo::before{content:"";position:absolute;top:-12px;left:50%;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:var(--ketchup);box-shadow:inset -3px -3px 0 rgba(0,0,0,.25),0 2px 2px rgba(0,0,0,.3)}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:1400/933}
+.photo figcaption{margin-top:10px;font:600 14px/1.35 var(--mono);color:#3a332c;text-align:center}
+
+/* Speisekarte */
+.menu{margin:36px 0 0;background:var(--board);color:var(--board-ink);padding:22px 24px 18px;border:4px solid var(--senf);max-width:780px}
+.menu h2{margin:0 0 12px;font:700 15px/1 var(--cond);letter-spacing:.24em;text-transform:uppercase;color:var(--senf)}
+.menu ol{margin:0;padding:0;list-style:none;columns:2 300px;column-gap:28px}
+.menu li{break-inside:avoid}
+.menu a{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:4px;padding:5px 0;text-decoration:none;font:500 17px/1.25 var(--cond);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px dotted rgba(244,241,234,.28)}
+.menu a span{color:var(--senf)}
+.menu a:hover{color:var(--senf)}
+
+/* ---------- Gespräch ---------- */
+main{padding:10px 0 30px}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px 52px;padding:40px 0 30px;border-bottom:2px dashed var(--rule)}
+.part:last-of-type{border-bottom:0}
+.part h2{grid-column:1/-1;margin:0 0 8px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.part h2 .no{display:inline-grid;place-items:center;min-width:2.1em;height:2.1em;padding:0 .3em;border-radius:50%;background:var(--senf);color:#1d1a17;font:700 18px/1 var(--cond)}
+.part h2 .t{display:inline-block;max-width:100%;padding:.18em .45em .14em;background:var(--board);color:var(--board-ink);font:700 clamp(22px,3vw,32px)/1.15 var(--cond);letter-spacing:.06em;text-transform:uppercase}
+.part.spiess h2 .t{background:var(--ketchup);color:#fff}
+
+.talk{min-width:0}
+.turn{display:grid;grid-template-columns:6.2em minmax(0,1fr);gap:0 18px;margin:0 0 13px}
+.turn .who{margin:.34em 0 0;font:600 12.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.turn .said{margin:0}
+.turn.q .who{color:var(--ketchup-ink)}
+.turn.q .said{font-style:italic}
+.turn.a .who{color:var(--muted)}
+.turn.x .who{color:var(--muted)}
+.turn.x .said{font-style:italic;color:var(--muted)}
+.cue{margin:16px 0;padding:8px 12px;border-left:4px solid var(--senf);font:400 15px/1.45 var(--mono);color:var(--muted)}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:20px;align-self:start}
+.note{margin:0;padding:14px 16px;background:var(--card);border:1px solid var(--rule);font:400 16px/1.45 var(--serif)}
+.note b{display:block;margin:0 0 5px;font:600 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ketchup-ink)}
+.pull{margin:0;padding:18px 18px 16px;background:var(--senf);color:#1d1a17;font:700 clamp(22px,2.2vw,27px)/1.18 var(--cond);letter-spacing:.01em;text-transform:uppercase;transform:rotate(-1.2deg);box-shadow:5px 5px 0 var(--ketchup)}
+.pull cite{display:block;margin-top:10px;font:600 12px/1.2 var(--mono);font-style:normal;letter-spacing:.06em}
+.card{margin:0;padding:14px 16px;border:3px solid var(--ink);background:var(--card);font:400 16px/1.45 var(--serif)}
+.card h3{margin:0 0 8px;font:700 15px/1 var(--cond);letter-spacing:.2em;text-transform:uppercase}
+.card dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 12px}
+.card dt{font:600 12px/1.65 var(--mono);color:var(--muted);text-transform:uppercase}
+.card dd{margin:0}
+
+@media (max-width:960px){
+  .cover-grid{grid-template-columns:minmax(0,1fr)}
+  .photo{justify-self:start;max-width:520px}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px}
+}
+@media (max-width:560px){
+  body{font-size:17.5px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:2px}
+  .turn .who{margin:0}
+  .cover{padding-top:40px}
+  .sign{box-shadow:5px 5px 0 var(--ketchup)}
+  .menu{padding:18px 16px 14px}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:28px 0 64px;border-top:4px solid var(--ink)}
+.bon{display:inline-block;margin:0 0 18px;padding:12px 16px;background:#fffdf8;color:#1d1a17;font:400 14px/1.5 var(--mono);box-shadow:var(--shadow);border-top:2px dashed #b9ad98;border-bottom:2px dashed #b9ad98}
+.bon b{font-weight:600}
+.protokoll{margin:0;max-width:46em;font:400 14px/1.6 var(--mono);color:var(--muted)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<div class="awning" aria-hidden="true"></div>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="cover-grid">
+      <div>
+        <p class="kicker">Pogoradio auf Bermudafunk · München · Februar 2009</p>
+        <h1 class="sign"><small>Frankfurt (Oder) · seit 1995</small>Die<br>Bock&shy;wurscht&shy;bude</h1>
+        <p class="sub">Mieschka Mayonaise, der Schlagzeuger, über Ossi-Punk, die GEMA und Konzerte für Spritgeld. Und dann dreht er den Spieß um und interviewt Rüdi.</p>
+        <p class="lede">Ein Ossi-Punk-Festival in München, es ist frostig, im Bus ist es auch nicht wärmer. Rüdi hat zehn Minuten gewartet, bis endlich jemand von der Bockwurschtbude Zeit hat, und der ist nicht der Sänger. Nach einer Viertelstunde stellt Mieschka die Fragen: Wie war das mit dem Radio, mit der Pogo Presse und mit der Rechnung über 10.000 Euro?</p>
+      </div>
+      <figure class="photo">
+        <img src="bockwurschtbude-backstage.jpg" width="1400" height="933" alt="Drei Männer im Backstage, die Fäuste hochgereckt: links einer mit kurzen rotblonden Haaren und Schmollmund, in der Mitte einer mit zerzausten dunklen Haaren, breitem Grinsen und Bierflasche, rechts einer mit schwarzen Stachelhaaren, Nietenjacke und Zigarette im Mundwinkel. Dahinter Konzertplakate, eins für „Nu Noizes Battle of the Bands“.">
+        <figcaption>Die Bockwurschtbude im Backstage. Bereit.</figcaption>
+      </figure>
+    </div>
+    <nav class="menu" aria-label="Inhalt">
+      <h2>Heute im Angebot</h2>
+      <ol>
+        <li><a href="#t1"><span>1</span>Zehn Minuten in der Kälte</a></li>
+        <li><a href="#t2"><span>2</span>Fleischessen ist Faschismus</a></li>
+        <li><a href="#t3"><span>3</span>Ossi-Band?</a></li>
+        <li><a href="#t4"><span>4</span>Der Spieß dreht sich</a></li>
+        <li><a href="#t5"><span>5</span>Vom Fanzine zum Radio</a></li>
+        <li><a href="#t6"><span>6</span>Grüße nach San Francisco</a></li>
+        <li><a href="#t7"><span>7</span>10.000 Euro für ein Foto</a></li>
+        <li><a href="#t8"><span>8</span>Die GEMA</a></li>
+        <li><a href="#t9"><span>9</span>Frankfurt an der Oder</a></li>
+        <li><a href="#t10"><span>10</span>Schauergeschichten aus Mannheim</a></li>
+        <li><a href="#t11"><span>11</span>Spritgeld plus fünfzig Euro</a></li>
+        <li><a href="#t12"><span>12</span>Zu wenig Schlüpfriges</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">1</span><span class="t">Zehn Minuten in der Kälte</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe hier zehn Minuten gewartet. Endlich hat sich der Sänger von der Bockwurschtbude bereit erklärt, mit mir ein Interview zu machen. Guten Abend.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Schönen guten Abend. Dass er zehn Minuten gewartet hat, und es ist ja schon ein bisschen frostig hier, zeigt ja auch, dass ich nicht der Sänger bin, sondern der Schlagzeuger. Der Gitarrist und Sänger und der Bassist fehlen leider noch, die sind im Innenraum. Aber ich bin ja Mieschka und heiße euch herzlich willkommen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Guten Abend. Du machst doch selber auch irgendwie eine Radiosendung.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Genau. Erst mal habe ich relativ lange Radio gemacht. In Berlin ist das ein bisschen anders als bei euch. Du kommst aus Mannheim, oder? In Berlin ist das Bürgerradio nicht so gut zu empfangen, eher über Kabel, terrestrisch eigentlich gar nicht. Da machen wir jetzt immer noch mit meinen Kollegen von Voice of Culture einmal im Monat eine Radiosendung. Und davor habe ich auf einer terrestrischen Frequenz fünf Jahre lang die Sendung „Mainstream für den Untergrund“ gemacht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist mir ein Begriff.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Genau.</p></div>
+  </div>
+  <aside class="side">
+    <div class="card">
+      <h3>Die Bockwurschtbude</h3>
+      <dl>
+        <dt>Aus</dt><dd>Frankfurt (Oder), Brandenburg</dd>
+        <dt>Seit</dt><dd>November 1995</dd>
+        <dt>Gründer</dt><dd>Mikro Mostrich und Mieschka Mayonaise</dd>
+        <dt>2009</dt><dd>Mieschka am Schlagzeug, dazu Mikro Mostrich und Rosi Rettich (seit 2004) an Gitarre, Gesang und Bass</dd>
+        <dt>Stil</dt><dd>Deutschpunk</dd>
+      </dl>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">2</span><span class="t">Fleischessen ist Faschismus</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt zur Bockwurschtbude. Der Name impliziert ja schon mal, dass es sich um eine Band handelt, die den fleischlichen Genüssen nicht …</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">… abgeneigt ist.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Abgeneigt ist.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Ja, das sagt der Name. Und es stimmt auch, wir sind keine Vegetarier. Aber ansonsten hat die Namensgebung eigentlich nichts mit unseren persönlichen Vorlieben beim Essen zu tun.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Fleischessen ist Faschismus.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Welches Fleisch?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Überhaupt. Fleisch von Tieren.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Ist generell Faschismus? Okay. Kannst du mir das noch kurz erklären?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, nee, nee. Habe ich so auf einem Aufkleber auf dem Klo gesehen.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Ach so. Okay.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die lügen nie.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Die Aufkleber. Okay. Es gibt aber auch genug Aufkleber, die sagen … Nee, das möchte ich jetzt nicht wiederholen. Den Leuten möchte ich keine Plattform geben.</p></div>
+  </div>
+  <aside class="side">
+    <p class="pull">„Habe ich auf einem Aufkleber auf dem Klo gesehen. Und die lügen nie.“<cite>Rüdi</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">3</span><span class="t">Ossi-Band?</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und ihr spielt heute Abend um halb eins hier?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Hoffe ich mal. Wenn sich alle Bands an den Zeitplan halten, der sowieso nicht existiert, dann kann es durchaus passieren: halb eins, eins, halb zwei.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Würdet ihr euch als Ossi-Band bezeichnen? Gibt es den Begriff überhaupt? Ihr kommt ja aus Frankfurt, hast du gerade erzählt.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Dadurch sind wir eine Ossi-Band. Und wir spielen hier auf einem Ossi-Punk-Festival, wo lauter Bands größtenteils aus der sowjetischen Besatzungszone herkommen. Ob wir uns als Ossi-Band sehen? Eigentlich nicht. Wir fühlen uns einfach nur als Band.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, ja. Jetzt stelle ich mal eine gute Frage. Was soll ich denn … Bockwurschtbude …</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Gemeint ist Frankfurt an der Oder, an der Grenze zu Polen, nicht Frankfurt am Main.</p>
+  </aside>
+</section>
+
+<section class="part spiess" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">4</span><span class="t">Der Spieß dreht sich</span></h2>
+  <div class="talk">
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Hier ist deine 400. Sendung, sagst du?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, genau.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Okay. Das ist jetzt alles umgedreht: Ich bin Herr Mieschka, und ich interviewe jetzt den Rüdi.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Guten Abend.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Wann hast du denn mit dem Radio angefangen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das war im Dezember 2000. Da ist der Bermudafunk zum ersten Mal on air gegangen, da war das mit der Frequenz genehmigt und so weiter. Und da habe ich gesagt: Super, bin ich sofort dabei. Dann haben wir das Studio aufgebaut, im Stadthaus, und dann ging das auch schon los. Ich habe zwei Stunden Sendung gemacht, alles mit Kassetten und so. Es war alles sehr, sehr dilettantisch. Nicht so wie jetzt hier.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Jetzt ist es schon ein bisschen besser geworden.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hat sich gesteigert.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">2000 angefangen, jetzt haben wir 2009, 400 Sendungen. Wie oft sendest du?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Einmal die Woche.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Einmal die Woche, immer live? Oder auch vorproduziert?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Eigentlich wird vorproduziert, aber wir tun immer so, als wäre es live. Die meisten Leute denken, es wäre live, aber in Wirklichkeit ist alles vorbereitet. Wie bei den meisten Sendungen im Fernsehen, die werden ja auch teilweise zwei Wochen vorher produziert.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Da seht ihr’s, liebe Hörer.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das liegt aber nicht daran, dass man danach noch rumschneiden kann. Es liegt eher daran, dass ich gerne von daheim produziere, aus meinem Zimmer, und nicht im Bermudafunk-Studio. Das ist mir einfach zu anstrengend, jeden Mittwoch zwischen 23 und 24 Uhr da aufzutauchen. Und die meisten Gäste sind auch nicht pünktlich, da muss man sich immer ein bisschen nach den Gästen richten. Also sage ich: Machen wir es bei mir daheim. Da steht ein Computer rum, da stehen Mikros rum, ein Mischpult …</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">… rum.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Bier rum. Da ist alles fein. Und da ist niemand, der die ganze Zeit reinrennt und fragt, ob das Studio frei ist, bla bla bla.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Kann ich voll und ganz nachvollziehen. Wöchentliche Sendungen, nie unterbrochen? Nie in Urlaub gefahren, wo man sagt: Hey, vier Wochen passiert jetzt erst mal nichts?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Es gab ein paar Ausfälle, da hatte ich Kollegen, die mich vertreten haben. Würdig vertreten, muss man dazu sagen.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Zum Beispiel? Wo man auch mal Dankeschön sagen kann.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Der Mike zum Beispiel, der hat mich oft sehr würdevoll vertreten. Ab und zu habe ich die Sendung auch vorproduziert, und die Leute haben gar nicht gemerkt, dass ich im Urlaub war. Meistens habe ich meinen Urlaub aber so gelegt, dass es gepasst hat. Davon abgesehen fahre ich gar nicht so oft in Urlaub.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Die älteste Sendung im <a href="/sendungen/">Sendungsarchiv</a> ist vom 10. Dezember 2000. Folge 400 lief am 18. Februar 2009. Am Ende waren es 842.</p>
+    <p class="pull">„Wir tun immer so, als wäre es live.“<cite>Rüdi über Pogoradio</cite></p>
+  </aside>
+</section>
+
+<section class="part spiess" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">5</span><span class="t">Vom Fanzine zum Radio</span></h2>
+  <div class="talk">
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Was war die Motivation? Klar, wahrscheinlich, weil es die Frequenz gab. Aber welche angenehmen Nebeneffekte hat das Radiomachen für dich? Gästelistenplätze, LPs umsonst, backstage Bier saufen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das Radiomachen war für mich eigentlich so eine Fortsetzung von meiner langen Zeit als Fanzine-Macher.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Das hieß Pogo Presse.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das habe ich gefühlte zehn Jahre vorher schon gemacht. Und irgendwann war für mich klar: Schreiben strengt an. Man hat ein weißes Papier vor sich oder einen Computer, muss irgendwas eintippen, und alles ist sehr anstrengend und sehr trocken. Wenn man dagegen was sendet, dann versendet es sich auch. Man babbelt irgendeine Scheiße, und schon ist sie weg.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und weil ich beruflich auch in diese Schiene eingestiegen bin, mit Zeitungmachen: Ich arbeite bei einem Printmagazin. Da habe ich mir gesagt, das mit dem Layouten, Bilder raussuchen und Rumschnipseln will ich nicht auch noch als Hobby machen. Da war für mich klar: Mein Ding ist Radio.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich wollte schon als junger Kerl einen Piratensender gründen. Ich hatte sogar eine Bauanleitung dafür. Irgend so ein Elektrofuzzi hat den zusammengebastelt, aber er hat nie richtig funktioniert. Da hätten auch nur Leute im Umkreis von zehn Kilometern auf freiem Feld was empfangen. Und die müssen ja auch genau in dem Moment zuhören. Heute kommt das Internet dazu, da kann man die Sendung reinstellen, und die Leute ziehen sie sich runter und hören sie, wann sie gerade Bock haben.</p></div>
+  </div>
+  <aside class="side">
+    <p class="pull">„Man babbelt irgendeine Scheiße, und schon ist sie weg.“<cite>Rüdi über den Vorteil von Radio</cite></p>
+    <p class="note"><b>Anm. d. Red.</b>Die Pogo Presse ist ein Punk-Fanzine aus Mannheim. Im <a href="../trend/">Trend-Interview von 2004</a> ist von ihr auch die Rede.</p>
+  </aside>
+</section>
+
+<section class="part spiess" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">6</span><span class="t">Grüße nach San Francisco</span></h2>
+  <div class="talk">
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Wie sieht es mit Feedback aus? Gibt es Leute, die sagen: Hey, richtig geile Band entdeckt, du spielst super Musik, ich bin Stammhörer, kann ich Freikarten oder Platten gewinnen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also bisher habe ich noch nicht meine Frau fürs Leben gefunden. Das will man ja immer, man will ja geliebt werden. Man macht immer irgendwas, um geliebt zu werden. Das ist genauso wie beim Musikmachen. Die ganze Macherei ist eigentlich nur ein Betteln um Anerkennung.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Hast du schon mal Musik gemacht?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, ja. Lange Jahre. Aber nicht so fruchtbar.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Aber du kriegst schon Feedback?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja. Zum Beispiel gibt es einen Radiosender in San Francisco, der auch in Los Angeles ausstrahlt und meine Sendung jede Woche überträgt. Freitags, immer: Morgens bringen sie Al Jazeera, dann kommt Maximum Rocknroll und danach meine Sendung. Versteht wahrscheinlich keine Sau dort, aber die machen es halt.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">I want to say hello to everybody in San Francisco. This is Mieschka from Die Bockwurschtbude, a small band from Germany. We just want to say hi, and have a nice day!</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Maximum Rocknroll ist das bekannte Punk-Fanzine aus San Francisco, das auch eine eigene Radiosendung hatte.</p>
+  </aside>
+</section>
+
+<section class="part spiess" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">7</span><span class="t">10.000 Euro für ein Foto</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und dann gibt es ab und zu noch so Feedback, wenn man zum Beispiel ein T-Shirt macht: Man nimmt ein Foto, das dreißig Jahre alt ist, und bastelt daraus sein Logo. Und dann kriegt man irgendwann einen Brief mit einer Rechnung über 10.000 Euro, weil man dieses Bild von einem Fotografen benutzt hat.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Okay. Das ist dir schon passiert.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja. Aber ich habe ihn dann so angebettelt: Hey, ich bin so ein armer Punkrocker, ich habe so viele Schulden, überhaupt geht’s mir ganz schlecht, ich bin so blöd im Kopf, bitte, bitte, bitte, mach das nicht.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">War das ein einzelnes T-Shirt oder eine größere Auflage?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die T-Shirts sind über Nix Gut Records verkauft worden. Und das war eigentlich der Grund, weil es ja kommerziell benutzt worden ist. Die Shirts haben sich natürlich null verkauft, es wurde auch kein Gewinn damit erzielt. Aber es ging um die Sache, und der Fotograf hat natürlich auch ein Recht auf sein Bild.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die Frau, die auf dem T-Shirt drauf ist und inzwischen über fünfzig ist, hat das durch den ganzen Wirbel im Internet mitgekriegt: die Uschi Paranoia, die in Wien wohnt und die ich an dieser Stelle grüßen möchte. Ihre Reaktion war einfach nur: Sie hätte gern drei Shirts. Hat sie auch gekriegt.</p></div>
+  </div>
+  <aside class="side">
+    <p class="pull">„Ich bin so ein armer Punkrocker. Bitte, bitte, bitte, mach das nicht.“<cite>Rüdi an den Fotografen</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t8">
+  <h2 id="t8"><span class="no">8</span><span class="t">Die GEMA</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Da will einer rein.</p></div>
+    <p class="cue">Kurze Unterbrechung: Lucy bringt die Gästeliste, und einer im grauen Pullover soll seine wieder zurückgeben.</p>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Liste! Das ist ein gutes Thema. Ich habe da eine Idee: Habt ihr euch bei der GEMA angemeldet?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Nee. Man muss da so eine GEMA-Liste ausfüllen, wer Texter und wer Komponist ist. Aber wir sind nicht GEMA-gemeldet.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Warum?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Das bringt nur Schwierigkeiten. Wir sind keine Rockstars, die tausende Alben verkaufen. Tausend kriegen wir vielleicht bald hin. Aber dass wir davon leben können? Nee.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dein Handy macht Lärm. … Egal. Auf jeden Fall GEMA-Liste ausfüllen: Du kennst den alten Punkrocktrick? Man schreibt irgendeine Scheiße rein, und die bei der GEMA brauchen mindestens drei Wochen, bis sie das recherchiert haben.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Nö. Wir spielen zwölf, dreizehn, vierzehn, fünfzehn Titel, und die schreiben wir alle untereinander. Wir sind ja auch lange genug dabei, nach vierzehn Jahren weiß man das. Aber wir sind trotzdem nicht gemeldet, weil …</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vierzehn Jahre …</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Lass mich ausreden.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Entschuldigung.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">… weil es uns nix bringt. Wenn es engagierte Leute gibt, die zum Beispiel Radio machen, dann sollen sie uns spielen. Und wenn wir irgendwo spielen wollen und die Leute haben eh schon kein Geld, dann auch noch GEMA-Zeug anzumelden, so dass die als Dank dafür, dass sie uns eingeladen haben, noch Kohle abdrücken dürfen? Also warum?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dieser Laden hier, das Backstage, zahlt auf jeden Fall GEMA-Gebühr. So eine Pauschale.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Das ist auch nicht die Größenordnung, in der wir normalerweise spielen. Wir spielen in kleinen Clubs, Clubchen und so. Was der Laden hier macht, ist mir egal.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also: GEMA ist scheiße. Aber wenn ihr zum Beispiel in Frankfurt auf dem Stadtfest spielen würdet, umsonst, und es würden zufällig zweitausend Leute davorstehen, dann würdet ihr richtig Geld von der GEMA kriegen.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Aber wir werden auch nicht auf dem Stadtfest spielen, weil das nicht so ankommt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Weil es nicht Style ist. Weil es mit Punkrock nichts zu tun hat.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Eben.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt bin ich wieder in der Rolle, dass ich die Fragen stelle, merke ich schon.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Dadurch hast du die andere Frage vergessen, die du noch stellen wolltest. Aber mach weiter. Du machst das gut.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Danke. Nach 400 Sendungen hat man so eine gewisse Routine.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Gespielt wurde im Backstage in München. Über die GEMA hat Rüdi später noch einmal eine ganze Sendung gemacht, am 9. Mai 2012, mit Jürgen von Rookie Records und Frank von <a href="../supernichts/">Supernichts</a>.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t9">
+  <h2 id="t9"><span class="no">9</span><span class="t">Frankfurt an der Oder</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Vierzehn Jahre. Es gibt auch eine Band aus Frankfurt an der Oder, die gibt es auch schon seit vierzehn Jahren.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Richtig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und ihr wohnt teilweise WG-mäßig miteinander?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Ja, wir haben eine Riesen-Hippie-WG. Wir drei von der Bockwurschtbude, wie viele Hunde, eine Frau, aber die zählt auch als Hund. Nein, war ein Scherz. Wir wohnen natürlich nicht alle zusammen, aber wir kennen uns schon seit Jahren. Zufällig hat sich eine WG aus dem Bassisten von Oderflut, dem Bassisten der Bockwurschtbude und dem Gitarristen von Telekoma ergeben. Aber das ist Zufall.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie ist eigentlich das Leben in Frankfurt (Oder)? Man liest immer nur Horrorsachen: dass die Jugendlichen alle nazimäßig unterwegs sind und alle total aggro.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Das muss man relativieren, glaube ich. Erst mal vorneweg: Es ist sehr ruhig. Es ist nicht so viel los wie im nahegelegenen Berlin. Aber das liegt in der Natur der Sache, und ich glaube, in vielen westdeutschen Städten ist es genauso langweilig wie in unserem beschaulichen Frankfurt. Es gibt sicher schönere Städte, aber wir kommen da her, es ist unsere Heimat, und es ist in Ordnung.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Und zu den Horrorgeschichten und dass alles aggro ist: Wir sind hier in München auf einem Punkrockkonzert, und da wird auf dem Klo gekokst. Das ist überhaupt nicht unser Ding. Ich möchte jetzt nicht alle über einen Kamm scheren, aber teilweise gibt es in der westdeutschen Szene mehr Aggro als bei uns. Die Punkrockszene und die Menschen an sich sind bei uns immer noch familiärer und nehmen viel Rücksicht aufeinander. Es gibt definitiv einen Unterschied, ob man Konzerte im Westen oder im Osten spielt. Ich sage nicht, was besser ist.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Diese Gerüchte hören wir seit vierzehn Jahren, seit es die Band gibt. Und ich kann nur sagen: Packt euch mal die Koffer und fahrt selbst hin und schaut euch das an! Die Szene ist vernetzt, man kennt sich seit Jahren, übers Internet und so. Man muss nur seinen Arsch hochkriegen und da mal hinfahren. Entschuldigung, dass ich meine Stimme ein bisschen anhebe, aber das nervt nach einer Weile. Es ist alles normal, ruhig, familiär. Von Übergriffen hört man in letzter Zeit sowieso nichts mehr. Und wenn es welche gibt, dann in Ostdeutschland genauso wie in Westdeutschland.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Inzwischen, ja.</p></div>
+  </div>
+  <aside class="side">
+    <p class="pull">„Packt euch mal die Koffer und fahrt selbst hin und schaut euch das an!“<cite>Mieschka über Frankfurt (Oder)</cite></p>
+  </aside>
+</section>
+
+<section class="part spiess" aria-labelledby="t10">
+  <h2 id="t10"><span class="no">10</span><span class="t">Schauergeschichten aus Mannheim</span></h2>
+  <div class="talk">
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Du bist der Interviewer.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Scheiße. Ja.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Wie ist es denn bei dir in Mannheim? Man hört immer so viele Schauergeschichten über Mannheim. Beschreib doch mal die Szene in Mannheim.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die ist so krass, du glaubst es gar nicht. Du gehst vor die Haustür, und alles ist zugeschissen mit Hundescheiße, weil die ganzen Assis gerade im Winter keinen Bock haben, ihren Köter zum nächsten Spielplatz zu führen.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Da dürfen sie dann hinscheißen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist mir scheißegal. Aber die müssen direkt mit ihren Jogginghosen, gerade ist RTL-2-Werbepause: Hund raus, direkt auf die Gasse scheißen, wieder rein.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Da frage ich mich, warum du überhaupt RTL 2 schaust.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe gar keinen Fernseher.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Ach so. Dann habe ich dich missverstanden.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du zahlst ja keine GEZ, oder?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Na ja, wenn man Radio hat, muss man zahlen. Und du wirst ja öffentlich finanziert, durch den Bermudafunk. Deshalb möchte ich die Antwort verweigern.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ist auch eine Antwort. Kirchensteuer?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Ich nicht. Ich bin ja auch nicht in der Kirche.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was gibt’s sonst noch für Steuern?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Pendlerpauschale auch nicht. Nee.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Bermudafunk ist das Freie Radio für Mannheim und Heidelberg. Freie Radios werden zum Teil über die Landesmedienanstalt aus den Rundfunkgebühren gefördert, daher Mieschkas Ausrede.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t11">
+  <h2 id="t11"><span class="no">11</span><span class="t">Spritgeld plus fünfzig Euro</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie sieht es aus mit Konzerten? Habt ihr Probleme, einen Platz zu finden, wo ihr spielen könnt? Oder läuft das alles gediegen, weil ihr so vernetzt seid?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Wer uns einladen möchte, kann das gerne tun. Früher gab es so ein schönes Heftchen vom Plastic Bomb mit Konzertadressen. Das hat uns in der Anfangsphase viele Kontakte und Hilfe gegeben, auch wenn damals schon ein paar Adressen veraltet waren. Da haben wir uns noch aktiv um Konzerte gekümmert. Das könnte man heute übers Internet auch noch machen, beim Plastic Bomb gibt es da inzwischen auch eine Seite. Aber wir haben mittlerweile keine Zeit mehr, uns selbst so aktiv um Konzerte zu kümmern. Eine Bookingfirma haben wir nicht, wollen wir auch nicht.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Also warten wir auf Konzertanfragen. Wenn der Termin geht, schreiben wir zurück: Ja, geht. Dann gucken wir im Internet, was die Spritkosten für hin und zurück sind, und legen noch fünfzig Euro drauf, damit wir auf der langen Fahrt zwischendurch was essen gehen können. Eine Bockwurst oder einen Kaffee. Da bleibt fast nie was übrig. Das Studio zahlen wir selber. Kommerzvorwürfe kamen bei uns noch nicht, höchstens aus Spaß unter den Bands. Aber manche Leute sollten schon mal überlegen: Woher kommt die Band, und wie finanziert sie sich? Da bleibt meistens nicht viel übrig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wie viele Konzerte gibt es so?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Ungefähr zehn im Jahr, das ist so der Durchschnitt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die meisten wahrscheinlich im Umkreis von Frankfurt?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Nö, die meisten in Sachsen, glaube ich. In Frankfurt haben wir schon viel gespielt. Ich glaube, wir haben 112, 114 Konzerte oder so, und als ich das letzte Mal nachgeguckt habe, waren allein knapp dreißig davon in Frankfurt. Was ich schon ein bisschen viel finde, obwohl ich eigentlich meine, dass wir gar nicht so oft in Frankfurt spielen, eigentlich nur einmal im Jahr. Und sonst viel in Sachsen, was großartig ist und meistens Spaß macht, weil die Leute dort wirklich noch feiern können. Und wollen. Nicht so abgehalftert wie in Berlin.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Berlin ist ja ein schlechtes Pflaster.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Nee, falsch. Beispiel: Dritte Wahl? Schon fünfzigmal gesehen. Außerdem komme ich heute nicht aus dem Bett, und das ist ja zwei Stadtbezirke weiter. Die Leute sind sehr bequem geworden, ich nehme mich da nicht aus.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Oder man geht an einem Abend auf zwei Konzerte und ist dann auf jedem nur halb dabei.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Geht natürlich auch. Ansonsten spielen wir überall in Deutschland. Und mit München heute haben wir, glaube ich, die vier wichtigsten Städte Deutschlands bespielt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hamburg war auch dabei?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Hamburg, Köln, Berlin und München.</p></div>
+  </div>
+  <aside class="side">
+    <p class="pull">„Spritkosten für hin und zurück, plus fünfzig Euro für eine Bockwurst unterwegs.“<cite>Mieschka über die Gage</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t12">
+  <h2 id="t12"><span class="no">12</span><span class="t">Zu wenig Schlüpfriges</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Super. Und wie geht es weiter mit der Bockwurschtbude? Zukunftspläne?</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Wir haben mittlerweile wieder vier Songs für eine neue Platte aufgenommen, vier neue haben wir noch in petto. Wir arbeiten langsam am neuen Album, aber das dauert noch ein bisschen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, das war’s. Interview.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Danke dir. Hat es dir gefallen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, gar nicht. Ich fand es ein bisschen langweilig. So viel Musikerquatsch und zu wenig von dem, was die Leute hören wollen, nämlich schlüpfrige Geschichten.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Welche Steuern man zahlt und so.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">So was, worauf man überhaupt nicht gefasst ist. Wo man denkt: Boah, jetzt kann ich nicht aufs Klo gehen, weil gleich irgendwas total Hammermäßiges kommt.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Okay. Dann tut mir leid, dass es ein bisschen langweilig war.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Tut mir auch leid, dass ich nicht so richtig in Form bin. Ich bin den ganzen Tag schon am Saufen, und das macht so was nicht besser. Und die Kälte hier im Bus tut ihr Übriges.</p></div>
+    <div class="turn a"><p class="who">Mieschka</p><p class="said">Na dann lass uns das abbrechen. Viel Spaß noch.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dir auch. Und nimm das nicht persönlich, das hat nichts mit euch zu tun. Ich finde es total geil.</p></div>
+  </div>
+  <aside class="side">
+    <p class="pull">„Ich fand es ein bisschen langweilig. Zu wenig schlüpfrige Geschichten.“<cite>Rüdi über sein eigenes Interview</cite></p>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="bon">BOCKWURSCHTBUDE · BON 0400<br>1 × Interview, kalt serviert ……… 25:00<br>1 × Rüdi, interviewt ……… gratis<br><b>Danke für Ihren Besuch!</b></p>
+  <p class="protokoll">Pogoradio auf Bermudafunk · Backstage, München · Februar 2009 · Rüdi mit Mieschka Mayonaise von der Bockwurschtbude · Transkript redigiert und gekürzt.</p>
+</footer>
+</body>
+</html>
