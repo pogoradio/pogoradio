@@ -8,17 +8,21 @@
 <meta name="description" content="Interviews, Gespräche und Geschichten aus dem Archiv von Pogoradio: Sabotakt, Superfreunde, Tarek, Red Union, Trend, Fabulous Disaster, Toxoplasma, The Vageenas, Hørmy, Auweia!, Versus, Brutal Knights, Karl Nagel, Zwakkelmann, Die Strafe, The Savants, Krank, Lost Lyrics, Bockwurschtbude, Blutjungs, Supernichts, Club Déjà-Vu, Slime, Egotronic und mehr. Dazu das Sendungsarchiv mit allen Sendungen und Songlisten von 2000 bis 2018.">
 <style>
 :root {
-  --bg: #262523;
-  --panel: #2f2e2b;
-  --panel-hover: #353430;
-  --fg: #ece8e1;
-  --fg-soft: #cfcac1;
-  --muted: #a39e95;
-  --rule: #403e3a;
-  --accent: #ff5a4a;
+  --bg: #f3f1ec;
+  --panel: #ffffff;
+  --panel-hover: #ebe8e1;
+  --fg: #1f1e1c;
+  --fg-soft: #46433e;
+  --muted: #6f6a62;
+  --rule: #dcd8cf;
+  --accent: #d63a2c;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #262523; --panel: #2f2e2b; --panel-hover: #353430; --fg: #ece8e1; --fg-soft: #cfcac1; --muted: #a39e95; --rule: #403e3a; --accent: #ff5a4a; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #262523; --panel: #2f2e2b; --panel-hover: #353430; --fg: #ece8e1; --fg-soft: #cfcac1; --muted: #a39e95; --rule: #403e3a; --accent: #ff5a4a; color-scheme: dark; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1rem/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
@@ -56,7 +60,7 @@ a { color: inherit; }
 .extras li { padding: .15rem .5rem; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); }
 .extras li.lnk { padding: 0; border: 0; position: relative; z-index: 1; }
 .extras li.lnk a { display: inline-block; padding: .2rem .6rem; border-radius: 999px; background: var(--fg); color: var(--bg); font-weight: 650; text-decoration: none; }
-.extras li.lnk a:hover { background: #fff; }
+.extras li.lnk a:hover { background: var(--accent); color: #fff; }
 
 .foot { padding-top: 1.25rem; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font-size: .82rem; color: var(--muted); border-top: 1px solid var(--rule); }
 .foot p { margin: 0; }
@@ -74,7 +78,7 @@ a { color: inherit; }
 
 <header class="wrap">
   <div class="head">
-    <img src="pogoradio-logo.png" width="452" height="380" alt="">
+    <picture><source srcset="pogoradio-logo.png" media="(prefers-color-scheme: dark)"><img src="pogoradio-logo-dunkel.png" width="452" height="380" alt=""></picture>
     <div>
       <h1>Pogoradio</h1>
       <p class="sub">Archiv · Bermudafunk 105,4 · 2000–2018</p>

@@ -11,28 +11,28 @@
 <style>
 /* Layout: sticky search bar over a dense, one-line-per-show register; click a row to unfold its full song list */
 :root {
-  --bg: #f4f4f1;
+  --bg: #f3f1ec;
   --panel: #ffffff;
-  --fg: #1a1a1d;
-  --muted: #6c6c72;
-  --line: #deded8;
-  --accent: #c8005f;
-  --accent-soft: #fbe3ee;
-  --mark: #ffe066;
-  --mark-fg: #1a1a1d;
+  --fg: #1f1e1c;
+  --muted: #6f6a62;
+  --line: #dcd8cf;
+  --accent: #d63a2c;
+  --accent-soft: #fbe4e0;
+  --mark: #ffe08a;
+  --mark-fg: #1f1e1c;
   --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
   --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #131315; --panel: #1b1b1e; --fg: #ececea; --muted: #9a9aa1; --line: #2d2d31;
-    --accent: #ff4f9b; --accent-soft: #3a1626; --mark: #8a6d00; --mark-fg: #fff6d6; color-scheme: dark;
+    --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --muted: #a39e95; --line: #403e3a;
+    --accent: #ff5a4a; --accent-soft: #45231f; --mark: #7a5c00; --mark-fg: #fff4d1; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #131315; --panel: #1b1b1e; --fg: #ececea; --muted: #9a9aa1; --line: #2d2d31;
-  --accent: #ff4f9b; --accent-soft: #3a1626; --mark: #8a6d00; --mark-fg: #fff6d6; color-scheme: dark;
+  --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --muted: #a39e95; --line: #403e3a;
+  --accent: #ff5a4a; --accent-soft: #45231f; --mark: #7a5c00; --mark-fg: #fff4d1; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body {
@@ -160,11 +160,7 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 </style>
 
 <style>
-/* Website: dunkel wie die Startseite */
-:root:not([data-pgr]) {
-  --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --muted: #a39e95; --line: #403e3a;
-  --accent: #ff5a4a; --accent-soft: #45231f; --mark: #7a5c00; --mark-fg: #fff4d1; color-scheme: dark;
-}
+/* Website: hell oder dunkel wie das Gerät, Farben wie die Startseite */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
 img { max-width: 100%; }
