@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Club Déjà-Vu vor dem Sonic Ballroom · Pogoradio</title>
+<meta name="description" content="Pogoradio am 31. Juli 2009 vor dem Sonic Ballroom in Köln mit Club Déjà-Vu, früher Die Kurt Cobains: Legoland, Knebelverträge, Booklets mit Blattgold, Mitgliedschaft im ADAC ohne Führerschein und die neue CD „Mondphasenfriseur“.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f3fb;
+  --panel:#ffffff;
+  --ink:#1f1424;
+  --muted:#6b5a70;
+  --rule:#e6d8ee;
+  --magenta:#9a2fc4;
+  --magenta-deep:#7a1fa3;
+  --magenta-ink:#8424ad;
+  --cyan:#5ff3ff;
+  --alien:#2fbf3a;
+  --alien-ink:#1d8a27;
+  --orange:#e8703a;
+  --orange-ink:#b34d1c;
+  --sans:"Space Grotesk","Segoe UI",Roboto,Arial,sans-serif;
+  --pixel:"VT323",ui-monospace,Menlo,Consolas,monospace;
+  --neon:"Rye","Rockwell Extra Bold","Arial Black",serif;
+  --paper:"Times New Roman",Times,Georgia,serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#150e1c;
+    --panel:#21162b;
+    --ink:#f3e9f5;
+    --muted:#b9a4be;
+    --rule:#3a2a47;
+    --magenta-ink:#d99bff;
+    --alien-ink:#6cf277;
+    --orange-ink:#ff9a66;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#150e1c;
+  --panel:#21162b;
+  --ink:#f3e9f5;
+  --muted:#b9a4be;
+  --rule:#3a2a47;
+  --magenta-ink:#d99bff;
+  --alien-ink:#6cf277;
+  --orange-ink:#ff9a66;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration-color:var(--magenta);text-decoration-thickness:2px;text-underline-offset:.18em}
+.wrap{width:min(1140px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Kopf im Cover-Stil ---------- */
+.cover{position:relative;overflow:hidden;color:#fff;
+  background:repeating-linear-gradient(0deg,var(--magenta) 0 7px,var(--magenta-deep) 7px 9px);
+  padding:46px 0 52px}
+.ufo{position:absolute;width:150px;height:auto;opacity:.9;pointer-events:none}
+.ufo.u1{right:4%;top:12%;transform:rotate(-8deg)}
+.ufo.u2{left:56%;top:5%;width:90px;transform:rotate(10deg)}
+.ufo.u3{left:-20px;bottom:6%;width:110px;transform:rotate(6deg)}
+@media (prefers-reduced-motion:no-preference){
+  .ufo.u1{animation:hover 6s ease-in-out infinite}
+  .ufo.u2{animation:hover 5s ease-in-out infinite reverse}
+  @keyframes hover{50%{translate:0 -10px}}
+}
+.cover .wrap{position:relative}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:46px;align-items:center}
+.kicker{margin:0 0 20px;font:400 22px/1.2 var(--pixel);letter-spacing:.04em;color:#ffe7fb}
+h1{margin:0;font:400 clamp(48px,8.6vw,112px)/1 var(--neon);color:#fff;
+  text-shadow:0 0 6px var(--cyan),0 0 18px var(--cyan),0 0 34px rgba(95,243,255,.6);letter-spacing:.01em;overflow-wrap:anywhere}
+h1 span{display:block}
+.sub{margin:26px 0 0;max-width:30em;font:700 clamp(20px,2.3vw,25px)/1.35 var(--sans)}
+.lede{margin:14px 0 0;max-width:34em;color:#ffeefb}
+.label{display:inline-block;margin-top:22px;padding:6px 14px;background:#fff;color:#111;font:400 clamp(20px,2.4vw,26px)/1.1 var(--paper);transform:rotate(-1.5deg);box-shadow:2px 3px 0 rgba(0,0,0,.25)}
+
+.cd{margin:0;justify-self:end;width:100%;max-width:380px;transform:rotate(3deg)}
+.cd img{display:block;width:100%;height:auto;aspect-ratio:1/1;box-shadow:0 18px 40px -16px rgba(0,0,0,.6),0 0 0 6px #fff}
+.cd figcaption{margin-top:18px;font:400 21px/1.2 var(--pixel);text-align:center;color:#fff}
+
+/* Inhalt */
+.index{background:var(--panel);border-bottom:1px solid var(--rule)}
+.index ol{margin:0 auto;padding:18px max(16px,env(safe-area-inset-left,0px));list-style:none;width:min(1140px,100%);display:flex;flex-wrap:wrap;gap:8px 10px}
+.index a{display:inline-flex;gap:8px;align-items:baseline;padding:4px 12px;border:2px solid var(--alien);border-radius:999px;text-decoration:none;font:400 21px/1.1 var(--pixel)}
+.index a span{color:var(--alien-ink)}
+.index a:hover{background:var(--alien);color:#0c2a0f}
+
+/* ---------- Gespräch ---------- */
+main{padding:10px 0 30px}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px 52px;padding:40px 0 32px;border-bottom:1px solid var(--rule)}
+.part:last-of-type{border-bottom:0}
+.part h2{grid-column:1/-1;margin:0 0 8px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font:700 clamp(26px,3.4vw,38px)/1.1 var(--sans);letter-spacing:-.015em}
+.part h2 .no{font:400 26px/1 var(--pixel);color:#0c2a0f;background:var(--alien);padding:2px 10px;border-radius:3px}
+
+.talk{min-width:0}
+.turn{display:grid;grid-template-columns:7.4em minmax(0,1fr);gap:0 18px;margin:0 0 12px}
+.turn .who{margin:.05em 0 0;font:400 21px/1.15 var(--pixel);letter-spacing:.02em}
+.turn .said{margin:0}
+.turn.q .who{color:var(--magenta-ink)}
+.turn.q .said{font-weight:700}
+.turn.f .who{color:#0f8fa0}
+.turn.o .who{color:var(--alien-ink)}
+.turn.r .who{color:var(--orange-ink)}
+.turn.s .who{color:var(--muted)}
+:root[data-theme="dark"] .turn.f .who{color:var(--cyan)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .turn.f .who{color:var(--cyan)}}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:20px;align-self:start}
+.note{margin:0;padding:12px 15px;background:var(--panel);border:1px solid var(--rule);border-left:5px solid var(--alien);font:400 16px/1.5 var(--sans)}
+.note b{display:block;margin:0 0 4px;font:400 19px/1 var(--pixel);letter-spacing:.04em;color:var(--alien-ink)}
+.beam{margin:0;padding:18px 18px 16px;background:var(--magenta);color:#fff;font:700 22px/1.25 var(--sans);clip-path:polygon(0 0,100% 0,100% 88%,62% 88%,50% 100%,48% 88%,0 88%);padding-bottom:34px}
+.beam cite{display:block;margin-top:8px;font:400 19px/1 var(--pixel);font-style:normal;color:#ffe7fb}
+.facts{margin:0;padding:14px 16px;background:var(--panel);border:2px solid var(--magenta);font:400 16px/1.45 var(--sans)}
+.facts h3{margin:0 0 8px;font:400 24px/1 var(--pixel);color:var(--magenta-ink)}
+.facts dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 12px}
+.facts dt{font:400 18px/1.25 var(--pixel);color:var(--muted)}
+.facts dd{margin:0}
+
+@media (max-width:960px){
+  .cover-grid{grid-template-columns:minmax(0,1fr)}
+  .cd{justify-self:start;max-width:320px}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px}
+  .ufo.u2{display:none}
+}
+@media (max-width:560px){
+  body{font-size:17.5px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:0}
+  .ufo.u1{width:64px;top:9px;right:12px}
+  .ufo.u3{display:none}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:30px 0 64px;border-top:1px solid var(--rule)}
+.end .out{margin:0 0 14px;font:400 clamp(26px,4vw,42px)/1.15 var(--neon);color:var(--magenta-ink)}
+.protokoll{margin:0;max-width:46em;font:400 19px/1.35 var(--pixel);color:var(--muted)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ufo" viewBox="0 0 160 70">
+      <ellipse cx="80" cy="44" rx="76" ry="16" fill="#d8d0c4" stroke="#2b2230" stroke-width="3"/>
+      <path d="M48 40 Q52 14 80 12 Q108 14 112 40 Z" fill="#cfc6b8" stroke="#2b2230" stroke-width="3"/>
+      <line x1="80" y1="12" x2="86" y2="0" stroke="#2b2230" stroke-width="3"/>
+      <ellipse cx="80" cy="50" rx="44" ry="6" fill="#bfb5a6"/>
+      <circle cx="40" cy="44" r="3" fill="#2b2230"/><circle cx="80" cy="47" r="3" fill="#2b2230"/><circle cx="120" cy="44" r="3" fill="#2b2230"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="cover">
+  <svg class="ufo u1" viewBox="0 0 160 70" aria-hidden="true"><use href="#ufo"/></svg>
+  <svg class="ufo u2" viewBox="0 0 160 70" aria-hidden="true"><use href="#ufo"/></svg>
+  <svg class="ufo u3" viewBox="0 0 160 70" aria-hidden="true"><use href="#ufo"/></svg>
+  <div class="wrap">
+    <div class="cover-grid">
+      <div>
+        <p class="kicker">Pogoradio auf Bermudafunk · vor dem Sonic Ballroom, Köln · 31. Juli 2009</p>
+        <h1><span>Club</span><span>Déjà-Vu</span></h1>
+        <p class="sub">Früher hießen sie Die Kurt Cobains. Jetzt verstehen sie alle. Glauben sie.</p>
+        <p class="lede">Am selben Abend wie Supernichts spielen Club Déjà-Vu im Sonic Ballroom, der zehn Jahre alt wird. Nach dem Konzert greift sich Rüdi die Bande: Ferdinand Führer am Schlagzeug, den Herrn mit dem Schnauzbart aus Günzburg, Roland van Oystern und einen, der lieber nichts sagt. Wie lang das Interview wird, bestimmen sie mit der Länge ihrer Antworten.</p>
+        <p class="label">Stark · Muskel · Rock · Power</p>
+      </div>
+      <figure class="cd">
+        <img src="mondphasenfriseur.jpg" width="900" height="900" alt="Plattencover von „Mondphasenfriseur“: violetter Hintergrund mit waagerechten Streifen, oben in weißen, leuchtenden Buchstaben „Club Déjà-Vu“. Eine gezeichnete nackte Frau mit grüner Haut und roter Mähne posiert zwischen orangen und roten Kugeln, um sie herum fliegen Ufos. Unten ein aufgeklebter Zettel mit dem Titel.">
+        <figcaption>Out now: „Mondphasenfriseur“</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<nav class="index" aria-label="Inhalt">
+  <ol>
+    <li><a href="#t1"><span>01</span>Legoland</a></li>
+    <li><a href="#t2"><span>02</span>Die Kurt Cobains</a></li>
+    <li><a href="#t3"><span>03</span>Blattgold im Booklet</a></li>
+    <li><a href="#t4"><span>04</span>Flatrate</a></li>
+    <li><a href="#t5"><span>05</span>Ich unterschreibe alles</a></li>
+    <li><a href="#t6"><span>06</span>Daten machen nicht glücklich</a></li>
+    <li><a href="#t7"><span>07</span>In den Sonnenuntergang</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">01</span>Legoland</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt machen wir ein Interview mit Club Déjà-Vu. Es ist so: Die Länge des Interviews bestimmt ihr mit der Länge eurer Antworten.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ich wurde gerade noch aufgehalten. Von einem weiblichen Fan.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Macht nichts. Du spielst Schlagzeug?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Das kann ich nur bestätigen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wo kommt ihr her?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Aus Bayerisch-Schwaben.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Sag doch einfach mal eine Hausnummer.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ich komme aus Stuttgart. Der Herr mit dem Schnauzbart kommt aus Günzburg.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Günzburg. Das ist ja bekannt wegen der Legostadt.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Ja, das ist richtig. Legoland.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Da hast du aber nichts mit zu tun?</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Nee, leider nicht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Da boomt ja sozusagen alles.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Die dachten, es boomt wegen Legoland. Aber eigentlich hat sich gar nichts verändert. Außer dass halt Kohle draufgeht.</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Aber du kennst jemanden, der die Legofiguren zusammengebaut hat.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Das ist auch nicht richtig. Leider auch falsch.</p></div>
+  </div>
+  <aside class="side">
+    <div class="facts">
+      <h3>Club Déjà-Vu</h3>
+      <dl>
+        <dt>Aus</dt><dd>Günzburg in Bayerisch-Schwaben, der Schlagzeuger aus Stuttgart</dd>
+        <dt>Früher</dt><dd>Die Kurt Cobains, Album „Der Todesfluch des Zigeunerkönigs“</dd>
+        <dt>Label</dt><dd>Nebula 5</dd>
+        <dt>2009</dt><dd>„Mondphasenfriseur“</dd>
+        <dt>Am Mikro</dt><dd>Ferdinand Führer (Schlagzeug), Reichsmarschall Omega, Roland van Oystern, Angry Staff. So stellen sie sich vor.</dd>
+      </dl>
+    </div>
+    <p class="note"><b>Anm. d. Red.</b>Das Legoland Deutschland steht seit 2002 in Günzburg.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">02</span>Die Kurt Cobains</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das Einzige, was ich über euch weiß: Ihr seid bei diesem Label Nebula 5. Und da gab es noch so eine Band, die hieß Die Kurt Cobains.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Die Kurt Cobains. Ja, das sind wir nicht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Muss man euch alles aus der Nase ziehen?</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Wir haben uns umbenannt, weil das irgendwie keiner verstanden hat. Alle sind davon ausgegangen, dass wir entweder Grunge machen oder eine Nirvana-Coverband sind. Deswegen haben wir uns umbenannt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und jetzt versteht es jeder.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ich glaube schon. Jetzt versteht uns jeder. Die Sache läuft rund.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr schon mal Verträge unterschrieben?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Knebelverträge? Nein, noch nie.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wie seid ihr an den Sonic Ballroom gekommen? Das ist ja schon weit weg.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Supernichts spielen heute Abend hier, und die mögen uns ganz gerne. Und wir sie auch. Wir hatten sie auch mal zu uns eingeladen, und sie sind gekommen, die Guten. Und heute sind wir mal wieder hier.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Mit Supernichts hat Rüdi am selben Abend gesprochen: <a href="../supernichts/">Supernichts vor dem Sonic Ballroom</a>. Laut Sendungsarchiv liefen Die Kurt Cobains im März 2009 bei Pogoradio, Club Déjà-Vu ab Juli 2009 mit „Mondphasenfriseur“.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">03</span>Blattgold im Booklet</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt erzähl mal was zur Band. Hier im Hintergrund werden fleißig Flaschen gesammelt. Der, der das macht, sahnt hier richtig Kohle ab, im Gegensatz zu euch. Was kriegt ihr heute Abend?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Keine Ahnung.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr da nichts ausgemacht?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Unsere Verträge, die wir vorher abgeschickt haben, sind leider auf dem Weg verloren gegangen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wie sieht es aus mit der Band? Ihr müsst jetzt irgendwas sagen.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Wir sind schlechte Interviewpartner.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist einfach nur scheiße.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Das stimmt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr habt jetzt die Chance, euch zu profilieren.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Ich habe schon zehn Bier getrunken.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Jo, geil. Club Déjà-Vu, out now: die neue CD bei Nebula 5 Enterprises. Stark, Muskel, Rock, Power. Kaufen!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aber wer kauft sich heutzutage noch CDs? Die sind doch von gestern. Man lädt sich den Scheiß runter. Ich habe euer Album auch runtergeladen, per BitTorrent.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ach, echt? Glaube ich gar nicht. Schmarrn. Blödsinn.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Da hatte ich aber kein Textheft und kein Cover. Ich habe nur Songs ohne Titel. „Untitled 2“, „Untitled 3“.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ich glaube, das ist ein Generationsproblem. Nur die Jüngeren, bis siebzehn, achtzehn, laden vermehrt runter. Aber so alte Knochen wie du kaufen immer noch LPs und CDs und stellen sie in den Schrank. So wie ich natürlich auch. Ich sammle die und freue mich. Man tut sich als älterer Herr halt schwer, sich auf die neue Technologie umzustellen, MP3 und Internet.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Das Einzige, was wir dagegen machen: Wir gestalten unsere Booklets so extrem geil, dass die in der Regel schon den Kaufpreis rechtfertigen.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Wir verarbeiten da Blattgold.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die Fünf-Euro-Scheine, die zwischendrin liegen.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Kann ich den haben?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ein super Deal: Bei jeder Bestellung einer CD gibt es mindestens einen Fünf-Euro-Schein dazu. Solange der Vorrat reicht.</p></div>
+  </div>
+  <aside class="side">
+    <p class="beam">„Stark, Muskel, Rock, Power. Kaufen!“<cite>Ferdinand Führer, Werbeblock</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">04</span>Flatrate</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt noch mal zurück zur Band. Wie geht es weiter? Fragen wir mal andersrum: Was haltet ihr von diesen Flatrate-Bordellen, die jetzt geschlossen werden?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ich hoffe, dass ich mich nicht zufällig drin befinde, wenn eins geschlossen wird. Es wäre unangenehm, wenn meine Frau das erfahren würde. Haha.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was würde sie dann sagen?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Schau bloß, dass du nach Hause kommst. Räum erst mal auf, und dann gibt es Essen.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Dieselbe Frage hat an dem Abend auch <a href="../supernichts/#b2">Supernichts</a> bekommen. Fünf Tage vorher hatte die Polizei vier Häuser einer Flatrate-Bordellkette durchsucht. Auf „Mondphasenfriseur“ steht übrigens das Lied „Mit dem Fahrrad ins Bordell“.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">05</span>Ich unterschreibe alles</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe mal ein Lied von euch gehört, da geht es um Versicherungsverträge. Ich habe heute eine Rechnung über meine Unfallversicherung gekriegt. Die habe ich noch nie in Anspruch genommen, und anscheinend zahle ich jedes Jahr knapp sechzig Euro dafür. Würdest du mir raten, den Vertrag aufzuheben? Oder passiert dann gerade ein Unfall?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ich muss gestehen, bei Versicherungen bin ich ein schlechter Ratgeber. In dem Lied ging es um Verträge allgemein. Mich muss man nur auf der Straße ansprechen, ich unterschreibe alles. Ich bin Mitglied im Deutschen Vogelschutzbund, bei der Caritas, bei noch irgendwas, und beim ADAC war ich zwei Jahre lang Mitglied, ohne überhaupt einen Führerschein oder ein Auto zu haben.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Delfine?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Nein, das ist übertrieben. Aber ich zahle überall. Ständig zahle und zahle ich, und nie passiert mir was. Die Caritas brauche ich nicht.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Das ist auch der Grund, warum die Band gegründet wurde: weil der Flo in keiner Weise mehr ausgekommen ist. Da hat er uns gefragt, ob wir ihm helfen können, seine finanzielle Lage in den Griff zu kriegen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Super Idee, dafür eine Band zu gründen. Hast du einen Führerschein?</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Ja.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Bist du beim ADAC?</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Nee.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hast du ein Auto?</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Nein, ich habe kein Auto. Ich leihe mir manchmal Flos Auto, und dann fahre ich damit.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wohin?</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Heim.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Zu seiner Mutter, zum Abendessen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die Wäsche? Wäschst du die daheim oder bei der Mutter?</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Gegenüber ist so ein Salon, da trage ich sie hin. Was soll ich sagen, so mach ich das.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist okay. Da kann man nichts dagegen meckern.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ein reinlicher kleiner Kerl, der Roland.</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Ja, danke.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du hast noch gar nichts gesagt.</p></div>
+    <div class="turn s"><p class="who">Angry Staff</p><p class="said">Ich mag auch nichts sagen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist auch besser so.</p></div>
+    <div class="turn s"><p class="who">Angry Staff</p><p class="said">Das ist echt besser. Mein scheiß Gesicht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aber wir sind ja kein Fernsehen. Wir sind Radio.</p></div>
+    <div class="turn s"><p class="who">Angry Staff</p><p class="said">Ja, aber man hört es auch an meiner Stimme, dass mein Gesicht irgendwie deformiert ist.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Es ist leider …</p></div>
+    <div class="turn s"><p class="who">Angry Staff</p><p class="said">… eine üble Geschichte.</p></div>
+  </div>
+  <aside class="side">
+    <p class="beam">„Mich muss man nur auf der Straße ansprechen. Ich unterschreibe alles.“<cite>Ferdinand Führer, Mitglied im ADAC ohne Auto</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">06</span>Daten machen nicht glücklich</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt sag mir mal einen Grund, warum man Club-Déjà-Vu-CDs kaufen sollte.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Erstens, um unsere finanzielle Notlage ins Gleichgewicht zu bringen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Man kann auch in die Dritte Welt spenden.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Aber davon habe ich nichts. Zweitens, weil der Gregor das Booklet so schön bastelt. Da hockt er manchmal wochenlang und schnipselt und zerschneidet seine alten „Cinema“-Heftchen, die er irgendwo bei seinem Vater geklaut hat. Tagelang schnipselt er, und dann wird es auch immer schön. Und für den dritten Grund verweise ich an einen meiner Mitstreiter, in diesem Fall Roland van Oystern.</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Der dritte Grund? …</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du guckst ein bisschen. War das Konzert nicht gut?</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Doch. Das Konzert war sehr schön. Ein sehr schönes Konzert.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du bist also der kafkaeske Mensch.</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Ja, ja. Was soll ich sagen? Die muss halt jemand kaufen.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Die Kartons stehen bei uns rum. Jeder Gang zum Klo wird ein Hürdenlauf. Furchtbar.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wird es nicht besser, wenn man alles ins Internet stellt? Dann hat man alles aus den Füßen.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Im Endeffekt wäre das natürlich schon sinnvoll. Aber wie gesagt: Ich brauche irgendwas in der Hand. Ich möchte die Verpackung, die Platte oder die CD anfassen, sie mir anschauen, daran rumspielen, sie irgendwo hinstellen und sammeln. Genau das ist der Punkt: Ich bin Sammler. Um glücklich zu sein, brauche ich Dinge. Daten machen mich nicht glücklich. Ich brauche irgendwas Plastisches. Aber das ist wahrscheinlich ein Generationsproblem. Die anderen müssen die CD erst in den Computer stecken, auf MP3 umwandeln …</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Kann man machen.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">… und dann habe ich die Lieder auf meinem MP3-Stick und zusätzlich die Belastung durch so ein Stück Müll. Das ist ja völlig bescheuert. Aber die CD wird auf jeden Fall verschwinden. In zehn Jahren wird es nur noch Schlager auf CD geben. Und Club Déjà-Vu. Eine Platte wäre natürlich auch schön, aber das ist so teuer.</p></div>
+  </div>
+  <aside class="side">
+    <p class="beam">„Um glücklich zu sein, brauche ich Dinge. Daten machen mich nicht glücklich.“<cite>Ferdinand Führer, Sammler</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">07</span>In den Sonnenuntergang</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was macht die Zukunft? Wohin geht der Weg mit diesem Club?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Wie immer in den Sonnenuntergang.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr schon ein paar Lieder für eine neue Platte zusammen?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ach ja, richtig. Gut, dass du es erwähnst. Sehr gute Frage, man merkt schon, du bist ein Profi. Meistens haben wir es mit ganz schlechten Interviewern zu tun.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Bei Pogoradio auf Bermudafunk seid ihr gut aufgehoben.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Es ist ja auch eine Beleidigung unserer Souveränität, wenn man sich mit so stammelnden Typen rumärgern muss, die sich vor Ehrfurcht in die Hose scheißen, wenn sie uns interviewen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich habe mir extra einen hinter die Binde gekippt, damit ich die Angst überwinde.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Klar, verständlich. Wie war die Frage?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wohin geht der Weg? Habt ihr schon neue Lieder für eine neue CD?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Richtig. Im August, also kommenden Monat, gehen wir ins Studio und nehmen eine neue auf. Im Endeffekt die dritte.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wieder das schlechte Studio, wo das Schlagzeug so komisch abgemischt worden ist?</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Was meinst du?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Nein, ein super Studio, wo nur die ganz Großen aufnehmen.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Carla Bruni.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Pur?</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Nein, die waren da nicht. Pfui!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ihr wisst ja: Zeit ist Geld. Jetzt brauchen wir abschließende Worte.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">So langweilig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mir ist nicht langweilig, aber ich muss an die Zuhörerinnen und Zuhörer denken. Wenn hier nicht in den nächsten fünf Sekunden irgendwelche schlüpfrigen Geschichten kommen, muss ich das Interview abbrechen.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Auf jeden Fall, was er vorher nicht zu sagen imstande war: Wir nehmen im August die dritte Platte auf, und wir glauben, dass die relativ stark wird. Und das Booklet machen wir dann entsprechend noch ein bisschen besser, damit sich das die Waage hält.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dieses Label Nebula 5, seid ihr das auch? Oder ist das eine ganz andere Baustelle?</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Nein, wir sind nicht so arm dran, dass wir selber ein Label gründen müssen, um unsere eigenen Platten rauszubringen. Das ist echt unterste Schublade.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also nicht so wie Die Ärzte oder die Toten Hosen, die ihr eigenes Label haben.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Das ist ein anderer Status. Die können ihre Sachen auch so verkaufen. Aber wir sind ja keine Band, die ums Verrecken keinen Plattenvertrag kriegt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wie läuft die Platte?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Sie läuft an. Zwei in der letzten Woche.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wie viele heute Abend?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Zwei, soweit ich weiß. Aber ich bin nicht direkt im Bilde, die Mädchen hocken an der Kasse.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Oh, schlecht. Dann mache ich nachher vielleicht noch ein Interview mit den Käufern.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Das ist dein gutes Recht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay. Das war ein Interview hier in Köln vor dem Sonic Ballroom, der heute sein Zehnjähriges gefeiert hat. Und das war Club Déjà-Vu. Wie heißt du?</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Ferdinand Führer.</p></div>
+    <div class="turn r"><p class="who">Roland</p><p class="said">Roland van Oystern.</p></div>
+    <div class="turn o"><p class="who">Omega</p><p class="said">Reichsmarschall Omega.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hallo, nicht einschlafen! Name?</p></div>
+    <div class="turn s"><p class="who">Angry Staff</p><p class="said">Angry Staff.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Oh, cool.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay. Ich gehe wieder zurück ins Funkhaus.</p></div>
+    <div class="turn f"><p class="who">Ferdinand</p><p class="said">Tschüss.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Laut Sendungsarchiv liefen danach „Für immer Astronaut“ (Oktober 2010), „Erotic Science Fiction“ (ab November 2010) und 2015 „Die Farben der Saison“ bei Pogoradio. Roland van Oystern war im September 2012 selbst bei Rüdi zu Gast, Ferdinand Führer im Juli 2015.</p>
+    <p class="note"><b>Anm. d. Red.</b>Die Ärzte haben ihr Label Hot Action Records, die Toten Hosen JKP.</p>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="out">Ende der Übertragung</p>
+  <p class="protokoll">Pogoradio auf Bermudafunk · vor dem Sonic Ballroom, Köln-Ehrenfeld · 31. Juli 2009 · Rüdi mit Club Déjà-Vu · Transkript redigiert und gekürzt. Die Aufnahme steht im <a href="/interview-archiv/#club-deja-vu">Interview-Archiv</a>.</p>
+</footer>
+</body>
+</html>
