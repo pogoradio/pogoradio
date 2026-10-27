@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auweia! vs. Versus im Hinterhof · Pogoradio</title>
+<meta name="description" content="Pogoradio 2007 im Hinterhof vom Juz Mannheim mit den Kölner Bands Auweia! und Versus und dem Maskottchen Störten: ein Euro Eintritt, Pennplatz im Keller, Oettinger gegen Export, Ruhrpott Rodeo, Lieblingsbands und ein Abbruch aus privaten Gründen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&family=Rubik+Mono+One&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2efe7;
+  --panel:#faf8f3;
+  --ink:#141312;
+  --muted:#5d5a55;
+  --rule:#cfc9bd;
+  --red:#d4191c;
+  --red-ink:#b5121a;
+  --tape:rgba(236,224,176,.82);
+  --noise:.075;
+  --body:"Courier Prime","Courier New",Courier,monospace;
+  --type:"Special Elite","Courier New",Courier,monospace;
+  --mono:"Rubik Mono One","Arial Black",Impact,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141312;
+    --panel:#1d1b19;
+    --ink:#efebe2;
+    --muted:#a9a49b;
+    --rule:#34312d;
+    --red-ink:#ff5b52;
+    --tape:rgba(255,240,180,.2);
+    --noise:.05;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141312;
+  --panel:#1d1b19;
+  --ink:#efebe2;
+  --muted:#a9a49b;
+  --rule:#34312d;
+  --red-ink:#ff5b52;
+  --tape:rgba(255,240,180,.2);
+  --noise:.05;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--body);overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:var(--noise);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+body>*{position:relative;z-index:1}
+a{color:inherit;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:.16em}
+.wrap{width:min(1140px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Titel ---------- */
+.cover{padding:50px 0 44px;border-bottom:3px solid var(--ink)}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,330px);gap:48px;align-items:start}
+.kicker{margin:0 0 22px;font:400 15px/1.4 var(--type);letter-spacing:.04em}
+.ransom{margin:0;font-size:clamp(38px,7.2vw,88px);line-height:1.18;letter-spacing:0}
+.ransom .w{display:inline-block;white-space:nowrap;margin:0 .14em .12em 0}
+.ransom i{display:inline-block;font-style:normal;font-weight:400;padding:.05em .11em .02em;margin:0 .015em;line-height:1;box-shadow:2px 3px 0 rgba(0,0,0,.28)}
+.ransom i:nth-child(5n+1){font-family:"Bungee",Impact,sans-serif;background:#fff;color:#141312;transform:rotate(-4deg)}
+.ransom i:nth-child(5n+2){font-family:"Playfair Display",Georgia,serif;font-weight:900;font-style:italic;background:#141312;color:#fff;transform:rotate(3deg) translateY(-.04em)}
+.ransom i:nth-child(5n+3){font-family:"Special Elite",Courier,monospace;background:#d4191c;color:#fff;transform:rotate(-2deg) translateY(.06em)}
+.ransom i:nth-child(5n+4){font-family:"Rubik Mono One",Impact,sans-serif;font-size:.8em;background:#e6e0d0;color:#141312;transform:rotate(5deg)}
+.ransom i:nth-child(5n+5){font-family:"Playfair Display",Georgia,serif;font-weight:900;background:#fff;color:#d4191c;outline:2px solid #141312;outline-offset:-2px;transform:rotate(-6deg)}
+.ransom .vs i{font-size:.55em;vertical-align:.35em}
+.sub{margin:22px 0 0;max-width:30em;font:400 clamp(19px,2.2vw,23px)/1.4 var(--type)}
+.lede{margin:16px 0 0;max-width:36em}
+.hint{display:inline-block;margin:20px 0 0;padding:6px 10px;border:2px dashed var(--ink);font:400 15px/1.45 var(--type);max-width:36em}
+
+.cast{position:relative;margin:8px 0 0;padding:22px 20px 16px;background:var(--panel);border:1px solid var(--rule);transform:rotate(1.5deg);box-shadow:4px 5px 0 rgba(0,0,0,.18)}
+.cast::before{content:"";position:absolute;top:-13px;left:50%;width:120px;height:28px;margin-left:-60px;background:var(--tape);transform:rotate(-4deg)}
+.cast h2{margin:0 0 10px;font:400 18px/1.2 var(--mono);text-transform:uppercase}
+.cast dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;font:400 16px/1.45 var(--body)}
+.cast dt{font:400 15px/1.5 var(--type);text-transform:uppercase}
+.cast dd{margin:0}
+.ticket{position:absolute;right:-14px;bottom:-74px;width:104px;height:104px;border-radius:50%;display:grid;place-items:center;text-align:center;
+  background:var(--red);color:#fff;font:400 13px/1.1 var(--type);text-transform:uppercase;transform:rotate(-12deg);box-shadow:3px 3px 0 rgba(0,0,0,.25)}
+.ticket b{display:block;font:400 30px/1 "Bungee",Impact,sans-serif}
+
+/* Inhalt */
+.index{border-bottom:1px solid var(--rule);background:var(--panel)}
+.index ol{margin:0 auto;padding:14px max(16px,env(safe-area-inset-left,0px));list-style:none;width:min(1140px,100%);display:flex;flex-wrap:wrap;gap:6px 18px}
+.index a{display:inline-flex;gap:8px;align-items:baseline;padding:3px 0;text-decoration:none;font:400 16px/1.25 var(--type)}
+.index a span{color:var(--red-ink)}
+.index a:hover{text-decoration:underline}
+
+/* ---------- Gespräch ---------- */
+main{padding:6px 0 30px}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px 52px;padding:44px 0 32px;border-bottom:2px dashed var(--rule)}
+.part:last-of-type{border-bottom:0}
+.part h2{grid-column:1/-1;margin:0 0 10px;font:400 clamp(19px,2.4vw,27px)/1.55 var(--mono);text-transform:uppercase;transform:rotate(-.6deg);transform-origin:left}
+.part h2 .no{display:inline-block;margin-right:.4em;padding:.05em .3em;background:var(--red);color:#fff}
+.part h2 .t{background:var(--ink);color:var(--paper);padding:.08em .35em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+.talk{min-width:0}
+.turn{display:grid;grid-template-columns:7.4em minmax(0,1fr);gap:0 16px;margin:0 0 11px}
+.turn .who{margin:.12em 0 0;font:400 15px/1.3 var(--type);text-transform:uppercase;letter-spacing:.02em;color:var(--muted)}
+.turn .who span{display:inline-block;padding:.05em .3em .02em}
+.turn .said{margin:0}
+.turn.q .who{color:var(--red-ink)}
+.turn.q .said{font-weight:700}
+.turn.a .who span{background:var(--ink);color:var(--paper)}
+.turn.v .who span{border:2px solid var(--ink);color:var(--ink);padding:0 .28em}
+.turn.s .who{color:var(--ink);text-decoration:underline wavy var(--red);text-underline-offset:.25em}
+.turn .said em{font-style:italic}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:24px;align-self:start}
+.note{position:relative;margin:0;padding:16px 16px 14px;background:var(--panel);border:1px solid var(--rule);font:400 15.5px/1.5 var(--body);box-shadow:3px 4px 0 rgba(0,0,0,.12)}
+.note::before{content:"";position:absolute;top:-10px;left:18px;width:70px;height:20px;background:var(--tape);transform:rotate(-5deg)}
+.note b{display:block;margin:0 0 4px;font:400 14px/1.2 var(--type);text-transform:uppercase;color:var(--red-ink)}
+.quote{margin:0;padding:14px 16px 12px;background:#fff;color:#141312;font:400 20px/1.35 var(--type);transform:rotate(-1.2deg);box-shadow:3px 4px 0 rgba(0,0,0,.25);border-left:8px solid #d4191c}
+.quote cite{display:block;margin-top:8px;font:400 13px/1.2 var(--mono);font-style:normal;text-transform:uppercase;color:#5d5a55}
+.list{margin:0;padding:16px 16px 12px;border:3px solid var(--ink);background:var(--panel)}
+.list h3{margin:0 0 8px;font:400 16px/1.2 var(--mono);text-transform:uppercase}
+.list ul{margin:0;padding:0;list-style:none;font:400 16px/1.5 var(--type)}
+.list li::before{content:"✕ ";color:var(--red-ink)}
+
+@media (max-width:960px){
+  .cover-grid{grid-template-columns:minmax(0,1fr)}
+  .cast{max-width:420px;margin-top:20px}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:0}
+  .turn .who{margin-bottom:2px}
+  .ticket{right:-4px;bottom:-56px;width:92px;height:92px}
+  .cover{padding-bottom:64px}
+  .quote{transform:none}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:30px 0 64px;border-top:3px solid var(--ink)}
+.end .out{margin:0 0 12px;font:400 clamp(20px,3vw,28px)/1.3 var(--mono);text-transform:uppercase}
+.end .out span{background:var(--red);color:#fff;padding:.05em .3em}
+.protokoll{margin:0;max-width:48em;font:400 15.5px/1.55 var(--body);color:var(--muted)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="cover">
+  <div class="wrap cover-grid">
+    <div>
+      <p class="kicker">Pogoradio auf Bermudafunk · Juz Mannheim, im Hinterhof · 2007</p>
+      <h1 class="ransom" aria-label="Auweia! vs. Versus"><span class="w" aria-hidden="true"><i>A</i><i>U</i><i>W</i><i>E</i><i>I</i><i>A</i><i>!</i></span><span class="w vs" aria-hidden="true"><i>v</i><i>s</i><i>.</i></span><span class="w" aria-hidden="true"><i>V</i><i>E</i><i>R</i><i>S</i><i>U</i><i>S</i></span></h1>
+      <p class="sub">Zwei Bands aus dem Raum Köln, ein Maskottchen, sehr viel Bier und noch mehr Stimmen.</p>
+      <p class="lede">Auweia! und Versus haben im Juz gespielt, für einen Euro Eintritt. Danach sitzt Rüdi mit ihnen im Hinterhof. Alle reden gleichzeitig, die Bands interviewen erst mal Rüdi, das Maskottchen will auch was sagen, und am Ende muss Rüdi die Sendung aus privaten Gründen abbrechen.</p>
+      <p class="hint">Wer was sagt, ist auf der Aufnahme oft nicht auszumachen. Wo es klar ist, steht die Band dabei, sonst „Einer“.</p>
+    </div>
+    <aside class="cast" aria-label="Wer dabei ist">
+      <h2>Im Hinterhof</h2>
+      <dl>
+        <dt>Rüdi</dt><dd>Pogoradio</dd>
+        <dt>Auweia!</dt><dd>Punk aus Köln</dd>
+        <dt>Versus</dt><dd>Umkreis Köln, „wahrscheinlich ein lateinischer Name“</dd>
+        <dt>Störten</dt><dd>Maskottchen und Fahrer von Auweia!</dd>
+        <dt>Dazu</dt><dd>Bier, Oettinger und viele Stimmen</dd>
+      </dl>
+      <p class="ticket" aria-label="Eintritt ein Euro"><span>Eintritt<b>1 €</b></span></p>
+    </aside>
+  </div>
+</header>
+
+<nav class="index" aria-label="Inhalt">
+  <ol>
+    <li><a href="#t1"><span>01</span>Jingle mit Todesstrafe</a></li>
+    <li><a href="#t2"><span>02</span>Wer interviewt hier wen?</a></li>
+    <li><a href="#t3"><span>03</span>Umkreis Köln</a></li>
+    <li><a href="#t4"><span>04</span>Wunschkonzert</a></li>
+    <li><a href="#t5"><span>05</span>Auf dem Titelblatt</a></li>
+    <li><a href="#t6"><span>06</span>Ein Euro Eintritt</a></li>
+    <li><a href="#t7"><span>07</span>No Future</a></li>
+    <li><a href="#t8"><span>08</span>Nicht Pfarrer, Fahrer</a></li>
+    <li><a href="#t9"><span>09</span>Ein Tag im Bier</a></li>
+    <li><a href="#t10"><span>10</span>Abends in Köln</a></li>
+    <li><a href="#t11"><span>11</span>Lieblingsbands</a></li>
+    <li><a href="#t12"><span>12</span>Im Zug nach Osnabrück</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">01</span><span class="t">Jingle mit Todesstrafe</span></h2>
+  <div class="talk">
+    <div class="turn e"><p class="who">Einer, singt</p><p class="said">„Bei der nächsten Provokation gibt’s Todesstrafe, du angepasste Ratte!“</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also, machen wir jetzt mal einen Jingle hier. Pogoradio im Bermudafunk …</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Hör auf!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Check, check. Hier ist Pogoradio im Bermudafunk, jeden Mittwoch zwischen 23 und 24 Uhr. Und ich habe hier zwei Bands am Start. Die eine heißt Versus. Das ist wahrscheinlich ein lateinischer Name. Und die andere Band heißt Auweia!. Das ist Punk.</p></div>
+    <div class="turn e"><p class="who">Einer, singt</p><p class="said">„Bei der nächsten Provokation gibt’s Todesstrafe, du angepasste Ratte!“</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Provocation? Ist das alles Englisch?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">So wie Exploited, ne?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja. Super. Geil.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Kann mal jemand mein Bier mit den Zähnen öffnen? Geht das? Kann das jemand von euch?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Mit den Zähnen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mit den Zähnen, ja.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Nein. Ich kann die Schuhe ausziehen. Oh Gott, oh Gott, oh Gott.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Danke. Ach, ging doch.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Das waren die Weisheitszähne. Prost.</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Das waren die Weisheitszähne. Prost.“<cite>Einer, nach dem Bier</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">02</span><span class="t">Wer interviewt hier wen?</span></h2>
+  <div class="talk">
+    <div class="turn e"><p class="who">Einer</p><p class="said">Machst du Interviews immer nach den Konzerten?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, weil dann sind die Leute entspannter und haben schon einiges in sich.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Erzähl doch mal was über dich.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also, ich bin der Rüdi.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Was machst du denn so den ganzen Tag? Wie lang machst du das jetzt schon?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Sechs Jahre. Sieben Jahre. Seit 2000 mache ich das.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Warum machst du das? Willst du drüber reden?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was?</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Warum machst du dieses Interview mit diesen Bands?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Mit diesen Bands? Ich mache es mit allen Bands, die hier vorbeikommen.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Oh. Und wir dachten, wir wären was Besonderes.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Ein Schwein! Er hat uns ein Lied versprochen. Ich geh.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Mit jedem, der hier vorbeikommt, machst du ein Interview?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nur eins.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Nur eins. Überleg dir, was du sagst.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dann sage ich lieber nichts.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Feigling.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Jetzt habe ich eine Frage.</p></div>
+    <div class="turn e"><p class="who">Alle</p><p class="said">Nein!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du hast eine Frage? Ich habe hier eine Frage gehört. Der Norbert …</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Bier haben wir doch alle, oder? In der Hand?</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Und wir dachten, wir wären was Besonderes.“<cite>Einer, enttäuscht</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">03</span><span class="t">Umkreis Köln</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">So, jetzt kommen wir mal zurück. Es sind zwei Bands hier. Ihr kommt aus Köln?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Umkreis Köln. Köln am Rhein.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Brühl, Köln, Gießen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Versus und Auweia!.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Düsseldorf, Köln, Duisburg, Ehrenfeld, Süd.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Düsseldorf darf man ja nicht sagen. Köln-Mitte.</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Aber wir haben auch unser Maskottchen dabei. Das ist der Störten hier.</p></div>
+    <div class="turn v"><p class="who"><span>Versus</span></p><p class="said">Möchte dazu sagen: Das ist das Maskottchen von Auweia!. Wir haben damit nichts zu tun.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Spontanität ist ja seine Stärke. Sag mal ein Wort, das mit M anfängt.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Masturbation.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Er war schneller!</p></div>
+    <div class="turn v"><p class="who"><span>Versus</span></p><p class="said">Versus, Versus!</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Versus fängt nicht mit M an.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wie heißt denn das Maskottchen eigentlich? Wer bist du?</p></div>
+    <div class="turn s"><p class="who">Störten</p><p class="said">Störten.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Störtebeker.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Möbelhaus.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Möbelhaus ist richtig. 20 Punkte. Oder auch Mutti. Das könnte man jetzt als Überleitung zu einem Lied nehmen, aber …</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Fatal. Ein Masterplan.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Auweia! gibt es seit 2004 in Köln. Gesungen hat Ullah, Gitarre spielte Norbert, der in Abschnitt 02 kurz auftaucht. Ullah war 2011 selbst bei Rüdi zu Gast.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">04</span><span class="t">Wunschkonzert</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Jetzt dürfen wir auch nicht zu viel labern. Wir könnten uns jetzt zum Beispiel ein Lied wünschen. Gibt’s ein gutes Lied von eurer Band? Auweia!?</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Also, ich wünsche mir von Versus „Judgement Day“. Das ist das Neueste und das Schönste. Aber das gibt’s gar nicht, weil es noch nicht aufgenommen ist.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist schlau im Radio.</p></div>
+    <div class="turn v"><p class="who"><span>Versus</span></p><p class="said">Ich habe da so eine Liveversion …</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Könnt ihr das vielleicht singen? Summen?</p></div>
+    <div class="turn v"><p class="who"><span>Versus</span></p><p class="said">Nee. Das hat eben auf der Bühne schon nicht geklappt, dann probiere ich das jetzt auch nicht noch mal.</p></div>
+    <div class="turn e"><p class="who">Einer, singt</p><p class="said">„Next time I see you, Judgement Day …“</p></div>
+    <div class="turn v"><p class="who"><span>Versus</span></p><p class="said">Ich wünsche mir von Auweia! „Punk, Aller!“.</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Oh. Nein. Nee, das will sich keiner wünschen. Das ist der letzte Scheiß. Das kennen ja schon alle.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr nicht ein großes Konzert in Rostock gehabt?</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Nee, nee. Wir haben die Band jetzt komplett geknickt, Alter. Komplett neu. Force Attack? Nee, auf dem Force Attack haben wir nicht gespielt. Auf dem Ruhrpott Rodeo.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr da irgendwas gewonnen? Ruhrpott Rodeo, da war ich ja auch.</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Ja, das war groß. Wir hatten drei Lieder, und dann wurde uns der Saft abgedreht. Ihr Schweine!</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wer macht denn so einen Scheiß?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Gerüchte besagen, dass der Sänger zu spät war.</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Nee, nee, anderer Käse. Die Techniker haben da zu lange gebraucht, und das ging alles auf unsere Zeit.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Der ist unschuldig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Schreist du ihn persönlich an oder was?</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Ich habe mich mit ihm unterhalten, und er konnte absolut nichts dafür.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Er sollte auch auf dem Punk im Pott spielen und hat sich nicht mehr gemeldet.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Da wollten wir auch gar nicht spielen. Wir spielen nämlich auf dem Punk-im-Eimer-Festival.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Gewünscht hat es sich dann doch jemand: In der Sendung vom 12. September 2007 liefen „Punk, Aller“ und „Szenekrieg“ von Auweia!, live aus dem Juz Mannheim.</p>
+    <p class="note"><b>Anm. d. Red.</b>Das Force Attack war ein Punkfestival bei Rostock, das Ruhrpott Rodeo findet in Hünxe am Niederrhein statt.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">05</span><span class="t">Auf dem Titelblatt</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Steigt euch langsam nicht der Erfolg zu Kopf?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Was? Der Erfolg?</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Ach so. Das geht so ein bisschen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du warst ja auch mal das Covergirl auf dem Titelblatt der Plastic Bomb, ne?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und hat es danach irgendwie geklappt?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja. Wir waren dann eigentlich auch auf dem Spiegel und auf dem Stern.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nee, ich meine jetzt so …</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Wir sind ein bisschen untergegangen.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Da war er nackt, das wurde zensiert.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Oh. Und mit den Mädels?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Da haben halt noch mehr Leute gesagt: Ey, du bist doch der Depp von … Eigentlich hat sich danach auch nur der Dennis wieder an mich rangemacht.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Stimmt. Aber das war’s wert. Das war auch schön. Der ist ja nicht verkehrt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was ist eigentlich an dem Gerücht dran, dass Auweia! demnächst bei Plastic Bomb einsteigt, mit einer neuen Platte? Das hört man ja in aller Munde.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Das ist so wie das Gerücht, dass Versus auf Maniac Attack Records untergehen, weil die keine Lieder zustande kriegen. Ganz komische Sache.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich hab’s im Wald gehört. Ich weiß gar nicht, wer es erzählt hat.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Der Räuber Hotzenplotz.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Die Plastic Bomb ist eines der großen deutschen Punk-Fanzines und hat auch ein eigenes Plattenlabel.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">06</span><span class="t">Ein Euro Eintritt</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wisst ihr eigentlich, dass ihr heute Abend verarscht worden seid, mit dem 1-Euro-Eintritt? Da kriegt ihr ja nie die Spritkohle zusammen.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Wir haben auch ein bisschen Angst. Aber zur Not schlagen wir sie alle zusammen, die da waren.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr euren Pennplatz schon gesehen? Die verpissten Matratzen in dem feuchten Keller mit dem Schimmel an der Wand?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ey, da haben wir draufgepisst.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Sieht auf jeden Fall besser aus als zu Hause, würde ich sagen. Matratze warm, Matratze kalt, das ist immer …</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Als es hieß, es kostet nur einen Euro, haben wir uns gedacht: Wir saufen einfach so viel, dass uns kein Mensch mehr auf Spritgeld ansprechen wird.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Mit Oettinger.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Hallo? Was ist an Oettinger verkehrt?</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Gibt’s auch als Pils.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Trinkst du Pils, ich trinke Export. Das ist der kleine große Unterschied.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Das ist nie im Leben … Das ist noch nicht mal Bier.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was meinst du, ist das so der Rückwärtsgang der Evolution?</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Ja, eindeutig. Jetzt trinke ich lieber … wie heißt das Zeug? Mineralwasser.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ey, pass mir auf mit Mineralwasser, Alter.</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Trinkst du Pils, ich trinke Export. Das ist der kleine große Unterschied.“<cite>Einer, Oettinger in der Hand</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">07</span><span class="t">No Future</span></h2>
+  <div class="talk">
+    <div class="turn e"><p class="who">Einer</p><p class="said">Was ist eigentlich mit dem Gesabbel? Kommt da ab und zu auch noch Musik dazwischen?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, ja. Ich schneide das dann dazwischen rein.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Super. Hoffe ich doch.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Warte mal, wir machen jetzt eine Pause und hören ein Lied.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ey! Boah, das war mein Lieblingslied.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Ey, das läuft schon seit sieben Minuten, das ist viel zu lang. Wir müssen jetzt noch was Sinnvolles sagen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also, Bands stellt man ja immer irgendwelche Fragen. Zum Beispiel: Was habt ihr vor? Wo kommt ihr her, wo geht ihr hin? Was passiert so plattentechnisch?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Hattest du schon mal Bands, die auf so was geantwortet haben?</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Die Zukunftsfrage musst du Versus stellen. Wir sind hier so No Future.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Ist klar. Wir machen die Scheiße nur wegen dem Freibier.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Habt ihr schon mal angedacht, euch aufzulösen?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja, immer. Jeden Morgen. Eigentlich lösen wir uns immer auf. Jeden Morgen überlege ich mir, warum …</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Wir machen die Scheiße nur wegen dem Freibier.“<cite>Zukunftspläne</cite></p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t8">
+  <h2 id="t8"><span class="no">08</span><span class="t">Nicht Pfarrer, Fahrer</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Wer ist denn eigentlich von eurer Band so der übelste Typ? Derjenige, den keiner leiden kann?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Den keiner leiden kann? Das ist der Störten.</p></div>
+    <div class="turn e"><p class="who">Alle</p><p class="said">Störten!</p></div>
+    <div class="turn s"><p class="who">Störten</p><p class="said">Mich kann ja eh keiner leiden, ihr scheiß Typen. Hier, guckt euch das Gesicht an. Das Gesicht, Alter.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Entschuldigung, das ist Radio.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Das ist ungeschminkt. Echt ungeschminkt, Alter. Wer so aussieht, der ist hässlich.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Das ist ja wie bei „Manta, Manta“, Alter.</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Er ist übrigens unser Fahrer.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich dachte, wir haben hier seriöse Leute im Interview.</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Der Störten ist unser Fahrer. Nicht Pfarrer, Fahrer.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Auto?</p></div>
+    <div class="turn a"><p class="who"><span>Auweia!</span></p><p class="said">Auch. Also, Bus und Bahn fahren wir immer mit ihm. Er kauft immer das Wochenendticket, und dann fahren wir mit ihm.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Er fährt auch die Bahn. Ist eigentlich nicht zu verachten, wie der die Bahn fährt.</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Nicht Pfarrer, Fahrer.“<cite>Auweia! über Störten</cite></p>
+    <p class="note"><b>Anm. d. Red.</b>Mit dem Schönes-Wochenende-Ticket der Bahn konnten bis zu fünf Leute einen Tag lang durch ganz Deutschland fahren, im Nahverkehr.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t9">
+  <h2 id="t9"><span class="no">09</span><span class="t">Ein Tag im Bier</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was glaubt ihr eigentlich, warum auf einmal so viele Streiks sind?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja, ne?</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Ey, das will ich jetzt gar nicht hören. Ich wünsche mir was von den Fuckin Faces. „Ein Tag im Bier“.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja, hier, bitte. Das wollen wir alle hören.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das ist eine Band, die ich nicht habe.</p></div>
+    <div class="turn e"><p class="who">Alle</p><p class="said">Oh.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Na, schicke ich dir per E-Mail.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, mach das.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Das musst du haben. Wichtig. Ansonsten, wenn du Lust hast, kannst du ja mal was Sinnvolles fragen.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Im Sommer 2007 streikten die Lokführer der GDL. Die E-Mail ist offenbar angekommen: „Ein Tag im Bier“ von den Fuckin Faces lief in der Sendung vom 12. September 2007.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t10">
+  <h2 id="t10"><span class="no">10</span><span class="t">Abends in Köln</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Könnte ich auch machen. Ihr kommt aus Köln. Wo kann man da abends hingehen?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Nach Brühl. Zwanzig Minuten mit der Bahn.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Von meiner Haustür aus sind es zehn Minuten mit der Bundesbahn.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Man kann in den Sonic Ballroom gehen.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Ist ja langweilig.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ansonsten geht man halt auf die Straße und macht es wie Kotzbrocken damals. Bauwagenplatz, wem gehört die Welt, diese Straße …</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Und da kann man einfach so als Touri hin?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Natürlich nicht! Du musst schon freitags um einundzwanzig Uhr in den Sonic Ballroom, da sind regelmäßig Konzerte.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Das klingt vernünftig.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Sehr angenehmer Platz. Ansonsten der Plus bei mir um die Ecke, der hat bis 22 Uhr offen. Da kann man dann vorglühen. Mit oder ohne Alkohol, ist immer gut.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Die kleinen Preise, ne? Die nerven zwar ein bisschen, aber da kann man drüber wegtrinken.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Früher konntest du im Hit-Markt Wein umsonst trinken. Da hattest du so eine Weintheke zum Testen. Echt, Alter.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Vor dem Sonic Ballroom in Köln-Ehrenfeld hat Rüdi zwei Jahre später <a href="../supernichts/">Supernichts</a> und <a href="../club-deja-vu/">Club Déjà-Vu</a> interviewt. Den Plus gibt es nicht mehr, die Filialen wurden ab 2009 zu Netto.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t11">
+  <h2 id="t11"><span class="no">11</span><span class="t">Lieblingsbands</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was sind eure Lieblingsbands?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Da muss man jetzt jeden Einzelnen fragen. Jeder hat drei Möglichkeiten.</p></div>
+    <div class="turn e"><p class="who">Der Erste</p><p class="said">…But Alive.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die zweite?</p></div>
+    <div class="turn e"><p class="who">Der Erste</p><p class="said">Puh, das ist schwer. Eine Rangfolge habe ich da gar nicht. An zweiter Stelle kann ich tausend nennen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, der Nächste.</p></div>
+    <div class="turn e"><p class="who">Der Zweite</p><p class="said">Tin Can Army ist die beste Band der Welt. Und, ich glaube, Lower Class Brats, Anti-Nowhere League und, um richtig zu schleimen, T.O.D. Hört euch T.O.D. an! T-O-D, aus Düsseldorf.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Die habe ich, glaube ich, sogar schon in der Sendung gespielt.</p></div>
+    <div class="turn e"><p class="who">Der Zweite</p><p class="said">Ja, zu Recht! Die sind so cool und stellen ihren Scheiß online. Eine Internetband, aber trotzdem verdammt toll.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und du?</p></div>
+    <div class="turn e"><p class="who">Der Dritte</p><p class="said">Ach, was soll ich da sagen? Keine Ahnung. GBH, Chaos UK und die Pestpocken.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay. Und du?</p></div>
+    <div class="turn e"><p class="who">Der Vierte</p><p class="said">Ich würde sagen, Tin Can Army ist die beste Band der Welt, die es jemals gab. Und ansonsten Versus und, ich glaube, Auweia!.</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Wer ist das denn? Wer hört denn so eine Scheiße?</p></div>
+  </div>
+  <aside class="side">
+    <div class="list">
+      <h3>Die Liste aus dem Hinterhof</h3>
+      <ul>
+        <li>Tin Can Army (zweimal „beste Band der Welt“)</li>
+        <li>…But Alive</li>
+        <li>Lower Class Brats</li>
+        <li>Anti-Nowhere League</li>
+        <li>T.O.D.</li>
+        <li>GBH</li>
+        <li>Chaos UK</li>
+        <li>Pestpocken</li>
+        <li>Versus und Auweia!</li>
+      </ul>
+    </div>
+    <p class="note"><b>Anm. d. Red.</b>Geschleimt hat sich gelohnt: T.O.D. und Auweia! haben später ein Split-Tape zusammen gemacht, im Pogoradio lief es ab 2009. Auweia! waren außerdem auf „15 Jahre asozial“, einem Tribute an die Pestpocken. Mit denen gibt es ein <a href="/interview-archiv/pestpocken/">Interview im Archiv</a>.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t12">
+  <h2 id="t12"><span class="no">12</span><span class="t">Im Zug nach Osnabrück</span></h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was verbindet ihr sonst noch Negatives mit Punkrock?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Schürfwunden. Die verbinde ich gerne.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Hast du schon mal welche gehabt?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Ja. Auf der Straße hat man halt auch mal so was.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Im Kopf auch.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Bist du so ein bisschen Hypochonder? Der sofort einen Ausschlag kriegt, wenn er einen sieht?</p></div>
+    <div class="turn e"><p class="who">Einer</p><p class="said">Wenn ich den Ausschlag sehe, dann krieg ich auch einen, oder was meinst du? Nee, ich bin auch nicht so der Herpestyp. Ich bin eigentlich mehr so der Typ, der sonntags im Bett liegt und sich den Bauch streichelt, bis die Pizza warm ist.</p></div>
+    <div class="turn e"><p class="who">Ein anderer</p><p class="said">Wir haben sehr viel gemeinsam. Ich liebe dich.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Oh, da bahnt sich aber was an.</p></div>
+    <div class="turn e"><p class="who">Einer, singt</p><p class="said">„Ich fand das ganz große Glück mit dir im Zug nach Osnabrück.“</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Verdammt. Ich muss die Sendung jetzt aus privaten Gründen abbrechen. Das war Pogoradio im Bermudafunk, und ich gehe wieder zurück ins Funkhaus.</p></div>
+  </div>
+  <aside class="side">
+    <p class="quote">„Ich muss die Sendung jetzt aus privaten Gründen abbrechen.“<cite>Rüdi</cite></p>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="out"><span>Ende</span> der Aufnahme</p>
+  <p class="protokoll">Pogoradio auf Bermudafunk · Juz Mannheim, im Hinterhof nach dem Konzert · 2007 · Rüdi mit Auweia!, Versus und Störten · Transkript redigiert und gekürzt. Gesendet am 12. September 2007, die Sendung steht im <a href="/sendungen/">Sendungsarchiv</a>.</p>
+</footer>
+</body>
+</html>
