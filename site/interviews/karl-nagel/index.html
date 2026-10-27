@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karl Nagel blättert im Album · Pogoradio</title>
+<meta name="description" content="Pogoradio 2007 per Skype mit Karl Nagel in Hamburg: über sein Punk-Fotoalbum punkfoto.de, Fanzines ohne Bandberichte, die APPD, den Wahlkampf 2005, eine Rentnerband und vierzehn DVDs auf Bestellung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#ece3cf;
+  --page-2:#e2d7bf;
+  --ink:#24201b;
+  --muted:#6a5f50;
+  --pencil:#3b342b;
+  --print:#fbf8f1;
+  --print-ink:#24201b;
+  --corner:#2b2722;
+  --rule:#cbbd9f;
+  --accent:#9c2f21;
+  --glassine:rgba(255,255,255,.45);
+  --hand:"Kalam","Comic Sans MS",cursive;
+  --serif:"EB Garamond",Garamond,Georgia,"Times New Roman",serif;
+  --type:"Cutive Mono","Courier New",Courier,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#1b1a18;
+    --page-2:#22201d;
+    --ink:#ebe5d8;
+    --muted:#a69d8e;
+    --pencil:#f1ece2;
+    --print:#f4efe4;
+    --print-ink:#24201b;
+    --corner:#0c0b0a;
+    --rule:#3a3631;
+    --accent:#e2735f;
+    --glassine:rgba(255,255,255,.05);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#1b1a18;
+  --page-2:#22201d;
+  --ink:#ebe5d8;
+  --muted:#a69d8e;
+  --pencil:#f1ece2;
+  --print:#f4efe4;
+  --print-ink:#24201b;
+  --corner:#0c0b0a;
+  --rule:#3a3631;
+  --accent:#e2735f;
+  --glassine:rgba(255,255,255,.05);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;color:var(--ink);font:400 20px/1.55 var(--serif);overflow-x:hidden;
+  background:var(--page);
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 6%,transparent) 1px,transparent 1.2px);
+  background-size:7px 7px;
+}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:.18em}
+.wrap{width:min(1120px,100%);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+
+/* ---------- Albumdeckel ---------- */
+.cover{padding:52px 0 42px;border-bottom:1px solid var(--rule);overflow:hidden}
+main{overflow:hidden}
+.kicker{margin:0 0 18px;font:400 15px/1.4 var(--type);letter-spacing:.04em;color:var(--muted)}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:46px;align-items:center}
+h1{margin:0;font:700 clamp(54px,9vw,112px)/.95 var(--hand);color:var(--pencil);letter-spacing:-.01em;transform:rotate(-2deg);transform-origin:left bottom}
+h1 small{display:block;font-size:.36em;font-weight:400;margin-top:.25em;color:var(--muted)}
+.sub{margin:28px 0 0;max-width:32em;font:600 clamp(21px,2.4vw,26px)/1.35 var(--serif)}
+.lede{margin:14px 0 0;max-width:36em}
+
+/* Fotoecken */
+.slot{position:relative;margin:0;background:var(--print);color:var(--print-ink);padding:22px 22px 20px;box-shadow:0 8px 22px -14px rgba(0,0,0,.6)}
+.slot::before,.slot::after,.slot .c1,.slot .c2{content:"";position:absolute;width:26px;height:26px;background:var(--corner)}
+.slot::before{left:-6px;top:-6px;clip-path:polygon(0 0,100% 0,0 100%)}
+.slot::after{right:-6px;top:-6px;clip-path:polygon(0 0,100% 0,100% 100%)}
+.slot .c1{left:-6px;bottom:-6px;clip-path:polygon(0 0,100% 100%,0 100%)}
+.slot .c2{right:-6px;bottom:-6px;clip-path:polygon(100% 0,100% 100%,0 100%)}
+.empty{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;background:transparent;color:var(--pencil);box-shadow:none;border:2px dashed color-mix(in srgb,var(--pencil) 45%,transparent);transform:rotate(1.6deg)}
+.empty p{margin:0;font:400 24px/1.25 var(--hand);padding:0 18px}
+.empty p small{display:block;margin-top:8px;font-size:.7em;color:var(--muted)}
+
+/* Inhalt als Albumregister */
+.reg{margin:38px 0 0;max-width:760px}
+.reg p{margin:0 0 6px;font:400 15px/1 var(--type);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.reg ol{margin:0;padding:0;list-style:none;columns:2 280px;column-gap:30px}
+.reg li{break-inside:avoid}
+.reg a{display:grid;grid-template-columns:1.8em minmax(0,1fr);padding:4px 0;text-decoration:none;font:400 21px/1.3 var(--hand);color:var(--pencil);border-bottom:1px solid var(--rule)}
+.reg a span{color:var(--muted)}
+.reg a:hover{color:var(--accent)}
+
+/* ---------- Seiten ---------- */
+main{padding:14px 0 30px}
+.part{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px 54px;padding:44px 0 34px;border-bottom:1px solid var(--rule);position:relative}
+.part:last-of-type{border-bottom:0}
+.part h2{grid-column:1/-1;margin:0 0 8px;display:flex;align-items:baseline;gap:14px;font:700 clamp(30px,3.6vw,42px)/1.1 var(--hand);color:var(--pencil);transform:rotate(-.8deg);transform-origin:left}
+.part h2 .no{font:400 17px/1 var(--type);color:var(--muted);transform:rotate(.8deg)}
+
+.talk{min-width:0}
+.turn{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:0 18px;margin:0 0 13px}
+.turn .who{margin:.36em 0 0;font:400 14px/1.2 var(--type);letter-spacing:.04em;text-transform:uppercase}
+.turn .said{margin:0}
+.turn.q .who{color:var(--accent)}
+.turn.q .said{font-style:italic}
+.turn.a .who{color:var(--muted)}
+
+.side{min-width:0;display:flex;flex-direction:column;gap:30px;align-self:start;padding-top:6px}
+.slot.quote{transform:rotate(-1.4deg)}
+.slot.quote:nth-of-type(even){transform:rotate(1.2deg)}
+.slot.quote blockquote{margin:0;font:400 23px/1.3 var(--hand)}
+.slot.quote cite{display:block;margin-top:10px;font:400 13px/1.2 var(--type);font-style:normal;letter-spacing:.04em;color:#6a5f50}
+.note{margin:0;padding:12px 15px;background:var(--glassine);border:1px solid var(--rule);font:400 17px/1.45 var(--serif)}
+.note b{display:block;margin:0 0 4px;font:400 13px/1.2 var(--type);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.facts{margin:0;padding:14px 16px;border:1px solid var(--rule);background:var(--glassine);font:400 17px/1.45 var(--serif)}
+.facts h3{margin:0 0 8px;font:700 22px/1.1 var(--hand);color:var(--pencil)}
+.facts dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 12px}
+.facts dt{font:400 13px/1.7 var(--type);color:var(--muted);text-transform:uppercase}
+.facts dd{margin:0}
+
+@media (max-width:960px){
+  .cover-grid{grid-template-columns:minmax(0,1fr)}
+  .empty{max-width:340px}
+  .part{grid-template-columns:minmax(0,1fr)}
+  .side{max-width:560px;padding-inline:8px}
+  .empty{margin:0 8px}
+}
+@media (max-width:560px){
+  body{font-size:19px}
+  .turn{grid-template-columns:minmax(0,1fr);gap:2px}
+  .turn .who{margin:0}
+  .cover{padding-top:40px}
+}
+
+/* ---------- Schluss ---------- */
+.end{padding:30px 0 64px;border-top:1px solid var(--rule)}
+.end{overflow:hidden}
+.end .bye{margin:0 0 14px;font:700 30px/1.2 var(--hand);color:var(--pencil);transform:rotate(-1deg);transform-origin:left;padding-right:8px}
+.protokoll{margin:0;max-width:46em;font:400 15px/1.6 var(--type);color:var(--muted)}
+</style>
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<header class="cover">
+  <div class="wrap">
+    <p class="kicker">Pogoradio auf Bermudafunk · per Skype nach Hamburg · 2007</p>
+    <div class="cover-grid">
+      <div>
+        <h1>Karl Nagel<small>blättert im Album</small></h1>
+        <p class="sub">Achthundert alte Fotos, ein Scanner im Rucksack und kein einziges Bandfoto: Karl Nagel hat gerade punkfoto.de gestartet.</p>
+        <p class="lede">Rüdi ruft per Skype in Hamburg an. Es geht um das Fotoalbum im Netz, um Fanzines, die sich nicht für Musik interessieren, um die APPD, die ihn nicht loslässt, und um eine Band, in der leider gerade der Sänger gestorben ist. Am Ende stellt sich heraus, dass Rüdi selbst auf einem DVD-Cover ist.</p>
+      </div>
+      <div class="slot empty" aria-label="Leerer Platz im Fotoalbum"><span class="c1"></span><span class="c2"></span><p>Hier fehlt noch ein Foto.<small>Liegt deins in der Schublade?</small></p></div>
+    </div>
+    <nav class="reg" aria-label="Inhalt">
+      <p>Inhalt des Albums</p>
+      <ol>
+        <li><a href="#t1"><span>1</span>Rentnergeschichten</a></li>
+        <li><a href="#t2"><span>2</span>Scanner im Rucksack</a></li>
+        <li><a href="#t3"><span>3</span>Keine Bandfotos</a></li>
+        <li><a href="#t4"><span>4</span>Die Rentnerband</a></li>
+        <li><a href="#t5"><span>5</span>Zu viel Scheiße im Hirn</a></li>
+        <li><a href="#t6"><span>6</span>Bloß nicht auf Tour</a></li>
+        <li><a href="#t7"><span>7</span>Vierzehn DVDs</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="part" aria-labelledby="t1">
+  <h2 id="t1"><span class="no">1</span>Rentnergeschichten</h2>
+  <div class="talk">
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ja, hallo?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, hallo, hier ist der Rüdi vom Pogoradio. Bin ich mit Karl Nagel verbunden?</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Völlig richtig.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dann möchte ich gerne mal wissen, was du im Moment treibst. Du hast im Internet ja so ein Punk-Fotoalbum aufgemacht.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ja gut, das sind halt so typische Rentnergeschichten, die macht man, wenn man 46 oder älter ist. Ich hatte hier so viele Fotos rumliegen, bestimmt 800 Stück, und dachte mir, die können ja nicht weiter in der Gegend rumliegen. Deswegen wollte ich einfach was Schönes, Nostalgisches machen, damit alle alten Punkrocker ein paar Tränen verdrücken können. Wie man das halt so macht bei alten Fotoalben.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du selber hast aber früher nie Fotos gemacht, kann das sein?</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Das stimmt, ich habe früher nie Fotos gemacht. Das haben eigentlich immer andere gemacht. Aber weil ich immer irgendwelche Projekte gefahren habe, die was mit den Chaostagen zu tun hatten oder mit der APPD oder mit irgendwelchen Fanzines, sind einfach total viele Bilder hier angelandet. Und im Laufe der Jahre wird die Kiste halt immer voller.</p></div>
+  </div>
+  <aside class="side">
+    <div class="facts">
+      <h3>Karl Nagel</h3>
+      <dl>
+        <dt>Geboren</dt><dd>9. Dezember 1960 in Wuppertal</dd>
+        <dt>Wohnt</dt><dd>Hamburg</dd>
+        <dt>Bekannt</dt><dd>Chaostage in Hannover, APPD, Spitzenkandidat bei der Bundestagswahl 1998</dd>
+        <dt>Fanzine</dt><dd>„Hackfleisch“, sechs Ausgaben in den Achtzigern</dd>
+        <dt>Bands</dt><dd>unter anderem Militant Mothers (1988–1992)</dd>
+      </dl>
+    </div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t2">
+  <h2 id="t2"><span class="no">2</span>Scanner im Rucksack</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und die kann man jetzt alle bei punkfoto.de bewundern.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">So ist es.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Und wenn man eigene Fotos hat, kann man sie dir zuschicken, und du scannst sie dann fleißig ein?</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Die wenigsten Leute sind ja bereit, einem Originalfotos zuzuschicken. Manche haben es gemacht, und die haben ihre Sachen mittlerweile auch schon wieder zurück. Ich mache es teilweise sogar so, dass ich Leute, wenn ich unterwegs bin, besuche, mit Scanner und Laptop im Rucksack, und scanne ihnen die Bilder praktisch direkt unterm Arsch weg. Aber viele können auch selbst scannen und schicken mir die Bilder per Mail. Das ist die einfachste Variante, und dann baue ich das entsprechend ein. Ich brauche nur zu jedem Foto die Angaben: aus welchem Jahr, wer drauf ist und, falls es von Bedeutung ist, zum Beispiel bei einem Profifotografen, den Namen des Fotografen.</p></div>
+  </div>
+  <aside class="side">
+    <div class="slot quote"><span class="c1"></span><span class="c2"></span><blockquote>„Ich scanne sie dir praktisch direkt unterm Arsch weg.“</blockquote><cite>Karl Nagel, mit Scanner im Rucksack</cite></div>
+    <p class="note"><b>Anm. d. Red.</b>Laut Wikipedia betreibt Karl Nagel sein Fotoarchiv der deutschen Punkszene seit 2007. Es gilt als eine der größten Sammlungen von Punkrock-Fotos überhaupt.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t3">
+  <h2 id="t3"><span class="no">3</span>Keine Bandfotos</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Was mir aufgefallen ist: Das sind eigentlich nur Fotos aus den frühen Achtzigern. Und überhaupt keine Bandfotos, sondern nur Leute, die auf der Straße rumgammeln.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Genau. Das war für mich in erster Linie immer Punkrock. Punkrock war für mich nicht, in einer Band zu spielen, was ich zwar auch gemacht habe, sondern wie ich den Tag mit den Leuten verbracht habe. Und das sollte in den Bildern rüberkommen.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Auch die Fanzines, die ich früher gemacht habe, zum Beispiel das „Hackfleisch“ in den Achtzigern, haben sich praktisch null mit Musik beschäftigt. Sondern nur damit, was die Leute so treiben, was die Skins gerade treiben, wer wem auf die Fresse gehauen hat, was gerade lustig los war. Auch Strukturen, die sich ändern, Entwicklungen innerhalb der Szene haben mich immer mehr interessiert als die tausendste Band.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Musik ist eine Sache, die muss einfach für sich selbst sprechen. Es hat immer ziemlich wenig Sinn, Leute nach ihrer Musik zu befragen. Die Leute sollen ihre Musik machen, basteln, und dann findet man sie geil oder nicht. Aber Fanzines, die aus elenden Zusammenstellungen von Bandberichten bestehen, haben mir eigentlich nie gefallen.</p></div>
+  </div>
+  <aside class="side">
+    <div class="slot quote"><span class="c1"></span><span class="c2"></span><blockquote>„Es hat immer ziemlich wenig Sinn, Leute nach ihrer Musik zu befragen.“</blockquote><cite>Karl Nagel, in einer Musiksendung</cite></div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t4">
+  <h2 id="t4"><span class="no">4</span>Die Rentnerband</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Du hast dich schon öfter mal aus der Punkszene verabschiedet, und immer wieder tauchst du auf. Ich kann mir gut vorstellen, dass du irgendwann wieder als Musiker auf der Bühne stehst. So oft, wie du gegen Musiker wetterst, kann ich mir echt gut vorstellen, dass du mal wieder so eine Rentnerband aufmachst.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Natürlich! Da bist du auf dem völlig richtigen Trip. Der Haken ist nur: Ich bin bis jetzt einfach zu faul dafür. Wenn ich die richtigen Leute finden würde, Leute, die sich nicht doof üben müssen, wo man nicht elende Wochen im Übungsraum verbringen muss, sondern das relativ flott auf die Beine kriegt, kein Problem.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Am liebsten wäre mir sogar eine Band, bei der gerade der Sänger gestorben oder ausgestiegen ist und die ein komplettes Programm hat. Da müsste man im Grunde nur noch versuchen, die richtigen Texte dazu zu machen. Natürlich müsste mir die Musik gefallen, aber das wäre für mich das Bequemste. In der Beziehung verfolge ich wirklich die damalige APPD-Parole: Arbeit ist scheiße. Ich möchte mich beim Musikmachen echt nicht doof arbeiten, sondern das nur aus Spaß machen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Aha. Aber dafür machst du ganz schön viel.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Rüdi hatte recht: Ab 2008 stand Karl Nagel als Sänger von Kein Hass da wieder auf der Bühne. „Arbeit ist Scheiße!“ war 1998 das Wahlkampfmotto der APPD.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t5">
+  <h2 id="t5"><span class="no">5</span>Zu viel Scheiße im Hirn</h2>
+  <div class="talk">
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ja, vielleicht genau deswegen. Ich habe so viel Scheiße im Hirn, die ich machen möchte, dass ich echt aufpassen muss, dass die einzelnen Sachen nicht so zeitintensiv werden, dass zum Schluss nur noch eine übrig bleibt. Das war auch ein Grund, wieso ich 1999 keine Lust mehr auf die APPD hatte. Die hat mich zeitlich so gefressen, dass alles andere auf der Strecke geblieben ist. Das kann es nicht sein.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Trotzdem hast du irgendwann wieder angefangen mit der APPD.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Das ist nicht ganz richtig. Ich hatte damals ein Comicstudio gemacht, weil ich noch so eine Sache offen hatte: Ich wollte einfach mal Comics produzieren. Ich habe hier eine Wohnung angemietet und dachte mir: Wenn irgendwelche Gurken von Händlern meine ganzen Shirts schwarz nachmachen, dann kann ich die auch selbst nachmachen. Also habe ich die ganzen APPD-Shirts selbst gemacht und davon einen Teil der Miete bezahlt. So ist der Kontakt zur APPD wieder zustande gekommen.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Dann habe ich mit jemandem zusammengearbeitet, dem Felix, der Lust hatte, die APPD-Website wieder zu machen. Das war auch ziemlich nötig, da lief ja gar nichts mehr. Und dann kam urplötzlich diese verdammte Wahl. Wir hatten überhaupt keine Lust, daran teilzunehmen, weil es zu viel Arbeit und viel zu viel Stress ist. Aber so viele Leute haben uns angeschrieben: Unbedingt, unbedingt! Wir dachten echt, wenn wir da nicht mitmachen, sagen die für alle Zeiten, wir sind die letzten Verräter.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Na ja, und so geschah es dann halt, und so ist auch dieser Wahlkampfspot entstanden. Dazu bin ich echt gekommen wie die Jungfrau zum Kind. Eigentlich wollte ich das zu dem Zeitpunkt gar nicht machen, und für mich war völlig klar, dass nach der Wahl wieder Schluss ist. Aber dann kam ja Herr Großmann mit seiner phänomenalen Idee, mir eine einstweilige Verfügung auf den Hals zu hetzen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, ja. Das kann man an anderer Stelle nachlesen.</p></div>
+  </div>
+  <aside class="side">
+    <p class="note"><b>Anm. d. Red.</b>Gemeint ist die Bundestagswahl 2005. Der Spot der APPD wurde vom WDR zuerst abgelehnt und lief nach einem Urteil des Oberverwaltungsgerichts Münster doch in der ARD. Innenminister Otto Schily nannte ihn „eine Schande für Deutschland“.</p>
+    <p class="note"><b>Anm. d. Red.</b>Nach der Wahl zerstritt sich die Partei, der „Pogokrieg“. Es ging unter anderem um die Adresse appd.de, die auf Karl Nagel lief. Ein Gericht sprach sie dem Parteivorsitzenden Großmann zu. Sein Comicstudio Alligator Farm in Hamburg hatte Nagel 2005 gegründet.</p>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t6">
+  <h2 id="t6"><span class="no">6</span>Bloß nicht auf Tour</h2>
+  <div class="talk">
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Dann bin ich mal gespannt, wann man dich auf Tour sieht.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Das wird irgendwann passieren. Auf Tour übrigens wahrscheinlich nicht, da bin ich ziemlich sicher. Da habe ich überhaupt keinen Spaß dran, das hatte ich damals beim Musikmachen schon nicht, dauernd durch die Gegend zu fahren. Aber so ab und zu mal ein Konzert mit Leuten, das fände ich schon ganz spaßig. So einmal im Vierteljahr vielleicht. Ich bin ein alter Sack, ey, verstehst du? Das geht alles nicht mehr so.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, ja, klar. Den Spruch mit dem alten Sack habe ich schon vor zehn Jahren von dir gehört.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ja?</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ach komm. Nee, aber ohne Spaß: Touren hat mir schon damals keinen Spaß gemacht, als ich Musik gemacht habe. Die Gehirnwäsche-Tour war schon grenzwertig, aber die fand ich noch lustiger als eine Musiktour, weil mehr Spontanität im Spiel ist. Bei Musik riffst du eigentlich immer nur dein Programm runter, und darauf habe ich keine große Lust. So viele Konzerte hintereinander, oh nee, das habe ich damals gehasst, das brauche ich nicht noch mal. Aber Musikmachen selbst finde ich echt ganz klasse.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay, kommen wir noch mal zurück zu deinem Fotogalerie-Dingens. Wenn irgendwelche alten Säcke zuhören, die noch Bilder von früher in der Schublade haben, können sie dir die gerne zuschicken, und du schickst sie irgendwann wieder zurück. Sehe ich das richtig?</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ganz genau. Entweder per Post oder per E-Mail.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay. Dann bedanke ich mich bei dir.</p></div>
+  </div>
+  <aside class="side">
+    <div class="slot quote"><span class="c1"></span><span class="c2"></span><blockquote>„Ich bin ein alter Sack, ey, verstehst du?“</blockquote><cite>Karl Nagel. Sagt er seit mindestens zehn Jahren.</cite></div>
+  </aside>
+</section>
+
+<section class="part" aria-labelledby="t7">
+  <h2 id="t7"><span class="no">7</span>Vierzehn DVDs</h2>
+  <div class="talk">
+    <div class="turn a"><p class="who">Karl</p><p class="said">Hey, du hast eine Sache vergessen. Oder hast du das nicht mitgekriegt? Ich habe angefangen, das ganze Videomaterial, das ich habe, auf DVDs rauszubringen.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ja, ich habe was gelesen. Ist das so der ganze gesammelte Abfall, der nie benutzt worden ist?</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Auch das, ja. Auf dem ersten Cover bist übrigens du mit drauf, zusammen mit Heili.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ehrlich?</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ja. Ich habe total viel Material: Kundgebungen, auch die ganzen TV-Ausschnitte.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Ich glaube, da erwirke ich dann auch eine einstweilige Verfügung.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ja, das solltest du tun. Das wäre vielleicht ganz lustig. Aber du bist so extrem verfremdet, man erkennt dich kaum. Da müsstest du erst mal beweisen, dass du das bist. Es ist jedenfalls ziemlich viel Material. Zum Schluss werden das wahrscheinlich ungefähr vierzehn DVDs.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Nicht schlecht.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Die mache ich alle on demand, nach Bedarf, immer wenn einer bestellt.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Also nicht bei YouTube. Da muss man sie vorher kaufen und dann selber bei YouTube reinstellen.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Ganz genau. Wer sie nachmachen oder bei YouTube reinstellen will, soll das gerne machen. Aber wenn ich irgendwo für arbeite, will ich Asche sehen, und mich nicht mit so blödem Kram wie DVD-Brennen beschäftigen, bis mir die Fingernägel hochgehen. Mir ist egal, ob die Leute das dann bei YouTube einstellen oder sonst was damit anstellen. Irgendwelche Copyright-Ansprüche stelle ich da nicht.</p></div>
+    <div class="turn q"><p class="who">Rüdi</p><p class="said">Okay. Dann bedanke ich mich für das Gespräch. Mach’s gut.</p></div>
+    <div class="turn a"><p class="who">Karl</p><p class="said">Du auch, tschüss.</p></div>
+  </div>
+  <aside class="side">
+    <div class="slot quote"><span class="c1"></span><span class="c2"></span><blockquote>„Wenn ich irgendwo für arbeite, will ich Asche sehen.“</blockquote><cite>Karl Nagel über DVD-Brennen</cite></div>
+  </aside>
+</section>
+
+</main>
+
+<footer class="wrap end">
+  <p class="bye">Ende des Albums. Bitte vorsichtig umblättern.</p>
+  <p class="protokoll">Pogoradio auf Bermudafunk · per Skype nach Hamburg · 2007 · Rüdi mit Karl Nagel · Transkript redigiert und gekürzt. Die Post- und Mailadresse, die Karl Nagel am Ende nennt, ist weggelassen.</p>
+</footer>
+</body>
+</html>
