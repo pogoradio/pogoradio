@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sendungen zum Nachlesen – Pogoradio</title>
+<meta name="description" content="Ausgewählte Pogoradio-Sendungen im Wortlaut, gekürzt und redigiert, mit Gästen, Themen und Anmerkungen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+.pgr-bar{margin-left:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));margin-right:calc(-1 * max(16px, env(safe-area-inset-right, 0px)))}
+</style>
+<style>
+:root { --bg: #f3f1ec; --panel: #ffffff; --fg: #1f1e1c; --fg-soft: #46433e; --muted: #6f6a62; --rule: #dcd8cf; --accent: #d63a2c;
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif; --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --fg-soft: #cfc9bf; --muted: #a39e95; --rule: #403e3a; --accent: #ff5a4a; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --fg-soft: #cfc9bf; --muted: #a39e95; --rule: #403e3a; --accent: #ff5a4a; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body); padding: 0 16px 56px; }
+.wrap { max-width: 880px; margin: 0 auto; }
+header { display: flex; align-items: center; gap: 14px; padding: 22px 0 14px; border-bottom: 2px solid var(--fg); }
+header img { width: 56px; height: 56px; }
+.brand { font: 700 26px/1 var(--display); text-transform: uppercase; letter-spacing: .01em; }
+.brand span { color: var(--accent); }
+h1 { font: 700 40px/1.05 var(--display); text-transform: uppercase; margin: 26px 0 8px; }
+.lede { color: var(--fg-soft); margin: 0 0 24px; max-width: 60ch; }
+.card { display: block; background: var(--panel); border: 1px solid var(--rule); border-left: 5px solid var(--accent); padding: 18px 20px; margin-bottom: 14px; color: var(--fg); text-decoration: none; border-radius: 3px; }
+.card:hover { border-color: var(--accent); }
+.card .y { font: 500 13px/1.2 var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+.card h2 { font: 700 26px/1.1 var(--display); text-transform: uppercase; margin: 6px 0 6px; }
+.card p { margin: 0; color: var(--fg-soft); font-size: 15px; }
+.foot { margin-top: 30px; font-size: 14px; color: var(--muted); }
+.foot a { color: var(--fg-soft); }
+.back { display: inline-block; margin-top: 24px; color: var(--accent); font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+<div class="wrap">
+  <header>
+    <picture>
+      <source srcset="/pogoradio-logo-dunkel.png" media="(prefers-color-scheme: light)">
+      <img src="/pogoradio-logo.png" alt="Pogoradio-Logo">
+    </picture>
+    <div class="brand">Pogo<span>radio</span></div>
+  </header>
+
+  <h1>Sendungen zum Nachlesen</h1>
+  <p class="lede">Ausgewählte Sendungen aus dem Bermudafunk, im Wortlaut gekürzt und redigiert. Musik und Lockerheit bleiben drin, Füllwörter, Nebengespräche und Wiederholungen fliegen raus. Die Sendungsnummer und das Datum stehen bei jeder Sendung gleich oben.</p>
+
+  <a class="card" href="/sendungen/nachlesen/gema-2012/">
+    <div class="y">Sendung 562 · 9. Mai 2012</div>
+    <h2>Die GEMA und ihre Tricks</h2>
+    <p>Jürgen von Rookie Records und Frank von Supernichts (Fachanwalt für Urheber- und Medienrecht) über Verlage, Labels, GVL, Konzertveranstalter und die Frage, wie man mit der GEMA umgeht.</p>
+  </a>
+
+  <a class="back" href="/sendungen/">← Zurück zum Sendungsarchiv</a>
+
+  <p class="foot">Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+</div>
+</body>
+</html>
