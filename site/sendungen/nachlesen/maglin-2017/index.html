@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sendung 820: Videoblog statt Fanzine – Pogoradio</title>
+<meta name="description" content="Pogoradio-Sendung 820 vom 22. November 2017 im Wortlaut, gekürzt: Rüdi im Gespräch mit Maglin über seinen Videoblog, Reviews, Konzertberichte und Punk im Netz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+.pgr-bar{margin-left:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));margin-right:calc(-1 * max(16px, env(safe-area-inset-right, 0px)))}
+</style>
+<style>
+:root {
+  --bg: #f3f1ec; --panel: #ffffff; --fg: #1f1e1c; --fg-soft: #46433e; --muted: #6f6a62;
+  --rule: #dcd8cf; --accent: #d63a2c; --box: #ebe8e1;
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --fg-soft: #cfc9bf; --muted: #a39e95;
+    --rule: #403e3a; --accent: #ff5a4a; --box: #34332f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --fg-soft: #cfc9bf; --muted: #a39e95;
+  --rule: #403e3a; --accent: #ff5a4a; --box: #34332f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 17px/1.65 var(--body);
+  padding: 0 16px 56px;
+}
+.wrap { max-width: 720px; margin: 0 auto; }
+header { display: flex; align-items: center; gap: 14px; padding: 22px 0 14px; border-bottom: 2px solid var(--fg); }
+header img { width: 56px; height: 56px; }
+.brand { font: 700 26px/1 var(--display); text-transform: uppercase; letter-spacing: .01em; }
+.brand span { color: var(--accent); }
+.kicker { font: 600 14px/1.3 var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin: 28px 0 6px; }
+h1 { font: 700 44px/1.02 var(--display); text-transform: uppercase; margin: 0 0 10px; letter-spacing: .005em; }
+.lede { color: var(--fg-soft); font-size: 18px; margin: 0 0 18px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 13px/1.4 var(--mono); color: var(--muted); padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-bottom: 26px; }
+.meta b { color: var(--fg); font-weight: 500; }
+h2 { font: 700 26px/1.1 var(--display); text-transform: uppercase; margin: 36px 0 10px; }
+p { margin: 0 0 14px; }
+.talk b { font-weight: 600; }
+.speaker { font: 600 13px/1 var(--mono); text-transform: uppercase; color: var(--muted); letter-spacing: .04em; }
+.sep { text-align: center; color: var(--muted); letter-spacing: .4em; margin: 30px 0; }
+.note {
+  background: var(--box); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 22px 0; font-size: 15px; line-height: 1.55; border-radius: 0 3px 3px 0;
+}
+.note strong { display: block; font: 700 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--accent); margin-bottom: 8px; }
+.note p { margin: 0 0 8px; }
+.note p:last-child { margin: 0; }
+.songs { margin: 14px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.songs li { padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 15px; display: grid; grid-template-columns: 1fr; }
+.songs .by { color: var(--fg); font-weight: 600; }
+.songs .ti { color: var(--fg-soft); }
+.nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 44px; padding-top: 18px; border-top: 2px solid var(--fg); font: 14px/1.4 var(--body); }
+.nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.nav a:hover { text-decoration: underline; }
+.foot { margin-top: 28px; font-size: 14px; color: var(--muted); }
+.foot a { color: var(--fg-soft); }
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<div class="wrap">
+  <header>
+    <picture>
+      <source srcset="/pogoradio-logo-dunkel.png" media="(prefers-color-scheme: light)">
+      <img src="/pogoradio-logo.png" alt="Pogoradio-Logo">
+    </picture>
+    <div class="brand">Pogo<span>radio</span></div>
+  </header>
+
+  <div class="kicker">Sendung 820 · Bermudafunk 105,4 · 22. November 2017</div>
+  <h1>Videoblog statt Fanzine</h1>
+  <p class="lede">Maglin macht einen Punk-Videoblog auf YouTube: Reviews, Konzertberichte, Interviews aus Städten, in denen er war. Rüdi wollte wissen, wie das geht, warum er sich selbst im Bild zeigt und was Labels von Promoversionen halten.</p>
+
+  <div class="meta">
+    <span>Folge <b>820</b></span>
+    <span>Gast: <b>Maglin</b> (Maglins Blog)</span>
+    <span>Moderation: <b>Rüdi</b></span>
+    <span>Live auf punkrockersradio.de, Wiederholung im Bermudafunk</span>
+  </div>
+
+  <div class="note">
+    <strong>Hinweis</strong>
+    <p>Die Textfassung ist aus der Sendung redigiert. Füllwörter und Abbrüche sind raus, die direkte Rede bleibt. Namen, die im Transkript unsicher waren, stehen mit [?]. Die Songs sind als Titel aufgeführt, die Lieder selbst sind nicht wiedergegeben.</p>
+  </div>
+
+  <h2>Videoblog statt Fanzine</h2>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Guten Abend, hier ist wieder Pogoradio im Bermudafunk, mein Name ist Rüdi. Wenn heute nicht der 22.11.2017 ist, hört ihr eine Wiederholung, ansonsten sind wir live bei punkrockersradio.de. Zu Gast ist der wunderbare Maglin, der macht einen Videoblog.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Wunderschönen guten Abend! Das ist im Prinzip ein Fanzine, nur in Videoform auf YouTube.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Und viel besser, weil man nichts lesen muss. Einfach Filmchen gucken und zuhören.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Dafür muss man manchmal mein Gestotter ertragen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ist mir gar nicht aufgefallen. Ich habe vor der Sendung nichts anderes gemacht, als mich durch deinen Blog zu klicken, und war begeistert. Viele der Platten in deinen Reviews mag ich auch, kenne sie aber nur als Download. Du zeigst sie richtig: das aufgeklappte Cover, das Inlay, das grüne Vinyl. Das kriegt man bei einer Review im Heft nie mit. Und offensichtlich hast du die Sachen selbst gekauft und nicht einfach zugeschickt bekommen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist unterschiedlich. Manche Labels schicken mir inzwischen ihre Sachen, Bafferoi Records [?] zum Beispiel ist da sehr nett. Für eine Artwork-Besprechung brauche ich die Platte physisch. Vieles kaufe ich aber auch selbst.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Moment, eine Promoversion ist doch meistens nur eine lieblose CD. Kein Mensch verschickt Vinyl, das ist viel zu teuer.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das sage ich auch immer: Schickt mir einfach einen Downloadcode. Aber ich krieg tatsächlich manchmal Vinyl, vielleicht gerade weil ich das Artwork extra bespreche.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ich glaube, manche deiner Reviews sind länger als die Platte und haben mehr Klicks als die Platte Verkäufe.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Kann gut sein. Obwohl die Klickzahlen trotzdem ziemlich gering sind.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Klar, „Die zehn schönsten Baggerunfälle“ hat mehr Klicks.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Damit können sich auch mehr Leute identifizieren. So ein Baggerunfall hat weniger Anspruch als Punkrock.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Fürs Protokoll: Du heißt nicht wirklich Maglin.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Nein, das ist mein Internetname, seit ich online bin, also seit 2002 oder 2003, schlag mich tot.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Und du bist ja selbst oft im Bild. Mir wäre das unangenehm, diese ganze Selfie-Geschichte.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Am Anfang war es auch schwierig. Da habe ich noch fast kindlich regionale Bands vorgestellt und nur kurz ein Intro von mir gefilmt. Aber mal ehrlich: Würdest du dir einen 3-Minuten-Podcast anhören, den einer einmal die Woche hochlädt und in dem es um eine Platte geht?</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ehrlich gesagt nein. Wobei die wenigsten wissen, was ein Podcast eigentlich ist: ein Abo, das sich automatisch auf dem Endgerät erneuert. Ich biete die Sendung auch als Podcast an, aber laut Statistik hören die meisten sie auf der Webseite.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Podcast ist halt eine Worthülse geworden, genau wie Fanzine. Ist das Ox noch ein Fanzine oder schon ein Hochglanzmagazin? Ursprünglich gehörten auch DIY und Unkommerzialität dazu.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Jedenfalls kann das heute jeder mit dem machen, was im Haushalt rumliegt. Jedes Handy filmt in guter Qualität. Meistens scheitert es daran, dass die Leute nicht wissen, wo sie draufdrücken sollen, oder der dicke Daumen im Bild ist. Bei den Fanzines war es genauso: Erst als die Copyshops aufkamen und man billig kopieren konnte, gab es plötzlich so viele.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">So hat es bei mir auch angefangen. Ein Textblog oder ein eigenes Fanzine sind immer gescheitert. Dann hatte ich eine günstige Kamera und ein Gratis-Schnittprogramm, und im Endeffekt musst du nur Bock haben und Durchbeißvermögen. Ich bin nicht der Einzige aus der Punk-Ecke, der so was macht, aber die anderen haben irgendwann die Motivation verloren, auch Leute, die es viel professioneller gemacht haben.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">In den 90ern gab es einen Jörg Götterwind [?], der Konzertvideos auf VHS verkauft hat. Grottig. Der hatte Angst um seine Kamera und stand immer in der letzten Reihe. Damals wurde noch geraucht, also hast du nur Köpfe von hinten und Nebel gesehen. War der Sänger über zwei Meter groß, hast du vielleicht noch seinen Kopf gesehen. Und der Ton war beschissen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Meinst du den, der das bei 2010 TV [?] gemacht hat, mit dem legendären Interview mit dem Presi aus der Pfalz?</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Nee, der hat keine Interviews gemacht, nur Konzerte von hinten gefilmt. Aber lange durchgezogen, Respekt. Die Videos gab es dann bei irgendwelchen Mailordern.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Cool. Ich hab auch mal gelesen, dass es Fanzines auf Kassette gab. Dafür bin ich leider viel zu jung.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Meistens ist es daran gescheitert, dass sich die Leute nicht mit der Technik beschäftigt haben. Bei dir gefällt mir, dass du in den Reviews die Musik anspielst. Viele Punk-Radios machen das so: Das Gespräch ist ganz leise, dann kommt die Musik brutal laut. Das nervt wie Werbung im Fernsehen. Bei dir ist das ausgewogen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist nett. Ich spiele meistens 15 bis 20 Sekunden an. Ausgerechnet Bafferoi Records [?] hat sich mal beschwert, meine Stimme sei zu leise und die Musik zu laut. Das hängt aber auch vom Abspielgerät ab. Ich pegle im Schnittprogramm nach Gefühl, das gelingt nicht immer.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Die Musik sollte etwa 3 dB leiser sein als die Sprache.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ah, das wusste ich nicht.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ich mach’s auch nach Gefühl. Aber solche Kleinigkeiten interessieren wahrscheinlich nur uns zwei. Die Hörerinnen und Hörer wollen Musik.</p>
+
+  <div class="note">
+    <strong>Anm. d. Red.</strong>
+    <p>Die „3 dB“ sind eine Faustregel aus der Sendung. Eine feste Vorschrift dafür gibt es nicht. Die Regeln für Musik auf YouTube und die Verwertung über die GEMA haben sich seit 2017 mehrfach geändert. Was in der Sendung dazu steht, ist der Stand von damals.</p>
+  </div>
+
+  <p class="sep">·&nbsp;·&nbsp;·</p>
+
+  <p class="talk"><em>(Song: Loser Youth, „Club Cala Pada“)</em></p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das war Loser Youth vom neuen Album. „Es gibt viele schöne Plätze in Deutschland. Die schönsten sind für uns Arbeitsplätze.“ Das Lied hieß „Club Cala Pada“…</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">„In Club Cala Pada“.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Bei mir steht „Club Cala Pada“.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ah, tatsächlich.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Tommy von Loser Youth hast du ja auch schon interviewt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Den kenne ich über den Blog. Ein Glücksgriff: Als ich angefangen habe, hat er immer drunter kommentiert. Dann war ich mit zwei Freunden auf dem Weg nach Hamburg, wir brauchten einen Schlafplatz, und ich habe ihn angehauen. Er meinte: Klar, aber ich bin mit meiner anderen Band auf Tour. Das war Brutale Gruppe 5000, damals noch sehr unbekannt. Die Tour ist ausgefallen, er war doch da, wir haben bei ihm gepennt, und seitdem sind wir gut befreundet.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das Interview war vor etwa einem Monat?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ungefähr. Ich habe mit meiner Kochgruppe und Freunden ein Konzert mit ihnen gemacht.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Du organisierst ja auch Konzerte und kochst für die Bands, das habe ich inzwischen recherchiert. Auf deinen Blog bin ich aber nur zufällig gestoßen, über ein Facebook-Like bei dem Tommy-Interview. Vorher wusste ich nicht, dass es dich gibt. Dabei machst du das schon fünf, sechs Jahre.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist der Facebook- und YouTube-Algorithmus, das sieht halt niemand. Polytox hat meine Sachen mal übernommen, beziehungsweise davor Der Gestreckte Mittelfinger.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das kommt aus deiner Ecke, oder? Wiesbaden.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Genau, da kommt Falk her. Er hat erst die Online-Version von Plastic Bomb / Trash [?] gemacht. Als sie Polytox gegründet haben, hat er gefragt, ob ich einsteigen will. Da hatte ich aber so viel um die Ohren, dass ich froh war, einmal die Woche was zu schaffen. In ihrem letzten Podcast haben sie, glaube ich, kurz über eine Review von mir geredet, eigentlich eher über die Band.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Mir fällt auf, dass deine Reviews sehr fundiert sind. Bei Fanzines oder Bierschinken weiß ich, dass viele nur Reviews schreiben, weil sie scharf auf Gratisplatten sind. Hauptsache, man hat ein paar geschrieben, damit Nachschub kommt. Und man schreibt nicht zu böse, damit das Label weiter schickt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Auf Gratisplatten habe ich auch Bock. Man ist ja auch ein bisschen Versuchskaninchen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Die Labels würden am liebsten vor der Veröffentlichung schicken, um zu testen, wie es ankommt. Da bist du dann der Influencer.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das Problem ist der Aufwand, und das sage ich auch immer klar. Hören muss ich genauso, ich höre jede Platte etwa dreimal, um ein Gefühl für sie zu bekommen, und suche mir Songs raus, die ich gut finde. Davor schreibe ich noch Stichpunkte, die ich dann in die Kamera spreche. Deswegen mache ich eigentlich keine Reviews, in denen ich eine Platte komplett zerlege. Außer sie ist mir wichtig, weil ich die Band eigentlich geil finde, oder ich habe sonst nichts zu tun.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Oder du findest die Band scheiße.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Nicht mal dann. Dann ignoriere ich sie lieber. Gutes Beispiel ist die aktuelle Slime-Platte, an der sich die Geister scheiden. Ich habe sie nicht bekommen und würde sie mir auch nicht kaufen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Musst du ja nicht. Mit einem Gratis-Spotify-Account kannst du sie hören.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Dann müsste ich aber trotzdem Slime fragen, ob ich Songschnipsel benutzen darf, und kriege gesagt: Nur den Abschnitt und den da. Das wäre mir schon zu anstrengend.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Du fragst vorher wegen der Schnipsel? YouTube zahlt doch die GEMA. Wenn du was hochlädst, zeigt dir YouTube an, wem die Rechte gehören, und du erlaubst, dass Werbung eingebunden wird.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist aber erst seit Kurzem so. Lange gab es keine GEMA-Regelung, und YouTube hat alles weggestriked.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Im Moment ist es jedenfalls so. Ich lade die Sendung hoch, weil ich es kann, und sehe dann eine Copyright-Playlist mit den Labels. Kid Records [?] zum Beispiel, das kann ich nie aussprechen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist auch ein scheiß Name, muss man einfach mal sagen. Gefragt habe ich zuletzt bei „Tiergarten“ von Terrorgruppe, weil ich unsicher war. Die Platte hatte ich gekauft. Bei der WIZO-Review habe ich gar keine Schnipsel genommen, weil ich nicht wusste, wie entspannt die Band und die Labels sind. Die Reviews waren nämlich nicht sonderlich positiv. Die erste habe ich gemacht, weil ich früher großer WIZO-Fan war, die zweite, weil mich jemand darum gebeten hat. Fand ich nett.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Und wie fandst du die neue Terrorgruppe, „Super Blechdose“ [?]?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Nicht angehört. Ich sag’s ja öfter: Ich bin ein ganz schöner PC-Spießer. Die letzten Terrorgruppe-Aktionen haben mich genervt. Das Hin und Her mit den Festivals dieses Jahr war strange, ich glaube, beim Spirit [?], wo die Tasters [?] spielen sollten. Den Post fand ich bescheuert. Und die Sache mit dem Dickies-Sänger fand ich auch strange.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Was hat Terrorgruppe damit zu tun?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Archi hat sich dazu geäußert und ist dann ein bisschen zurückgerudert. Aber im Endeffekt bleibt es so. Für mich klang das nach: Ich will meine Art von Punk verteidigt wissen, und alle anderen sind doof. Das war anstrengend.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Bloß, der sexistische Gehalt dabei…</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Darauf will ich jetzt nicht eingehen, das führt zu weit.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Stimmt, ich muss dich wieder einfangen, wir reden ja über deinen Videoblog. Du hast Musik mitgebracht, und 20 Minuten sind schon rum. Die Sendung dauert leider nur eine Stunde.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Hier ist Black Lining, sozusagen mein Werbeblock. Sehr gute Freunde von mir, und das ist der einzige Song, den sie online haben. Ich durfte diesen Sommer mit ihnen auf Tour. Ich habe versucht, eine Mischung aus unbekannteren Bands und wichtigen Sachen zu finden.</p>
+
+  <p class="sep">·&nbsp;·&nbsp;·</p>
+
+  <p class="talk"><em>(Song: Black Lining, „Bottom Line“)</em></p>
+
+  <h2>Städtetrips, Kameras und Krankschreibungen</h2>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Black Lining, aus Mainz, glaube ich?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Mainz und Wiesbaden.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Damit kein falscher Eindruck entsteht: Du machst nicht nur Reviews, sondern auch Interviews, auch auf Reisen. Ich hab Thessaloniki gesehen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist mein City Guide. Ich frage Punks, was an ihrer Stadt cool ist und was man sich angucken sollte. In Thessaloniki war ich mit meinem guten Freund Cornelius, und wir haben Mike von Bad Signal [?] getroffen, die hatten mal in Mainz gespielt. Ich hab gefragt, ob er ein paar Fragen beantwortet und uns die Stadt zeigt. Aus anderthalb gemeinsamen Abenden ist das Video entstanden.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das Schneiden ist doch bestimmt ein Haufen Arbeit.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Inzwischen mache ich mir vorher Gedanken. Über die Fragen grenzt du Themen ein, und wenn es um Konzerte geht, weißt du: Für 20 Konzertschnipsel brauche ich 15 Minuten Material. Die große Frage ist, ob du überhaupt filmen darfst. Im Punk- und linksalternativen Kontext ist das nicht leicht. Beim Antikörper-Export-Fest im Stumpf in Hannover darf man zum Beispiel nur die Bands filmen, und dann wird das Zusammenschneiden echt langweilig.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Kenne ich. Vor zehn Jahren habe ich mir eine Spiegelreflexkamera gekauft, weil ich die Kreise auf meinen Konzertfotos gehasst habe, die vom Rauch und vom eingebauten Blitz kamen. Ohne Blitz war das Foto nur dunkel. Mit Aufsteckblitz war ich dann ziemlich wild. In Mannheim hat mich jeder gekannt, da konnte ich ungestört die Punks beim Kotzen fotografieren. Aber jetzt in Köln, etwas älter und mit dem Aussehen eines Hilfslehrers: Wenn ich im AZ die große Kamera auspacke, stehen da schon zehn andere mit fetter Spiegelreflex, und ich stehe dazwischen wie ein Tourist. Da hab ich keinen Bock mehr drauf.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist schwierig.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Dabei sind das Dokumente, die in 10, 20 Jahren unwiederbringlich wären.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Stimmt. Andererseits können Leute, die später im pädagogischen Bereich arbeiten wollen, richtig Ärger kriegen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Oder Leute, die gerade krankgeschrieben sind.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Genau.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Wobei krankgeschrieben nicht spaßunfähig heißt, hab ich mal gelernt. Ich erinnere mich an einen Superfreunde-Auftritt: Der Sänger war krankgeschrieben, stand auf der Bühne und hat mich gebeten, die Fotos nicht ins Netz zu stellen, damit sein Chef nichts spitzkriegt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ein ehemaliger Kollege von mir aus dem Service war krankgeschrieben beim Fußball und hat das auf Facebook gepostet. Der Chef wollte ihn abmahnen. Seine Antwort: „Was gucken Sie überhaupt auf mein Facebook? Was geht Sie das an? Wir können das ja mit der Gewerkschaft klären.“ Plötzlich war es ganz schnell vom Tisch. Seitdem weiß ich: krankgeschrieben heißt nur arbeitsunfähig, nicht spaßunfähig.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Beef gibt’s trotzdem. Dann muss man eben mit Hasskappe aufs Konzert, wenn man krankgeschrieben ist.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das wäre gruselig, aber auch sehr witzig.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Max von RilRec [?] hat immer großartige Konzertfotos gemacht, leider nicht mehr. Da war das ganze Publikum verpixelt. Fand ich ein bisschen lame.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Hab ich im Video auch mal probiert. Aber im bewegten Bild musst du jeden nachpixeln und mitziehen, das ist zu anstrengend.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Der Horror! So viel Arbeit für 10 Sekunden, da nimmst du besser ein anderes Bild.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Außerdem leben wir in Deutschland und nicht in einem repressiven Land, wo man eingeknastet wird, weil man auf einem Punkkonzert war. Was soll die Scheiße?</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Stimmt. Ich kenne aber Leute, die in bestimmten Berufen arbeiten, wo das nicht gut ankäme. Andererseits sind das öffentliche Konzerte, da kann jeder sehen, wer da ist.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Schwierige Sache. Kommt drauf an, was du sonst so machst. Wenn du Vollzeit-Punk bist und den ganzen Tag auf dem Marktplatz sitzt, kann’s dir am Arsch vorbeigehen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das sind dann die, die am lautesten schreien. Oder besoffen in die Kamera fallen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Genau: „Kameramann Arschloch!“ Dabei hocken sie den ganzen Tag vor der Sparkasse, wo sie rund um die Uhr gefilmt werden. Beim Resist letztes Jahr hieß es: Pass auf, dass du nicht so viel Publikum filmst. Und dann sind ständig Leute ins Bild gesprungen. Ich filme eine Band, und einer kommt von der Seite und rülpst mir in die Linse.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Bleiben wir lieber beim musikalischen Teil des Abends. Bijou Igitt: wunderbarer Bandname, ich verfolge die Band schon eine Weile. Aber diese Platte kann ich nicht am Stück hören, irgendwann geht mir die Stimme vom Sänger auf den Sack.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Geht mir ähnlich, da muss man mal Pause machen. Aber einzelne Songs sind krasse Hits, und die Platte ist einfach schön. Die habe ich geschenkt bekommen, da habe ich mich doppelt gefreut.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">„Can’t Relax in Deutschpop“, mit einem L.</p>
+
+  <p class="sep">·&nbsp;·&nbsp;·</p>
+
+  <p class="talk"><em>(Song: Bijou Igitt, „Can’t Relax in Deutschpop“)</em></p>
+
+  <h2>Jahresbestenliste, Arbeitsweise und Klickzahlen</h2>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das waren Bijou Igitt. Du hast für 2016 die fünf besten Punkplatten gekürt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Die besten, die ich besprochen habe, genau.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Machst du das dieses Jahr wieder?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Hab ich vor, ist eine Zeitfrage. Schon beim Zusammenstellen der Setlist für heute ist mir aufgefallen, wie viel geiler Scheiß dieses Jahr rauskam, der unterm Radar geblieben ist. Vielleicht teile ich es auf in deutschsprachig und nicht-deutschsprachig.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Was fällt dir spontan ein?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">„Keep You Warm“ von Blankets als 7-Inch, die neue 7-Inch von Loser Youth, Rest in Denial waren großartig, die neue Attacop [?] ist wirklich gut. Dann „Paddeln ohne Kanu“, eine kurze Split mit Kuballa, da ist so viel geiler Scheiß drauf. Und Bad Signal mit „Silent Days“… nee, wie heißt die… „3 Minutes to Midnight“ oder so, „Straight out of Midnight“. Da muss ich nochmal in mich gehen und mich durchklicken.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Mir ist aufgefallen, dass ich dieses Jahr zum ersten Mal fast nur Neuveröffentlichungen gespielt habe, weil ständig was Geiles rauskommt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich habe auch in letzter Zeit viel bekommen: Zu Moloch [?] und Bas [?].</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Die waren, glaube ich, sogar bei mir in der Sendung.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Alles gute bis sehr gute Platten. Und ein echter All-Time-Favorite sind Inwiefern [?], die ja auch deinen Jingle gemacht haben. Krasse Platte! Ein paar Songs klingen sehr ähnlich, die kann man überspringen, aber es sind Hits und Ohrwürmer drauf. Und wenn ich mich einfach aufs Bett legen will, höre ich gerade viel Fern [?], die neue Platte ist richtig gut.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Mit Inwiefern wollte ich noch ein Interview machen, aber im Dezember haben sie keine Zeit, einer geht auf Weltreise oder so. Ich habe ehrlich gesagt noch nicht richtig reingehört. Ich habe so viel Zeug, dass mir die Muße fehlt, mal eine Platte richtig anzuhören.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Für Reviews wäre das gut. Da musst du dir halt anderthalb Stunden nehmen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Wie machst du das eigentlich? Du stellst dich vor die Kamera und redest wie auf einen Anrufbeantworter, ohne Feedback.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich höre die Platte zwei-, dreimal, meistens auf dem Bett liegend. Manchmal höre ich sie auch im Shuffle, um zu prüfen, ob die Reihenfolge als Album Sinn ergibt. Das mache ich seit meiner ersten Disco-Oslo-Review, da fand ich die Platte einfach aneinandergeklatscht. Die Songs waren geil, aber es war kein Plattengefühl. Um so ein Gefühl einzufangen, höre ich sie drei-, viermal oder öfter, dann mache ich Stichpunkte. Und dann nehme ich mich fünf-, sechsmal auf, bis es passt, weil ich ungern schneide.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Echt? Du brichst ab und fängst neu an?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Korrekt.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Boah, das wäre mir zu viel Arbeit. Deshalb mache ich die Sendung in einem Take. Ich kann nicht richtig frei sprechen, keine Sätze beenden, und wenn ich anfange zu korrigieren, komme ich da nie wieder raus.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Es klingt nach mehr, als es ist. Der Sprechteil einer Review sind maximal zwei Minuten, und ich schreibe nur Stichpunkte. Bei Konzertberichten schreibe ich ganze Texte und spreche sie ab. Aber auch da wandle ich ab, weil Geschriebenes anders ist als Gesprochenes. Du denkst: Oh, saugute Formulierung, dann atmest du einmal falsch, und es klingt total affig und dumm.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ich habe früher auch Reviews für ein Fanzine geschrieben. Was mir auffällt: Du siehst sofort, wie viele Leute dein Video angeklickt haben. Bei einer Review im Heft weißt du nie, wie viele sie gelesen haben. Bei Fanzines wurde mit den Zahlen auch gemogelt. Manche haben 5.000 oder 10.000 Auflage behauptet, damit sie von den Werbekunden mehr Kohle verlangen können. Bei uns waren gedruckte und verkaufte Auflage fast identisch, weil wir im Copyshop eine kleine Auflage gemacht haben. Und bei dir kann ein Interview 50 Leute sehen oder 13.000.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das hängt eher von der Band ab. Und, ganz klar, davon, wie reißerisch der Titel ist.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Feine Sahne Fischfilet hat, glaube ich, 13.000 Klicks.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das Turbostaat-Video hat noch mehr, weil der Titel „Frei.Wild Nazischeiße!“ ist. Das hat ordentlich gezogen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Klar. Kommentare gibt es aber wenige.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich gucke auch gar nicht nach. Wenn bei YouTube die rote Glocke für einen neuen Kommentar leuchtet, freue ich mich natürlich. Bei großen Bands schaue ich nicht auf die Zahlen, da ist klar, dass Leute gucken. Witzig war, als mich mal jemand angesprochen hat, weil irgendein Landtagsabgeordneter [?] ein Video geteilt hatte: „Ich hab das auf deinem Twitter gesehen, wusste gar nicht, dass du so was machst.“ Ich so: „Bitte?“ Sehr strange.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Cool. Komm, wir spielen die Blankets. Bei meiner Google-Recherche habe ich übrigens festgestellt, dass es eine italienische Band mit dem gleichen Namen gibt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Wusste ich nicht. Die Blankets sind eine tolle Band aus der Nähe von Münster, die Platte ist, glaube ich, schon letztes Jahr erschienen. Ich habe mal auf einem Konzert gekocht, auf dem sie gespielt haben. Die sind unglaublich nett und machen tolle Musik, wenn man auf die Revive-Richtung [?] steht. Noch etwas zurückhaltend, die sind ganz neu, und die Sängerin macht das, glaube ich, zum ersten Mal.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das Schöne ist: Wir müssen gar nicht viel sagen. Einfach Play drücken, und jeder entscheidet selbst.</p>
+
+  <p class="sep">·&nbsp;·&nbsp;·</p>
+
+  <p class="talk"><em>(Song: Blankets, „Coins“)</em></p>
+
+  <h2>Thorsten Hindrichs, Frei.Wild und Punks auf Malta</h2>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Die Blankets aus Münster. Schön ruhiges Lied.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Es ist Pop-Punk.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ja. Klasse. Was wollte ich noch sagen… Ich habe mir ja keine Fragen aufgeschrieben. Du dagegen machst dir richtig Mühe, deine Fragen sind recherchiert und hintergründig. Begeistert hat mich dein Interview mit Dr. Thorsten Hindrichs, der sich mit Punkrock, Grauzone und der aktuellen Musiklandschaft gut auskennt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das ist ja sein Job. Er macht an der Uni was zu Jugendkulturen und ist eine Hausnummer beim Thema Grauzone, also dem, was ich als Deutschrock bezeichne. Eine sehr bekannte Deutschrock-Band hat ihn sogar mal angerufen, ob man nicht darüber reden möchte, was Grauzone auf Konzerten eigentlich ist.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Geht der selbst viel auf Konzerte?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Außerhalb seines Forschungsgebiets eher weniger. Auf einem Punkkonzert habe ich ihn genau einmal gesehen, bei Kapott [?] aus Hamburg.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Er wirkte wie ein regelmäßiger Konzertgänger.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Früher war er viel unterwegs, und für die Forschung natürlich. Er war bei mehreren Frei.Wild-Konzerten, weil er darüber publiziert hat. Als Frei.Wild das große Thema in der deutschen Popkultur war, wurde er oft zitiert und interviewt.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Wärst du hier live im Studio, müsstest du jetzt einen Schwedenkräuter trinken. Du hast das Wort gesagt: Frei.Wild.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ach so. Aber nicht positiv gemeint.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Nee, das ist eine Strafe, weil der Schnaps so bitter ist. Das Äquivalent zum Mundauswaschen mit Seife.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ah ja.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Gemein, ich weiß. Jedenfalls: Bei Punk ist er weniger unterwegs, auf der anderen Seite umso mehr.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Das Video kann ich sehr empfehlen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Es ist von 2015 und immer noch aktuell. Das ist mir beim Durchklicken generell aufgefallen: Deine Videos sind auch nach Jahren noch aktuell. Meine Sendung ist das nicht, die kommt jede Woche und ist wie eine Zeitung, irgendwann langweilig.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Kommt drauf an. Die Sendung mit Tommy von Loser Youth kann man auch in ein, zwei Jahren noch hören.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ich nicht, vielleicht jemand anderes. Ein Tipp, der bei der Stange hält: Setz dir das Ziel, jede Woche was zu veröffentlichen, und zwing dich, den inneren Schweinehund zu überwinden. Wenn ich die Sendung nur einmal im Monat machen würde, wäre ich nicht so bei der Sache.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich versuche ja, einmal die Woche was hochzuladen. Am Samstag habe ich ein neues Interview aufgenommen, das muss ich noch schneiden, aber die letzten zwei Tage war ich einfach platt. Es ist zeitintensiv, und wenn es mal nicht geht, geht’s nicht. Ist halt ein Hobby, und ich will mir kein schlechtes Gewissen machen, wenn zwei Wochen nichts kommt. Meistens klappt es aber ganz okay.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Hast du Zukunftspläne oder neue Formate?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich will nächstes Jahr wieder nach Israel, darüber habe ich vor ein paar Jahren eine Doku über Punk und Hardcore gemacht. Und nach Malta, wo ich letztes Jahr eine Doku über die Szene gedreht habe. Total spannend, weil es auf Malta etwa 120 Punks gibt, und das war’s.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Für Malta ist das ziemlich viel. Wie viele Leute wohnen da?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Um die 300.000, glaube ich.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Mannheim hat auch 300.000 Einwohner, und da gibt’s keine 120 Punks.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Und auf Malta ist das Wetter besser.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Da trägt man dann Flip-Flops statt Springerstiefel.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Witzigerweise nicht. Die sind genauso kostümiert.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ist mir in Thailand auch aufgefallen. Die tragen originale Stiefel und Lederjacken, weil sie denken, das gehört so. Total lächerlich.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Früher war’s ja nicht anders. In Rocko Schamonis „Dorfpunks“ steht: 40 Grad, und ich trug trotzdem Lederjacke und Stiefel, weil man musste.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Er fand es wohl erwähnenswert genug, um es aufzuschreiben.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Kann sein. Ansonsten: mal schauen. Jede Woche was rauszuhauen ist immer was Neues, das ist das Schöne an der Szene. Es kommt viel Neues raus, und trotzdem hat es immer was von früher. Für mich ist das ein geschlossenes, ziemlich kleines Universum mit wenig Wachstum.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Ein YouTube-Star wirst du damit nie, dafür fehlt die große Zielgruppe.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Stimmt.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Gilt aber für 90 % der Popkultur.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Mir reichen 30 bis 50 Leute, und wenn es nur zehn wären, wäre es auch geil. Mir geht’s um die Sache.</p>
+
+  <div class="note">
+    <strong>Anm. d. Red.</strong>
+    <p>Malta hatte 2017 rund 440.000 Einwohner, nicht 300.000. Mannheim lag bei rund 300.000. Die Zahl der Punks auf Malta stammt aus Maglins Einschätzung.</p>
+  </div>
+
+  <p class="sep">·&nbsp;·&nbsp;·</p>
+
+  <p class="talk"><em>(Song: Kuballa, „Frankie“)</em></p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Wir haben noch neun Minuten, wir müssen musikalisch kürzen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Dann nehme ich Kuballa. Die kommen irgendwo aus Süddeutschland, sind total super, schreiben tolle Texte und machen guten Punkrock.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Das war Kuballa. Ich weiß nicht, ob ich es schon erwähnt habe, aber jetzt wird ein bisschen gebauchpinselt: Deine Konzertberichte finde ich richtig gut. Die sind kurzweilig. Ein paar Sekunden auf die Bühne, man sieht die Bands abkaspern, das Publikum, den Laden, dazu ein bisschen Backstage-Interview. Alles kurz zusammengefasst, und man hat einen kompletten Eindruck, wie es war.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich frage mich nämlich selbst, ob das die Leute interessiert.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Auf jeden Fall. Es gibt nichts Schlimmeres als ein komplett aufgenommenes Live-Konzert. So eine Scheiße gucke ich mir nicht an, auch wenn mich die Band interessiert. Die Lieder gibt’s auf Platte besser.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich habe auch ein paar Live-Mitschnitte gemacht, weil mir das Schneiden mit drei, vier Kameras viel Spaß macht.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Dann ist es auch cool zum Zugucken, weil man was erlebt. Aber meine Aufmerksamkeitsspanne ist wirklich nicht hoch. Bei deinen Sachen reicht sie gerade so.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Danke schön.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Bandinterviews finde ich sowieso gut. Wenn mir Musik gefällt, will ich die Leute dahinter kennenlernen und wissen, ob das Idioten sind oder so cool, wie ich sie mir vorstelle.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ich finde es wichtig, dass die Leute in der Band cool sind. Sonst können wir es auch bleiben lassen und Heavy Metal hören.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">So sieht’s aus. Wir sind fast am Ende, danke dir! Geht alle mal auf YouTube oder sucht im Netz nach „Maglins Blog“, ich verlinke es auch auf meiner Webseite. Das war Pogoradio im Bermudafunk, mein Name ist Rüdi. Wenn heute nicht der 22.11. ist, war das eine Wiederholung, ansonsten sind wir live bei punkrockersradio.de. Maglin, du darfst noch ein Lied aussuchen.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Geil, danke für die Einladung! Ich nehme „They Still Ignore Peaceful Protest“ von Exilent, für alle, die sich Geknüppel wünschen.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Gib zu, du hattest ein bisschen Angst, dass die Sendung in die Hose geht.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Ein bisschen. Für mich ist es das erste Mal auf der anderen Seite.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Und ich hab ja gesagt, dass ich mich nicht vorbereite. Wenn die Sendung scheiße wird, ist dein Ruf im Eimer.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Bei 30 Leuten kann man das noch verkraften.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Genau. So, Schluss jetzt.</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">„They Still Ignore Peaceful Protest“, bitte!</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Machen wir. Danke! Wir bleiben aber noch in der Leitung, ne?</p>
+
+  <p class="speaker">Maglin</p>
+  <p class="talk">Jo.</p>
+
+  <p class="speaker">Rüdi</p>
+  <p class="talk">Jo, tschüss, bis dann.</p>
+
+  <p class="sep">·&nbsp;·&nbsp;·</p>
+
+  <p class="talk"><em>(Song: Exilent, „Signs of Devastation“)</em></p>
+
+  <h2>Songs in dieser Sendung</h2>
+  <ul class="songs">
+    <li><span class="by">Inwiefern</span> <span class="ti">Pogoradio Jingle</span></li>
+    <li><span class="by">Loser Youth</span> <span class="ti">Club Cala Pada</span></li>
+    <li><span class="by">Black Lining</span> <span class="ti">Bottom Line</span></li>
+    <li><span class="by">Bijou Igitt</span> <span class="ti">Can’t relax in Deutschpop</span></li>
+    <li><span class="by">Blankets</span> <span class="ti">Coins</span></li>
+    <li><span class="by">Kuballa</span> <span class="ti">Frankie</span></li>
+    <li><span class="by">Exilent</span> <span class="ti">They Still Ignore Peaceful Protest</span></li>
+  </ul>
+
+  <div class="nav">
+    <a href="/sendungen/nachlesen/">← Alle Sendungen zum Nachlesen</a>
+    <a href="/sendungen/">Sendungsarchiv →</a>
+  </div>
+
+  <p class="foot">Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+</div>
+</body>
+</html>
