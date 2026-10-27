@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Review-Archiv – Pogoradio</title>
+<meta name="description" content="1358 Reviews und Geschichten aus dem alten Pogoradio-Blog 2006–2013: Platten, Fanzines, Bücher, DVDs und Stories, durchsuchbar nach Band, Heft, Jahr und Schreiber.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<style>
+/* Layout: sticky search bar over a register of reviews; a review unfolds in place as a readable column */
+:root {
+  --bg: #f3f1ec;
+  --panel: #ffffff;
+  --fg: #1f1e1c;
+  --soft: #46433e;
+  --muted: #6f6a62;
+  --line: #dcd8cf;
+  --accent: #d63a2c;
+  --accent-soft: #fbe4e0;
+  --mark: #ffe08a;
+  --mark-fg: #1f1e1c;
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --soft: #c9c4bb; --muted: #a39e95; --line: #403e3a; --accent: #ff5a4a; --accent-soft: #45231f; --mark: #7a5c00; --mark-fg: #fff4d1; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #262523; --panel: #2f2e2b; --fg: #ece8e1; --soft: #c9c4bb; --muted: #a39e95; --line: #403e3a; --accent: #ff5a4a; --accent-soft: #45231f; --mark: #7a5c00; --mark-fg: #fff4d1; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 var(--body); -webkit-font-smoothing: antialiased; }
+[hidden] { display: none !important; }
+a { color: inherit; }
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 24px;
+}
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg);
+  padding-block: 16px 10px; border-bottom: 2px solid var(--fg); display: grid; gap: 10px;
+}
+.brand { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; }
+h1 { font: 700 28px/1 var(--display); letter-spacing: .01em; text-transform: uppercase; margin: 0; }
+h1 span { color: var(--accent); }
+.sub { color: var(--muted); font-size: 12.5px; }
+.sibs { margin-left: auto; display: flex; gap: 14px; }
+.sib { font: 600 14px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--soft); text-decoration: none; white-space: nowrap; }
+.sib:hover { color: var(--fg); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .25em; }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.search { flex: 1 1 260px; position: relative; min-width: 0; }
+.search input {
+  width: 100%; font: 15px var(--body); padding: 8px 32px 8px 10px; color: var(--fg);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 3px;
+}
+.search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+#clear { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); border: 0; background: none; color: var(--muted); font-size: 18px; cursor: pointer; padding: 2px 8px; }
+select { font: 13px var(--body); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 3px; padding: 7px 8px; cursor: pointer; max-width: 100%; }
+.count { font: 600 15px/1 var(--display); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-left: auto; white-space: nowrap; }
+.count b { color: var(--fg); font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.list { border-top: 1px solid var(--line); }
+.item { border-bottom: 1px solid var(--line); scroll-margin-top: calc(var(--hh, 150px) + 8px); }
+.item.open .teaser { display: none; }
+.row { display: grid; grid-template-columns: 84px minmax(0, 1fr) 150px; gap: 0 16px; align-items: baseline; padding: 10px 8px; cursor: pointer; }
+.row:hover, .item.open .row { background: var(--panel); }
+.date { font: 12.5px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ti { font-weight: 600; font-size: 15px; line-height: 1.3; }
+.ti .ar { text-transform: uppercase; letter-spacing: .02em; }
+.ti .dash { color: var(--muted); font-weight: 400; }
+.fmt { font: 12px var(--mono); color: var(--muted); margin-top: 2px; overflow-wrap: anywhere; }
+.teaser { color: var(--muted); font-size: 13px; margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hits { color: var(--accent); font-size: 12px; margin-top: 3px; }
+.meta { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12.5px; color: var(--muted); }
+.tag {
+  display: inline-block; font: 600 11.5px/1 var(--display); letter-spacing: .07em; text-transform: uppercase;
+  padding: 3px 6px 2px; border-radius: 2px; border: 1px solid var(--line); color: var(--soft);
+}
+.tag.story { color: var(--accent); background: var(--accent-soft); border-color: transparent; }
+.by { color: var(--soft); }
+mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; padding: 0 1px; }
+
+article.text-body {
+  padding: 6px 8px 26px calc(84px + 16px + 8px);
+  max-width: calc(84px + 16px + 8px + 68ch);
+  font-size: 15.5px; line-height: 1.65; color: var(--fg);
+}
+article.text-body p { margin: 0 0 .9em; }
+article.text-body .sig { color: var(--soft); font-style: italic; }
+article.text-body .src { font-size: 12.5px; line-height: 1.5; color: var(--muted); margin: 1.2em 0 0; padding-top: 8px; border-top: 1px solid var(--line); }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.close, .copy {
+  font: 600 13px/1 var(--display); letter-spacing: .07em; text-transform: uppercase;
+  background: none; color: var(--soft); border: 1px solid var(--line); border-radius: 3px; padding: 7px 10px; cursor: pointer;
+}
+.close:hover, .copy:hover { color: var(--fg); border-color: var(--fg); }
+.more { display: block; margin: 16px auto 0; font: 600 14px/1 var(--display); letter-spacing: .07em; text-transform: uppercase; background: var(--fg); color: var(--bg); border: 0; border-radius: 3px; padding: 10px 16px; cursor: pointer; }
+.more:hover { background: var(--accent); color: #fff; }
+.empty, .loading { padding: 40px 8px; color: var(--muted); text-align: center; }
+
+footer.foot {
+  margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: 12.5px; color: var(--muted);
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px);
+}
+footer.foot p { margin: 0; max-width: 70ch; }
+footer.foot a { color: var(--fg); text-decoration-color: var(--accent); text-underline-offset: .2em; }
+
+@media (max-width: 760px) {
+  .row { grid-template-columns: 1fr; gap: 3px; }
+  .meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 4px; }
+  article.text-body { padding: 4px 8px 24px; font-size: 15px; }
+  .sibs { margin-left: 0; }
+  .count { margin-left: 0; }
+  .controls select { flex: 1 1 40%; }
+  header.top { position: static; }
+  .item { scroll-margin-top: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Review<span>-</span>Archiv</h1>
+      <div class="sub" id="sub"></div>
+      <nav class="sibs" aria-label="Weitere Archive"><a class="sib" href="/interview-archiv/">Interviews →</a><a class="sib" href="/sendungen/">Sendungen →</a></nav>
+    </div>
+    <div class="controls">
+      <div class="search">
+        <input id="q" type="search" placeholder="Suche: Band, Platte, Label, Heft, Schreiber …" autocomplete="off" aria-label="Suche">
+        <button id="clear" type="button" aria-label="Suche leeren" hidden>×</button>
+      </div>
+      <select id="cat" aria-label="Art"><option value="">Alle Arten</option></select>
+      <select id="year" aria-label="Jahr"><option value="">Alle Jahre</option></select>
+      <select id="by" aria-label="Geschrieben von"><option value="">Alle Schreiber</option></select>
+      <select id="sort" aria-label="Sortierung">
+        <option value="az">A–Z</option>
+        <option value="new">Neueste zuerst</option>
+        <option value="old">Älteste zuerst</option>
+      </select>
+      <div class="count"><b id="n">0</b> <span id="nl">Reviews</span></div>
+    </div>
+  </header>
+
+  <div class="list" id="list"><div class="loading">Reviews werden geladen …</div></div>
+  <div class="empty" id="empty" hidden>Nichts gefunden. Probier einen kürzeren Begriff oder setz die Filter zurück.</div>
+  <button class="more" id="more" type="button" hidden>Weitere anzeigen</button>
+
+  <footer class="foot">
+    <p>Die Reviews und Geschichten stammen aus dem alten Pogoradio-Blog (pogoradio.de, 2006–2013), viele davon aus dem Punkrock!-Fanzine. Rechtschreibung und Zeichensetzung sind behutsam korrigiert, Ton und Wortwahl der Schreiber sind geblieben. Bilder und Adressen sind nicht übernommen.</p>
+    <p>Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a></p>
+  </footer>
+</div>
+
+<script src="daten.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var listEl = $('list'), qEl = $('q'), catEl = $('cat'), yearEl = $('year'), byEl = $('by'), sortEl = $('sort'), moreEl = $('more');
+  var CAT = { Platte: ['Platte', 'Platten'], Fanzine: ['Fanzine', 'Fanzines'], Buch: ['Buch', 'Bücher'], DVD: ['DVD', 'DVDs'], Story: ['Story', 'Stories'], Konzert: ['Konzert', 'Konzerte'] };
+  var CAT_ORDER = ['Platte', 'Fanzine', 'Buch', 'DVD', 'Story', 'Konzert'];
+  var PAGE = 120;
+  var DATA = [], open = {}, shown = PAGE, rows = [], terms = [];
+
+  function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function esc(s) { return (s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function fmtDate(d) { var p = d.split('-'); return p[2] + '.' + p[1] + '.' + p[0]; }
+  function hl(str, terms) {
+    if (!str) return '';
+    if (!terms.length) return esc(str);
+    var n = norm(str);
+    if (n.length !== str.length) return esc(str);
+    var marks = [];
+    terms.forEach(function (t) { var i = 0; while ((i = n.indexOf(t, i)) !== -1) { marks.push([i, i + t.length]); i += t.length; } });
+    if (!marks.length) return esc(str);
+    marks.sort(function (a, b) { return a[0] - b[0]; });
+    var out = '', pos = 0;
+    marks.forEach(function (m) {
+      if (m[0] < pos) { if (m[1] > pos) { out += '<mark>' + esc(str.slice(pos, m[1])) + '</mark>'; pos = m[1]; } return; }
+      out += esc(str.slice(pos, m[0])) + '<mark>' + esc(str.slice(m[0], m[1])) + '</mark>'; pos = m[1];
+    });
+    return out + esc(str.slice(pos));
+  }
+  function countIn(hay, t) { var c = 0, i = 0; while ((i = hay.indexOf(t, i)) !== -1) { c++; i += t.length; } return c; }
+  function setHH() { document.documentElement.style.setProperty('--hh', document.querySelector('header.top').offsetHeight + 'px'); }
+  window.addEventListener('resize', setHH);
+
+  function opt(el, value, label) { var o = document.createElement('option'); o.value = value; o.textContent = label; el.appendChild(o); }
+
+  function init(data) {
+    DATA = data;
+    var cats = {}, years = {}, authors = {};
+    DATA.forEach(function (r, i) {
+      r.i = i;
+      r.y = r.d.slice(0, 4);
+      r.plain = r.p.join(' ');
+      r.teaser = r.plain.length > 220 ? r.plain.slice(0, 220).replace(/\s+\S*$/, '') + ' …' : r.plain;
+      r.headHay = norm([r.a, r.t, r.m, r.by, CAT[r.cat] ? CAT[r.cat][0] : '', r.b || ''].join(' '));
+      r.bodyHay = norm(r.plain);
+      r.words = r.plain.split(/\s+/).length;
+      cats[r.cat] = (cats[r.cat] || 0) + 1;
+      years[r.y] = (years[r.y] || 0) + 1;
+      if (r.by) authors[r.by] = (authors[r.by] || 0) + 1;
+    });
+    CAT_ORDER.forEach(function (c) { if (cats[c]) opt(catEl, c, CAT[c][1] + ' (' + cats[c] + ')'); });
+    Object.keys(years).sort().reverse().forEach(function (y) { opt(yearEl, y, y + ' (' + years[y] + ')'); });
+    Object.keys(authors).sort(function (a, b) { return authors[b] - authors[a] || a.localeCompare(b, 'de'); })
+      .forEach(function (a) { opt(byEl, a, a + ' (' + authors[a] + ')'); });
+    var ys = Object.keys(years).sort();
+    $('sub').textContent = DATA.length + ' Reviews und Geschichten aus dem Blog · ' + ys[0] + '–' + ys[ys.length - 1] + ' · ' + Object.keys(authors).length + ' Schreiber';
+    setHH();
+    render();
+    openFromHash();
+  }
+
+  function titleHTML(r, terms) {
+    var h = '<span class="ar">' + hl(r.a, terms) + '</span>';
+    if (r.t) h += '<span class="dash"> – </span>' + hl(r.t, terms);
+    return h;
+  }
+
+  function itemHTML(r, terms) {
+    var hits = 0;
+    if (terms.length) terms.forEach(function (t) { hits += countIn(r.bodyHay, t); });
+    var isOpen = !!open[r.i];
+    var meta = '<span class="tag' + (r.cat === 'Story' ? ' story' : '') + '">' + esc(CAT[r.cat] ? CAT[r.cat][0] : r.cat) +
+      (r.cat === 'Story' ? ' · ' + Math.max(1, Math.round(r.words / 200)) + ' Min.' : '') + '</span>' +
+      (r.by ? '<span class="by">von ' + hl(r.by, terms) + '</span>' : '');
+    var h = '<div class="item' + (isOpen ? ' open' : '') + '" id="' + esc(r.slug) + '" data-i="' + r.i + '">' +
+      '<div class="row" tabindex="0" role="button" aria-expanded="' + (isOpen ? 'true' : 'false') + '">' +
+      '<div class="date">' + fmtDate(r.d) + '</div>' +
+      '<div><div class="ti">' + titleHTML(r, terms) + '</div>' +
+      (r.m ? '<div class="fmt">' + hl(r.m, terms) + '</div>' : '') +
+      '<div class="teaser">' + hl(r.teaser, terms) + '</div>' +
+      (hits ? '<div class="hits">' + hits + ' Treffer im Text' + (isOpen ? '' : ' · zum Lesen aufklappen') + '</div>' : '') +
+      '</div><div class="meta">' + meta + '</div></div>';
+    if (isOpen) {
+      var body = r.p.map(function (x) { return '<p>' + hl(x, terms) + '</p>'; }).join('');
+      if (r.by) body += '<p class="sig">– ' + esc(r.by) + '</p>';
+      var src = 'Erschienen im Pogoradio-Blog am ' + fmtDate(r.d);
+      if (r.b) src += ', im Beitrag „' + esc(r.b) + '“';
+      body += '<p class="src">' + src + '.</p>';
+      h += '<article class="text-body">' + body + '<div class="actions"><button class="close" type="button">Zuklappen</button><button class="copy" type="button">Link kopieren</button></div></article>';
+    }
+    return h + '</div>';
+  }
+
+  function filtered() {
+    var c = catEl.value, y = yearEl.value, b = byEl.value;
+    var out = DATA.filter(function (r) {
+      if (c && r.cat !== c) return false;
+      if (y && r.y !== y) return false;
+      if (b && r.by !== b) return false;
+      return terms.every(function (t) { return r.headHay.indexOf(t) !== -1 || r.bodyHay.indexOf(t) !== -1; });
+    });
+    var s = sortEl.value;
+    if (s === 'new') out.sort(function (a, b) { return b.d < a.d ? -1 : b.d > a.d ? 1 : a.i - b.i; });
+    else if (s === 'old') out.sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : a.i - b.i; });
+    return out;
+  }
+
+  function render(keepShown) {
+    var q = norm(qEl.value.trim());
+    terms = q ? q.split(/\s+/).filter(Boolean) : [];
+    $('clear').hidden = !qEl.value;
+    rows = filtered();
+    if (!keepShown) shown = PAGE;
+    listEl.innerHTML = rows.slice(0, shown).map(function (r) { return itemHTML(r, terms); }).join('');
+    $('n').textContent = rows.length;
+    $('nl').textContent = rows.length === 1 ? 'Eintrag' : 'Einträge';
+    $('empty').hidden = rows.length > 0;
+    moreEl.hidden = rows.length <= shown;
+    if (!moreEl.hidden) moreEl.textContent = 'Weitere ' + Math.min(PAGE, rows.length - shown) + ' anzeigen (' + (rows.length - shown) + ' übrig)';
+  }
+  moreEl.addEventListener('click', function () {
+    var from = shown; shown += PAGE;
+    listEl.insertAdjacentHTML('beforeend', rows.slice(from, shown).map(function (r) { return itemHTML(r, terms); }).join(''));
+    moreEl.hidden = rows.length <= shown;
+    if (!moreEl.hidden) moreEl.textContent = 'Weitere ' + Math.min(PAGE, rows.length - shown) + ' anzeigen (' + (rows.length - shown) + ' übrig)';
+  });
+
+  function rerender(el) {
+    var r = DATA[+el.getAttribute('data-i')];
+    var t = document.createElement('div'); t.innerHTML = itemHTML(r, terms);
+    var nu = t.firstChild; el.parentNode.replaceChild(nu, el);
+    return nu;
+  }
+  function setHash(slug) {
+    try { history.replaceState(null, '', slug ? '#' + slug : location.pathname + location.search); } catch (e) {}
+  }
+  function toggle(item, forceOpen) {
+    var i = +item.getAttribute('data-i');
+    open[i] = forceOpen === undefined ? !open[i] : forceOpen;
+    var nu = rerender(item);
+    setHash(open[i] ? DATA[i].slug : '');
+    if (!open[i]) {
+      var top = nu.getBoundingClientRect().top;
+      if (top < 0) nu.scrollIntoView({ block: 'start' });
+    }
+    var row = nu.querySelector('.row'); if (row) row.focus({ preventScroll: true });
+  }
+
+  listEl.addEventListener('click', function (e) {
+    if (e.target.closest('a')) return;
+    var item = e.target.closest('.item'); if (!item) return;
+    if (e.target.closest('.close')) { toggle(item, false); return; }
+    if (e.target.closest('.copy')) {
+      var btn = e.target.closest('.copy'), url = location.href.split('#')[0] + '#' + DATA[+item.getAttribute('data-i')].slug;
+      var done = function () { btn.textContent = 'Kopiert'; setTimeout(function () { btn.textContent = 'Link kopieren'; }, 1600); };
+      try { navigator.clipboard.writeText(url).then(done, function () { setHash(DATA[+item.getAttribute('data-i')].slug); }); } catch (err) { setHash(DATA[+item.getAttribute('data-i')].slug); }
+      return;
+    }
+    if (e.target.closest('article')) return;
+    if (window.getSelection().toString()) return;
+    if (e.target.closest('.row')) toggle(item);
+  });
+  listEl.addEventListener('keydown', function (e) {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('row')) {
+      e.preventDefault(); toggle(e.target.closest('.item'));
+    }
+  });
+
+  var timer;
+  qEl.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(function () { render(); }, 160); });
+  $('clear').addEventListener('click', function () { qEl.value = ''; render(); qEl.focus(); });
+  [catEl, yearEl, byEl, sortEl].forEach(function (el) { el.addEventListener('change', function () { render(); }); });
+
+  function openFromHash() {
+    var slug = decodeURIComponent((location.hash || '').slice(1));
+    if (!slug) return;
+    var r = DATA.find(function (x) { return x.slug === slug; });
+    if (!r) return;
+    open[r.i] = true;
+    qEl.value = ''; catEl.value = ''; yearEl.value = ''; byEl.value = '';
+    render();
+    var idx = rows.indexOf(r);
+    if (idx >= shown) { shown = idx + 1; render(true); }
+    setHH();
+    var el = document.getElementById(slug); if (el) el.scrollIntoView({ block: 'start' });
+  }
+  window.addEventListener('hashchange', openFromHash);
+
+  if (window.PGR_REVIEWS) init(window.PGR_REVIEWS);
+  else window.addEventListener('load', function () {
+    if (window.PGR_REVIEWS) init(window.PGR_REVIEWS);
+    else listEl.innerHTML = '<div class="loading">Die Reviews konnten nicht geladen werden. Bitte die Seite neu laden.</div>';
+  });
+})();
+</script>
+</body>
+</html>

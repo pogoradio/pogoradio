@@ -166,6 +166,9 @@ body { margin: 0; }
 img { max-width: 100%; }
 [hidden] { display: none !important; }
 .sib { margin-left: auto; font: 600 14px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--fg); opacity: .8; text-decoration: none; white-space: nowrap; }
+.sibs { margin-left: auto; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.sibs .sib { margin-left: 0; }
+@media (max-width: 760px) { .sibs { margin-left: 0; } }
 .sib:hover { opacity: 1; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .25em; }
 .foot a { color: var(--fg); text-decoration-color: var(--accent); text-underline-offset: .2em; }
 @media (max-width: 760px) { .sib { margin-left: 0; } }
@@ -179,8 +182,7 @@ img { max-width: 100%; }
     <div class="brand">
       <h1>Sendungs<span>-</span>Archiv</h1>
       <div class="sub" id="sub"></div>
-      <a class="sib" href="/sendungen/nachlesen/">Sendungen zum Nachlesen →</a>
-      <a class="sib" href="/interview-archiv/">Interview-Archiv →</a>
+      <nav class="sibs" aria-label="Weitere Archive"><a class="sib" href="/sendungen/nachlesen/">Sendungen zum Nachlesen →</a><a class="sib" href="/interview-archiv/">Interview-Archiv →</a><a class="sib" href="/reviews/">Review-Archiv →</a></nav>
     </div>
     <div class="controls">
       <div class="search">
