@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Walter Elf bei Pogoradio</title>
+<meta name="description" content="Pogoradio-Interview vom 30. Mai 2003 im Juz Mannheim: Jürgen und Beppo von Kick Joneses über das Ende von Walter Elf, das Wiedersehen in der Kammgarn und Lieder über Frauen, Fußball, Bier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Alegreya:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style id="pgr-bar-css">
+.pgr-bar{position:relative;z-index:60;display:flex;align-items:center;min-height:44px;margin:0;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:#2f2e2b;color:#ece8e1;border-bottom:1px solid #403e3a;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-align:left}
+.pgr-bar a.pgr-bar__home{display:inline-flex;align-items:center;gap:.55em;padding:12px 0;color:#ece8e1;text-decoration:none;font:inherit}
+.pgr-bar a.pgr-bar__home:hover{color:#fff;text-decoration:underline;text-decoration-color:#ff4d3d;text-decoration-thickness:2px;text-underline-offset:.3em}
+.pgr-bar a.pgr-bar__home:focus-visible{outline:2px solid #ff4d3d;outline-offset:3px;border-radius:2px}
+.pgr-bar__dot{width:7px;height:7px;border-radius:50%;background:#ff4d3d;flex:none}
+</style>
+<style>
+/* Walter Elf: Stadionheft vom Betze. Rot-weiß wie der 1. FC Kaiserslautern,
+   eine große Rückennummer 11 im Kopf, Aufstellung statt Steckbrief,
+   das Gespräch in sieben Abschnitten wie die sieben Aufnahmen.
+   Hell oder dunkel wie das Gerät. */
+:root {
+  --bg: #f4f1ea;
+  --panel: #fffdf8;
+  --ink: #1d1b18;
+  --soft: #5d574e;
+  --rule: #d9d2c5;
+  --red: #c8102e;
+  --red-soft: rgba(200, 16, 46, .07);
+  --jue: #1f5f8b;
+  --bep: #8a5a12;
+  --display: "Big Shoulders Display", "Oswald", "Arial Narrow", Impact, sans-serif;
+  --serif: "Alegreya", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1a19; --panel: #252321; --ink: #eee8dd; --soft: #aaa297; --rule: #3a3632;
+    --red: #ff5a5f; --red-soft: rgba(255, 90, 95, .10); --jue: #86b9de; --bep: #e2ae62;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1b1a19; --panel: #252321; --ink: #eee8dd; --soft: #aaa297; --rule: #3a3632;
+  --red: #ff5a5f; --red-soft: rgba(255, 90, 95, .10); --jue: #86b9de; --bep: #e2ae62;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.125rem/1.58 var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-color: var(--red); text-underline-offset: .2em; }
+a:hover { color: var(--red); }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* Kopf */
+.kopf { position: relative; padding: 34px 0 22px; border-bottom: 6px solid var(--red); overflow: hidden; }
+.nummer {
+  position: absolute; right: -6px; top: 14px;
+  font: 900 clamp(130px, 26vw, 196px)/.8 var(--display);
+  color: transparent; -webkit-text-stroke: 2px var(--red);
+  opacity: .45; letter-spacing: -.02em; pointer-events: none; user-select: none;
+}
+.kicker {
+  position: relative; display: inline-block; margin: 0 0 12px; padding: 4px 9px 3px;
+  background: var(--red); color: #fff;
+  font: 700 .82rem/1.2 var(--display); letter-spacing: .12em; text-transform: uppercase;
+}
+h1 {
+  position: relative; margin: 0;
+  font: 900 clamp(3.4rem, 13vw, 6.2rem)/.86 var(--display);
+  text-transform: uppercase; letter-spacing: .01em;
+}
+.dek { position: relative; max-width: 34em; margin: 14px 0 0; color: var(--soft); font-size: 1.12rem; line-height: 1.5; }
+
+/* Aufstellung */
+.aufstellung { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 18px 0 0; padding: 0; list-style: none; border: 1px solid var(--rule); background: var(--panel); }
+.aufstellung li { padding: 10px 12px 11px; border-left: 1px solid var(--rule); }
+.aufstellung li:first-child { border-left: 0; }
+.aufstellung .pos { display: block; font: 700 .74rem/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+.aufstellung .name { display: block; font: 900 1.55rem/1.05 var(--display); text-transform: uppercase; margin-top: 3px; }
+.aufstellung .verein { display: block; font-size: .92rem; line-height: 1.35; color: var(--soft); margin-top: 2px; }
+.aufstellung .j .name { color: var(--jue); }
+.aufstellung .b .name { color: var(--bep); }
+.aufstellung .r .name { color: var(--red); }
+.rahmen { margin: 12px 0 0; font-size: .98rem; color: var(--soft); }
+
+/* Inhalt */
+.toc { margin: 22px 0 6px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; font: 700 .9rem/1.4 var(--display); letter-spacing: .06em; text-transform: uppercase; }
+.toc a { text-decoration: none; color: var(--soft); }
+.toc a:hover { color: var(--red); }
+.toc b { color: var(--red); margin-right: .3em; }
+
+/* Gespräch */
+section { margin: 30px 0 0; }
+h2 {
+  display: flex; align-items: baseline; gap: 12px; margin: 0 0 12px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--ink);
+  font: 900 1.7rem/1.05 var(--display); text-transform: uppercase; letter-spacing: .01em;
+}
+h2 .nr { color: var(--red); font-size: 1.15em; min-width: 1.1em; }
+.q { margin: 0 0 .62em; }
+.q b { font: 700 .82rem/1 var(--display); letter-spacing: .1em; text-transform: uppercase; margin-right: .5em; }
+.q.r b { color: var(--red); }
+.q.j b { color: var(--jue); }
+.q.b b { color: var(--bep); }
+.q.a b { color: var(--soft); }
+.q.r { color: var(--ink); }
+.regie { font-style: italic; color: var(--soft); }
+.lied { font-style: italic; }
+
+/* Anmerkung der Redaktion */
+.anm {
+  margin: 12px 0 14px; padding: 9px 13px 10px;
+  border-left: 4px solid var(--red); background: var(--red-soft);
+  font-size: .95rem; line-height: 1.48;
+}
+.anm b { font: 700 .74rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-right: .5em; }
+
+/* Schluss */
+.schluss { margin: 34px 0 0; padding: 16px 0 40px; border-top: 6px solid var(--red); font-size: .92rem; line-height: 1.5; color: var(--soft); }
+.schluss p { margin: 0 0 8px; }
+.schluss ul { margin: 4px 0 0; padding-left: 1.1em; }
+.schluss li { margin: 2px 0; }
+
+@media (max-width: 600px) {
+  body { font-size: 1.06rem; }
+  .kopf { padding-top: 26px; }
+  .nummer { top: 20px; right: -10px; -webkit-text-stroke-width: 1.5px; opacity: .28; }
+  .aufstellung { grid-template-columns: 1fr; }
+  .aufstellung li { border-left: 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 7.2em 1fr; column-gap: 10px; align-items: baseline; }
+  .aufstellung li:first-child { border-top: 0; }
+  .aufstellung .pos { grid-row: 1 / span 2; }
+  .aufstellung .name { margin-top: 0; font-size: 1.35rem; }
+  h2 { font-size: 1.45rem; }
+}
+</style>
+</head>
+<body>
+<div class="pgr-bar" role="navigation" aria-label="Pogoradio"><a class="pgr-bar__home" href="/"><span aria-hidden="true">←</span><span class="pgr-bar__dot" aria-hidden="true"></span>Pogoradio-Archiv</a></div>
+
+<div class="wrap">
+  <header class="kopf">
+    <div class="nummer" aria-hidden="true">11</div>
+    <p class="kicker">Pogoradio-Interview · Juz Mannheim · 30. Mai 2003</p>
+    <h1>Walter Elf</h1>
+    <p class="dek">Angesagt war es als Kick-Joneses-Interview. Geredet wurde dann vor allem über die Band davor: warum Walter Elf aufgehört haben, das Wiedersehen in der Kammgarn und Lieder über Frauen, Fußball, Bier.</p>
+    <ul class="aufstellung" aria-label="Aufstellung">
+      <li class="j"><span class="pos">Gitarre</span><span class="name">Jürgen</span><span class="verein">Kick Joneses</span></li>
+      <li class="b"><span class="pos">Gesang, Trompete</span><span class="name">Beppo</span><span class="verein">Kick Joneses</span></li>
+      <li class="r"><span class="pos">Mikrofon</span><span class="name">Rüdi</span><span class="verein">Pogoradio, an dem Abend auch an der Kasse</span></li>
+    </ul>
+    <p class="rahmen">Freitag, 30. Mai 2003: Kick Joneses spielen im Juz Mannheim, mit Achtung Spitfire! Schnell schnell. Das Gespräch kam in sieben Aufnahmen auf Band, hier in sieben Abschnitten.</p>
+  </header>
+
+  <nav aria-label="Inhalt">
+    <ol class="toc">
+      <li><a href="#plural"><b>1</b>Plural, ganz wichtig</a></li>
+      <li><a href="#metropolen"><b>2</b>Die Metropolen besetzt</a></li>
+      <li><a href="#bier"><b>3</b>Bier, Frauen, Fußball</a></li>
+      <li><a href="#schluss"><b>4</b>Warum Schluss war</a></li>
+      <li><a href="#wurscht"><b>5</b>Die Wurscht</a></li>
+      <li><a href="#unzufriedenheit"><b>6</b>Unzufriedenheit</a></li>
+      <li><a href="#jingle"><b>7</b>Jingle</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="plural" aria-labelledby="h1-plural">
+      <h2 id="h1-plural"><span class="nr">1</span>Plural, ganz wichtig</h2>
+      <p class="q r"><b>Rüdi</b>Okay, wir fangen jetzt an mit dem Interview mit Kick Joneses.</p>
+      <p class="q j"><b>Jürgen</b>Kick Joneses, ganz wichtig: Plural! Man sagt nicht „Jones“, sondern „Joneses“. Es geht ja um die Mehrzahl.</p>
+      <p class="q r"><b>Rüdi</b>Und was ist das für ein Name, wo kommt der her?</p>
+      <p class="q j"><b>Jürgen</b>Der kommt aus Amerika und aus England.</p>
+      <p class="q r"><b>Rüdi</b>Anglizistisch?</p>
+      <p class="q j"><b>Jürgen</b>So könnte man es sagen. Aber da kann der Sänger besser was zu sagen.</p>
+      <p class="q r"><b>Rüdi</b>Du singst?</p>
+      <p class="q b"><b>Beppo</b>Mhm.</p>
+      <p class="q r"><b>Rüdi</b>Ich hab gedacht, du kannst nur gut aussehen, aber du singst auch noch.</p>
+      <p class="q b"><b>Beppo</b>Oh, aussehen, danke. Danke.</p>
+      <p class="q r"><b>Rüdi</b>Ich hab hier so einen James-Bond-Verschnitt vor mir stehen, die Haare hoch, gepierct … Brosnan. Ich hab ja vorhin Kasse gemacht, und da waren mindestens 20 gut aussehende Frauen, die umsonst reingekommen sind, weil sie auf der Gästeliste standen. Nur wegen dem Sänger.</p>
+      <p class="q b"><b>Beppo</b>Das war aber der andere Sänger. Und die waren auch nicht so gut aussehend, die waren vor allen Dingen alt und schon vergeben.</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Kick Joneses haben zwei Sänger, beide auch an der Trompete: Beppo und Alex.</aside>
+      <p class="q j"><b>Jürgen</b>Und wohlhabend wahrscheinlich.</p>
+      <p class="q r"><b>Rüdi</b>Stehst du nicht auf wohlhabend?</p>
+      <p class="q b"><b>Beppo</b>Ich steh auch gerne auf Luxus, danke.</p>
+      <p class="q r"><b>Rüdi</b>Auf was für Luxus? Hast du auf dem Girokonto ein Minus oder ein Plus?</p>
+      <p class="q b"><b>Beppo</b>Ich hab ein Guthabenkonto. Da kann ich gar nicht ins Minus gehen.</p>
+      <p class="q r"><b>Rüdi</b>Was ist das?</p>
+      <p class="q b"><b>Beppo</b>Im Grunde ein Konto, das einfach nichts mehr auszahlt, wenn man ins Minus kommt.</p>
+      <p class="q r"><b>Rüdi</b>Schufa?</p>
+      <p class="q b"><b>Beppo</b>Ja, genau! Total! Danke! Als Student hab ich gelebt wie Gott in Frankreich, und dann …</p>
+      <p class="q j"><b>Jürgen</b>… dann hat Frankreich seine Schulden eingefordert!</p>
+      <p class="q b"><b>Beppo</b>Und außerdem: Wenn man Kinder hat und eine Frau, dann bleibt …</p>
+      <p class="q r"><b>Rüdi</b>… dann fressen sie dir die Haare vom Kopf.</p>
+      <p class="q b"><b>Beppo</b>Genau, so ist das. Man sieht’s ja auch langsam. Guck mal hier.</p>
+      <p class="q j"><b>Jürgen</b>Die haben sie erst mal rechts und links weggefressen. Nee, die haben schon alles weggefressen.</p>
+      <p class="q b"><b>Beppo</b>Ich bin beim dritten, ne? Guck mal, warum ich so aussehe.</p>
+      <p class="q r"><b>Rüdi</b>Gleich kommen da noch die Säcke dran.</p>
+    </section>
+
+    <section id="metropolen" aria-labelledby="h2-metropolen">
+      <h2 id="h2-metropolen"><span class="nr">2</span>Die Metropolen besetzt</h2>
+      <p class="q r"><b>Rüdi</b>Und sonst macht euch das Spaß mit der Musik? Ich meine, Erfolg habt ihr ja jetzt nicht.</p>
+      <p class="q j"><b>Jürgen</b>Als Kick Joneses … wenn wir keinen Spaß dran hätten, würden wir das nicht mehr machen, glaube ich. Einige von uns sind mittlerweile über 40, einige knapp drunter. Da macht man das sonst nicht mehr.</p>
+      <p class="q r"><b>Rüdi</b>Mitte der 90er sind mir mal Plakate von Kick Joneses ins Haus geflattert, die waren vierfarbig. Das könnt ihr euch heute nicht mehr leisten, oder?</p>
+      <p class="q b"><b>Beppo</b>Nee, kaum noch.</p>
+      <p class="q r"><b>Rüdi</b>Oder malt ihr die selber mit Buntstiften an?</p>
+      <p class="q b"><b>Beppo</b>Wir haben so einen Kindergarten, den wir öfter mal beauftragen. Der lässt dann die Kinder die Plakate malen.</p>
+      <p class="q r"><b>Rüdi</b>Kinderarbeit ist gut. Und dann gibt’s noch was. Ich erzähl ja im Radio immer so Sachen: Die Band stammt aus der und der Ecke, die waren vorher bei denen und denen. Bei euch würde ich jetzt behaupten, obwohl es vielleicht nicht stimmt: Das ist zum Teil Spermbirds und zum anderen Teil Boxhamsters.</p>
+      <p class="q b"><b>Beppo</b>Falsch! Ganz falsch!</p>
+      <p class="q j"><b>Jürgen</b>Walter Elf! Walter Elf und Spermbirds stimmt. In den beiden Bands haben eigentlich fast alle schon mal gespielt, die jetzt bei Kick Joneses mitmachen. Aber die Boxhamsters sind nur Freunde von uns. Vielleicht kommt das, weil wir oft zusammen spielen.</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Walter Elf gründeten sich 1983 in Kaiserslautern. Im selben Jahr entstanden aus ihrem Umfeld die Spermbirds, 1985 teilten sich beide Bands eine Split-EP. Kick Joneses gibt es seit 1992, nach dem Ende von Walter Elf. Beppo heißt eigentlich Matthias Götte und ist heute Schlagzeuger der Spermbirds.</aside>
+      <p class="q r"><b>Rüdi</b>Also nicht im gleichen Proberaum.</p>
+      <p class="q j"><b>Jürgen</b>Nee, nee. Die Boxhamsters kommen aus Gießen und proben auch da. Wir kommen ja noch aus dem Kreis Kaiserslautern, das ist unsere goldene Mitte. Wir haben uns verstreut über Städte wie Stuttgart, Köln, Frankfurt. Wir haben die Metropolen besetzt.</p>
+      <p class="q r"><b>Rüdi</b>Wie macht ihr das dann mit dem Proben? Schickt ihr immer ein Tape rum, und jeder spielt seins drauf?</p>
+      <p class="q b"><b>Beppo</b>Nee, wir proben relativ selten, und dann machen wir lange Probewochen. Im Proberaum sind wir sehr produktiv. Bei uns geht das so: Jeder überlegt sich zu Hause die Sachen, kommt in den Proberaum und sagt den anderen, was sie spielen sollen.</p>
+      <p class="q r"><b>Rüdi</b>Also hat jeder zu Hause ein Tape.</p>
+      <p class="q b"><b>Beppo</b>Nee, das wird zu Hause komponiert.</p>
+      <p class="q r"><b>Rüdi</b>Ah, mit Noten?</p>
+      <p class="q b"><b>Beppo</b>Nee, ohne Noten natürlich. Das wird komponiert und dann erklärt: Du musst das und das spielen. Das wird vorgesungen.</p>
+      <p class="q r"><b>Rüdi</b>Auf den Anrufbeantworter, oder wie?</p>
+      <p class="q b"><b>Beppo</b>Nee, im Proberaum. Man hat die Lieder im Kopf vorkomponiert, und alle drei Monate treffen wir uns im Proberaum. <span class="regie">(zu Jürgen)</span> Aber du hast ab und zu auch Lieder auf Kassette vorkomponiert.</p>
+      <p class="q j"><b>Jürgen</b>Ja, aber ganz selten, jetzt bei der neuen Platte einmal. Ansonsten spiel ich den anderen im Proberaum vor, was sie spielen sollen, oder einer singt es ihnen vor, und dann ergibt sich eins nach dem anderen. Meistens schaffen wir bei einer Probe drei, vier neue Lieder, wenn wir denn wollen.</p>
+    </section>
+
+    <section id="bier" aria-labelledby="h2-bier">
+      <h2 id="h2-bier"><span class="nr">3</span>Bier, Frauen, Fußball</h2>
+      <p class="q r"><b>Rüdi</b>Ich kann jetzt kein Lied von Kick Joneses singen …</p>
+      <p class="q b"><b>Beppo</b>Kannst du ja auch noch nicht.</p>
+      <p class="q r"><b>Rüdi</b>… ich kenn euch eigentlich vom Sehen.</p>
+      <p class="q j"><b>Jürgen</b>Die Lieder kennst du vom Sehen? Sehr abstraktes Verständnis.</p>
+      <p class="q r"><b>Rüdi</b>Ich möchte mal behaupten, ich war sogar schon mal auf einem Konzert. Und es gab eine Single bei Flight 13. Ist das im Moment euer Label?</p>
+      <p class="q j"><b>Jürgen</b>Da war nur die Single, genau. Und jetzt sind wir auch wieder auf dem neuen Ox-Sampler drauf.</p>
+      <p class="q r"><b>Rüdi</b>Was habt ihr dafür bezahlt, dass ihr da draufkommt?</p>
+      <p class="q j"><b>Jürgen</b>Nichts. Wir haben tatsächlich nichts bezahlt … ah, das darf man gar nicht sagen. Wir haben jedenfalls nichts bezahlt.</p>
+      <p class="q r"><b>Rüdi</b>Ah, die nehmen immer so ein paar Bands, die sie schon länger kennen, und die anderen müssen dafür bezahlen. Aber das dürft ihr jetzt nicht sagen.</p>
+      <p class="q b"><b>Beppo</b>Aber es bringt ja was. Das Ox ist ein nettes Fanzine.</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Flight 13 ist ein Plattenladen mit Label in Freiburg. Dem Ox-Fanzine aus Solingen lag damals eine Sampler-CD bei.</aside>
+      <p class="q b"><b>Beppo</b>Um was es in den Liedern geht, ist natürlich eine schwierige Frage, weil zwei Leute die Lieder schreiben. Die Texte sind relativ bodenständig. Es ist das, was einen in der aktuellen Lebensphase bewegt.</p>
+      <p class="q r"><b>Rüdi</b>Früher ging’s mal um Bier, Frauen und Fußball. Das ist ja schon aus …</p>
+      <p class="q j"><b>Jürgen</b>Wenn du jetzt all die Lieder singst, wo es um Bier, Frauen, Fußball geht, denk ich mir manchmal: Ui, ui, ui.</p>
+      <p class="q b"><b>Beppo</b>Wir haben es ja gerade erst wieder gemacht: an Weihnachten, um unsere jetzige Platte zu finanzieren, mit Walter Elf in der Kammgarn.</p>
+      <p class="q j"><b>Jürgen</b>Genau.</p>
+      <p class="q r"><b>Rüdi</b>Und da war die Hölle los, mit Vorverkauf.</p>
+      <p class="q j"><b>Jürgen</b>Genau, ja.</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Am 20. Dezember 2002 spielten Walter Elf in der Kammgarn in Kaiserslautern ein einmaliges Wiedersehenskonzert, Kick Joneses waren mit dabei. Später kamen weitere Abende dazu, unter anderem 2005, 2008, 2012 und 2016, fast immer zwischen den Jahren in der Kammgarn.</aside>
+      <p class="q b"><b>Beppo</b>Damals haben wir über Bier, Frauen, Fußball gesungen, jetzt singt man halt über Frauen, Fußball, Bier.</p>
+      <p class="q j"><b>Jürgen</b>Aber halt ein bisschen intellektueller. Differenzierter.</p>
+      <p class="q r"><b>Rüdi</b>Was ist denn wichtiger von den drei Themen?</p>
+      <p class="q b"><b>Beppo</b>Das ist schwierig. Kann ich nicht sagen.</p>
+      <p class="q r"><b>Rüdi</b>Du?</p>
+      <p class="q j"><b>Jürgen</b>Kann ich jetzt auch nicht sagen, nee.</p>
+      <p class="q b"><b>Beppo</b>Das Thema Kinder ist natürlich noch dazugekommen.</p>
+    </section>
+
+    <section id="schluss" aria-labelledby="h2-schluss">
+      <h2 id="h2-schluss"><span class="nr">4</span>Warum Schluss war</h2>
+      <p class="q r"><b>Rüdi</b>Walter Elf waren für mich ja immer so was wie Serious Drinking. Die deutschsprachigen.</p>
+      <p class="q b"><b>Beppo</b>Das war vielleicht zu der Zeit auch angebracht. Und das sind wir vielleicht jetzt auch noch.</p>
+      <p class="q j"><b>Jürgen</b>Serious Drinking kann ich absolut befürworten, ja.</p>
+      <p class="q r"><b>Rüdi</b>Das kam bei mir irgendwie zeitgleich ins Haus geflattert: die zweite Walter Elf, „Die Angst des Tormanns beim Elfmeter“, und Serious Drinking. Und da hab ich gedacht: Haja, das passt ja gut zusammen. Beides macht sehr viel Spaß und sehr viel Laune.</p>
+      <aside class="anm"><b>Anm. d. Red.</b>„Die Angst des Tormanns beim Elfmeter“ erschien 1988 und war das zweite Album von Walter Elf, der Titel ist von Peter Handke geliehen. Serious Drinking kommen aus Norwich, gegründet 1981, und sangen über Fußball und Trinken. Ihr erstes Album hieß „The Revolution Starts at Closing Time“ (1983).</aside>
+      <p class="q b"><b>Beppo</b>Das war zu der Zeit einfach unser Ding. Das haben wir gemacht bis 1990, und dann haben wir gesagt: Okay, jetzt reicht’s auch mal, jetzt machen wir was anderes. Damit wir nicht ewig unter dem Namen Walter Elf weitermachen und immer wieder das Gleiche spielen müssen. Irgendwann wiederholt man sich selbst. Die Leute unten haben es noch abgefeiert, und wenn wir ganz einfach strukturierte Menschen wären, hätten wir gesagt: Okay, toll, dann feiern wir uns halt auch selbst ab. Aber das hat uns nicht genügt. Der Trick war: Man löst sich auf und fängt gleichzeitig neu an. Wenn du weiter Walter Elf heißt und das Konzept umstellst, dürfen die Leute ja weiterhin rufen: Jetzt spielt mal das und das!</p>
+      <p class="q r"><b>Rüdi</b>Zum Beispiel „Kaiserslautern“.</p>
+      <p class="q b"><b>Beppo</b>Ja, genau. Pfälzer Dorf …</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Das Abschiedskonzert von Walter Elf war am 17. Dezember 1991 in der Kammgarn, also gut ein Jahr später als hier erinnert.</aside>
+      <p class="q j"><b>Jürgen</b>Mir fällt noch ein anderes Beispiel ein, für die andere Seite: Die Goldenen Zitronen. Die haben sich in der Zeit komplett verändert und ihren Namen behalten, und ich finde, die haben das super gemacht.</p>
+      <p class="q b"><b>Beppo</b>Genau. Wir haben halt den anderen Weg gewählt, den, der uns sinnvoll erschien: Wir stoppen das Ganze und machen was Neues. Dann können wir auch schön frei sein. Wir sind sozusagen auf unsere eigene Anonymität gestoßen. Und damit leben wir gut, weil es – ich will das nicht extra hochgestochen ausdrücken – unserem kreativen Leben als Musiker entgegenkommt. Sonst verfängt man sich …</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Die Goldenen Zitronen aus Hamburg fingen Mitte der Achtziger als Funpunkband an und wurden später deutlich politischer und experimenteller.</aside>
+    </section>
+
+    <section id="wurscht" aria-labelledby="h2-wurscht">
+      <h2 id="h2-wurscht"><span class="nr">5</span>Die Wurscht</h2>
+      <p class="q r"><b>Rüdi</b><span class="regie">(singt)</span> <span class="lied">„Da werden die Wurst geschlacht’ …“</span></p>
+      <p class="q b"><b>Beppo</b><span class="lied">„Da werden die Wurscht gemacht!“</span></p>
+      <p class="q j"><b>Jürgen</b>Er sagt’s doch schon: die Wurscht gemacht.</p>
+      <p class="q r"><b>Rüdi</b>Weiter?</p>
+      <p class="q j"><b>Jürgen</b>Was weiß denn ich? Ich spiel doch nur die Gitarre, ich sing doch nicht.</p>
+      <p class="q r"><b>Rüdi</b>Ach so. Also noch mal. <span class="regie">(singt)</span> <span class="lied">„Da werden die Wurst geschlacht’ …“</span></p>
+      <p class="q b"><b>Beppo</b><span class="lied">„Da werden die Wurscht gemacht!“</span></p>
+      <p class="q r"><b>Rüdi</b>Und jetzt?</p>
+      <p class="q j"><b>Jürgen</b>Meinst du das Lied von Walter Elf oder das Original? Es gibt ja auch so ein Volkslied.</p>
+      <p class="q r"><b>Rüdi</b>Ja, ja.</p>
+      <p class="q j"><b>Jürgen</b>Das geht nämlich so: <span class="lied">„Da wird gesoffen die ganze Nacht.“</span></p>
+      <p class="q r"><b>Rüdi</b>Siehst du, du weißt es doch! Alla hopp, es geht doch! Alla, danke! Bis dann!</p>
+      <aside class="anm"><b>Anm. d. Red.</b>„Kaiserslautern“ gehört zu den Walter-Elf-Klassikern. Das Lied steht unter anderem auf der Split-LP von 1987 und auf dem Livealbum „Oh hängt sie auf!“ von 1992.</aside>
+      <p class="q b"><b>Beppo</b>Nee, aber weißt du, weil du das vorhin gefragt hast: Es ist uns kein bisschen peinlich. Es gibt ja scheinbar Bands, denen so was peinlich ist, was sie vor Jahren mal gemacht haben.</p>
+      <p class="q r"><b>Rüdi</b>Ich meine, wenn’s euch peinlich wäre, dann wäre euch auch das Interview hier peinlich.</p>
+      <p class="q b"><b>Beppo</b>Nee, nicht mal das. Aber dann hätten wir letzte Weihnachten bestimmt nicht das Konzert gemacht.</p>
+      <p class="q r"><b>Rüdi</b>Was eigentlich gut war.</p>
+      <p class="q j"><b>Jürgen</b>Ja, es war super. Absolut super. Es war noch mal schön, weißt du. Walter Elf gab’s zu dem Zeitpunkt sozusagen 20 Jahre lang, halt in einer anderen Formation.</p>
+      <p class="q r"><b>Rüdi</b>Aber Moment, da waren saumäßig viele junge Leute, ich würde sagen gute 18, 19. Das heißt, als Walter Elf aufgehört haben, können die eigentlich noch gar keine Walter Elf gehört haben. Die haben sich richtig gefreut, dass die Band noch mal spielt. Vorne vor der Bühne waren ganz viele junge Leute. Irgendwie ist das eine mündliche Geschichte, das muss überliefert worden sein.</p>
+      <p class="q b"><b>Beppo</b>Im Moment stehen ja unheimlich viele junge Punker auf alte Kassetten zum Beispiel. Und auf Cotzbrocken! Die sind gerade total angesagt.</p>
+      <p class="q r"><b>Rüdi</b>Das Beste an Cotzbrocken finde ich ja, dass das jetzt als CD rausgekommen ist. Ich hab das früher als Platte gehabt, okay, da fand man das ja noch witzig. Aber jetzt als CD, diese furchtbar aufgenommene Platte …</p>
+      <p class="q j"><b>Jürgen</b>Alles kommt wieder auf CD raus, ne? Die ganzen Canalterror-Sachen, alles kommt auf CD raus.</p>
+      <p class="q r"><b>Rüdi</b>Aber bei Cotzbrocken fand ich das unglaublich. Wenn sie die Platte noch mal aufgelegt hätten, okay, das hätte ich verstanden. Aber als CD, so Hightech, und dann kommt dieser Sound …</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Cotzbrocken waren eine Deutschpunkband der frühen Achtziger. Ihre LP „Jeden das Seine …“ erschien damals bei Rock-O-Rama.</aside>
+      <p class="q b"><b>Beppo</b>Nee, die jungen Leute haben doch gar keinen Plattenspieler mehr.</p>
+      <p class="q r"><b>Rüdi</b>Das stimmt eigentlich.</p>
+      <p class="q j"><b>Jürgen</b>Wer kauft heutzutage noch einen Plattenspieler? Für was denn?</p>
+      <p class="q r"><b>Rüdi</b>Ja, ich! Ich hab einen Plattenspieler!</p>
+      <p class="q j"><b>Jürgen</b>Es ging um junge Leute.</p>
+      <p class="q r"><b>Rüdi</b>Ach so, ja, junge Leute.</p>
+      <p class="q b"><b>Beppo</b>So alt, wie du bist …</p>
+    </section>
+
+    <section id="unzufriedenheit" aria-labelledby="h2-unzufriedenheit">
+      <h2 id="h2-unzufriedenheit"><span class="nr">6</span>Geschichten über Unzufriedenheit</h2>
+      <p class="q r"><b>Rüdi</b>Okay, dann machen wir hier einen Abschluss.</p>
+      <p class="q b"><b>Beppo</b>Das reicht, gell? Ich wollte noch mal kurz was sagen, nicht um Werbung zu machen. Vorhin hieß es: Um was geht’s in den Liedern? Die neue Platte heißt „Tales of Discontent“, also Geschichten über Unzufriedenheit. Die behandelt immer noch dieselben Themen wie früher, aber vielleicht mit einer etwas anderen Herangehensweise.</p>
+      <p class="q r"><b>Rüdi</b>Sag bloß nicht nachdenklich.</p>
+      <p class="q b"><b>Beppo</b>Ach Gott, hör mir auf, überhaupt nicht! Aber halt immer noch persönlich. Wenn man 35 ist, hat man mehr persönliche Erfahrungen als mit 25, ganz ohne Wertung, ob das besser oder schlechter ist. Aber auf jeden Fall mehr. Quantitativ mehr.</p>
+      <aside class="anm"><b>Anm. d. Red.</b>„Tales of Discontent“ erschien 2003 bei Boss Tuneage.</aside>
+      <p class="q r"><b>Rüdi</b>Aber ihr singt ja immer für jüngere Leute. Die Älteren in eurem Alter …</p>
+      <p class="q j"><b>Jürgen</b>Genau, das ist mir auch schon aufgefallen. Die Leute werden immer jünger.</p>
+      <p class="q r"><b>Rüdi</b>… die kommen ja gar nicht mehr. Die kriegen keinen, der auf die Babys aufpasst.</p>
+      <p class="q b"><b>Beppo</b>Doch! Ich hab im Moment auch einen Babysitter.</p>
+      <p class="q r"><b>Rüdi</b>Ja? Was zahlst du denn die Stunde?</p>
+      <p class="q b"><b>Beppo</b>Das ist meine Frau.</p>
+      <p class="q r"><b>Rüdi</b>Okay.</p>
+      <p class="q b"><b>Beppo</b>Morgen beim Konzert ist es meine Mutter. Deswegen versuchen wir, viele Open Airs zu spielen. Da können die Kinder mitkommen.</p>
+      <p class="q r"><b>Rüdi</b>Ja, klar.</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Am nächsten Abend, dem 31. Mai 2003, spielten Kick Joneses im Hellmut in Saarbrücken.</aside>
+    </section>
+
+    <section id="jingle" aria-labelledby="h2-jingle">
+      <h2 id="h2-jingle"><span class="nr">7</span>Jingle</h2>
+      <p class="q r"><b>Rüdi</b>Jetzt noch abschließende Worte, oder macht mal so einen Jingle. Ihr müsst sagen: Pogoradio auf 105,4 im Bermudafunk. Habt ihr’s euch gemerkt?</p>
+      <p class="q a"><b>Beide</b>Pogoradio auf 105,4 im Bermudafunk!</p>
+      <p class="q r"><b>Rüdi</b>Im Bermudafunk!</p>
+      <p class="q b"><b>Beppo</b>Eins, zwei, drei, vier: Pogoradio auf 105,4 im Bermuda-Dreieck … nee, wie? Funk!</p>
+      <p class="q a"><b>Alle</b>Funk!</p>
+      <p class="q r"><b>Rüdi</b>Und die Band heißt … ihr müsst es alle sagen, damit es jeder sagen kann: Kick Joneses!</p>
+      <p class="q a"><b>Beide</b>Kick Joneses!</p>
+      <p class="q r"><b>Rüdi</b>Wie kommt’s denn eigentlich zu dem Namen? Das hab ich noch gar nicht gefragt.</p>
+      <p class="q b"><b>Beppo</b>Kick heißt treten. Und die Joneses sind sozusagen, wie man bei uns sagt: Otto Normal, Müller, Meyer …</p>
+      <p class="q r"><b>Rüdi</b>Ach so, treten …</p>
+      <p class="q j"><b>Jürgen</b>Treten Schmidt! Treten Schmidt in den Schritt! Zum Beispiel! Genau!</p>
+      <aside class="anm"><b>Anm. d. Red.</b>Im Englischen stehen die Joneses für die Durchschnittsfamilie von nebenan, mit der man mithalten will („keeping up with the Joneses“).</aside>
+      <p class="q r"><b>Rüdi</b>Okay. Dann viel Spaß bei eurem Konzert!</p>
+      <p class="q a"><b>Beide</b>Danke!</p>
+    </section>
+  </main>
+
+  <footer class="schluss">
+    <p>Aufgenommen am 30. Mai 2003 im Juz Mannheim, für die Seite gekürzt. Wer was sagt, ist nach dem Gesprächsverlauf zugeordnet. Die Anmerkungen geben den Stand von Oktober 2026 wieder.</p>
+    <p>Quellen für die Anmerkungen:</p>
+    <ul>
+      <li><a href="https://de.wikipedia.org/wiki/Walter_Elf">Walter Elf</a> (Wikipedia)</li>
+      <li><a href="https://www.kick-joneses.de/Konzerte.html">Konzerthistorie</a> (kick-joneses.de)</li>
+      <li><a href="https://en.wikipedia.org/wiki/Spermbirds">Spermbirds</a> und <a href="https://en.wikipedia.org/wiki/Serious_Drinking">Serious Drinking</a> (Wikipedia, englisch)</li>
+      <li><a href="https://de.wikipedia.org/wiki/Flight_13_Records">Flight 13 Records</a> (Wikipedia), <a href="https://en.wikipedia.org/wiki/Ox-Fanzine">Ox-Fanzine</a> (Wikipedia, englisch)</li>
+      <li><a href="https://pennyblackmusic.co.uk/Home/Details?id=11773">Besprechung von „Tales of Discontent“</a> (Pennyblack Music)</li>
+      <li><a href="https://www.maximumrocknroll.com/band/cotzbrocken/">Cotzbrocken</a> (Maximum Rocknroll)</li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>
