@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sendepause – Pogoradio</title>
+<meta name="description" content="Diese Seite gibt es nicht. Hier läuft gerade nur Rauschen. Zurück zum Pogoradio-Archiv.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f1ec;--panel:#ffffff;--panel-hover:#ebe8e1;--fg:#1f1e1c;--fg-soft:#46433e;
+  --muted:#6f6a62;--rule:#dcd8cf;--accent:#d63a2c;
+  --dial:#e7e3d9;--tick:#46433e;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#262523;--panel:#2f2e2b;--panel-hover:#353430;--rule:#403e3a;--fg:#ece8e1;
+    --fg-soft:#cfcac1;--muted:#a39e95;--accent:#ff5a4a;
+    --dial:#1c1b19;--tick:#a39e95;
+  }
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);
+  font:400 17px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+.pgr-bar{background:#2f2e2b;border-bottom:1px solid #403e3a;padding:10px 16px}
+.pgr-bar a{color:#ece8e1;text-decoration:none;font:500 14px/1.2 "IBM Plex Sans",system-ui,sans-serif}
+.pgr-bar a:hover,.pgr-bar a:focus-visible{text-decoration:underline}
+main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:40px 20px 24px}
+.logo{height:64px;width:auto;display:block;margin-bottom:28px}
+
+/* Das Dial: das Einzige, was sich bewegt */
+.dial{position:relative;height:110px;border:2px solid var(--fg);border-radius:6px;background:var(--dial);overflow:hidden}
+.dial::before{ /* Skala */
+  content:"";position:absolute;left:14px;right:14px;top:18px;height:26px;
+  background:
+    repeating-linear-gradient(90deg,var(--tick) 0 2px,transparent 2px 20px) bottom/100% 100% no-repeat,
+    repeating-linear-gradient(90deg,var(--tick) 0 1px,transparent 1px 5px) bottom/100% 45% no-repeat;
+}
+.dial .freq{position:absolute;left:14px;right:14px;top:50px;display:flex;justify-content:space-between;
+  font:600 15px/1 "Barlow Condensed",sans-serif;color:var(--muted);letter-spacing:.02em}
+.dial .mark{position:absolute;top:50px;left:calc(14px + (100% - 28px) * .84);transform:translateX(-50%);
+  font:700 15px/1 "Barlow Condensed",sans-serif;color:var(--fg)}
+.dial .mark small{display:block;margin-top:3px;font:500 11px/1.1 "IBM Plex Sans",sans-serif;color:var(--muted);text-align:center}
+.needle{position:absolute;top:8px;bottom:8px;width:3px;background:var(--accent);left:14px;
+  animation:suche 6s cubic-bezier(.45,.05,.3,1) forwards}
+.needle::after{content:"";position:absolute;top:-2px;left:-4px;width:11px;height:11px;border-radius:50%;background:var(--accent)}
+/* sucht hin und her, bleibt knapp neben 105,4 stehen */
+@keyframes suche{
+  0%{left:14px}
+  30%{left:calc(14px + (100% - 28px) * .93)}
+  55%{left:calc(14px + (100% - 28px) * .22)}
+  80%{left:calc(14px + (100% - 28px) * .88)}
+  100%{left:calc(14px + (100% - 28px) * .805)}
+}
+.rausch{position:absolute;inset:0;opacity:.16;pointer-events:none;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  animation:flimmer .5s steps(3) infinite}
+@media (prefers-color-scheme:dark){.rausch{mix-blend-mode:screen;opacity:.12}}
+@keyframes flimmer{0%{background-position:0 0}33%{background-position:-40px 30px}66%{background-position:25px -50px}100%{background-position:-15px 10px}}
+@media (prefers-reduced-motion:reduce){
+  .needle{animation:none;left:calc(14px + (100% - 28px) * .805)}
+  .rausch{animation:none}
+}
+
+h1{font:700 clamp(40px,9vw,68px)/.98 "Barlow Condensed",sans-serif;letter-spacing:.005em;margin:30px 0 14px}
+h1 span{color:var(--accent)}
+.lead{font-size:19px;color:var(--fg-soft);margin:0 0 8px;max-width:34em}
+.klein{color:var(--muted);font-size:15px;margin:0 0 28px;max-width:38em}
+
+.weiter{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin:0 0 34px}
+.btn{display:inline-block;padding:11px 18px;border-radius:4px;font:600 17px/1 "Barlow Condensed",sans-serif;
+  letter-spacing:.02em;text-decoration:none;cursor:pointer;border:2px solid var(--fg);color:var(--fg);background:transparent}
+.btn.haupt{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{background:var(--panel-hover)}
+.btn.haupt:hover{filter:brightness(1.08);background:var(--accent)}
+.btn:focus-visible,.liste a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#zaehler{color:var(--muted);font-size:15px}
+
+.liste{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.liste li{border-bottom:1px solid var(--rule)}
+.liste a{display:flex;justify-content:space-between;gap:16px;padding:13px 2px;color:var(--fg);text-decoration:none}
+.liste a:hover{background:var(--panel-hover)}
+.liste b{font:600 20px/1.2 "Barlow Condensed",sans-serif;letter-spacing:.01em}
+.liste span{color:var(--muted);font-size:15px;text-align:right}
+
+footer{max-width:760px;width:100%;margin:0 auto;padding:18px 20px 34px;color:var(--muted);font-size:14px}
+footer a{color:var(--fg-soft)}
+@media (max-width:520px){
+  main{padding-top:28px}
+  .liste a{flex-direction:column;gap:2px}
+  .liste span{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="pgr-bar"><a href="/">Pogoradio – zur Startseite</a></div>
+
+<main>
+  <picture>
+    <source srcset="/pogoradio-logo.png" media="(prefers-color-scheme: dark)">
+    <img class="logo" src="/pogoradio-logo-dunkel.png" alt="Pogoradio" width="64" height="64">
+  </picture>
+
+  <div class="dial" role="img" aria-label="Radioskala: Die Nadel sucht und bleibt knapp neben 105,4 stehen">
+    <div class="freq" aria-hidden="true"><span>87,5</span><span>92</span><span>96</span><span>100</span><span>104</span><span>108</span></div>
+    <div class="mark" aria-hidden="true">105,4<small>Bermudafunk</small></div>
+    <div class="needle" aria-hidden="true"></div>
+    <div class="rausch" aria-hidden="true"></div>
+  </div>
+
+  <h1>Sendepause. <span>404.</span></h1>
+  <p class="lead">Hier läuft gerade nur Rauschen. Die Seite, die du suchst, wurde nie gesendet, ist umgezogen oder hat sich im Äther verlaufen.</p>
+  <p class="klein">Wir haben alle 602 Einträge im Sendungsarchiv durchgehört. Diese Seite war nicht dabei.</p>
+
+  <div class="weiter">
+    <a class="btn haupt" href="/" id="start">Zur Startseite</a>
+    <button class="btn" type="button" id="bleiben">Hier bleiben</button>
+    <span id="zaehler" aria-live="polite">Weiterleitung in 15 Sekunden.</span>
+  </div>
+
+  <ul class="liste">
+    <li><a href="/sendungen/"><b>Sendungsarchiv</b><span>602 Sendungen, 2000–2018</span></a></li>
+    <li><a href="/interview-archiv/"><b>Interviews aus dem Blog</b><span>49 Gespräche</span></a></li>
+    <li><a href="/reviews/"><b>Reviews aus dem Blog</b><span>1358 Besprechungen und Geschichten</span></a></li>
+    <li><a href="/sendungen/nachlesen/"><b>Sendungen zum Nachlesen</b><span>Textfassungen</span></a></li>
+  </ul>
+</main>
+
+<footer>
+  Kontakt: <a href="mailto:pogoradio@gmail.com">pogoradio@gmail.com</a>
+</footer>
+
+<script>
+(function(){
+  var sek=15, z=document.getElementById('zaehler'), t;
+  function tick(){
+    sek--;
+    if(sek<=0){location.replace('/');return;}
+    z.textContent='Weiterleitung in '+sek+(sek===1?' Sekunde.':' Sekunden.');
+  }
+  t=setInterval(tick,1000);
+  document.getElementById('bleiben').addEventListener('click',function(){
+    clearInterval(t);
+    z.textContent='Weiterleitung abgebrochen.';
+    this.disabled=true;this.style.opacity='.5';this.style.cursor='default';
+  });
+})();
+</script>
+</body>
+</html>
